@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>在线听佛乐 - 杭州乐米动漫</title>
+<meta http-equiv="X-UA-Compatible" content="edge">
+<meta name="Description" content="杭州乐米动漫佛教音乐频道聚合了海量佛教歌曲,如大悲咒等,佛教流行音乐免费欣赏,佛教歌曲试听下载">
+<meta name="Keywords" content="佛教音乐,下载,大悲咒,佛乐,,佛教歌曲,经典音乐,佛教音乐下载,佛教音乐MP3,佛乐,大悲咒">
+<link rel="stylesheet" href="css/common.css">
+<script src="../v5/r4/js/jquery.min.js"></script>
+<script src="../v5/r4/js/common.js"></script>
+<script src="js/common.js"></script>
+<script src="js/calendar.js"></script>
+<script type="text/javascript" src="../js/ds.js"></script>
+</head>
+<body>
+<div class="common-white-gradient-bg">
+<div class="common-flowers-bg" style="padding-bottom: 20px;">
+    <div class="container clearfix logo-ctn">
+        <a href="../index.html" class="logo" title="返回一听首页?">杭州乐米动漫</a>
+        <div class="search-ctn">
+            <form action="http://so.lezicartoon.cn/all.do" method="get" onsubmit="return search(this);">
+                <div class="search-ctn-type">
+                    <div class="search-ctn-type-all" check-current="0" id="search_title">
+                        <span></span>
+                        <p id="st">全部</p>
+                    </div>
+                    <div class="search-ctn-type-secondary clearfix" id="search_cont">
+                        <a href="javascript:void(0);" check-num="0">全部</a>
+                        <a href="javascript:void(0);" check-num="1">歌曲</a>
+                        <a href="javascript:void(0);" check-num="2">专辑</a>
+                        <a href="javascript:void(0);" check-num="3">歌手</a>
+                        <a href="javascript:void(0);" check-num="4">歌词</a>
+                    </div>
+                </div>
+                <div class="search-content">
+                    <input type="text" name="q" id="sq" value="支持拼音搜索，如找邓丽君输入dlj即可" x-webkit-speech="" x-webkit-grammar="builtin:search" onwebkitspeechchange="(function(e){e.target.form.submit();})(event)">
+                </div>
+                <div class="button-ctn">
+                    <button type="submit">搜索</button>
+                </div>
+            </form>
+        </div>
+        <script type="text/javascript">search_type();</script>
+        <div class="userbox">
+            <div class="user-guest" id="user-guest">
+                <p class="sitelogin">
+                    <a href="javascript:;" class="link-reg">注册</a> -
+                    <a href="javascript:;" class="link-login">登录</a>
+                </p>
+                <p class="pluginlogin">
+                    <a href="javascript:;" class="login-weibo">微博登录</a>
+                    <a href="javascript:;" class="login-qq">QQ登录</a>
+                    <a href="javascript:;" class="link-favor">我的收藏</a>
+                </p>
+                <p class="sitelogin" style="margin-left:10px">
+                    <a href="javascript:;" target="_blank" class="link-login">手机听佛乐</a>
+                </p>
+            </div>
+            <div class="user-login" id="user-login">
+                <p class="user-welcome">
+                    <a href="javascript:;" class="link-username">yuanjainhang</a>上午好
+                </p>
+                <div class="user-action" id="user_login_action">
+                    <a href="javascript:;" class="act-fav">我的收藏</a>
+                    <div>
+                        <a href="javascript:;" target="_blank">用户中心</a>
+                        <a href="javascript:;">退出登录</a>
+                    </div>
+                </div>
+                <p class="sitelogin" style="margin-left:10px">
+                    <a href="javascript:;" target="_blank" class="link-login">手机听佛乐</a>
+                </p>
+            </div>
+        </div>
+        <script type="text/javascript">login();</script>
+    </div>
+    <div class="buddha-menu-bg">
+        <div class="menu">
+            <a href="javascript:;">首&nbsp;&nbsp;页</a>
+            <a href="javascript:;">密咒真言</a>
+            <a href="javascript:;">经忏课颂</a>
+            <a href="javascript:;">经典念诵</a>
+            <a href="javascript:;">一心念佛</a>
+            <a href="javascript:;">凡歌咏法</a>
+            <a href="javascript:;">和雅清音</a>
+            <a href="javascript:;">雪域梵音</a>
+            <a href="javascript:;">其他佛乐</a>
+        </div>
+        <div class="banner">
+            <div class="calendar-bg"></div>
+            <script type="text/template" id="tpl">
+            <div class="calendar-ctn">
+                <div class="calendar-title clearfix">
+                    <p>{{y}}年{{m}}月</p>
+                    <span>{{nm}}{{nd}}</span>
+                </div>
+                <div class="calendar-cont">
+                    <strong>{{d}}</strong>
+                    <div>
+                        <p>星期{{w}}</p>
+                        <i></i>
+                    </div>
+                </div>
+                <div class="calendar-table clearfix">
+                    <div class="calendar-table-title">
+                        <p>{{gy}}年&nbsp;{{nm}}</p>
+                        <span>属相&nbsp;{{sx}}&nbsp;&nbsp;<i></i></span>
+                    </div>
+                    <dl>
+                        <dt>
+                            宜
+                        </dt>
+                        <dd>
+                            <span>{{yi}}</span>
+                        </dd>
+                    </dl>
+                    <dl class="calendar-table-cont-spe">
+                        <dt>
+                            忌
+                        </dt>
+                        <dd>
+                            <span>{{ji}}<span>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            </script>
+            <script>
+                var tpl = $('#tpl').html();
+                calendar.yi = calendar.yi.replace(/\./g, '</span><span>');
+                calendar.ji = calendar.ji.replace(/\./g, '</span><span>');
+                tpl = tpl.replace(/\{\{([a-z_]+)\}\}/g, function(m, k){
+                    return calendar[k];
+                });
+                $('#tpl').after(tpl);
+            </script>
+            <!-- Baidu Button BEGIN -->
+            <div class="share">
+              <div id="bdtext">如果您喜欢一听佛教音乐频道，请分享至：</div>
+              <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare">
+                <a class="bds_qzone">ＱＱ空间</a>
+                <a class="bds_sqq">ＱＱ好友</a>
+                <a class="bds_tsina">新浪微博</a>
+                <a class="bds_tqq">腾讯微博</a>
+                <a class="bds_tieba">百度贴吧</a>
+                <span class="bds_more">更多</span>
+                <a class="shareCount"></a>
+              </div>
+            </div>
+            <script id="bdshare_js" data="type=tools&amp;uid=14170"></script>
+            <script id="bdshell_js"></script>
+            <script>
+                (function(){
+                    var s = document.getElementById('bdshell_js');
+                    s.async = true;
+                    window.bds_config={
+                        snsKey:{'tqq':'403a778463634ece8f0c75a66c4e230d', 'tsina':'1435846576'},
+                        bdPopTitle:'推荐分享：杭州乐米动漫佛教音乐频道聚合了海量佛教歌曲,如大悲咒等,佛教流行音乐免费欣赏,佛教歌曲试听下载 ' + location.href,
+                        bdDesc:'推荐分享：杭州乐米动漫佛教音乐频道聚合了海量佛教歌曲,如大悲咒等,佛教流行音乐免费欣赏,佛教歌曲试听下载 ' + location.href,
+                        bdText:'推荐分享：杭州乐米动漫佛教音乐频道聚合了海量佛教歌曲,如大悲咒等,佛教流行音乐免费欣赏,佛教歌曲试听下载 ' + location.href,
+                        bdPic:'http://www.lezicartoon.cn/fo/images/banner.png'
+                    }
+                    s.src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+                })();
+            </script>
+            <!-- Baidu Button END -->
+        </div>
+    </div>
+    <div class="recommendation">
+        <div class="recommendation-title"></div>
+        <div class="recommendation-bg"></div>
+        <div class="recommendation-content">
+            <div class="recommendation-cont-title">
+                <span id="n1">佛乐歌曲推荐</span>
+                <span id="n2" class="dark">佛乐专辑推荐</span>
+            </div>
+            <div class="songlist">
+                <div class="recommendation-cont-list clearfix" id='recommend'>
+                    <ul>
+                                                                            <li><input type="hidden" value="627730" name="checked">1.<span><a href="javascript:;" target="_fo">Amoghasiddhi(不空成就佛)</a></span></li>
+                                                                                                                            <li><input type="hidden" value="626615" name="checked">2.<span><a href="javascript:;" target="_fo">大悲咒(龚玥 天女之声专辑 八十四句)</a></span></li>
+                                                                                                                            <li><input type="hidden" value="626614" name="checked">3.<span><a href="javascript:;" target="_fo">大悲咒(邝美云 禅美云声 十一面观音根本咒)</a></span></li>
+                                                                                                                            <li><input type="hidden" value="626652" name="checked">4.<span><a href="javascript:;" target="_fo">大悲咒(观自在 十一面观音根本咒)</a></span></li>
+                                                                                                                            <li><input type="hidden" value="627365" name="checked">5.<span><a href="javascript:;" target="_fo">见闻利益品(地藏菩萨本愿经 乔安舞 清净莲音专辑)</a></span></li>
+                                                                        </ul><ul>
+                                                                                                    <li><input type="hidden" value="470510" name="checked">6.<span><a href="javascript:;" target="_fo">消灾吉祥神咒</a></span></li>
+                                                                                                                            <li><input type="hidden" value="470527" name="checked">7.<span><a href="javascript:;" target="_fo">大悲咒</a></span></li>
+                                                                                                                            <li><input type="hidden" value="178965" name="checked">8.<span><a href="javascript:;" target="_fo">梵唱大悲咒</a></span></li>
+                                                                                                                            <li><input type="hidden" value="118437" name="checked">9.<span><a href="javascript:;" target="_fo">消灾吉祥神咒</a></span></li>
+                                                                                                                            <li><input type="hidden" value="216920" name="checked">10.<span><a href="javascript:;" target="_fo">南无阿弥陀佛</a></span></li>
+                                                                        </ul><ul>
+                                                                                                    <li><input type="hidden" value="216921" name="checked">11.<span><a href="javascript:;" target="_fo">莲花生大师心咒 (经文唱诵 桑昂丹增仁波切)</a></span></li>
+                                                                                                                            <li><input type="hidden" value="118227" name="checked">12.<span><a href="javascript:;" target="_fo">般若波罗蜜多心经</a></span></li>
+                                                                                                                            <li><input type="hidden" value="208331" name="checked">13.<span><a href="javascript:;" target="_fo">南无阿弥陀佛 - 李娜</a></span></li>
+                                                                                                                            <li><input type="hidden" value="118436" name="checked">14.<span><a href="javascript:;" target="_fo">大悲咒</a></span></li>
+                                                                                                                            <li><input type="hidden" value="353441" name="checked">15.<span><a href="javascript:;" target="_fo">南无阿弥陀佛</a></span></li>
+                                                                        </ul><ul>
+                                                                    </ul>
+                </div>
+                <a href="javascript:;" class="recommendation-play-all playAll"><i></i>全部播放</a>
+            </div>
+            <div class="albumlist">
+                <ul>
+                                        <li><a href="javascript:;" target="_blank"><img src="../images/special/362/s100_961dfbce0179cd0ffa1dd3ec485.jpg" title="陆沅枫 - 般若心经 (单曲)">
+                    <span title="陆沅枫" class="album">般若心经 (单曲)</span></a></li>
+                                        <li><a href="javascript:;" target="_blank"><img src="../images/special/362/s100_b0e872df1082ec93329104a14a3.jpg" title="马常胜 - 虚谷">
+                    <span title="马常胜" class="album">虚谷</span></a></li>
+                                        <li><a href="javascript:;" target="_blank"><img src="../images/special/378/s100_262633b5ed53a375676ad70005a.jpg" title="陈琴 - 心经 (单曲)">
+                    <span title="陈琴" class="album">心经 (单曲)</span></a></li>
+                                        <li><a href="javascript:;" target="_blank"><img src="../images/special/390/s100_e9f9fcb7675974dde476a37713f.jpg" title="刘清沨 - 佛语说 (EP)">
+                    <span title="刘清沨" class="album">佛语说 (EP)</span></a></li>
+                                        <li><a href="javascript:;" target="_blank"><img src="../images/special/362/s100_a0affd682a4f9565cff0a8a1d4f.jpg" title="黄帅 - 普贤菩萨行愿品">
+                    <span title="黄帅" class="album">普贤菩萨行愿品</span></a></li>
+                                        <li><a href="javascript:;" target="_blank"><img src="../images/special/362/s100_2304d28b0ca48d55e2ad8c212e8.jpg" title="马常胜 - 梵音密语">
+                    <span title="马常胜" class="album">梵音密语</span></a></li>
+                                        <li><a href="javascript:;" target="_blank"><img src="../images/special/370/s100_af1feab7c30fb0675e1c38ac3ff.jpg" title="阿斯根 - 喇嘛仟 (单曲)">
+                    <span title="阿斯根" class="album">喇嘛仟 (单曲)</span></a></li>
+                                        <li><a href="javascript:;" target="_blank"><img src="../images/special/362/s100_7bebeb498707f733c7a9ce1b66f.jpg" title="顿慈法师 - 空谷禅韵">
+                    <span title="顿慈法师" class="album">空谷禅韵</span></a></li>
+                                        <li><a href="javascript:;" target="_blank"><img src="../images/special/362/s100_6f9c1c0609b832679f4047948e0.jpg" title="法海法师 - 无际藏">
+                    <span title="法海法师" class="album">无际藏</span></a></li>
+                                        <li><a href="javascript:;" target="_blank"><img src="../images/special/380/s100_19d49011a42d30ffe52f0a79f98.jpg" title="本善本幻 - 了又未了 如是缘">
+                    <span title="本善本幻" class="album">了又未了 如是缘</span></a></li>
+                                        <li><a href="javascript:;" target="_blank"><img src="../images/special/377/s100_075e5374cbd92e2bbc62abec8e5.jpg" title="儿童歌曲 - 贝瓦儿歌-儿歌新动力">
+                    <span title="儿童歌曲" class="album">贝瓦儿歌-儿歌新动力</span></a></li>
+                                        <li><a href="javascript:;" target="_blank"><img src="../images/special/412/s100_bbbda31d7213cd507b0ff886da2.jpg" title="刘清沨 - 六字真言颂 (单曲)">
+                    <span title="刘清沨" class="album">六字真言颂 (单曲)</span></a></li>
+                                        <li><a href="javascript:;" target="_blank"><img src="../images/special/363/s100_716322aca38883636a36739dba0.jpg" title="游子组合 - 游子组合">
+                    <span title="游子组合" class="album">游子组合</span></a></li>
+                                        <li><a href="javascript:;" target="_blank"><img src="../images/special/427/s100_d17f9f0ce2916896ac1069e7490.jpg" title="罗佳 - 佛佑众生 (单曲)">
+                    <span title="罗佳" class="album">佛佑众生 (单曲)</span></a></li>
+                                    </ul>
+            </div>
+        </div>
+    </div>
+    <script>
+    var commend = $('.recommendation-cont-title span');
+    commend.hover(function(){
+        if ($(this).attr('id') == 'n1') {
+            commend.eq(0).removeAttr('class');
+            commend.eq(1).attr('class', 'dark');
+            $('.songlist').show();
+            $('.albumlist').hide(); 
+        } else {
+            commend.eq(1).removeAttr('class');
+            commend.eq(0).attr('class', 'dark');
+            $('.songlist').hide();
+            $('.albumlist').show(); 
+        }
+    });
+    $('.playAll').click(function(){
+        var ids = [];
+        $('#recommend input').each(function() {
+            ids.push(this.value);
+        });
+        if(ids.length){
+            window.open('/p_'+ids.join('_')+'.html', '_1ting');
+        }
+    });
+    </script>
+    <div class="container music-list-container" style="padding-bottom: 0;">
+        <div class="plate-container clearfix">
+            <div class="plate-icon plate-icon-mizhou"></div>
+            <div class="plate-music" id='mzzy'>
+                <ul class="common-music-container clearfix songList" data-selected="true">
+                                    </ul>
+                <div class="plate-function">
+                    <a href="javascript:;" class="plate-function-check">查看全部&gt;&gt;</a>
+                    <div class="plate-function-sub listAction">
+                        <a href="javascript:;" class="select" target="_self">全/反选</a>
+                        <a href="javascript:;" class="play" target="_self">播放</a>
+                        <a href="javascript:;" class="add" target="_self">加入列表</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>ting('mzzy');</script>
+
+        <div class="plate-container clearfix">
+            <div class="plate-icon plate-icon-jingqian"></div>
+            <div class="plate-music" id='jcks'>
+                <ul class="common-music-container clearfix" data-selected="true">
+                                    </ul>
+                <div class="plate-function">
+                    <a href="javascript:;" class="plate-function-check">查看全部&gt;&gt;</a>
+                    <div class="plate-function-sub listAction">
+                        <a href="javascript:;" class="select" target="_self">全/反选</a>
+                        <a href="javascript:;" class="play" target="_self">播放</a>
+                        <a href="javascript:;" class="add" target="_self">加入列表</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>ting('jcks');</script>
+
+        <div class="plate-container clearfix">
+            <div class="plate-icon plate-icon-classic"></div>
+            <div class="plate-music" id='jdns'>
+                <ul class="common-music-container clearfix" data-selected="true">
+                                    </ul>
+                <div class="plate-function">
+                    <a href="javascript:;" class="plate-function-check">查看全部&gt;&gt;</a>
+                    <div class="plate-function-sub listAction">
+                        <a href="javascript:;" class="select" target="_self">全/反选</a>
+                        <a href="javascript:;" class="play" target="_self">播放</a>
+                        <a href="javascript:;" class="add" target="_self">加入列表</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>ting('jdns');</script>
+
+        <div class="plate-container clearfix">
+            <div class="plate-icon plate-icon-heart"></div>
+            <div class="plate-music" id='yxnf'>
+                <ul class="common-music-container clearfix" data-selected="true">
+                                    </ul>
+                <div class="plate-function">
+                    <a href="javascript:;" class="plate-function-check">查看全部&gt;&gt;</a>
+                    <div class="plate-function-sub listAction">
+                        <a href="javascript:;" class="select" target="_self">全/反选</a>
+                        <a href="javascript:;" class="play" target="_self">播放</a>
+                        <a href="javascript:;" class="add" target="_self">加入列表</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>ting('yxnf');</script>
+
+        <div class="plate-container clearfix">
+            <div class="plate-icon plate-icon-fange"></div>
+            <div class="plate-music" id='fgyf'>
+                <ul class="common-music-container clearfix" data-selected="true">
+                                    </ul>
+                <div class="plate-function">
+                    <a href="javascript:;" class="plate-function-check">查看全部&gt;&gt;</a>
+                    <div class="plate-function-sub listAction">
+                        <a href="javascript:;" class="select" target="_self">全/反选</a>
+                        <a href="javascript:;" class="play" target="_self">播放</a>
+                        <a href="javascript:;" class="add" target="_self">加入列表</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>ting('fgyf');</script>
+
+        <div class="plate-container clearfix">
+            <div class="plate-icon plate-icon-heya"></div>
+            <div class="plate-music" id='hyqy'>
+                <ul class="common-music-container clearfix" data-selected="true">
+                                    </ul>
+                <div class="plate-function">
+                    <a href="javascript:;" class="plate-function-check">查看全部&gt;&gt;</a>
+                    <div class="plate-function-sub listAction">
+                        <a href="javascript:;" class="select" target="_self">全/反选</a>
+                        <a href="javascript:;" class="play" target="_self">播放</a>
+                        <a href="javascript:;" class="add" target="_self">加入列表</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>ting('hyqy');</script>
+
+        <div class="plate-container clearfix">
+            <div class="plate-icon plate-icon-xueyu"></div>
+            <div class="plate-music" id='xyfy'>
+                <ul class="common-music-container clearfix" data-selected="true">
+                                    </ul>
+                <div class="plate-function">
+                    <a href="javascript:;" class="plate-function-check">查看全部&gt;&gt;</a>
+                    <div class="plate-function-sub listAction">
+                        <a href="javascript:;" class="select" target="_self">全/反选</a>
+                        <a href="javascript:;" class="play" target="_self">播放</a>
+                        <a href="javascript:;" class="add" target="_self">加入列表</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>ting('xyfy');</script>
+
+        <div class="plate-container clearfix">
+            <div class="plate-icon plate-icon-other"></div>
+            <div class="plate-music" id='qtfy'>
+                <ul class="common-music-container clearfix" data-selected="true">
+                                    </ul>
+                <div class="plate-function">
+                    <a href="javascript:;" class="plate-function-check">查看全部&gt;&gt;</a>
+                    <div class="plate-function-sub listAction">
+                        <a href="javascript:;" class="select" target="_self">全/反选</a>
+                        <a href="javascript:;" class="play" target="_self">播放</a>
+                        <a href="javascript:;" class="add" target="_self">加入列表</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>ting('qtfy');</script>
+
+        <div class="plate-container clearfix">
+            <h3>推荐佛乐专辑</h3>
+            <div class="albums">
+                <ul>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/362/s100_961dfbce0179cd0ffa1dd3ec485.jpg">
+                        <span class="singer">陆沅枫</span>
+                        <span class="album">般若心经 (单曲)</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/362/s100_b0e872df1082ec93329104a14a3.jpg">
+                        <span class="singer">马常胜</span>
+                        <span class="album">虚谷</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/378/s100_262633b5ed53a375676ad70005a.jpg">
+                        <span class="singer">陈琴</span>
+                        <span class="album">心经 (单曲)</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/390/s100_e9f9fcb7675974dde476a37713f.jpg">
+                        <span class="singer">刘清沨</span>
+                        <span class="album">佛语说 (EP)</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/362/s100_a0affd682a4f9565cff0a8a1d4f.jpg">
+                        <span class="singer">黄帅</span>
+                        <span class="album">普贤菩萨行愿品</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/362/s100_2304d28b0ca48d55e2ad8c212e8.jpg">
+                        <span class="singer">马常胜</span>
+                        <span class="album">梵音密语</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/370/s100_af1feab7c30fb0675e1c38ac3ff.jpg">
+                        <span class="singer">阿斯根</span>
+                        <span class="album">喇嘛仟 (单曲)</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/362/s100_7bebeb498707f733c7a9ce1b66f.jpg">
+                        <span class="singer">顿慈法师</span>
+                        <span class="album">空谷禅韵</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/362/s100_6f9c1c0609b832679f4047948e0.jpg">
+                        <span class="singer">法海法师</span>
+                        <span class="album">无际藏</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/380/s100_19d49011a42d30ffe52f0a79f98.jpg">
+                        <span class="singer">本善本幻</span>
+                        <span class="album">了又未了 如是缘</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/377/s100_075e5374cbd92e2bbc62abec8e5.jpg">
+                        <span class="singer">儿童歌曲</span>
+                        <span class="album">贝瓦儿歌-儿歌新动力</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/412/s100_bbbda31d7213cd507b0ff886da2.jpg">
+                        <span class="singer">刘清沨</span>
+                        <span class="album">六字真言颂 (单曲)</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/363/s100_716322aca38883636a36739dba0.jpg">
+                        <span class="singer">游子组合</span>
+                        <span class="album">游子组合</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/427/s100_d17f9f0ce2916896ac1069e7490.jpg">
+                        <span class="singer">罗佳</span>
+                        <span class="album">佛佑众生 (单曲)</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/412/s100_3753b89d47c5a6c8e8abfc2961d.jpg">
+                        <span class="singer">马艺航</span>
+                        <span class="album">静心 (EP)</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/414/s100_471e74b19c95881a644aacad7a4.jpg">
+                        <span class="singer">观聪</span>
+                        <span class="album">善缘 (单曲)</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/362/s100_d1a131f2af069d545425872540b.jpg">
+                        <span class="singer">印良法师</span>
+                        <span class="album">乘愿吉祥</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/440/s100_d5df5fa874e4de922eb604061c6.jpg">
+                        <span class="singer">祁立新</span>
+                        <span class="album">佛在你家（单曲）</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/383/s100_32d49b31f02fc3f7859330a5b56.jpg">
+                        <span class="singer">陆沅枫</span>
+                        <span class="album">枫从东方来</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/362/s100_2cea1d3639456335cddf9135671.jpg">
+                        <span class="singer">空雨</span>
+                        <span class="album">箫雨</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/406/s100_eb036faefc6427d2416c55adaf9.jpg">
+                        <span class="singer">欧阳青</span>
+                        <span class="album">敬佛要有一颗慈悲心 (单曲)</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/419/s100_2d25c45d1974257e6fbac7ffe62.jpg">
+                        <span class="singer">吴大可</span>
+                        <span class="album">一念佛魔 (单曲)</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/415/s100_41f7a8cb2e07fb68d08d807913c.jpg">
+                        <span class="singer">刘清沨</span>
+                        <span class="album">晨钟暮鼓 (单曲)</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/427/s100_5cb12b2f06592b6d5c5386be3dd.jpg">
+                        <span class="singer">紫君</span>
+                        <span class="album">念佛成佛 (单曲)</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/390/s100_428c091cb10fec575c5cae07426.jpg">
+                        <span class="singer">林羽</span>
+                        <span class="album">吉祥经 (单曲)</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/369/s100_56b5048e2856fd9a2d482e186b1.jpg">
+                        <span class="singer">乌吉斯古楞</span>
+                        <span class="album">佛说</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/387/s100_ea2524fcaae9e0f1fbf98e82e9b.jpg">
+                        <span class="singer">内地杂锦合辑</span>
+                        <span class="album">别有用心 (EP)</span></a>
+                    </li>
+                                        <li>
+                        <a href="javascript:;" target="_blank"><img src="../images/special/406/s100_c6cd0937ba2a3232c4a40919fc0.jpg">
+                        <span class="singer">刘清沨</span>
+                        <span class="album">大悲咒喜悦版 (单曲)</span></a>
+                    </li>
+                                    </ul>
+            </div>
+        </div>
+
+        <div class="plate-container clearfix">
+            <div class="comment">
+                <iframe width="100%" height="1000" id="commentFrame" allowtransparency="true" src="javascript:;" frameborder="0" scrolling="no"></iframe>
+            </div>
+        </div>
+
+    </div>
+    <!-- 主题内容结束 -->
+</div>
+</div>
+<div class="foot w960">
+    杭州乐米动漫佛教音乐频道聚合了海量佛教歌曲,如佛乐大悲咒等,佛教音乐免费欣赏,佛教MP3歌曲试听下载
+</div>
+<link href="../v5/r4/style/suggest.css" rel="stylesheet" type="text/css">
+<script src="../v5/r4/js/suggest.js"></script>
+<script type="text/javascript">search_tips();</script>
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="0" height="0" id="play_list_send">
+    <param name="allowScriptAccess" value="always">
+    <param name="movie" value="/v5/flash/play_list_send.swf">
+    <embed src="../v5/flash/play_list_send.swf" quality="high" width="0" height="0" name="play_list_send" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+</object>
+<script type="text/javascript">BAIDU_CLB_fillSlot("825171");</script>
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F6eaa55efefd420f66c2417e2eee97478' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cdiv id='cnzz_stat_icon_30022848'%3E%3C/div%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D30022848' type='text/javascript'%3E%3C/script%3E"));</script>
+</body>
+</html>

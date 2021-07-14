@@ -1,0 +1,207 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>胡彦斌_Make FriendLRC滚动歌词下载</title>
+<link href="v5/style/lrc/lrc.css" rel="stylesheet" type="text/css">
+<script>
+if(self==top){document.write('<style>#nav{position:absolute;top:0;left:0;padding:0 0;background:#fff url("/v5/r4/images/top_logo.png") no-repeat;border-top:4px solid #22A5E9;border-bottom:1px solid #AACBEE; width:100%;height:60px;}#nav p{padding:6px;height:30px;line-height:30px;margin-left:200px;}body{margin-top:80px;}#container{height:auto;width:auto;text-align:left;padding:10px;}.ting_5{text-align:left;}</style>');}
+</script>
+<script>
+document.domain='lezicartoon.cn';
+function the(s){return document.getElementById(s);}
+</script>
+</head>
+<body>
+<div class="ting_5">
+</div>
+        <div id="container"></div>
+    <div id="lrc">[ti:Make Friend]
+[ar:胡彦斌]
+[al:文武双全]
+[offset:500]
+
+[00:00.39]胡彦斌 - Make friend
+[00:06.56]词曲：胡彦彬
+[03:05.56][01:25.43][00:12.60]
+[01:40.03][00:23.19]我懒懒的躺在沙发里
+[01:42.74][00:27.47]整天傻傻得看电视机
+[01:45.48][00:30.42]是该出去走走散散心
+[01:50.96][00:34.79]不知不觉来到迪高里
+[01:54.36][00:38.87]看见一个女孩靓的我不敢眨眼睛
+[01:59.75][00:43.74]oh baby oh right
+[02:02.03][00:46.69]三言两语我们已经开始熟悉
+[02:08.19][00:54.10]做个朋友可不可以
+[02:13.25][00:58.14]oh baby 让我们离开这里
+[02:38.87]让我们离开这里
+[02:41.64][02:17.31][01:01.93]不管这到底是去那里
+[02:44.79][02:20.28][01:05.05]需要你 拥抱你 和你一起去happy
+[02:49.26][02:25.28][01:09.75]想要呼吸新鲜的空气
+[02:53.25][02:28.87][01:13.43]分享急促节奏的魅力
+[02:57.92][02:33.46][01:18.09]这个夜晚只有我和你
+[03:01.08][02:36.49][01:21.11]只有我和你
+</div>
+    <script>
+        var Lyric = function(){
+            var that = this;
+            this.preTime = 0;
+            this.nextTime = 0;
+            this.currIndex = 0;
+            this.lrc = the("lrc").innerHTML.split("[");
+            this.array = [];
+
+            this.init = function(){
+                var array = [];
+                if (that.lrc.length > 5){
+                    for (var i = 0; i < that.lrc.length; i++){
+                        var g = {};
+                        var t = that.lrc[i].split("]");
+                        g.time = that.getTime(t[0]);
+                        if (isNaN(g.time))
+                            continue;
+                        g.c = t[1];
+                        if (g.c == "")
+                            g.c = that.getNext(i);
+                        array.push(g);
+                    }
+
+                    array.sort(function(x, y) {
+                        if (x.time > y.time)
+                            return 1;
+                        else if (x.time < y.time)
+                            return -1;
+                        else
+                            return 0;
+                    });
+                    var tc = '';
+                    for (var i = 0; i < array.length; i++){
+                        var g = array[i];
+                        if (!g.c) {
+                            g.c = "";
+                        }
+                        tc+=("<div id='lrc" + i + "'>" + g.c + "</div>");
+                    }
+                    the('container').innerHTML=tc;
+
+                    if(top == self){
+                        return;
+                    }
+
+                    var time = window.setInterval(function() {
+                        try {
+                            if (parent.document.getElementById('not-allowed-scroll').checked) {
+                                that.lrcList();
+                            }
+                        } catch(e) {
+                            that.lrcList();
+                        }
+                    }, 500);
+                } else {
+                    the("container").innerHTML = the("lrc").innerHTML;
+                }
+                that.lines = array;
+            };
+
+            this.getNext = function(i){
+                var result = "";
+                var i = i + 1;
+                if(that.lrc[i]){
+                    t = that.lrc[i].split("]");
+                    if (t[1] == "")
+                        result = that.getNext(i);
+                    else
+                        result = t[1]
+                }
+                return result;
+            };
+
+            this.getTime = function(str){
+                var time = 0;
+                var ta = str.split(":");
+                if (ta.length < 2)
+                    return time;
+
+                if (ta[1].indexOf(".") > 0) {
+                    var tb = ta[1].split(".");
+                    time = ta[0] * 60 * 1000 + tb[0] * 1000 + tb[1] * 10;
+                }
+                else
+                    time = ta[0] * 60 * 1000 + ta[1] * 1000;
+                return time;
+            };
+
+            this.lrcList = function(){
+                var s = 0;
+                try {
+                    s = parent.Instance.time();
+                } catch(e) {
+                    return;
+                }
+                s = s * 1000;
+
+                function getTop(idx) {
+                    return Math.max(80, the("lrc" + idx).offsetTop - 23) - 80;
+                }
+
+                function moveScrollbar(idx) {
+                    var t = getTop(idx);
+                    var ch = the('container').scrollHeight;
+
+                    the("container").scrollTop = t;
+                }
+
+                if (s == 0) {
+                    that.currIndex = 0;
+                    moveScrollbar(that.currIndex);
+
+                    for (var i = 0; i < that.lines.length; i++) {
+                        the("lrc" + i).style.color = '#000000';
+                    }
+                    return;
+                }
+
+                if (s > 0 && that.currIndex < that.lines.length - 1)
+                {
+                    that.preTime = that.lines[that.currIndex].time;
+
+                    that.nextTime = that.lines[that.currIndex + 1].time;
+
+                    if (s >= that.preTime && s < that.nextTime) {
+
+                    } else if (s >= that.nextTime) {
+                        the("lrc" + that.currIndex).style.color = '#000';
+                        moveScrollbar(++that.currIndex);
+                        the("lrc" + that.currIndex).style.color = '#06adf3';
+                        that.lrcList();
+                    } else {
+                        the("lrc" + that.currIndex).style.color = '#000';
+                        moveScrollbar(--that.currIndex);
+                        the("lrc" + that.currIndex).style.color = '#06adf3';
+                        that.lrcList();
+                    }
+                }
+                else
+                {
+                    if (s < that.lines[that.lines.length - 1].time) {
+                        that.currIndex = 0;
+                        moveScrollbar(that.currIndex);
+                        for (var i = 0; i < that.lines.length; i++) {
+                            the("lrc" + i).style.color = '#000';
+                        }
+                        that.lrcList();
+                    }
+                }
+            };
+        };
+        new Lyric().init();
+    </script>
+    <!--歌词下标签云22-->
+
+<div id="nav"><a href="index.html"><div style="width:300px;height:90px;"></div></a><p class="songtitle" style="margin-top:-45px">试听<a href="singer/64/singer_481.html" target="_blank">胡彦斌</a>的<a href="player/d0/player_75721.html" target="_blank">Make Friend</a></p></div>
+<script src='c-30065998.js' language='JavaScript'></script>
+
+
+</body>
+</html>

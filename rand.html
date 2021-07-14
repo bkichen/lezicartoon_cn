@@ -1,0 +1,783 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>随便听听 - 杭州乐米动漫</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Keywords" content="随便听听 - 杭州乐米动漫">
+    <meta name="Description" content="随便听听 - 杭州乐米动漫">
+    <meta name="properties" content="随便听听 - 杭州乐米动漫">
+    <meta content="all" name="robots">
+    <img src="http://js.lezicartoon.cn/js.gif" style="display:none;">
+    <link href="v5/r4/player/style/style.css" rel="stylesheet" type="text/css">
+<link href="v5/r4/player/style/tingx_player.css" rel="stylesheet" type="text/css">
+<link href="v5/r4/style/lightbox.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    .header{height:38px; background:url('v5/images/rand/bg.gif') repeat-x;text-align:center;}
+    .header h3{margin:0 auto; font-size:14px; width:940px; padding-left:20px; background:url('v5/images/rand/r_3.gif') no-repeat center left; line-height:38px;}
+    .header span{float:right; margin-left:23px; font-size:12px; font-weight:400;}
+    .header .btn_randset{ margin-right:400px; width:100px; float:right; border:none; font-size:14px; height:17px; overflow:hidden; line-height:17px; padding-left:10px; margin-top:8px; background:url('https://www.lezicartoon.cn/v5/images/randset_img.gif') -93px 1px no-repeat; cursor:pointer; }
+    .header span.random{margin-right:8px; margin-top:6px; font-size:12px; font-weight:400;}
+    .header span.random a{display:block; width:112px; height:23px; background:url('v5/images/rand/r_1.gif') no-repeat;text-indent:-999px}
+    .header span.random a:hover{background:url('v5/images/rand/r_2.gif') no-repeat;}
+    *{ padding:0px; margin:0px; }
+    ul{ list-style:none; }
+    body.openset .mask{ display:block; }
+    body.openset .randset{ display:block; }
+    .mask{ position:absolute; top:38px; height:0px; background:#000; width:100%; height:100%; overflow:hidden; filter:alpha(opacity=80); -moz-opacity:0.8; opacity: 0.8; display:none; z-index:2147483641; }
+    .mask iframe{ position:absolute; z-index:2147483642; width:100%; height:100%; background:#000; left:0px; top:0px; }
+    .mask .masktop{ position:absolute; z-index:2147483643; width:100%; height:100%; background:#000; left:0px; top:0px; }
+    .randset{ position:absolute; left:50%; top:60px; margin-left:-400px; width:800px; height:auto; background:#FFF; overflow:hidden; border:2px solid #AEE7E7; display:none; z-index:2147483647; }
+    .randset .title{ height:26px; width:100%; overflow:hidden; background:#AEE7E7 url(v5/images/rand/randset_img.gif) 0px -67px repeat-x; line-height:25px; }
+    .randset .title h2{ font-size:14px; color:#09C; text-indent:7px; }
+    .randset .title a.closeset{ float:right; margin:-21px 7px 0px 0px; width:16px; height:16px; background:url(v5/images/rand/randset_img.gif) 0px 0px no-repeat; overflow:hidden; line-height:1000%; }
+    .randset .title a.closeset:hover{ background:url(v5/images/rand/randset_img.gif) 0px -16px no-repeat; }
+    .randset .option{ border:2px solid #AEE7E7; padding:1px; }
+    .randset dl{ padding:8px 12px; clear:both; overflow:hidden; }
+    .randset dl dt{ height:25px; line-height:25px; font-size:14px; font-weight:bold; color:#F60; background:url(v5/images/rand/randset_img.gif) 0px -108px repeat-x; }
+    .randset dl dt strong{ float:left; padding-right:8px; background:#FFF; }
+    .randset dl dd{ width:100%; overflow:hidden; clear:both; }
+    .checkboxlist li{ float:left; white-space:nowrap; padding:6px 18px 6px 4px; height:21px; line-height:21px; overflow:hidden; }
+    .checkboxlist li input{ font-size:12px; float:left; }
+    .checkboxlist li input[type="checkbox"]{ margin:5px 4px 0 3px; *margin:0px 0 0px 1px; _vertical-align:middle; }
+    .checkboxlist li label{ color:#36C; float:left; padding-left:0px; }
+    .keyword{ padding:8px 4px; height:auto; line-height:25px; }
+    .keyword input.ipt_checkbox{ font-size:12px; float:left; margin:6px 4px 0 3px; *margin:2px 0 0px 1px; _vertical-align:middle; }
+    .keyword label{ float:left; color:#36C; }
+    .keyword label .ipt_text,#ipt_kwd{ border-width:1px; border-style:solid; border-color:#777 #CCC #CCC #777; height:15px; line-height:15px; padding:4px; vertical-align:middle; margin:0px 5px; }
+    .keyword small{ font-size:12px; color:#999; }
+    .submit{ background:#F1FCFC; border-top:1px solid #AEE7E7; height:31px; padding:6px 12px; overflow:hidden; cletuar:both; line-height:31px; }
+    .submit button{ width:108px; height:31px; overflow:hidden; border:none; text-indent:-1000px; background:url(v5/images/rand/randset_img.gif) 0px -36px no-repeat; float:left; cursor:pointer; }
+    .submit .closeset{ float:left; line-height:31px; padding-left:12px; }
+    .submit .closeset a{ text-decoration:underline; }
+    .submit .autoreload{ float:right; }
+    .submit .autoreload input{ font-size:12px; float:left; margin:9px 4px 0 3px; *margin:4px 0 0px 1px; _vertical-align:middle; }
+    .submit .autoreload label{ float:left; color:#777; }
+    a:focus { outline:0; }#musicbox .remove { display:none; }
+    .hotwords { display: block;float: left; margin-left: 70px; margin-top: 10px; }
+    .hotwords span { float: left; margin: 0 10px; color: #666; cursor: pointer; }
+    .hotwords span:hover { color: #f60; }
+    </style>
+    <script>document.domain = "lezicartoon.cn";</script>
+    <script src="v5/r4/js/jquery.min.js"></script>
+<script src="v5/r4/player/js/player.js"></script>
+<script src="v5/r4/js/lightbox.js"></script>
+<script src="v5/r4/player/js/share.js"></script>
+<script src="js/ds.js"></script>
+  </head>
+  <body>
+    <div class="header">
+        <h3 id="menu">
+            <span><a href="" rel="sidebar" title="随便听听 - 杭州乐米动漫">♫收藏本页</a></span>
+            <span><a href="#">♬设置首页</a></span>
+            <button class="btn_randset"><b><font color="blue">设置歌曲范围</font></b></button>
+            <span class="random"><a href="#">随机更换歌曲</a></span>随便听听
+        </h3>
+    </div>
+    <div class="mask">
+        <div class="masktop"></div>
+        <iframe id="maskbottom" width="100%" height="100%"></iframe>
+    </div>
+
+    <div class="randset">
+        <div class="title">
+            <h2>随便听听设置</h2>
+            <a href="#" class="closeset">关闭</a>
+        </div>
+        <div class="option">
+            <dl>
+                <dt><strong>歌手</strong></dt>
+                <dd>
+                    <ul class="checkboxlist" id="group">
+                        <li><input type="checkbox" value="1" id="s19c4"><label for="s19c4">华人男歌手</label></li>
+                        <li><input type="checkbox" value="2" id="s7401"><label for="s7401">华人女歌手</label></li>
+                        <li><input type="checkbox" value="3" id="se946"><label for="se946">华人组合</label></li>
+                        <li><input type="checkbox" value="14" id="sf7a6"><label for="sf7a6">欧美男歌手</label></li>
+                        <li><input type="checkbox" value="15" id="sb5cb"><label for="sb5cb">欧美女歌手</label></li>
+                        <li><input type="checkbox" value="16" id="s2794"><label for="s2794">欧美组合</label></li>
+                        <li><input type="checkbox" value="4" id="s193a"><label for="s193a">日本歌手</label></li>
+                        <li><input type="checkbox" value="5" id="s84c0"><label for="s84c0">韩国歌手</label></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>曲风</strong></dt>
+                <dd>
+                    <ul class="checkboxlist" id="genre">
+                        <li><input type="checkbox" value="74" id="s6f69"><label for="s6f69">流行</label></li>
+                        <li><input type="checkbox" value="128" id="sabe8"><label for="sabe8">发烧</label></li>
+                        <li><input type="checkbox" value="101" id="s8879"><label for="s8879">民谣</label></li>
+                        <li><input type="checkbox" value="114" id="s2d9e"><label for="s2d9e">古典</label></li>
+                        <li><input type="checkbox" value="120" id="s7df6"><label for="s7df6">爵士</label></li>
+                        <li><input type="checkbox" value="89" id="sc21d"><label for="sc21d">摇滚</label></li>
+                        <li><input type="checkbox" value="106" id="sfbea"><label for="sfbea">舞曲</label></li>
+                        <li><input type="checkbox" value="109" id="s1400"><label for="s1400">电子</label></li>
+                        <li><input type="checkbox" value="145" id="s01a1"><label for="s01a1">演唱会</label></li>
+                        <li><input type="checkbox" value="124" id="se342"><label for="se342">原声</label></li>
+                        <li><input type="checkbox" value="140" id="s2ef0"><label for="s2ef0">休闲</label></li>
+                        <li><input type="checkbox" value="146" id="s2518"><label for="s2518">跨界</label></li>
+                        <li><input type="checkbox" value="137" id="s379f"><label for="s379f">曲艺</label></li>
+                        <li><input type="checkbox" value="193" id="s6d96"><label for="s6d96">实验音乐</label></li>
+                        <li><input type="checkbox" value="129" id="s0d21"><label for="s0d21">器乐演奏</label></li>
+                        <li><input type="checkbox" value="147" id="s712e"><label for="s712e">胎教</label></li>
+                        <li><input type="checkbox" value="135" id="sbf8c"><label for="sbf8c">革命歌曲</label></li>
+                        <li><input type="checkbox" value="136" id="scffd"><label for="scffd">军营歌曲</label></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>年代</strong></dt>
+                <dd>
+                    <ul class="checkboxlist" id="pubdate">
+                        <li><input type="checkbox" value="2000-2011" id="s8df7"><label for="s8df7">2000年后...</label></li>
+                        <li><input type="checkbox" value="1990-1999" id="s9a29"><label for="s9a29">90年代</label></li>
+                        <li><input type="checkbox" value="1980-1989" id="s2a30"><label for="s2a30">80年代</label></li>
+                        <li><input type="checkbox" value="1900-1970" id="s2fb0"><label for="s2fb0">更早...</label></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>语言</strong></dt>
+                <dd>
+                    <ul class="checkboxlist" id="lang">
+                        <li><input type="checkbox" value="35" id="sd8b6"><label for="sd8b6">国语</label></li>
+                        <li><input type="checkbox" value="36" id="sd2ab"><label for="sd2ab">粤语</label></li>
+                        <li><input type="checkbox" value="38" id="s086b"><label for="s086b">韩语</label></li>
+                        <li><input type="checkbox" value="37" id="sf3b2"><label for="sf3b2">日语</label></li>
+                        <li><input type="checkbox" value="34" id="s0ab2"><label for="s0ab2">英语</label></li>
+                        <li><input type="checkbox" value="42" id="s2df2"><label for="s2df2">闽南语</label></li>
+                        <li><input type="checkbox" value="46" id="s4a39"><label for="s4a39">纯音乐</label></li>
+                        <li><input type="checkbox" value="39,40,41,43,44,45,47" id="s98d7"><label for="s98d7">其他语言</label></li>
+                    </ul>
+                </dd>
+            </dl>
+            <dl>
+                <dt><strong>自定义关键词</strong></dt>
+                <dd class="keyword">
+                    <input type="checkbox" class="ipt_checkbox" id="fld_chk">
+                    <label>
+                        <span>关键词:</span>
+                        <input type="text" class="ipt_text" id="fld_kwd">
+                    </label>
+                    <small>可以输入歌手,歌名,专辑名等关键词,我们会根据您的关键词随机推荐歌曲.</small>
+                    <div class="hotwords">
+                        
+                    </div>
+                </dd>
+            </dl>
+            <div class="submit">
+                <button type="button" id="save-opt">保存设置</button>
+                <span class="closeset" id="reset-opt"><a href="#">取消设置</a></span>
+
+                <p class="autoreload">
+                    <input id="autoreload" type="checkbox" checked="checked">
+                    <label for="autoreload">保存设置后立即更新播放列表</label>
+                </p>
+            </div>
+        </div>
+    </div>
+        <script>
+        var Dict = Dict || window;
+        Dict.get = function (k) {
+            return this['_' + k];
+        };
+        Dict.set = function (k, v) {
+            this['_' + k] = v;
+        };
+        var Jcache=[],Jsonp = function (q) {
+            Jcache=convert(q);
+            yiting.player.create(Jcache||[]);
+        },getCheckedValues = function() {
+            var a = [],
+                b = [];
+            $('.checkboxlist').each(function () {
+                    $(this).find('input:checkbox').each(function (i) {
+                        b.push(this.value);
+                        a.push(this.checked ? 1 : 0);
+                    });
+                });
+            return {
+                    'k': a,
+                    'v': b
+                };
+        },getQueryString = function (a, b) {
+            var c = [],
+                d = [],
+                e = [],
+                f = [],
+                g = [];
+            for (var i = 0; i < a.length; i++) {
+                    if (a[i] == 1) {
+                        if (i < 8) {
+                            c.push(b[i]);
+                        } else if (i < 26) {
+                            d.push(b[i]);
+                        } else if (i < 30) {
+                            e.push(b[i]);
+                        } else {
+                            f.push(b[i]);
+                        }
+                    }
+                }
+
+            if (8 > c.length && c.length > 0) {
+                    g.push('typeID=' + c.join(","));
+                }
+
+            if (16 > d.length && d.length > 0) {
+                    g.push('g=' + d.join(","));
+                }
+
+            if (4 > e.length && e.length > 0) {
+                    g.push('time=' + e.join("|"));
+                }
+
+            if (8 > f.length && f.length > 0) {
+                    g.push('lang=' + f.join(","));
+                }
+
+            var v = $.trim($('#fld_kwd').val());
+            if ($('#fld_chk').attr('checked') && v.length > 0) {
+                    g.push('q=' + v);
+                }
+
+            return g.join("&");
+        },initQuery =  function () {
+            var k = yiting.cookie.get('RAND');
+            if (k.length >= 38) {
+                var v = k.substring(38);
+                if (v.length > 0) {
+                    $('#fld_kwd').val(v);
+                    $('#fld_chk').attr('checked', true);
+                }
+                var a = k.substring(0, 38).split('');
+                var b = [],
+                    d = [];
+                $('.checkboxlist').each(function () {
+                        $(this).find('input:checkbox').each(function (i) {
+                            this.checked = a[i] == 0 ? false : true;
+                            b.push(this.checked ? 1 : 0);
+                            d.push(this.value);
+                        });
+                    });
+                var q = getQueryString(d, b);
+                if (q.length > 0) {
+                        Dict.set('query', q)
+                }
+            }
+        },getRequestParameter = function (param) {
+            var q = document.location.search || document.location.hash;
+            if (param == null) {
+                return q;
+            }
+            if (q) {
+                var pairs = q.substring(1).split("&");
+                for (var i = 0; i < pairs.length; i++) {
+                    if (pairs[i].substring(0, pairs[i].indexOf("=")) == param) {
+                        return pairs[i].substring((pairs[i].indexOf("=") + 1));
+                    }
+                }
+            }
+            return "";
+        },
+        convert=function(q){
+            var c = [];
+            try{
+            $.each(q.results, function (i, g) {
+                c.push([g.song_id, g.singer_name, g.singer_url, g.song_name, g.player_url, g.album_name, g.album_url, g.song_filepath, g.album_cover]);
+            });
+            }catch(e){}
+            return c;
+        },
+        Jsonc = function (q) {
+            var pl=yiting.player,c = convert(q),ui=yiting.ui;
+            if(c.length >0){
+                pl.items = c;
+                pl.stop();
+                c = ui.parse(ui.template(1).replace(/%node/g,'li'), c).replace('<li','<li class="playing"');
+                $('#playlist ul').html(c);
+                pl.play(0);
+            }else{
+                $("body").addClass("openset");
+                alert("很遗憾，找不到这样类型的相关歌曲！\n您可以尝试变更或减少一些歌曲的属性！");
+            }
+        },
+        getJSON = function (k,m) {
+            var surl = '/rand.php?' + k + '&jsonp=Jsonc&_='+ (new Date()).getTime();
+            var jx = document.createElement('script');
+            jx.setAttribute('src', surl);
+            jx.setAttribute('type', 'text/javascript');
+            document.getElementsByTagName('head')[0].appendChild(jx);
+        },
+        Instance = {
+            time: yiting.player.position
+        },
+        gaq = function (s) {
+            _gaq.push(['_trackEvent', 'newplayer', s]);
+            return true;
+        },
+        Jfns = [
+            function () {
+                var title = '随便听听 - 杭州乐米动漫';
+                var url = document.location.href;
+                if (window.sidebar) {
+                    window.sidebar.addPanel(title, url, "");
+                } else if (window.external) {
+                    window.external.AddFavorite(url, title);
+                } else if (window.opera && window.print) {
+                    return true;
+                }
+                return false;
+            },
+
+            function() {
+                try{
+                    with(this) {
+                        style.behavior = 'url(#default#homepage)';
+                        setHomePage(document.location.href);
+                    }
+                }catch(e){}
+                return false;
+            },
+            function(){
+              Jfns[3](true);
+              this.blur();
+              return false;
+            },
+            function (m) {
+                var g = getRequestParameter('g'),q = Dict.get('query');
+                if (g) {
+                    if (g.indexOf('%') >= 0) {
+                        g = decodeURIComponent(g);
+                    }
+                    getJSON('g=' + g, m);
+                    return false;
+                }
+
+                var s = getRequestParameter('singerId');
+                if (s) {
+                    getJSON('singerId=' + s, m);
+                    return false;
+                }
+
+                getJSON(q ? q:'i=0', m);
+                return false;
+            }];
+        initQuery();
+        var ns = document.getElementById("menu").getElementsByTagName("a");
+        for (var i in ns) {
+            ns[i].onclick = Jfns[i];
+        }
+        $(".btn_randset").click(function () {
+            $("body").addClass("openset");
+            if (!$(".hotwords span").size()) {
+                $.ajax({  
+                    type: "get",  
+                    async: false,  
+                    url: "//so.lezicartoon.cn/api/keyword/", 
+                    dataType: "jsonp",  
+                    success: function(data){
+                        var rs = [];
+                        for (var n in data) {
+                            rs.push('<span>' + data[n] + '</span>');
+                        }
+                        $(".hotwords").html(rs.join(''));
+                        $(".hotwords span").click(function(){ 
+                            $("#fld_kwd").val($(this).text());
+                            $("#fld_chk").attr('checked', 'checked');
+                            $("#save-opt").click();
+                        });
+                    }
+                });  
+            }
+            return false;
+        });
+
+        $(".closeset,.mask").click(function () {
+            $("body").removeClass("openset");
+            return false;
+        });
+
+        $("#fld_kwd").blur(function() { 
+            $("#fld_chk").attr('checked', $(this).val().length ? 'checked' : '');
+        });
+
+        $("#save-opt").click(function () {
+            window.setTimeout(function () {
+                var c = getCheckedValues(),
+                    a = c.k,
+                    b = c.v;
+                var q = getQueryString(a, b);
+                var v = $.trim($('#fld_kwd').val());
+                if ($('#autoreload').attr('checked') && q.length > 1) {
+                        getJSON(q, true);
+                }
+
+                Dict.set('query', q);
+
+                if ($('#fld_chk').attr('checked') && v.length > 0) {
+                    a.push(v);
+                }
+
+                yiting.cookie.set('RAND', a.join(""));
+
+            }, 1);
+
+            $("body").removeClass("openset");
+            return false;
+        });
+        Jsonp({"count":"5000","start":0,"end":20,"size":20,"query":"","results":[{"song_id":"1197330","singer_id":"38813","album_id":"128430","song_name":"\u4e3a\u4f55\u90a3\u4e48\u72e0\u5fc3\u79bb\u5f00\u6211","singer_name":"\u738b\u6625","album_name":"\u4e3a\u4f55\u90a3\u4e48\u72e0\u5fc3\u79bb\u5f00\u6211\uff08\u5355\u66f2\uff09","song_filepath":"\/2020\/08\/06\/06u_wc\/01.wma","player_url":"\/\/www.lezicartoon.cn\/player\/65\/player_1197330.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/c2\/album_128430.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/429\/s100_fc2f68e53672dd4ae07eaa4b8e7ebb21.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/a5\/singer_38813.html"},{"song_id":"1062918","singer_id":"31545","album_id":"108228","song_name":"\u6211\u5df2\u6e10\u6e10\u88ab\u4f60\u9057\u5fd8","singer_name":"\u5149\u5934\u6613","album_name":"\u6211\u5df2\u6e10\u6e10\u88ab\u4f60\u9057\u5fd8 (\u5355\u66f2)","song_filepath":"\/zzzzzmp3\/2014lDec\/03X\/03f_Guang\/01.wma","player_url":"\/\/www.lezicartoon.cn\/player\/d3\/player_1062918.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/d3\/album_108228.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/361\/s100_9505774588f25791b58e0eecd5429212.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/c1\/singer_31545.html"},{"song_id":"1197752","singer_id":"39146","album_id":"128670","song_name":"\u732e\u8840\u8005\u4e4b\u6b4c-\u9879\u6656\/\u5218\u9510\u537f\/\u738b\u666f\u8f72\/\u5d14\u6000\u806a","singer_name":"\u9879\u6656","album_name":"\u732e\u8840\u8005\u4e4b\u6b4c\uff08\u5355\u66f2\uff09","song_filepath":"\/2020\/11\/03\/03c_xh\/01.wma","player_url":"\/\/www.lezicartoon.cn\/player\/65\/player_1197752.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/c2\/album_128670.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/429\/s100_83f7e8efa4d4ee98c5bbfc04f6c3f912.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/d6\/singer_39146.html"},{"song_id":"1188788","singer_id":"4683","album_id":"124725","song_name":"\u6210\u90fd\uff0c\u4e00\u5ea7\u6765\u4e86\u5c31\u4e0d\u60f3\u79bb\u5f00\u7684\u57ce\u5e02","singer_name":"\u7f57\u4e2d\u65ed","album_name":"\u672a\u5b8c\u5f85\u65ed \u7f57\u4e2d\u65ed\u7ecf\u5178\u5168\u8bb0\u5f551995-2017","song_filepath":"\/zzzzzmp3\/2017kNov\/27X\/27d_ZHongxun\/14.wma","player_url":"\/\/www.lezicartoon.cn\/player\/65\/player_1188788.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/c2\/album_124725.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/416\/s100_46782d54b8269bd37847846430cbb8a7.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/d9\/singer_4683.html"},{"song_id":"1195862","singer_id":"35279","album_id":"127686","song_name":"\u968f","singer_name":"\u7533\u660e","album_name":"\u968f (\u5355\u66f2)","song_filepath":"\/2019\/12\/10\/10j_Shen\/01.wma","player_url":"\/\/www.lezicartoon.cn\/player\/65\/player_1195862.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/c2\/album_127686.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/426\/s100_125520871ecd0ccacbdc3e1e0fe82f12.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/1c\/singer_35279.html"},{"song_id":"1023764","singer_id":"30291","album_id":"103477","song_name":"\u5931\u843d\u7684\u6211","singer_name":"\u51ac\u96ea","album_name":"\u6211\u61c2\u4e86","song_filepath":"\/zzzzzmp3\/2014aJan\/15W\/15dongxue\/04.wma","player_url":"\/\/www.lezicartoon.cn\/player\/d3\/player_1023764.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/d3\/album_103477.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/345\/s100_9c986b8b97a7c011efad09187ac7c3bd.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/34\/singer_30291.html"},{"song_id":"1064297","singer_id":"31126","album_id":"108459","song_name":"\u7f8e\u597d\u7684\u65e5\u5b50","singer_name":"\u664f\u654f\u654f","album_name":"\u82d7\u4e61\u7f8e","song_filepath":"\/zzzzzmp3\/2014lDec\/17X\/17a_Minmin\/12.wma","player_url":"\/\/www.lezicartoon.cn\/player\/d3\/player_1064297.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/d3\/album_108459.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/362\/s100_63a1003998d8d386b6d870cdcd1dcfb7.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/c1\/singer_31126.html"},{"song_id":"1144192","singer_id":"14200","album_id":"118133","song_name":"\u53ec\u5524","singer_name":"\u8521\u96e8\u6674","album_name":"\u53ec\u5524 (\u5355\u66f2)","song_filepath":"\/zzzzzmp3\/2016eMay\/23X\/23c_YuQing\/01.wma","player_url":"\/\/www.lezicartoon.cn\/player\/65\/player_1144192.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/65\/album_118133.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/394\/s100_09c9427f62583913c1c1c979ca2ba2f6.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/aa\/singer_14200.html"},{"song_id":"1042217","singer_id":"30636","album_id":"105404","song_name":"\u6349\u9b3c\u8bfe\u58022","singer_name":"\u80e1\u4f1f\u7acb","album_name":"\u56de\u9b42\u591c \u7535\u5f71\u539f\u58f0\u5e26","song_filepath":"\/yingshi\/54\/1771045454.wma","player_url":"\/\/www.lezicartoon.cn\/player\/d3\/player_1042217.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/d3\/album_105404.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/352\/s100_fd9ea03fdfcb19c42d17e881d23f2ddd.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/34\/singer_30636.html"},{"song_id":"1197569","singer_id":"39077","album_id":"128547","song_name":"\u5fc3\u706f\u7167\u5927\u5343\uff08\u4f34\u594f\uff09","singer_name":"\u5f20\u53cc\u4f73","album_name":"\u5fc3\u706f\u7167\u5927\u5343\uff08\u5355\u66f2\uff09","song_filepath":"\/2020\/09\/01\/01q_zsj\/02.wma","player_url":"\/\/www.lezicartoon.cn\/player\/65\/player_1197569.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/c2\/album_128547.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/429\/s100_23914d87b890d118d3e8feb213fde166.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/d6\/singer_39077.html"},{"song_id":"1051282","singer_id":"31102","album_id":"106600","song_name":"\u5c0f\u56db","singer_name":"\u8d85\u4eba","album_name":"\u7231\u60c5\u9519\u9519\u9519(EP)","song_filepath":"\/zzzzzmp3\/2014hAug\/06W\/06chaoren\/02.wma","player_url":"\/\/www.lezicartoon.cn\/player\/d3\/player_1051282.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/d3\/album_106600.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/356\/s100_76b0fd31a666e71fb458a54e5338e198.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/c1\/singer_31102.html"},{"song_id":"1191639","singer_id":"37911","album_id":"125806","song_name":"\u6765\u4e0d\u53ca\u6325\u624b","singer_name":"\u6731\u5bb8\u8f89","album_name":"\u6765\u4e0d\u53ca\u6325\u624b (\u5355\u66f2)","song_filepath":"\/2018\/11\/05X\/05g_Chenhui\/01.wma","player_url":"\/\/www.lezicartoon.cn\/player\/65\/player_1191639.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/c2\/album_125806.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/420\/s100_f08efb3b1916c03ea04a3afbfdebfef1.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/a5\/singer_37911.html"},{"song_id":"1152877","singer_id":"35646","album_id":"119469","song_name":"\u59d0\u59b9\u82b1 ","singer_name":"\u5189\u5189\u5347\u8d77","album_name":"\u59d0\u59b9\u82b1 (EP)","song_filepath":"\/zzzzzmp3\/2016hAug\/03X\/03l_Ranra\/01.wma","player_url":"\/\/www.lezicartoon.cn\/player\/65\/player_1152877.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/65\/album_119469.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/399\/s100_84cdbb247aa330566aaaa8885ea9b0a5.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/1c\/singer_35646.html"},{"song_id":"1050401","singer_id":"31050","album_id":"106462","song_name":"\u4e61\u97f3\u4e61\u60c5","singer_name":"\u5f6d\u5146\u6210","album_name":"\u8ddf\u4f60\u8d70","song_filepath":"\/zzzzzmp3\/2014gJul\/30W\/30pengzhaocheng\/04.wma","player_url":"\/\/www.lezicartoon.cn\/player\/d3\/player_1050401.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/d3\/album_106462.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/355\/s100_7505be1f395371304ebd22e2b79788fc.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/c1\/singer_31050.html"},{"song_id":"1131113","singer_id":"31252","album_id":"116468","song_name":"\u626c\u5e06","singer_name":"\u90d1\u4fca\u5f18","album_name":"\u5f53\u72d7\u7231\u4e0a\u732b","song_filepath":"\/zzzzzmp3\/2016bFeb\/03F\/03zjhong\/02.wma","player_url":"\/\/www.lezicartoon.cn\/player\/65\/player_1131113.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/65\/album_116468.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/389\/s100_e9ca3e95c1494ce5fbbe239bdec37d38.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/c1\/singer_31252.html"},{"song_id":"1192507","singer_id":"7147","album_id":"126159","song_name":"\u53c8\u4f55\u82e6","singer_name":"\u4e91\u6735","album_name":"\u73cd\u60dc","song_filepath":"\/2019\/01\/21X\/21a_Yunduo\/03.wma","player_url":"\/\/www.lezicartoon.cn\/player\/65\/player_1192507.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/c2\/album_126159.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/421\/s100_8c99ccbcd285bdb39f010319c585a665.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/e2\/singer_7147.html"},{"song_id":"1195879","singer_id":"38062","album_id":"127696","song_name":"\u8463\u5efa\u56fd2020","singer_name":"\u6731\u4fca\u9716","album_name":"\u8463\u5efa\u56fd2020 (\u5355\u66f2)","song_filepath":"\/2019\/12\/13\/13d_Zhu\/01.wma","player_url":"\/\/www.lezicartoon.cn\/player\/65\/player_1195879.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/c2\/album_127696.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/426\/s100_34c906aec191d3c313d763df11942fc4.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/a5\/singer_38062.html"},{"song_id":"1196571","singer_id":"35219","album_id":"128012","song_name":"\u966a\u4f60\u53bb\u6c5f\u5357","singer_name":"\u848b\u5a74","album_name":"\u966a\u4f60\u53bb\u6c5f\u5357 (\u5355\u66f2)","song_filepath":"\/2020\/03\/18\/18d_Pei\/01.wma","player_url":"\/\/www.lezicartoon.cn\/player\/65\/player_1196571.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/c2\/album_128012.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/427\/s100_35a4a989320b5766687f30c6ef37e8fe.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/1c\/singer_35219.html"},{"song_id":"1152474","singer_id":"35603","album_id":"119375","song_name":"\u8ffd\u4e91","singer_name":"\u53f6\u7490","album_name":"\u6850\u5b50\u82b1\u5f00 (\u5355\u66f2)","song_filepath":"\/zzzzzmp3\/2016gJul\/26X\/26r_Yelu\/05.wma","player_url":"\/\/www.lezicartoon.cn\/player\/65\/player_1152474.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/65\/album_119375.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/398\/s100_91843c94d3d69d0ae50d325f1ed418dc.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/1c\/singer_35603.html"},{"song_id":"1058850","singer_id":"31338","album_id":"107626","song_name":"\u65e0\u5c3d\u4e4b\u68a6","singer_name":"\u9648\u6d69\u4e1c","album_name":"\u65e0\u5c3d\u4e4b\u68a6(EP)","song_filepath":"\/zzzzzmp3\/2014jOct\/22W\/22chenhaodong\/03.wma","player_url":"\/\/www.lezicartoon.cn\/player\/d3\/player_1058850.html","song_path":"","album_url":"\/\/www.lezicartoon.cn\/album\/d3\/album_107626.html","album_cover":"\/\/img.lezicartoon.cn\/images\/special\/359\/s100_dfac30c9679dd8219a5aaedb902fe7e1.jpg","singer_url":"\/\/www.lezicartoon.cn\/singer\/c1\/singer_31338.html"}]})    </script>
+    <div class="head_bg">
+      <div class="head">
+        <h1 class="toplogo"> <a href="index.html" target="_blank">杭州乐米动漫</a> </h1>
+        <div class="search">
+          <form method="get" action="//so.lezicartoon.cn/all.do" onsubmit="return yiting.vi.search(this);">
+            <div class="option_selected" id="search_option_selected"> <a href="#" id="st">全部</a> </div>
+            <div class="option_list" id="search_option_list">
+              <ul>
+                <li>
+                  <a href="#">全部</a>
+                </li>
+                <li>
+                  <a href="#">歌曲</a>
+                </li>
+                <li>
+                  <a href="#">专辑</a>
+                </li>
+                <li>
+                  <a href="#">歌手</a>
+                </li>
+                <li>
+                  <a href="#">歌词</a>
+                </li>
+              </ul>
+            </div>
+            <div class="search_box">
+              <input type="text" name="q" id="sq">
+              <button type="submit">搜索</button>
+            </div>
+            <div class="randplay"> <a href="javascript:;" target="_blank">随便听几首</a> </div>
+          </form>
+        </div>
+        <div class="tlink">
+          <ul>
+            <li id="index">
+              <a href="index.html" title="杭州乐米动漫" target="_blank">首页</a>
+            </li>
+            <li class="forlogin" id="reg">
+              <a href="javascript:;" onclick="lightbox.open({url:this.href,width:380,height:320,title:'注册'});return false;" target="_blank">注册</a>
+            </li>
+            <li class="forlogin" id="login">
+              <a href="javascript:;" onclick="lightbox.open({url:this.href,width:340,height:230,title:'登陆'});return false;" target="_box">登陆</a>
+            </li>
+            <li id="feedback">
+              <a href="javascript:;" target="_blank">意见箱</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <script src="v5/r4/player/js/auth.js">
+    </script>
+    <div class="main">
+      <div class="player">
+        <div class="playact">
+          <div class="state"> <span class="playedtime" id="playedtime">00:00</span> <span class="playstate" id="playstate">正在播放</span> <span class="totaltime" id="totaltime">00:00</span> </div>
+          <div class="progress" id="progress-crontrol"> </div>
+          <div class="action"> <a href="###" id="play-pause" class="play" onclick="return yiting.ui.control({'action':'toggle',node:this})">
+              <!-- 播放/暂停-->
+            </a> <a href="###" id="music-stop" onclick="return yiting.ui.control({'action':'stop'})">
+              <!-- 停止 -->
+            </a> <a href="###" id="music-pre" onclick="return yiting.ui.control({'action':'prev'})">
+              <!-- 上一曲 -->
+            </a> <a href="###" id="music-next" onclick="return yiting.ui.control({'action':'next'})">
+              <!-- 下一曲 -->
+            </a>
+            <div class="volume" id="volume-crontrol">
+            </div>
+            <a href="###" id="volume-max" onclick="return yiting.vi.volume(this);">
+              <!-- 音量增大 -->
+            </a> <a href="###" id="volume-min" onclick="return yiting.vi.volume(this);">
+              <!-- 音量减小 -->
+          </a> </div>
+        </div>
+        <div class="tabs" id="listtabs"> <a href="###" id="forplaylist" class="selected" onclick="return yiting.ui.tab(this);">播放列表</a> <a href="###" id="forhistorylist" onclick="return yiting.ui.tab(this);">播放历史</a> <a href="###" id="formusicbox" onclick="return yiting.ui.tab(this);">推荐歌曲</a> </div>
+        <div class="lists" id="musiclists">
+          <div class="playlist" id="playlist">
+            <div class="listbox iescrollcolor">
+              <ul class="mlist">
+                <script>yiting.ui.playlist();</script>
+              </ul>
+            </div>
+            <div class="listaction"> <a href="###" class="btn_select" onclick="return yiting.vi.select(this);">全/反选</a> <a href="###" class="btn_tofav" onclick="return yiting.vi.tofav(this);">加入收藏</a> <a href="###" class="btn_remove" onclick="return yiting.ui.remove(this);">移除</a> <a href="###" class="btn_addmusic" onclick="return yiting.vi.append(this)">添加歌曲</a>
+            </div>
+          </div>
+          <!-- /playlist -->
+          <div class="historylist" id="historylist">
+            <div class="listbox iescrollcolor">
+              <ul class="mlist" id="history">
+              </ul>
+            </div>
+            <div class="listaction"> <a href="###" class="btn_select" onclick="return yiting.vi.select(this);" title="全/反选">全/反选</a> <a href="###" class="btn_toplaylist" onclick="return yiting.vi.tolist(this);">加入列表</a> <a href="###" class="btn_tofav" onclick="return yiting.vi.tofav(this);">加入收藏</a> <a href="###" class="btn_remove" onclick="return yiting.vi.remove(this);">移除</a> </div>
+          </div>
+          <!-- /historylist -->
+          <div class="musicbox" id="musicbox">
+            <div class="listbox iescrollcolor">
+            </div>
+            <div class="listaction"> <a href="###" class="btn_select" onclick="return yiting.vi.select(this);" title="全/反选">全/反选</a> <a href="###" class="btn_toplaylist" onclick="return yiting.vi.tolist(this);">加入列表</a> <a href="###" class="btn_tofav" onclick="return yiting.vi.tofav(this);">加入收藏</a> </div>
+          </div>
+          <!-- /musicbox -->
+        </div>
+        <div class="playmode" id="playmode">
+          <ul>
+            <li>播放模式:</li>
+            <li class="loop selected">
+              <a href="###">顺序</a>
+            </li>
+            <li class="rand">
+              <a href="###">随机</a>
+            </li>
+            <li class="single">
+              <a href="###">单曲</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- /player -->
+      <div class="song">
+        <div class="songinfo" id="songinfo">
+          <p class="albumpic">
+            <a href="javascript:;" target="_blank">
+              <img src="images/special/101/s100_6cc04e6127ca70aac8b3961bebb.jpg" width="64" height="64">
+            </a>
+          <p class="songtitle">
+            <a href="#" target="_blank">载入中</a>
+          </p>
+          <p class="singer">歌手:<a href="#" target="_blank">载入中</a>
+          </p>
+          <p class="album">专辑:<a href="#" target="_blank">载入中</a>
+          </p>
+          </div>
+          <div class="songact"> <a href="#" class="fav" onclick="return yiting.vi.tofav();">收藏</a> <a href="#" class="down" onclick="return yiting.vi.down();">下载</a> <a href="#" class="nice" onclick="return yiting.vi.ring();">铃声</a> </div>
+          <div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" style="height:16px;overflow:hidden;clear:both;border-left:1px solid #98BFEB;border-right:1px solid #98BFEB;padding:2px 8px 14px 8px;line-height:16px;overflow:hidden;float:none">
+         <span class="bds_more">分享到</span>
+            <a class="bds_qzone"></a>
+            <a class="bds_tsina"></a>
+            <a class="bds_tqq"></a>
+            <a class="bds_sqq"></a>
+            <a class="bds_douban"></a>
+            <a class="bds_tieba"></a>
+            <span class="bds_more">更多</span>
+            <a class="shareCount"></a>
+        </div>
+          <div class="mobile"> 
+            <script>BAIDU_CLB_fillSlot('871501');</script>
+            <strong>下载到手机:</strong>
+            <input id="ring-song-name" type="hidden" class="jlname" value="">
+            <script>
+            $('#ring-song-name').val(Jcache[0][1]);
+            </script>
+            <input type="text" id="mobilenNmber" value="输入手机号" onclick="if(this.value=='输入手机号')this.value=''">
+            <button type="button" id="jringsubmit">下一步</button>
+          </div>
+          <script src="v5/r4/player/js/bdshare.js"></script>
+          <script src="v5/r4/player/js/clipboard.js">
+          </script>
+          <script>$(function(){clipboard.event('mouseover', function(){clipboard.setText( document.getElementById('jlrc_url').contentWindow.document.getElementById('container').innerHTML.replace(/<.+?>/g,''));});clipboard.event('complete', function(text){alert("复制到粘贴板")});clipboard.create('d_clip_button');})</script>
+            <div class="lyric">
+              <div class="lrcact"> <strong>歌词:</strong>
+                <input type="checkbox" id="not-allowed-scroll" checked="">
+                <label for="lrcautoscroll">自动滚动</label>
+                <a id="d_clip_button" href="#">复制歌词</a> <a href="#/errorlrc.php?id=&type=1" target="_blank">歌词纠错</a> <a href="faq/etc/help_7.html" target="_blank">不能听歌</a>
+              </div>
+              <div class="lrcbox iescrollcolor">
+
+                <script>
+                $('#d_clip_button').next().attr('href','/errorlrc.php?id='+Jcache[0][0]+'&type=1');
+                document.write('<iframe id="jlrc_url" name="jlrc_url" class="jlval" scrolling="no" topmargin="0" width="300" height="254" marginwidth="0" marginheight="0" frameborder="0" src="http://www.lezicartoon.cn/lrc'+Jcache[0][0]+'.html" ></iframe>');
+            </script>
+              </div>
+            </div>
+          </div>
+          <!-- /playinfo -->
+          <!-- addmusic -->
+          <div class="addmusic" id="addmusic" style="display:none;">
+            <div class="box_title">
+              <h3>添加歌曲</h3>
+              <a href="###" onclick="return yiting.wi.close(this)" class="close">关闭</a>
+            </div>
+            <div class="search">
+              <input type="text" value="请输入您要查询的关键词" title="请输入您要查询的关键词" onblur="if(this.value==''){this.value=this.title}" onfocus="if(this.value==this.title){this.value=''}">
+              <button onclick="return yiting.wi.search(this)">搜索</button>
+            </div>
+            <div class="musiclist">
+              <ul>
+              </ul>
+              <div class="pages">
+                <a href="#" onclick="return yiting.wi.prev(this)" class="page_pre">上一页</a>
+                <a href="#" onclick="return yiting.wi.next(this)" class="page_next">下一页</a>
+              </div>
+            </div>
+            <div class="hotkeyword">
+              <h3>热门搜索：</h3>
+              <p>
+              </p>
+            </div>
+          </div>
+          <div class="addmusic_arrow" id="addmusic_arrow" style="display:none;">
+          </div>
+          <!-- /addmusic --> <!-- AD -->
+        <div class="tingx_1" id="tingx_1" adata="2861918">
+            <script>
+            (function() {
+                var s = "_" + Math.random().toString(36).slice(2);
+                document.write('<div id="' + s + '"></div>');
+                (window.slotbydup=window.slotbydup || []).push({
+                    id: '2861918',
+                    container: s,
+                    size: '312,62',
+                    display: 'inlay-fix'
+                });
+            })();
+            </script>
+        </div>
+        <div class="tingx_2" id="tingx_2" adata="2861920">
+            <script>
+            (function() {
+                var s = "_" + Math.random().toString(36).slice(2);
+                document.write('<div id="' + s + '"></div>');
+                (window.slotbydup=window.slotbydup || []).push({
+                    id: '2861920',
+                    container: s,
+                    size: '300,250',
+                    display: 'inlay-fix'
+                });
+            })();
+            </script>
+        </div>
+        <div class="tingx_3">
+            <div id="tingx_3" adata="2861970" style="height:43px">
+                <script>
+                (function() {
+                    var s = "_" + Math.random().toString(36).slice(2);
+                    document.write('<div id="' + s + '"></div>');
+                    (window.slotbydup=window.slotbydup || []).push({
+                        id: '2861970',
+                        container: s,
+                        size: '300,43',
+                        display: 'inlay-fix'
+                    });
+                })();
+                </script>
+            </div>
+            <div id="tingx_4" adata="2861833" style="height:250px">
+                <script>
+                (function() {
+                    var s = "_" + Math.random().toString(36).slice(2);
+                    document.write('<div id="' + s + '"></div>');
+                    (window.slotbydup=window.slotbydup || []).push({
+                        id: '2861833',
+                        container: s,
+                        size: '300,250',
+                        display: 'inlay-fix'
+                    });
+                })();
+                </script>
+            </div>
+        <!-- /AD -->
+        </div>
+        <script src="v5/r4/player/js/refresh.js">
+        </script>
+        <div class="main" id="widget" style="display:none;">
+          <div class="nexusmusic">
+            <dl>
+              <dt>
+                <strong class="songname"><script>document.write(Jcache[0][3])</script></strong> 的相关歌曲</dt>
+              <dd>
+                <ul>
+                </ul>
+                <div class="action">
+                  <p>
+                    <a href="###" class="btn_select">全反选</a>
+                    <a href="###" class="btn_play">播放</a>
+                    <a href="###" class="btn_add">加入列表</a>
+                  </p>
+                </div>
+              </dd>
+            </dl>
+          </div>
+          <!-- /nexusmisc -->
+          <div class="userbox">
+            <dl>
+              <dt>他们也喜欢<strong class="songname"><script>document.write(Jcache[0][3])</script></strong>
+                 <div class="tingx_10" id="tingx_10" style="height:208px" adata="3023805">
+                    <!-- 广告位：播放页 userbox -->
+                    <script>
+                    (function() {
+                        var s = "_" + Math.random().toString(36).slice(2);
+                        document.write('<div id="' + s + '"></div>');
+                        (window.slotbydup=window.slotbydup || []).push({
+                            id: '3023805',
+                            container: s,
+                            size: '290,205',
+                            display: 'inlay-fix'
+                        });
+                    })();
+                    </script>
+                </div>
+              </dt>
+              <!--dd>
+                <ul id="box-user">
+                </ul>
+              </dd-->
+            </dl>
+          </div>
+          <!-- /userbox -->
+        </div>
+        <!-- /20100208 -->
+    <div class="tingx_5" id="tingx_5" adata="2861914">
+        <script>
+        (function() {
+            var s = "_" + Math.random().toString(36).slice(2);
+            document.write('<div id="' + s + '"></div>');
+            (window.slotbydup=window.slotbydup || []).push({
+                id: '2861914',
+                container: s,
+                size: '960,150',
+                display: 'inlay-fix'
+            });
+        })();
+        </script>
+    </div>
+        <!--<div class="comment">
+          <div class="comment_title">
+            <h2>对歌曲《<span class="songname"><script>document.write(Jcache[0][3])</script></span>》的评论</h2>
+          </div>
+          <div class="comment_box">
+            <script>
+                document.write('<iframe id="songcomment" name="songcomment" src="//pinglun.lezicartoon.cn/new_comment.show.php?type=3&id='+Jcache[0][0]+'" frameborder="0" scrolling="no"></iframe>');
+            </script>
+          </div>
+        </div>-->
+        <div class="foot">
+          <p class="copyright">Copyright&copy; 2003-2019 <a href="javascript:;" target="_blank">www.lezicartoon.cn</a> All Rights Reserved.</p> <p class="icp">
+            <a href="javascript:;" target="_blank">杭州乐米动漫</a>
+          </p>
+        </div>
+        <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="0" height="0" id="play_list_receive" align="middle">
+          <param name="allowScriptAccess" value="always">
+          <param name="allowFullScreen" value="false">
+          <param name="movie" value="/v5/r4/player/js/play_list_receive.swf">
+          <param name="quality" value="high">
+          <embed src="v5/r4/player/js/play_list_receive.swf" quality="high" width="0" height="0" name="play_list_receive" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+        </object>
+
+        <script>
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F32c12acc9a2efc3fa896bb3ebcd47ee7'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1254132604'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "w.cnzz.com/c.php%3Fid%3D1254132604' type='text/javascript'%3E%3C/script%3E"));</script>
+        
+
+      </div></body>
+    </html>

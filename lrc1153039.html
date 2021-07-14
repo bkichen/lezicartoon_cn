@@ -1,0 +1,214 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>周深_临安初雨LRC滚动歌词下载</title>
+<link href="v5/style/lrc/lrc.css" rel="stylesheet" type="text/css">
+<script>
+if(self==top){document.write('<style>#nav{position:absolute;top:0;left:0;padding:0 0;background:#fff url("/v5/r4/images/top_logo.png") no-repeat;border-top:4px solid #22A5E9;border-bottom:1px solid #AACBEE; width:100%;height:60px;}#nav p{padding:6px;height:30px;line-height:30px;margin-left:200px;}body{margin-top:80px;}#container{height:auto;width:auto;text-align:left;padding:10px;}.ting_5{text-align:left;}</style>');}
+</script>
+<script>
+document.domain='lezicartoon.cn';
+function the(s){return document.getElementById(s);}
+</script>
+</head>
+<body>
+<div class="ting_5">
+</div>
+        <div id="container"></div>
+    <div id="lrc">[ti:临安初雨]
+[ar:周深]
+[al:临安初雨]
+[by:磊子]
+[00:02.45]临安初雨
+[00:03.89]
+[00:05.22]词：月吟诗
+[00:06.38]曲：钟迅
+[00:07.70]编曲：高阳
+[00:09.02]唱：周深
+[00:10.91]
+[00:33.44]临安初雨 一夜落红
+[00:40.44]春水凝碧 断雁越澄空
+[00:47.68]挥袖抚琴 七弦玲珑
+[00:53.51]芦苇客舟 雨朦胧
+[01:00.90]
+[01:02.16]那年竹楼 惘然如梦
+[01:09.28]纤指红尘 醉影笑惊鸿
+[01:16.52]皓月长歌 把酒临风
+[01:22.36]倾杯畅饮 尽长虹
+[01:29.34]
+[01:30.26]浮云事尊前休说
+[01:33.78]弹指间昨日堪留
+[01:37.03]韶华易逝 岂料星移半昼
+[01:44.99]梦未醒一壶浊酒
+[01:48.70]人间话语事未休
+[01:51.94]蓦回首 舟过群山万重
+[02:00.68]那年竹楼 惘然如梦
+[02:07.69]纤指红尘 醉影笑惊鸿
+[02:14.91]皓月长歌 把酒临风
+[02:20.82]倾杯畅饮 尽长虹
+[02:28.24]何处江湖 何处留</div>
+    <script>
+        var Lyric = function(){
+            var that = this;
+            this.preTime = 0;
+            this.nextTime = 0;
+            this.currIndex = 0;
+            this.lrc = the("lrc").innerHTML.split("[");
+            this.array = [];
+
+            this.init = function(){
+                var array = [];
+                if (that.lrc.length > 5){
+                    for (var i = 0; i < that.lrc.length; i++){
+                        var g = {};
+                        var t = that.lrc[i].split("]");
+                        g.time = that.getTime(t[0]);
+                        if (isNaN(g.time))
+                            continue;
+                        g.c = t[1];
+                        if (g.c == "")
+                            g.c = that.getNext(i);
+                        array.push(g);
+                    }
+
+                    array.sort(function(x, y) {
+                        if (x.time > y.time)
+                            return 1;
+                        else if (x.time < y.time)
+                            return -1;
+                        else
+                            return 0;
+                    });
+                    var tc = '';
+                    for (var i = 0; i < array.length; i++){
+                        var g = array[i];
+                        if (!g.c) {
+                            g.c = "";
+                        }
+                        tc+=("<div id='lrc" + i + "'>" + g.c + "</div>");
+                    }
+                    the('container').innerHTML=tc;
+
+                    if(top == self){
+                        return;
+                    }
+
+                    var time = window.setInterval(function() {
+                        try {
+                            if (parent.document.getElementById('not-allowed-scroll').checked) {
+                                that.lrcList();
+                            }
+                        } catch(e) {
+                            that.lrcList();
+                        }
+                    }, 500);
+                } else {
+                    the("container").innerHTML = the("lrc").innerHTML;
+                }
+                that.lines = array;
+            };
+
+            this.getNext = function(i){
+                var result = "";
+                var i = i + 1;
+                if(that.lrc[i]){
+                    t = that.lrc[i].split("]");
+                    if (t[1] == "")
+                        result = that.getNext(i);
+                    else
+                        result = t[1]
+                }
+                return result;
+            };
+
+            this.getTime = function(str){
+                var time = 0;
+                var ta = str.split(":");
+                if (ta.length < 2)
+                    return time;
+
+                if (ta[1].indexOf(".") > 0) {
+                    var tb = ta[1].split(".");
+                    time = ta[0] * 60 * 1000 + tb[0] * 1000 + tb[1] * 10;
+                }
+                else
+                    time = ta[0] * 60 * 1000 + ta[1] * 1000;
+                return time;
+            };
+
+            this.lrcList = function(){
+                var s = 0;
+                try {
+                    s = parent.Instance.time();
+                } catch(e) {
+                    return;
+                }
+                s = s * 1000;
+
+                function getTop(idx) {
+                    return Math.max(80, the("lrc" + idx).offsetTop - 23) - 80;
+                }
+
+                function moveScrollbar(idx) {
+                    var t = getTop(idx);
+                    var ch = the('container').scrollHeight;
+
+                    the("container").scrollTop = t;
+                }
+
+                if (s == 0) {
+                    that.currIndex = 0;
+                    moveScrollbar(that.currIndex);
+
+                    for (var i = 0; i < that.lines.length; i++) {
+                        the("lrc" + i).style.color = '#000000';
+                    }
+                    return;
+                }
+
+                if (s > 0 && that.currIndex < that.lines.length - 1)
+                {
+                    that.preTime = that.lines[that.currIndex].time;
+
+                    that.nextTime = that.lines[that.currIndex + 1].time;
+
+                    if (s >= that.preTime && s < that.nextTime) {
+
+                    } else if (s >= that.nextTime) {
+                        the("lrc" + that.currIndex).style.color = '#000';
+                        moveScrollbar(++that.currIndex);
+                        the("lrc" + that.currIndex).style.color = '#06adf3';
+                        that.lrcList();
+                    } else {
+                        the("lrc" + that.currIndex).style.color = '#000';
+                        moveScrollbar(--that.currIndex);
+                        the("lrc" + that.currIndex).style.color = '#06adf3';
+                        that.lrcList();
+                    }
+                }
+                else
+                {
+                    if (s < that.lines[that.lines.length - 1].time) {
+                        that.currIndex = 0;
+                        moveScrollbar(that.currIndex);
+                        for (var i = 0; i < that.lines.length; i++) {
+                            the("lrc" + i).style.color = '#000';
+                        }
+                        that.lrcList();
+                    }
+                }
+            };
+        };
+        new Lyric().init();
+    </script>
+    <!--歌词下标签云22-->
+
+<div id="nav"><a href="index.html"><div style="width:300px;height:90px;"></div></a><p class="songtitle" style="margin-top:-45px">试听<a href="singer/1c/singer_35686.html" target="_blank">周深</a>的<a href="player/65/player_1153039.html" target="_blank">临安初雨</a></p></div>
+<script src='c-30065998.js' language='JavaScript'></script>
+
+
+</body>
+</html>

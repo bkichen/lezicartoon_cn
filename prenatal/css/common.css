@@ -1,0 +1,573 @@
+/* 设置默认字体 */
+body, button, input, select, textarea {
+     font: 12px/1.5 tahoma, arial, "\5b8b\4f53", sans-serif;
+     color:#666;
+}
+/* 清楚默认距离 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+    margin: 0;
+    padding: 0;
+}
+
+button, input, select, textarea {	/* 使得表单元素在 ie 下能继承字体大小 */
+    font-size: 100%;
+    outline: none;
+}
+textarea {
+    resize: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset, img {
+    border: 0;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color:#666;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+sup {vertical-align: text-top;} /* 重置，减少对行高的影响 */
+sub {vertical-align: text-bottom;}
+
+/* 清除浮动样式 */
+.clearfix:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {
+    *zoom:1;
+}
+.clear {
+    clear:both;
+    line-height: 0;
+}
+
+/* 公共样式 */
+body {
+    background: url("../images/body-bg.png");
+}
+.container {
+    width: 960px;
+    margin: 0 auto;
+    background: #FFF;
+}
+.logo-ctn {
+    padding-bottom: 20px;
+}
+.logo {
+    float: left;
+    overflow: hidden;
+    text-indent: -999px;
+    background: url("../images/logo.png") no-repeat;
+    width: 99px;
+    height: 27px;
+    margin-top: 19px;
+}
+.search-ctn {
+    float: left;
+    display: inline;
+    width: 364px;
+    height: 24px;
+    border: #CCC solid 1px;
+    color: #CCC;
+    margin: 20px 20px 0 41px;
+}
+.search-ctn-type {
+    width: 56px;
+    float: left;
+    display: inline;
+    position: relative;
+    cursor: pointer;
+}
+.search-ctn-type-all {
+    height: 24px;
+    line-height: 24px;
+    margin-left:6px;
+    _margin-left:4px;
+}
+.search-ctn-type-all span {
+    float: right;
+    width: 15px;
+    height: 12px;
+    border-right: #CCC solid 1px;
+    background: url("../images/common-icon.png") no-repeat -1px 0;
+    margin: 6px 0 0 9px;
+}
+.search-ctn-type-secondary {
+    display: none;
+    position: absolute;
+    left: -1px;
+    top: 24px;
+    border-left: #CCC solid 1px;
+    height: 20px;
+    line-height: 20px;
+    width: 205px;
+    _width: 208px;
+}
+.search-ctn-type-secondary a {
+    float: left;
+    color: #CCC;
+    border: #CCC solid 1px;
+    border-left: none;
+    width: 40px;
+    text-align: center;
+    background: #FFF;
+}
+.search-ctn-type-secondary a:hover, .search-ctn-type-secondary a.current {
+    color: #333;
+}
+.search-content {
+    width: 244px;
+    display: inline;
+    margin: 3px 8px 0 8px;
+    float: left;
+}
+.search-content input {
+    height: 18px;
+    line-height: 18px;
+    border: 0;
+    color: #CCC;
+    width: 244px;
+}
+.search-ctn .button-ctn {
+    float: right;
+    height: 24px;
+    background: #CCC;
+}
+.search-ctn .button-ctn button {
+    width: 48px;
+    height: 24px;
+    color: #FFF;
+    font-weight: bold;
+    background: #CCC;
+    border:0;
+    line-height: 24px;
+}
+.search-ctn .button-ctn button::-moz-focus-inner{ border:0; padding:0; margin:0; }/* 解决火狐的垂直居中 */
+
+/* 登录区域 */
+.userbox {
+    float: right;
+    padding-top: 26px;
+}
+.userbox .user-guest {
+    height: 20px;
+    line-height: 20px;
+    float: right;
+}
+.userbox .user-guest .sitelogin {
+    color: #666666;
+    float: left;
+    padding-right: 12px;
+}
+.userbox .user-guest .sitelogin a {
+    color: #666666;
+}
+.userbox .user-guest .sitelogin a.link-login {
+    color: #0093E1;
+    font-weight: bold;
+}
+.userbox .user-guest .pluginlogin {
+    float: left;
+    height: 20px;
+    overflow: hidden;
+}
+.userbox .user-guest .pluginlogin .login-weibo {
+    background: url("../images/common-icon.png") no-repeat -81px -21px;
+    color: #666666;
+    float: left;
+    padding: 0 10px 0 20px;
+}
+.userbox .user-guest .pluginlogin .login-qq {
+    background: url("../images/common-icon.png") no-repeat -81px -68px;
+    color: #666666;
+    float: left;
+    padding: 0 10px 0 20px;
+}
+.userbox .user-guest .pluginlogin a.link-favor {
+    float: left;
+    color: #0093E1;
+}
+.userbox .user-login {
+    float: right;
+    display: none;
+    height: 20px;
+    line-height: 20px;
+}
+.userbox .user-login .user-welcome {
+    color: #666666;
+    float: left;
+}
+.userbox .user-login .user-welcome .link-username {
+    color: #0090DA;
+    font-weight: bold;
+    margin-right: 5px;
+}
+.userbox .user-login .user-action {
+    float: left;
+    padding: 0 20px 0 10px;
+    height: 20px;
+    position: relative;
+    z-index: 100;
+    background-image: url("../images/common-icon.png");
+    background-repeat: no-repeat;
+    background-position: right -139px;
+    *background-position: right -141px;
+}
+.userbox .user-login .user-action-arrow-up {
+    background-position: right -121px;
+    *background-position: right -123px;
+}
+.userbox .user-login .user-action a {
+    color: #0093E1;
+}
+.userbox .user-login .user-action div {
+    display: none;
+    position: absolute;
+    left:0;
+    top:20px;
+    width: 62px;
+    background: #FFF;
+    padding: 4px 0 8px 10px;
+    border-right:#c6c6c6 solid 1px;
+    border-bottom:#c6c6c6 solid 1px;
+}
+.userbox .user-login .user-action div a {
+    display: block;
+}
+/* 登录区域结束 */
+
+.banner {
+    position: relative;
+    height: 352px;
+    background: #ceadd9;
+}
+.banner-content {
+    height: 352px;
+    display: none;
+}
+.banner-content-01 {background-image: url("../images/banner-bg-01.png");}
+.banner-content-02 {background-image: url("../images/banner-bg-02.png");}
+.banner-content-03 {background-image: url("../images/banner-bg-03.png");}
+.banner-content-04 {background-image: url("../images/banner-bg-04.png");}
+.banner-content-05 {background-image: url("../images/banner-bg-05.png");}
+.banner-content-06 {background-image: url("../images/banner-bg-06.png");}
+.banner-content h2 {
+    font-size: 30px;
+    color: #a56ebc;
+    text-shadow: 1px 1px 1px #FFF;
+    padding: 26px 0 24px 65px;
+    font-family: "\9ED1\4F53";
+}
+.banner-content h2 span {
+    font-size: 18px;
+}
+.banner-content div {
+    width: 552px;
+    height: 125px;
+    margin: 8px 0 0 63px;
+    color: #a56ebc;
+    line-height: 21px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.banner-content div p {
+    text-indent: 2em;
+}
+.banner-content a {
+    display: block;
+    margin: 25px 0 0 43px;
+    width: 159px;
+    height: 0px;
+    overflow:hidden;
+    padding-top:39px;
+    background-image: url("../images/play-now.png");
+}
+.banner-content a:hover {
+    background-image: url("../images/play-now-hover.png");
+}
+.banner ul {
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    width: 100%;
+}
+.banner ul li {
+    float: left;
+    display: inline;
+    margin-right: 1px;
+}
+.banner ul li a {
+    display: block;
+    position: relative;
+    width: 159px;
+    height: 26px;
+}
+.banner-list-bg, .banner-list-text {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 26px;
+}
+.banner-list-bg {
+    background: #FFF;
+    opacity: 0.3;
+    filter: alpha(opacity=30);
+}
+.banner-list-text {
+    text-align: center;
+    line-height: 26px;
+    color: #b080c4;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-shadow: 1px 1px 1px #FFF;
+}
+.banner ul li a:hover .banner-list-bg, .banner ul li a.current .banner-list-bg {
+    background: #c29dd1;
+}
+.banner ul li a:hover {
+    text-decoration: none;
+}
+.banner ul li a:hover .banner-list-text, .banner ul li a.current .banner-list-text {
+    color: #FFF;
+    text-shadow: 1px 1px 1px #b080c4;
+    text-decoration: none;
+}
+
+.special-list {
+    float: left;
+    width: 738px;
+    height: 243px;
+    background: #f3ebf5;
+    padding-left:17px;
+    margin-top: 9px;
+}
+.special-list dt {
+    font-size: 16px;
+    font-weight: bold;
+    color: #a873b8;
+    padding-top: 10px;
+}
+.special-list dd {
+    float: left;
+    display: inline;
+    margin: 9px 8px 0 0;
+    height: 170px;
+    width: 114px;
+    overflow: hidden;
+}
+.special-list dd a {
+    display: block;
+    color: #a873b8;
+}
+.special-list dd a span, .special-list dd img {
+    display: block;
+}
+.special-list-icon {
+    padding: 1px;
+    background: #FFF;
+    border: #DDD solid 1px;
+}
+.special-list-title {
+    margin-top: 8px;
+    padding-left: 4px;
+}
+.special-list-name {
+    margin-top: 3px;
+    padding-left: 4px;
+}
+
+.rank-ctn {
+    float: right;
+    border: solid 1px #e3c1f1;
+    width: 196px;
+    height: 240px;
+    margin-top: 9px;
+}
+.rank-ctn h3 {
+    color: #a873b8;
+    font-size: 16px;
+    height: 32px;
+    line-height: 32px;
+    padding-left: 10px;
+    border-bottom: solid 1px #e3c1f1;
+}
+.rank-content {
+    margin: 0 5px 5px 4px;
+    height: 172px;
+    background: #efe5f3;
+}
+
+.common-tab-list a {
+    float: left;
+    background: #cfb2db;
+    color: #FFF;
+    text-align: center;
+    font-weight: bold;
+}
+
+.common-tab-list a.current {
+    background: #eee3f2;
+    color: #a873b8;
+    text-decoration: none;
+}
+.common-music-list li {
+    height: 14px;
+    line-height: 14px;
+    color: #a873b8;
+    overflow: hidden;
+    padding: 6px 0;
+}
+.common-music-list a {
+    color: #a873b8;
+    margin-left: 8px;
+    white-space:nowrap;
+}
+
+.rank-tab-list {
+    height: 25px;
+    margin: 5px 0 0 4px;
+}
+.rank-tab-list a {
+    width: 93px;
+    margin-right: 2px;
+    height: 23px;
+    line-height: 23px;
+}
+.rank-tab-list a.current {
+    height: 25px;
+}
+.rank-music-list {
+    padding: 5px 16px 0 14px;
+    display: none;
+}
+
+.main-content {
+    padding: 9px 0 0;
+}
+
+.main-content-tab {
+    height: 37px;
+}
+.main-content-tab a {
+    margin-right: 3px;
+    width: 157px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 16px;
+    background: #bf98cf;
+}
+.main-content-tab a.current {
+    background: #f3ebf5;
+    height: 37px;
+}
+.main-content-tab a.main-content-tab-last-link {
+    margin-right: 0;
+    width: 160px;
+}
+.main-content-bg {
+    background: #f3ebf5;
+}
+.music-list-info {
+    width: 895px;
+    padding: 20px 0;
+    border-bottom: #ebd6f3 solid 1px;
+    margin-left: 40px;
+    display: none;
+}
+.music-list-info-mess {
+    width: 399px;
+    color: #a873b8;
+    line-height: 21px;
+    padding: 20px 0;
+    float: left;
+}
+.music-list-info-list {
+    float: right;
+    width: 450px;
+    background: #eee3f1;
+}
+.rank-ten-title {
+    width: 388px;
+    height: 30px;
+    background: url("../images/points.png") repeat-x left bottom;
+    margin: 9px 0 0 30px;
+}
+.rank-ten-title h3 {
+    float: left;
+    font-size: 16px;
+    color: #a873b8;
+}
+.rank-ten-title a {
+    float: right;
+    width: 84px;
+    color: #a873b8;
+    font-size: 14px;
+    line-height: 20px;
+    text-decoration: underline;
+    margin-top: 3px;
+}
+.rank-ten-title a span {
+    float: left;
+    width: 19px;
+    height: 20px;
+    background: url("../images/play-now-mini.png");
+    margin-right: 3px;
+}
+.rank-ten-list {
+    float: left;
+    display: inline;
+    margin: 15px 0 0 30px;
+    width: 184px;
+    padding-bottom: 20px;
+}
+.recommendation {
+    width: 895px;
+    padding-bottom: 20px;
+    border-top: #FFF solid 1px;
+    margin-left: 40px;
+}
+.recommendation-list {
+    float: none;
+    width: 100%;
+    padding-left: 0;
+    height: auto;
+}
+.recommendation-list dd {
+    margin: 9px 0 0 11px;
+}
+.load-more {
+    display: block;
+    margin: 30px auto 0;
+    width: 118px;
+    height: 27px;
+    line-height: 27px;
+    text-align: center;
+    background: #e19df3;
+    text-shadow: 1px 1px 1px #a06cb5;
+    color: #FFF;
+}
+
+.footer{
+    width:960px;
+    padding:20px 0;
+    text-align:center;
+    margin:auto;
+}

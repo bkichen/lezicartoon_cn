@@ -1,0 +1,786 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>电影原声 - 杭州乐米动漫</title>
+<meta name="Description" content="电影原声,杭州乐米动漫">
+<meta name="Keywords" content="电影原声,杭州乐米动漫">
+<link href="../v5/r5/style/common.css" rel="stylesheet" type="text/css">
+<link href="../v5/r4/style/rank.css" rel="stylesheet" type="text/css">
+<script src="../v5/r4/js/jquery.min.js"></script>
+<script src="../v5/r4/js/common.js"></script>
+<script src="../js/ds.js"></script>
+</head>
+<body>
+    <div class="site-nav">
+        <div class="center">
+            <ul class="navlink">
+                <li><a href="javascript:;">保存到桌面</a></li>
+                <li><a href="../genre/index.html">曲风</a></li>
+                <li><a href="../rank.html">排行榜</a></li>
+                <li><a href="../archives/index.html">专辑库</a></li>
+            </ul>
+            <!--div class="bshare-custom"><a title="分享到微信" class="bshare-weixin"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到QQ空间" class="bshare-qzone"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div-->
+            <!--div class="sinaweibo_iframe">
+                <iframe width="120" height="24" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="https://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=136&height=24&uid=1671108633&style=2&btn=light&dpc=1"></iframe>
+            </div-->
+
+            <!--<ul style="height:19px;width:110px;padding-top:5px;float:left;"><li><a style="color:#333" href="https://h5.lezicartoon.cn" title="手机访问一听">手机版:h5.lezicartoon.cn</a></li></ul>-->
+            <ul class="siteaction" style="height:24px;padding-top:1px;"> 
+                <li class="favorite" style="margin-top:5px"><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">加入收藏</a></li>
+            </ul>
+        </div>
+    </div>
+               <script type="text/javascript" language="javascript">
+                function AddFavorite(sURL, sTitle) {
+                    sURL = encodeURI(sURL); 
+                try{   
+                    window.external.addFavorite(sURL, sTitle);   
+                }catch(e) {   
+                    try{   
+                        window.sidebar.addPanel(sTitle, sURL, "");   
+                    }catch (e) {   
+                        alert("加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.");
+         
+                        }   
+                    }
+                }
+              </script>
+    <!-- /site-nav -->
+    <div class="header center">
+        <div class="logo">
+            <h1>
+                <a href="../index.html" title="返回一听首页?">杭州乐米动漫</a>
+            </h1>
+        </div>
+        <div class="search">
+            <div class="option_selected" id="search_option_selected">
+                <a href="javascript:void(0);" id="st" target="_self">全部</a>
+            </div>
+            <div class="option_list" id="search_option_list">
+                <ul>
+                    <li class="selected"><a href="javascript:void(0);" target="_self">全部</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌曲</a></li>
+                    <li><a href="javascript:void(0);" target="_self">专辑</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌手</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌词</a></li>
+                </ul>
+            </div>
+            <div class="search_box"><form method="get" action="//so.lezicartoon.cn/all.do" onsubmit="return search(this);">
+                <input type="text" name="q" id="sq" x-webkit-speech="" x-webkit-grammar="builtin:search" onwebkitspeechchange="(function(e){e.target.form.submit();})(event)">
+                <button type="submit">搜索</button></form>
+            </div>
+        </div>
+        <div class="userbox">
+            <div class="user-guest" id="user-guest">
+                <p class="sitelogin">
+                    <a href="../register.html" class="link-reg">免费注册</a> -
+                    <a href="../login.html" class="link-login">登录</a>
+                </p>
+                <p class="pluginlogin">
+                    <a href="../oauth2/authorize-1435846576_http2F2Fmy..html" class="login-weibo">微博登录</a>
+                    <a href="../oauth2.0/show-Login_pc_101501725_https2F2.html" class="login-qq">QQ登录</a>
+                    <a href="../login.html" class="link-favor">我的收藏</a>
+                </p>
+            </div>
+            <div class="user-login" id="user-login">
+                <p class="user-welcome">
+                    <a href="../login.html" class="link-username" id="username"></a>
+                    <span id="greeting"></span>
+                </p>
+                <div class="user-action" id="user_login_action">
+                    <a href="../login.html" class="act-fav">我的收藏</a>
+                    <div style="display: none;">
+                        <a href="../login.html" target="_blank">用户中心</a>
+                        <a href="../login.html">退出登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+        (function(){
+            function cookie(k){
+                var v = "";
+                var s = k+"=",c = document.cookie,l=c.length;
+                if (l > 0) {
+                    var os = c.indexOf(s);
+                    if (os != -1) {
+                        os += s.length;
+                        var ed = c.indexOf(";", os);
+                        if (ed == -1) ed = l;
+                        v = decodeURIComponent(c.substring(os, ed)).replace(/\+/g,' ');
+                    }
+                }
+                return v;
+            }
+            function receive(){
+                var greeting,
+                    hour = new Date().getHours(),
+                    id = cookie('OneId'),
+                    user = cookie('OneNick')||cookie('OneUser');
+                if(hour >= 6 && hour < 12){
+                    greeting='上午好!';
+                }else if(hour>=12 && hour<18){
+                    greeting='下午好!';
+                }else if(hour>=18 && hour<23){
+                    greeting='晚上好!';
+                }else{
+                    greeting='夜深了 请注意休息!';
+                }
+                if(id && /^\d+$/.test(id) && user && /^[^<>\"\']+$/.test(user)){
+                    $('#username').html(user);
+                    $('#greeting').html(greeting);
+                    $('#user-login').show();
+                    $('#user-guest').hide();
+                }else{
+                    $('#user-guest').show();
+                    $('#user-login').hide();
+                }
+            }
+            (function(ctn) {
+                var timeId, time = 500,
+                    slideTime = 200,
+                    child = ctn.children("div"),
+                    upClass = "user-action-arrow-up";
+                ctn.hover(function() {
+                    timeId = setTimeout(function() {
+                        ctn.addClass(upClass);
+                        child.slideDown(slideTime);
+                    }, time);
+                }, function() {
+                    ctn.removeClass(upClass);
+                    clearTimeout(timeId);
+                    child.slideUp(slideTime);
+                });
+            })($("#user_login_action"));
+            receive();
+            setInterval(receive, 3000);
+        })();
+        </script>
+        <div class="nav">
+            <ul class="allcate" id="nav_list">
+                <li><a href="../index.html" target="_self"><span>首页</span></a></li>
+                <li><a href="../group.html" class="has-sub" target="_self"><i style="display:block" target="_self"></i><span>歌手</span></a></li>
+                <li><a href="../archives/index.html" target="_self"><span>专辑</span></a></li>
+                <li><a href="../rank.html" target="_self"><span>排行榜</span></a></li>
+                <li><a href="#" class="has-sub" target="_self"><span>高清MV</span></a></li>
+            </ul>
+            <div class="randplay">
+                <a href="../rand.html">随便一听</a>
+            </div>
+            <div class="nav-category">
+                <a href="../genre/index.html" target="_self">曲风分类</a>
+                <!--span>|</span>
+                <a href="/topic" target="_self">专题 &bull; 活动</a-->
+                
+            </div>
+        </div>
+        <div class="nav-secondary" id="nav_secondary">
+            <p style="display:block;">
+                <a href="../group/group0_2.html"><span>华语女歌手</span></a> |
+                <a href="../group/group0_1.html"><span>华语男歌手</span></a> |
+                <a href="../group/group0_3.html"><span>华语组合</span></a> |
+                <a href="../group/group3_15.html"><span>欧美女歌手</span></a> |
+                <a href="../group/group3_14.html"><span>欧美男歌手</span></a> |
+                <a href="../group/group3_16.html"><span>欧美组合</span></a> |
+                <a href="../group/group5_0.html"><span>韩国</span></a> |
+                <a href="../group/group4_0.html"><span>日本</span></a> |
+                <a href="../group/group6_0.html"><span>影视</span></a> |
+                <a href="../group/group7_0.html"><span>其他</span></a> |
+                <span><!--a class="misc" href="/fo/">佛教音乐</a><a href="/prenatal/">胎教/儿歌</a><a href="http://5.lezicartoon.cn">广场舞</a><a href="/xiqu/">戏曲</a--><a href="../mv/index.html">高清MV</a></span>
+            </p>
+            <p style="text-align:center;width:736px;">
+                 <a href="../mv/cate/3.html">港台歌手MV</a>  | <a href="../mv/cate/6.html">内地歌手MV</a> | <a href="../mv/cate/2.html">韩国歌手MV</a> | <a href="../mv/cate/5.html">日本歌手MV</a> | <a href="../mv/cate/4.html">欧美歌手MV</a> | <a href="../mv/search-E6BC94E594B1E4BC9A.html">演唱会视频</a>   
+            </p>
+        </div>
+    </div>
+    <!-- /header -->
+    <script>
+    (function(){
+        var menus = $("#nav_list").find("a.has-sub"),
+            subMenu = $("#nav_secondary");
+        $.each(menus, function(index, ele) {
+            $(ele).mouseover(function() {
+                menus.children("i").hide();
+                $(ele).children("i").show();
+                subMenu.children("p").hide()
+                            .eq(index).show();
+            });
+        });
+        /*var links = [{'name': '明星美图',  'path': 'star'}, 
+                     {'name': '街拍美女',  'path': 'jiepai'}, 
+                     /*{'name': '流行服饰',  'path': 'dress'}, 
+                     {'name': '时尚彩妆',  'path': 'face'}, 
+                     {'name': '潮流发型',  'path': 'tide'}, 
+                     {'name': '清新美女',  'path': 'meinv'}, 
+                     {'name': '车模美女',  'path': 'chemo'},
+                     {'name': '唯美女生',  'path': 'fennen'}, 
+                     {'name': '非主流女生',  'path': 'feizhuliu'}, 
+                     {'name': 'Show Girl',   'path': 'showgirl'}, 
+                     {'name': 'Cosplay女神', 'path': 'cosplay'},
+                     {'name': '婚纱秀欣赏',  'path': 'hunsha'}];
+        setInterval(function(){
+            var d = links[Math.ceil(Math.random()*links.length)-1];
+            $('#picture').attr('href', 'https://ent.lezicartoon.cn/pictures/'+d.path).text(d.name);
+        }, 10000);*/
+    })();
+    </script>
+<div class="pageTitle center">
+        <h2><a href="../rank.html">排行榜</a> - <span>电影原声</span></h2>
+        <a href="#" class="randplay"><span>随便听几首</span></a>
+                    <ul class="pagemenu">
+                <li style="color:#70C4F9;">本页更新于：2021年7月14日 0时10分</li>
+            </ul>
+        </div>
+
+<div class="center">
+        <div class="lbar">
+        <dl>
+            <dt><strong>一听之最</strong></dt>
+            <dd>
+                <ul>
+                    <li><a href="javascript:;">热门歌曲</a></li>
+                    <li><a href="javascript:;">最新歌曲</a></li>
+                    <li><a href="javascript:;">独家&首发</a></li>
+                    <li><a href="javascript:;">经典老歌</a></li>
+                    <li><a href="javascript:;">欧美歌曲</a></li>
+                    <li><a href="javascript:;">日韩歌曲</a></li>
+                    <li><a href="javascript:;">热门专辑</a></li>
+                    <li><a href="../album_n.html">最新专辑</a></li>
+                    <li><a href="javascript:;">热门歌手</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl>
+            <dt><strong>推荐排行</strong></dt>
+            <dd>
+                <ul>
+                    <li><a href="javascript:;">情歌对唱</a></li>
+                    <li><a href="javascript:;">电视剧歌曲</a></li>
+                    <li><a href="javascript:;">韩国影视歌曲</a></li>
+                    <li><a href="javascript:;">Indie流行歌曲</a></li>
+                    <li><a href="javascript:;">dj舞曲</a></li>
+                    <li><a href="javascript:;">军营歌曲</a></li>
+                    <li><a href="javascript:;">古典音乐</a></li>
+                    <li><a href="javascript:;">民谣、乡村</a></li>
+                    <li><a href="javascript:;">轻音乐</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl>
+            <dt><strong>特别榜单</strong></dt>
+            <dd>
+                <ul>
+                    <li><a href="javascript:;">摇滚歌曲榜</a></li>
+                    <li><a href="javascript:;">跑步音乐榜</a></li>
+                    <li><a href="javascript:;">篮球音乐榜</a></li>
+                    <li><a href="javascript:;">台湾百佳唱片</a></li>
+                    <li><a href="javascript:;"><font color="#ff6600">新媒体流行榜</font></a></li>
+                </ul>
+            </dd>
+        </dl>
+    </div>
+    <!-- /lbar -->
+<script>
+(function(){
+    var a = $('div.lbar'), b = a.get(0),c = b.getElementsByTagName('a'),d,e=location.href;
+    if(e.indexOf('rank.html')>=0){return;}
+    try{
+        for(d=0;d<c.length;d++){
+            if((e.indexOf('/archives')!==-1 && c[d].getAttribute('href')==='/album_n.html')
+                || e.indexOf(c[d].getAttribute('href').replace('.html',''))>=0){
+                c[d].parentNode.className = 'thisclass';
+                break;
+            }
+        }
+    }catch(e){}
+})();
+</script>
+
+    <!-- /lbar -->
+    <div class="songList">
+        <div class="N_R1">
+            <!-- N_R1 -->
+            <script type="text/javascript" src="../gbkycdkyk.js"></script>
+        </div>
+                                        
+                
+                <h3>1-24</h3>
+                <ul id="list-0">
+                        <li>
+            <small>1.</small><input type="checkbox" value="1054622"><a href="javascript:;" title="天敌 - 萧敬腾 - 《痞子英雄-黎明升起》主题曲" target="_1ting">天敌 - 萧敬腾 - 《痞子英雄-黎明升起》主题曲</a>
+            </li>
+                                <li>
+            <small>2.</small><input type="checkbox" value="1053193"><a href="javascript:;" title="去大理 - 郝云 - 《心花路放》插曲" target="_1ting">去大理 - 郝云 - 《心花路放》插曲</a>
+            </li>
+                                <li>
+            <small>3.</small><input type="checkbox" value="1055347"><a href="javascript:;" title="一生所爱 - 卢冠廷 - 《大话西游》主题曲" target="_1ting">一生所爱 - 卢冠廷 - 《大话西游》主题曲</a>
+            </li>
+                                <li>
+            <small>4.</small><input type="checkbox" value="1054682"><a href="javascript:;" title="亲爱的小孩- 赵薇&黄渤&佟大为&郝蕾&张译 - 《亲爱的》主题曲" target="_1ting">亲爱的小孩- 赵薇&黄渤&佟大为&郝蕾&张译 - 《亲爱的》主题曲</a>
+            </li>
+                                <li>
+            <small>5.</small><input type="checkbox" value="1054680"><a href="javascript:;" title="爱不可及 - 王菲 - 《触不可及》主题曲" target="_1ting">爱不可及 - 王菲 - 《触不可及》主题曲</a>
+            </li>
+                                <li>
+            <small>6.</small><input type="checkbox" value="1048851"><a href="javascript:;" title="时间煮雨 - 吴亦凡 - 《小时代3：刺金时代》片尾曲" target="_1ting">时间煮雨 - 吴亦凡 - 《小时代3：刺金时代》片尾曲</a>
+            </li>
+                                <li>
+            <small>7.</small><input type="checkbox" value="1048645"><a href="javascript:;" title="不再见 - 陈学冬 - 《小时代:3刺金时代》插曲" target="_1ting">不再见 - 陈学冬 - 《小时代:3刺金时代》插曲</a>
+            </li>
+                                <li>
+            <small>8.</small><input type="checkbox" value="1045596"><a href="javascript:;" title="万花瞳 - 蔡依林 - 《小时代3：刺金时代》 主题曲" target="_1ting">万花瞳 - 蔡依林 - 《小时代3：刺金时代》 主题曲</a>
+            </li>
+                                <li>
+            <small>9.</small><input type="checkbox" value="1046882"><a href="javascript:;" title="Hello World - 周笔畅 - 《分手大师》叶小春之歌" target="_1ting">Hello World - 周笔畅 - 《分手大师》叶小春之歌</a>
+            </li>
+                                <li>
+            <small>10.</small><input type="checkbox" value="1048644"><a href="javascript:;" title="平凡之路 - 朴树 - 《后会无期》主题曲" target="_1ting">平凡之路 - 朴树 - 《后会无期》主题曲</a>
+            </li>
+                                <li>
+            <small>11.</small><input type="checkbox" value="1052531"><a href="javascript:;" title="无情 - 胡夏 - 《四大名捕大结局》主题曲" target="_1ting">无情 - 胡夏 - 《四大名捕大结局》主题曲</a>
+            </li>
+                                <li>
+            <small>12.</small><input type="checkbox" value="462351"><a href="javascript:;" title="Que Sera Sera (Whatever Will Be, Will Be) - Doris Day - 《擒凶记》主题曲" target="_1ting">Que Sera Sera (Whatever Will Be, Will Be) - Doris Day - 《擒凶记》主题曲</a>
+            </li>
+                                <li>
+            <small>13.</small><input type="checkbox" value="1046810"><a href="javascript:;" title="童真年代 - 张学友 - (动画电影《神笔马良》主题曲)" target="_1ting">童真年代 - 张学友 - (动画电影《神笔马良》主题曲)</a>
+            </li>
+                                <li>
+            <small>14.</small><input type="checkbox" value="1046201"><a href="javascript:;" title="谁control - 韩庚 - 《变形金刚4：绝迹重生》主题曲" target="_1ting">谁control - 韩庚 - 《变形金刚4：绝迹重生》主题曲</a>
+            </li>
+                                <li>
+            <small>15.</small><input type="checkbox" value="1045508"><a href="javascript:;" title="Into A Fantasy - 《驯龙高手2》宣传曲" target="_1ting">Into A Fantasy - 《驯龙高手2》宣传曲</a>
+            </li>
+                                <li>
+            <small>16.</small><input type="checkbox" value="1026006"><a href="javascript:;" title="Love Me Again - John Newman - 《明日边缘》片尾曲" target="_1ting">Love Me Again - John Newman - 《明日边缘》片尾曲</a>
+            </li>
+                                <li>
+            <small>17.</small><input type="checkbox" value="1043539"><a href="javascript:;" title="跟着你到天边 - 吴青峰" target="_1ting">跟着你到天边 - 吴青峰</a>
+            </li>
+                                <li>
+            <small>18.</small><input type="checkbox" value="1032074"><a href="javascript:;" title="跟着你到天边(张艺谋电影《归来》主题推广曲) - 韩磊" target="_1ting">跟着你到天边(张艺谋电影《归来》主题推广曲) - 韩磊</a>
+            </li>
+                                <li>
+            <small>19.</small><input type="checkbox" value="1030006"><a href="javascript:;" title="天雷地火(OT: Fake It To Make It) - 萧亚轩" target="_1ting">天雷地火(OT: Fake It To Make It) - 萧亚轩</a>
+            </li>
+                                <li>
+            <small>20.</small><input type="checkbox" value="1044373"><a href="javascript:;" title="小苹果 - 筷子兄弟" target="_1ting">小苹果 - 筷子兄弟</a>
+            </li>
+                                <li>
+            <small>21.</small><input type="checkbox" value="1031751"><a href="javascript:;" title="玻璃 - 蔡淳佳 - 电影《放手爱》主题曲" target="_1ting">玻璃 - 蔡淳佳 - 电影《放手爱》主题曲</a>
+            </li>
+                                <li>
+            <small>22.</small><input type="checkbox" value="1030061"><a href="javascript:;" title="Trigger to the Thunder of Love (OT: Fake It To Make It)(天雷地火) - 电影原声" target="_1ting">Trigger to the Thunder of Love (OT: Fake It To Make It)(天雷地火) - 电影原声</a>
+            </li>
+                                <li>
+            <small>23.</small><input type="checkbox" value="1030002"><a href="javascript:;" title="All Along The Watchtower(极品飞车) - (Alex Da Kid Remix) (Jamie N Commons)" target="_1ting">All Along The Watchtower(极品飞车) - (Alex Da Kid Remix) (Jamie N Commons)</a>
+            </li>
+                                <li>
+            <small>24.</small><input type="checkbox" value="1028790"><a href="javascript:;" title="Welcome Back (Bruno Mars) - 里约大冒险" target="_1ting">Welcome Back (Bruno Mars) - 里约大冒险</a>
+            </li>
+                                                </ul>
+                       <div class="listAction">
+                            <p>
+                                <a href="###" class="select btn_cmd" name="selectall" data-id="#list-0">全/反选</a>
+                                <a href="###" class="play btn_cmd" name="playselected" data-id="#list-0">播放</a>
+                                <a href="###" class="add" name="addall" data-id="#list-0">加入列表</a>
+                            </p>
+                        </div>
+                
+                
+                <h3>25-48</h3>
+                <ul id="list-24">
+                        <li>
+            <small>25.</small><input type="checkbox" value="1026708"><a href="javascript:;" title="The Moon Song (Film Version) - Joaquin Phoenix&Scarlett Johansson" target="_1ting">The Moon Song (Film Version) - Joaquin Phoenix&Scarlett Johansson</a>
+            </li>
+                                <li>
+            <small>26.</small><input type="checkbox" value="957699"><a href="javascript:;" title="How Long Will I Love You (《时空恋旅人》主题曲) - Jon Boden&Sam Sweeney&Ben Coleman" target="_1ting">How Long Will I Love You (《时空恋旅人》主题曲) - Jon Boden&Sam Sweeney&Ben Coleman</a>
+            </li>
+                                <li>
+            <small>27.</small><input type="checkbox" value="944866"><a href="javascript:;" title="Happy(神偷奶爸2) - Pharrell Williams" target="_1ting">Happy(神偷奶爸2) - Pharrell Williams</a>
+            </li>
+                                <li>
+            <small>28.</small><input type="checkbox" value="1020035"><a href="javascript:;" title="Wayfaring Stranger (破碎之家) - The Broken Circle Breakdown Bluegrass Band" target="_1ting">Wayfaring Stranger (破碎之家) - The Broken Circle Breakdown Bluegrass Band</a>
+            </li>
+                                <li>
+            <small>29.</small><input type="checkbox" value="1020921"><a href="javascript:;" title="The Beatitudes (绝美之城) - Kronos Quartet" target="_1ting">The Beatitudes (绝美之城) - Kronos Quartet</a>
+            </li>
+                                <li>
+            <small>30.</small><input type="checkbox" value="1022908"><a href="javascript:;" title="Waking Up - 孤独的生还者" target="_1ting">Waking Up - 孤独的生还者</a>
+            </li>
+                                <li>
+            <small>31.</small><input type="checkbox" value="958599"><a href="javascript:;" title="Sweeter Than Fiction(《成名机会》电影原声) - Taylor Swift" target="_1ting">Sweeter Than Fiction(《成名机会》电影原声) - Taylor Swift</a>
+            </li>
+                                <li>
+            <small>32.</small><input type="checkbox" value="1019013"><a href="javascript:;" title="Let It Go (冰雪大冒险) - Idina Menzel" target="_1ting">Let It Go (冰雪大冒险) - Idina Menzel</a>
+            </li>
+                                <li>
+            <small>33.</small><input type="checkbox" value="939293"><a href="javascript:;" title="光阴的故事(电影《中国合伙人》主题曲) - 黄晓明&邓超&佟大为" target="_1ting">光阴的故事(电影《中国合伙人》主题曲) - 黄晓明&邓超&佟大为</a>
+            </li>
+                                <li>
+            <small>34.</small><input type="checkbox" value="125360"><a href="javascript:;" title="当爱已成往事(电影《霸王别姬》的主题曲) - 张国荣" target="_1ting">当爱已成往事(电影《霸王别姬》的主题曲) - 张国荣</a>
+            </li>
+                                <li>
+            <small>35.</small><input type="checkbox" value="583635"><a href="javascript:;" title="友情岁月 - 黄晓明&余文乐&阮经天" target="_1ting">友情岁月 - 黄晓明&余文乐&阮经天</a>
+            </li>
+                                <li>
+            <small>36.</small><input type="checkbox" value="1020733"><a href="javascript:;" title="拯救(电影《警察故事2013》主题歌) - 成龙" target="_1ting">拯救(电影《警察故事2013》主题歌) - 成龙</a>
+            </li>
+                                <li>
+            <small>37.</small><input type="checkbox" value="89050"><a href="javascript:;" title="美丽的神话 - 孙楠/韩红" target="_1ting">美丽的神话 - 孙楠/韩红</a>
+            </li>
+                                <li>
+            <small>38.</small><input type="checkbox" value="378"><a href="javascript:;" title="想你的三百六十五天 - 李纹" target="_1ting">想你的三百六十五天 - 李纹</a>
+            </li>
+                                <li>
+            <small>39.</small><input type="checkbox" value="1019609"><a href="javascript:;" title="解放(电影《私人订制》片尾曲) - 羽泉" target="_1ting">解放(电影《私人订制》片尾曲) - 羽泉</a>
+            </li>
+                                <li>
+            <small>40.</small><input type="checkbox" value="948252"><a href="javascript:;" title="悄悄告诉你(电影《被偷走的那五年》主题曲) - 范玮琪" target="_1ting">悄悄告诉你(电影《被偷走的那五年》主题曲) - 范玮琪</a>
+            </li>
+                                <li>
+            <small>41.</small><input type="checkbox" value="582203"><a href="javascript:;" title="A Love Before Time 《卧虎藏龙》之“月光爱人”(英文版) - 李玟 - 电影原声" target="_1ting">A Love Before Time 《卧虎藏龙》之“月光爱人”(英文版) - 李玟 - 电影原声</a>
+            </li>
+                                <li>
+            <small>42.</small><input type="checkbox" value="621818"><a href="javascript:;" title="Someday We'll Be Together(北京遇上西雅图片头曲) - Vonda Shepard" target="_1ting">Someday We'll Be Together(北京遇上西雅图片头曲) - Vonda Shepard</a>
+            </li>
+                                <li>
+            <small>43.</small><input type="checkbox" value="470067"><a href="javascript:;" title="一闪一闪亮晶晶 吉他演奏 - 电影原声" target="_1ting">一闪一闪亮晶晶 吉他演奏 - 电影原声</a>
+            </li>
+                                <li>
+            <small>44.</small><input type="checkbox" value="588842"><a href="javascript:;" title="立秋 - 周子琰" target="_1ting">立秋 - 周子琰</a>
+            </li>
+                                <li>
+            <small>45.</small><input type="checkbox" value="1019160"><a href="javascript:;" title="ThIs Is Not the End - Fieldwork" target="_1ting">ThIs Is Not the End - Fieldwork</a>
+            </li>
+                                <li>
+            <small>46.</small><input type="checkbox" value="1019007"><a href="javascript:;" title="U2 - Ordinary Love - 曼德拉传" target="_1ting">U2 - Ordinary Love - 曼德拉传</a>
+            </li>
+                                <li>
+            <small>47.</small><input type="checkbox" value="579632"><a href="javascript:;" title="나의 왕자님 (My Prince) - 狼族少年" target="_1ting">나의 왕자님 (My Prince) - 狼族少年</a>
+            </li>
+                                <li>
+            <small>48.</small><input type="checkbox" value="1015445"><a href="javascript:;" title="Silhouettes - Of Monsters and Men" target="_1ting">Silhouettes - Of Monsters and Men</a>
+            </li>
+                                                </ul>
+                       <div class="listAction">
+                            <p>
+                                <a href="###" class="select btn_cmd" name="selectall" data-id="#list-24">全/反选</a>
+                                <a href="###" class="play btn_cmd" name="playselected" data-id="#list-24">播放</a>
+                                <a href="###" class="add" name="addall" data-id="#list-24">加入列表</a>
+                            </p>
+                        </div>
+                
+                
+                <h3>49-72</h3>
+                <ul id="list-48">
+                        <li>
+            <small>49.</small><input type="checkbox" value="960012"><a href="javascript:;" title="I See Fire - 《霍比特人2:史矛革荒漠》片尾曲" target="_1ting">I See Fire - 《霍比特人2:史矛革荒漠》片尾曲</a>
+            </li>
+                                <li>
+            <small>50.</small><input type="checkbox" value="623042"><a href="javascript:;" title="Becky G – Problem - (The Monster Remix) Lyrics (feat. will.i.am)" target="_1ting">Becky G – Problem - (The Monster Remix) Lyrics (feat. will.i.am)</a>
+            </li>
+                                <li>
+            <small>51.</small><input type="checkbox" value="948936"><a href="javascript:;" title="The Snail Is Fast - 极速蜗牛" target="_1ting">The Snail Is Fast - 极速蜗牛</a>
+            </li>
+                                <li>
+            <small>52.</small><input type="checkbox" value="948918"><a href="javascript:;" title="Let The Bass Go (Snoop Dogg) - 极速蜗牛" target="_1ting">Let The Bass Go (Snoop Dogg) - 极速蜗牛</a>
+            </li>
+                                <li>
+            <small>53.</small><input type="checkbox" value="936182"><a href="javascript:;" title="Crazy In Love - Kid Koala Version" target="_1ting">Crazy In Love - Kid Koala Version</a>
+            </li>
+                                <li>
+            <small>54.</small><input type="checkbox" value="952234"><a href="javascript:;" title="Ooh La La - Britney Spears - 电影原声" target="_1ting">Ooh La La - Britney Spears - 电影原声</a>
+            </li>
+                                <li>
+            <small>55.</small><input type="checkbox" value="951009"><a href="javascript:;" title="Jon Stevens of The Dead Daisies - Fly - 电影原声" target="_1ting">Jon Stevens of The Dead Daisies - Fly - 电影原声</a>
+            </li>
+                                <li>
+            <small>56.</small><input type="checkbox" value="948613"><a href="javascript:;" title="Pacific Rim (feat. Tom Morello) - 电影原声" target="_1ting">Pacific Rim (feat. Tom Morello) - 电影原声</a>
+            </li>
+                                <li>
+            <small>57.</small><input type="checkbox" value="583825"><a href="javascript:;" title="Show Me Your Panty / 지성 - 我的PS搭档" target="_1ting">Show Me Your Panty / 지성 - 我的PS搭档</a>
+            </li>
+                                <li>
+            <small>58.</small><input type="checkbox" value="943687"><a href="javascript:;" title="Rise Up - 电影原声" target="_1ting">Rise Up - 电影原声</a>
+            </li>
+                                <li>
+            <small>59.</small><input type="checkbox" value="939972"><a href="javascript:;" title="Ludacris - Rest of My Life (feat. Usher & David Guetta) - 速度与激情6" target="_1ting">Ludacris - Rest of My Life (feat. Usher & David Guetta) - 速度与激情6</a>
+            </li>
+                                <li>
+            <small>60.</small><input type="checkbox" value="936135"><a href="javascript:;" title="Hearts A Mess (Gotye) - 了不起的盖茨比" target="_1ting">Hearts A Mess (Gotye) - 了不起的盖茨比</a>
+            </li>
+                                <li>
+            <small>61.</small><input type="checkbox" value="626445"><a href="javascript:;" title="angle - Sarah McLachlan - 电影原声" target="_1ting">angle - Sarah McLachlan - 电影原声</a>
+            </li>
+                                <li>
+            <small>62.</small><input type="checkbox" value="626101"><a href="javascript:;" title="Oblivion (feat. Susanne Sundfør) - 电影原声" target="_1ting">Oblivion (feat. Susanne Sundfør) - 电影原声</a>
+            </li>
+                                <li>
+            <small>63.</small><input type="checkbox" value="585804"><a href="javascript:;" title="Freedom - Anthony Hamilton" target="_1ting">Freedom - Anthony Hamilton</a>
+            </li>
+                                <li>
+            <small>64.</small><input type="checkbox" value="602495"><a href="javascript:;" title="Becomes The Color - Emily Wells" target="_1ting">Becomes The Color - Emily Wells</a>
+            </li>
+                                <li>
+            <small>65.</small><input type="checkbox" value="597256"><a href="javascript:;" title="Sugar Man - 电影原声" target="_1ting">Sugar Man - 电影原声</a>
+            </li>
+                                <li>
+            <small>66.</small><input type="checkbox" value="602647"><a href="javascript:;" title="Paperman - 电影原声" target="_1ting">Paperman - 电影原声</a>
+            </li>
+                                <li>
+            <small>67.</small><input type="checkbox" value="602567"><a href="javascript:;" title="Shine Your Way - Owl City & Yuna" target="_1ting">Shine Your Way - Owl City & Yuna</a>
+            </li>
+                                <li>
+            <small>68.</small><input type="checkbox" value="578469"><a href="javascript:;" title="Misty Mountains performed by Richard Armitage and The Dwarf Cast - 魔戒" target="_1ting">Misty Mountains performed by Richard Armitage and The Dwarf Cast - 魔戒</a>
+            </li>
+                                <li>
+            <small>69.</small><input type="checkbox" value="597665"><a href="javascript:;" title="I Couldn't Care Less - Leslie Clio" target="_1ting">I Couldn't Care Less - Leslie Clio</a>
+            </li>
+                                <li>
+            <small>70.</small><input type="checkbox" value="596636"><a href="javascript:;" title="Before My Time - Scarlett Johansson - 逐冰之旅" target="_1ting">Before My Time - Scarlett Johansson - 逐冰之旅</a>
+            </li>
+                                <li>
+            <small>71.</small><input type="checkbox" value="573724"><a href="javascript:;" title="Skyfall - Adele" target="_1ting">Skyfall - Adele</a>
+            </li>
+                                <li>
+            <small>72.</small><input type="checkbox" value="586546"><a href="javascript:;" title="Hugh Jackman - Suddenly - 电影原声" target="_1ting">Hugh Jackman - Suddenly - 电影原声</a>
+            </li>
+                                                </ul>
+                       <div class="listAction">
+                            <p>
+                                <a href="###" class="select btn_cmd" name="selectall" data-id="#list-48">全/反选</a>
+                                <a href="###" class="play btn_cmd" name="playselected" data-id="#list-48">播放</a>
+                                <a href="###" class="add" name="addall" data-id="#list-48">加入列表</a>
+                            </p>
+                        </div>
+                
+                
+                <h3>73-96</h3>
+                <ul id="list-72">
+                        <li>
+            <small>73.</small><input type="checkbox" value="578912"><a href="javascript:;" title="Pi's Lullaby - 电影原声" target="_1ting">Pi's Lullaby - 电影原声</a>
+            </li>
+                                <li>
+            <small>74.</small><input type="checkbox" value="560610"><a href="javascript:;" title="画心Ⅱ - 张靓颖 - 《画皮Ⅱ》主题曲" target="_1ting">画心Ⅱ - 张靓颖 - 《画皮Ⅱ》主题曲</a>
+            </li>
+                                <li>
+            <small>75.</small><input type="checkbox" value="559317"><a href="javascript:;" title="Everybody Needs a Best Friend - 电影原声" target="_1ting">Everybody Needs a Best Friend - 电影原声</a>
+            </li>
+                                <li>
+            <small>76.</small><input type="checkbox" value="591696"><a href="javascript:;" title="The Cloud Atlas Sextet for Orchestra 云图六重奏 - 电影原声" target="_1ting">The Cloud Atlas Sextet for Orchestra 云图六重奏 - 电影原声</a>
+            </li>
+                                <li>
+            <small>77.</small><input type="checkbox" value="310822"><a href="javascript:;" title="Summer 盛夏 选自电影《菊次郎的夏天》 - 久石让" target="_1ting">Summer 盛夏 选自电影《菊次郎的夏天》 - 久石让</a>
+            </li>
+                                <li>
+            <small>78.</small><input type="checkbox" value="576198"><a href="javascript:;" title="Sugar Rush -AKB48 - 电影原声" target="_1ting">Sugar Rush -AKB48 - 电影原声</a>
+            </li>
+                                <li>
+            <small>79.</small><input type="checkbox" value="865266"><a href="javascript:;" title="O Kazakhstan(东极岛之歌原版) - " target="_1ting">O Kazakhstan(东极岛之歌原版) - </a>
+            </li>
+                                <li>
+            <small>80.</small><input type="checkbox" value="514855"><a href="javascript:;" title="He's a Pirate - 电影原声" target="_1ting">He's a Pirate - 电影原声</a>
+            </li>
+                                <li>
+            <small>81.</small><input type="checkbox" value="586542"><a href="javascript:;" title="Anne Hathaway - I Dreamed A Dream - 电影原声" target="_1ting">Anne Hathaway - I Dreamed A Dream - 电影原声</a>
+            </li>
+                                <li>
+            <small>82.</small><input type="checkbox" value="411530"><a href="javascript:;" title="I See You - Leona Lewis(《阿凡达》主题曲) - 电影原声" target="_1ting">I See You - Leona Lewis(《阿凡达》主题曲) - 电影原声</a>
+            </li>
+                                <li>
+            <small>83.</small><input type="checkbox" value="7472"><a href="javascript:;" title="Unchained Melody_《人鬼情未了》 - 影视音乐集锦" target="_1ting">Unchained Melody_《人鬼情未了》 - 影视音乐集锦</a>
+            </li>
+                                <li>
+            <small>84.</small><input type="checkbox" value="549037"><a href="javascript:;" title="My Heart Will Go On (Love Theme from Titanic) - James Horner & Céline Dion - 电影原声" target="_1ting">My Heart Will Go On (Love Theme from Titanic) - James Horner & Céline Dion - 电影原声</a>
+            </li>
+                                <li>
+            <small>85.</small><input type="checkbox" value="542942"><a href="javascript:;" title="I Will Always Love You - Whitney Houston" target="_1ting">I Will Always Love You - Whitney Houston</a>
+            </li>
+                                <li>
+            <small>86.</small><input type="checkbox" value="307"><a href="javascript:;" title="Tennessee Music - 珍珠港" target="_1ting">Tennessee Music - 珍珠港</a>
+            </li>
+                                <li>
+            <small>87.</small><input type="checkbox" value="6807"><a href="javascript:;" title="circle of life - 狮子王" target="_1ting">circle of life - 狮子王</a>
+            </li>
+                                <li>
+            <small>88.</small><input type="checkbox" value="140615"><a href="javascript:;" title="鲁冰花 - 曾淑勤 - 《鲁冰花》主题曲" target="_1ting">鲁冰花 - 曾淑勤 - 《鲁冰花》主题曲</a>
+            </li>
+                                <li>
+            <small>89.</small><input type="checkbox" value="49558"><a href="javascript:;" title="男儿当自强 - 林子祥 - 《黄飞鸿》主题曲" target="_1ting">男儿当自强 - 林子祥 - 《黄飞鸿》主题曲</a>
+            </li>
+                                <li>
+            <small>90.</small><input type="checkbox" value="119883"><a href="javascript:;" title="阿郎恋曲 - 许冠杰 - 《阿郎的故事》主题曲" target="_1ting">阿郎恋曲 - 许冠杰 - 《阿郎的故事》主题曲</a>
+            </li>
+                                <li>
+            <small>91.</small><input type="checkbox" value="192332"><a href="javascript:;" title="酒干倘卖无 - 苏芮 - 《搭错车》主题曲" target="_1ting">酒干倘卖无 - 苏芮 - 《搭错车》主题曲</a>
+            </li>
+                                <li>
+            <small>92.</small><input type="checkbox" value="51168"><a href="javascript:;" title="倩女幽魂 - 张国荣 - (电影《倩女幽魂》主题曲)" target="_1ting">倩女幽魂 - 张国荣 - (电影《倩女幽魂》主题曲)</a>
+            </li>
+                                <li>
+            <small>93.</small><input type="checkbox" value="44991"><a href="javascript:;" title="沧海一声笑 - 许冠杰 - 《笑傲江湖》主题曲" target="_1ting">沧海一声笑 - 许冠杰 - 《笑傲江湖》主题曲</a>
+            </li>
+                                <li>
+            <small>94.</small><input type="checkbox" value="1021566"><a href="javascript:;" title="夕阳之歌 - 梅艳芳 - 《英雄本色3-夕阳之歌》主题曲" target="_1ting">夕阳之歌 - 梅艳芳 - 《英雄本色3-夕阳之歌》主题曲</a>
+            </li>
+                                <li>
+            <small>95.</small><input type="checkbox" value="1857"><a href="javascript:;" title="天若有情 - 袁凤英 - 《天若有情》主题曲" target="_1ting">天若有情 - 袁凤英 - 《天若有情》主题曲</a>
+            </li>
+                                <li>
+            <small>96.</small><input type="checkbox" value="956855"><a href="javascript:;" title="友情岁月 - 郑伊健 - 《古惑仔之人在江湖》主题曲" target="_1ting">友情岁月 - 郑伊健 - 《古惑仔之人在江湖》主题曲</a>
+            </li>
+                                                </ul>
+                       <div class="listAction">
+                            <p>
+                                <a href="###" class="select btn_cmd" name="selectall" data-id="#list-72">全/反选</a>
+                                <a href="###" class="play btn_cmd" name="playselected" data-id="#list-72">播放</a>
+                                <a href="###" class="add" name="addall" data-id="#list-72">加入列表</a>
+                            </p>
+                        </div>
+                
+                                                </div>
+    <!-- /songList -->
+</div>
+<link href="../v5/r4/style/suggest.css" rel="stylesheet" type="text/css">
+<script src="../v5/r4/js/suggest.js"></script>
+<div class="footer center">
+    <!--<p class="footlink"> <a href="/faq/etc/about.html">关于一听</a> |--> <a href="../faq/etc/copyright.html">版权声明</a> <!--| <a href="/faq/etc/recruit.html">诚聘英才</a> -->| <a href="../faq/etc/contact_us.html">联系我们</a> | <a href="../index1.html">歌曲入库</a> | <a href="../faq/etc/history.html">历史合作</a> | <a href="../faq/etc/links.html">友情链接</a> | <a href="../faq/etc/help.html">帮助中心</a> <!--| <a href="https://h5.lezicartoon.cn">移动一听</a> </p>-->
+  <p class="copyright">&copy; 2003-2020   <a href="javascript:;" class="homepage">www.lezicartoon.cn</a> All Rights Reserved 沪ICP备19024260号-3</p>
+</div>
+
+<script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F32c12acc9a2efc3fa896bb3ebcd47ee7' type='text/javascript'%3E%3C/script%3E"));</script>
+<script src='../c-30001746.js' language='JavaScript'></script>
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="0" height="0" id="play_list_send">
+    <param name="allowScriptAccess" value="always">
+    <param name="movie" value="/v5/flash/play_list_send.swf">
+    <embed src="../v5/flash/play_list_send.swf" quality="high" width="0" height="0" name="play_list_send" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+</object>
+<script>
+window.callback_play_list = function(a){
+    window.flm = a;
+};
+(function(){
+    var c, m,q = function(v){
+        c = [];
+        $(v +' input:checkbox').each(function(){
+            if(this.checked){c.push(this.value)};
+        });
+        return c;
+    },p = function(c){
+        if(c.length>0){
+            try{
+                var fl =(function(n){
+                if (navigator.appName.indexOf("Microsoft") != -1) {
+                     return window[n];
+                 } else {
+                     return document[n];
+                 }
+                })('play_list_send');
+                fl.add_to_play_list(c);
+            }catch(e){
+                window.flm = e.message;
+            }
+        }else{
+            window.flm = '请选择歌曲！';
+        }
+    };
+
+    $('a.randplay').click(function(){
+        var h = [];
+        $('.songList input:checkbox').each(function(){
+            h.push(this.value);
+        });
+        h = h.sort(function(a,b){
+            return( parseInt( Math.random()*10 ) %2 );
+        }).slice(0,h.length>30?30:h.length);
+
+        window.open('/p_'+h.join('_')+'.html','_1ting');
+        return false;
+    });
+
+    $('a.btn_cmd').click(function(){
+        var d = $(this).attr('data-id'),
+            n = $(this).attr('name');
+        if(n=='selectall'){
+            $(d +' input:checkbox').each(function(){
+                this.checked = !this.checked;
+            });
+        }
+        else if(n=='playselected'){
+            c = q(d);
+            if(c.length>0){
+                window.open('/p_'+c.join('_')+'.html','_1ting');
+            }else{
+                alert('请选择要播放的歌曲!');
+            }
+        }
+        return false;
+    });
+
+    $('a.add').mousedown(function(){
+        c = q($(this).attr('data-id'));
+        if(c.length>0){
+            p(c);
+        }else{
+            window.flm = '请选择要加入播放列表的歌曲!';
+        }
+    }).mouseup(function(){
+        if(!window.flm){return;}
+        var m = window.flm;
+        switch (m.constructor){
+            case Array:
+                window.open('/p_'+m.join('_')+'.html','_1ting');
+                break;
+            case Boolean:
+                alert('已经添加到列表!');
+                break;
+            case String:
+                alert(m);
+                break;
+        }
+        window.flm = '';
+    });
+})();
+</script>
+<!-- 广告位：左下角悬浮 -->
+<script>
+(function() {
+    var s = "_" + Math.random().toString(36).slice(2);
+    document.write('<div id="' + s + '"></div>');
+    (window.slotbydup=window.slotbydup || []).push({
+        id: '3221626',
+        container: s,
+        size: '300,250',
+        display: 'float'
+    });
+})();
+</script>
+
+<!-- 广告位：富媒体补余 -->
+<script>
+(function() {
+    var s = "_" + Math.random().toString(36).slice(2);
+    document.write('<div id="' + s + '"></div>');
+    (window.slotbydup=window.slotbydup || []).push({
+        id: '2861847',
+        container: s,
+        size: '300,250',
+        display: 'float'
+    });
+})();
+</script>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=14170"></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    var bds_config = {
+        //'wbUid':1671108633,
+        'bdPopTitle':'杭州乐米动漫',
+        'snsKey':{'tqq':'403a778463634ece8f0c75a66c4e230d', 'tsina':'1435846576'},            
+        'bdPic':'//img.lezicartoon.cn/images/singer/7416.jpg'
+            };
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+</script>
+</body>
+</html>

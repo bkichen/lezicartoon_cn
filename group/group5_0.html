@@ -1,0 +1,2140 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="韩国歌手列表,杭州乐米动漫">
+<meta name="keywords" content="韩国,免费音乐,在线试听,杭州乐米动漫"> 
+<title>全部 韩国 歌手列表 - 杭州乐米动漫</title>
+<link href="../v5/r5/style/common.css" rel="stylesheet" type="text/css">
+<link href="../v5/r4/style/group.css" rel="stylesheet" type="text/css">
+<script src="../v5/r4/js/jquery.min.js"></script>
+<script src="../v5/r4/js/common.js"></script>
+<script src="../v5/r4/js/group.js"></script>
+<script src="../js/ds.js"></script>
+
+</head>
+<body>
+        <div class="site-nav">
+        <div class="center">
+            <ul class="navlink">
+                <li><a href="javascript:;">保存到桌面</a></li>
+                <li><a href="../genre/index.html">曲风</a></li>
+                <li><a href="../rank.html">排行榜</a></li>
+                <li><a href="../archives/index.html">专辑库</a></li>
+            </ul>
+            <!--div class="bshare-custom"><a title="分享到微信" class="bshare-weixin"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到QQ空间" class="bshare-qzone"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div-->
+            <!--div class="sinaweibo_iframe">
+                <iframe width="120" height="24" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="https://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=136&height=24&uid=1671108633&style=2&btn=light&dpc=1"></iframe>
+            </div-->
+
+            <!--<ul style="height:19px;width:110px;padding-top:5px;float:left;"><li><a style="color:#333" href="https://h5.lezicartoon.cn" title="手机访问一听">手机版:h5.lezicartoon.cn</a></li></ul>-->
+            <ul class="siteaction" style="height:24px;padding-top:1px;"> 
+                <li class="favorite" style="margin-top:5px"><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">加入收藏</a></li>
+            </ul>
+        </div>
+    </div>
+               <script type="text/javascript" language="javascript">
+                function AddFavorite(sURL, sTitle) {
+                    sURL = encodeURI(sURL); 
+                try{   
+                    window.external.addFavorite(sURL, sTitle);   
+                }catch(e) {   
+                    try{   
+                        window.sidebar.addPanel(sTitle, sURL, "");   
+                    }catch (e) {   
+                        alert("加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.");
+         
+                        }   
+                    }
+                }
+              </script>
+    <!-- /site-nav -->
+    <div class="header center">
+        <div class="logo">
+            <h1>
+                <a href="../index.html" title="返回一听首页?">杭州乐米动漫</a>
+            </h1>
+        </div>
+        <div class="search">
+            <div class="option_selected" id="search_option_selected">
+                <a href="javascript:void(0);" id="st" target="_self">全部</a>
+            </div>
+            <div class="option_list" id="search_option_list">
+                <ul>
+                    <li class="selected"><a href="javascript:void(0);" target="_self">全部</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌曲</a></li>
+                    <li><a href="javascript:void(0);" target="_self">专辑</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌手</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌词</a></li>
+                </ul>
+            </div>
+            <div class="search_box"><form method="get" action="//so.lezicartoon.cn/all.do" onsubmit="return search(this);">
+                <input type="text" name="q" id="sq" x-webkit-speech="" x-webkit-grammar="builtin:search" onwebkitspeechchange="(function(e){e.target.form.submit();})(event)">
+                <button type="submit">搜索</button></form>
+            </div>
+        </div>
+        <div class="userbox">
+            <div class="user-guest" id="user-guest">
+                <p class="sitelogin">
+                    <a href="../register.html" class="link-reg">免费注册</a> -
+                    <a href="../login.html" class="link-login">登录</a>
+                </p>
+                <p class="pluginlogin">
+                    <a href="../oauth2/authorize-1435846576_http2F2Fmy..html" class="login-weibo">微博登录</a>
+                    <a href="../oauth2.0/show-Login_pc_101501725_https2F2.html" class="login-qq">QQ登录</a>
+                    <a href="../login.html" class="link-favor">我的收藏</a>
+                </p>
+            </div>
+            <div class="user-login" id="user-login">
+                <p class="user-welcome">
+                    <a href="../login.html" class="link-username" id="username"></a>
+                    <span id="greeting"></span>
+                </p>
+                <div class="user-action" id="user_login_action">
+                    <a href="../login.html" class="act-fav">我的收藏</a>
+                    <div style="display: none;">
+                        <a href="../login.html" target="_blank">用户中心</a>
+                        <a href="../login.html">退出登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+        (function(){
+            function cookie(k){
+                var v = "";
+                var s = k+"=",c = document.cookie,l=c.length;
+                if (l > 0) {
+                    var os = c.indexOf(s);
+                    if (os != -1) {
+                        os += s.length;
+                        var ed = c.indexOf(";", os);
+                        if (ed == -1) ed = l;
+                        v = decodeURIComponent(c.substring(os, ed)).replace(/\+/g,' ');
+                    }
+                }
+                return v;
+            }
+            function receive(){
+                var greeting,
+                    hour = new Date().getHours(),
+                    id = cookie('OneId'),
+                    user = cookie('OneNick')||cookie('OneUser');
+                if(hour >= 6 && hour < 12){
+                    greeting='上午好!';
+                }else if(hour>=12 && hour<18){
+                    greeting='下午好!';
+                }else if(hour>=18 && hour<23){
+                    greeting='晚上好!';
+                }else{
+                    greeting='夜深了 请注意休息!';
+                }
+                if(id && /^\d+$/.test(id) && user && /^[^<>\"\']+$/.test(user)){
+                    $('#username').html(user);
+                    $('#greeting').html(greeting);
+                    $('#user-login').show();
+                    $('#user-guest').hide();
+                }else{
+                    $('#user-guest').show();
+                    $('#user-login').hide();
+                }
+            }
+            (function(ctn) {
+                var timeId, time = 500,
+                    slideTime = 200,
+                    child = ctn.children("div"),
+                    upClass = "user-action-arrow-up";
+                ctn.hover(function() {
+                    timeId = setTimeout(function() {
+                        ctn.addClass(upClass);
+                        child.slideDown(slideTime);
+                    }, time);
+                }, function() {
+                    ctn.removeClass(upClass);
+                    clearTimeout(timeId);
+                    child.slideUp(slideTime);
+                });
+            })($("#user_login_action"));
+            receive();
+            setInterval(receive, 3000);
+        })();
+        </script>
+        <div class="nav">
+            <ul class="allcate" id="nav_list">
+                <li><a href="../index.html" target="_self"><span>首页</span></a></li>
+                <li><a href="../group.html" class="has-sub" target="_self"><i style="display:block" target="_self"></i><span>歌手</span></a></li>
+                <li><a href="../archives/index.html" target="_self"><span>专辑</span></a></li>
+                <li><a href="../rank.html" target="_self"><span>排行榜</span></a></li>
+                <li><a href="#" class="has-sub" target="_self"><span>高清MV</span></a></li>
+            </ul>
+            <div class="randplay">
+                <a href="../rand.html">随便一听</a>
+            </div>
+            <div class="nav-category">
+                <a href="../genre/index.html" target="_self">曲风分类</a>
+                <!--span>|</span>
+                <a href="/topic" target="_self">专题 &bull; 活动</a-->
+                
+            </div>
+        </div>
+        <div class="nav-secondary" id="nav_secondary">
+            <p style="display:block;">
+                <a href="group0_2.html"><span>华语女歌手</span></a> |
+                <a href="group0_1.html"><span>华语男歌手</span></a> |
+                <a href="group0_3.html"><span>华语组合</span></a> |
+                <a href="group3_15.html"><span>欧美女歌手</span></a> |
+                <a href="group3_14.html"><span>欧美男歌手</span></a> |
+                <a href="group3_16.html"><span>欧美组合</span></a> |
+                <a href=""><span>韩国</span></a> |
+                <a href="group4_0.html"><span>日本</span></a> |
+                <a href="group6_0.html"><span>影视</span></a> |
+                <a href="group7_0.html"><span>其他</span></a> |
+                <span><!--a class="misc" href="/fo/">佛教音乐</a><a href="/prenatal/">胎教/儿歌</a><a href="http://5.lezicartoon.cn">广场舞</a><a href="/xiqu/">戏曲</a--><a href="../mv/index.html">高清MV</a></span>
+            </p>
+            <p style="text-align:center;width:736px;">
+                 <a href="../mv/cate/3.html">港台歌手MV</a>  | <a href="../mv/cate/6.html">内地歌手MV</a> | <a href="../mv/cate/2.html">韩国歌手MV</a> | <a href="../mv/cate/5.html">日本歌手MV</a> | <a href="../mv/cate/4.html">欧美歌手MV</a> | <a href="../mv/search-E6BC94E594B1E4BC9A.html">演唱会视频</a>   
+            </p>
+        </div>
+    </div>
+    <!-- /header -->
+    <script>
+    (function(){
+        var menus = $("#nav_list").find("a.has-sub"),
+            subMenu = $("#nav_secondary");
+        $.each(menus, function(index, ele) {
+            $(ele).mouseover(function() {
+                menus.children("i").hide();
+                $(ele).children("i").show();
+                subMenu.children("p").hide()
+                            .eq(index).show();
+            });
+        });
+        /*var links = [{'name': '明星美图',  'path': 'star'}, 
+                     {'name': '街拍美女',  'path': 'jiepai'}, 
+                     /*{'name': '流行服饰',  'path': 'dress'}, 
+                     {'name': '时尚彩妆',  'path': 'face'}, 
+                     {'name': '潮流发型',  'path': 'tide'}, 
+                     {'name': '清新美女',  'path': 'meinv'}, 
+                     {'name': '车模美女',  'path': 'chemo'},
+                     {'name': '唯美女生',  'path': 'fennen'}, 
+                     {'name': '非主流女生',  'path': 'feizhuliu'}, 
+                     {'name': 'Show Girl',   'path': 'showgirl'}, 
+                     {'name': 'Cosplay女神', 'path': 'cosplay'},
+                     {'name': '婚纱秀欣赏',  'path': 'hunsha'}];
+        setInterval(function(){
+            var d = links[Math.ceil(Math.random()*links.length)-1];
+            $('#picture').attr('href', 'https://ent.lezicartoon.cn/pictures/'+d.path).text(d.name);
+        }, 10000);*/
+    })();
+    </script>
+    <a href="javascript:void(0);" class="go-top" id="go_top">返回顶部</a>
+    <div class="center">
+        <div class="group-menu">
+            <div class="group-menu-component">
+                <a href="../group.html" class="group-menu-title">全部歌手</a>
+            </div>
+            <div class="group-menu-component">
+                <a href="#" class="group-menu-title">华语</a>
+                                                    <a href="group0_2.html" class=""><span>华语女歌手</span></a>
+                                    <a href="group0_1.html" class=""><span>华语男歌手</span></a>
+                                    <a href="group0_3.html" class=""><span>华语组合</span></a>
+                            </div>
+            <div class="group-menu-component">
+                <a href="#" class="group-menu-title">欧美</a>
+                                                    <a href="group3_15.html" class=""><span>欧美女歌手</span></a>
+                                    <a href="group3_14.html" class=""><span>欧美男歌手</span></a>
+                                    <a href="group3_16.html" class=""><span>欧美组合</span></a>
+                            </div>
+            <div class="group-menu-component group-menu-component-last">
+                                                    <a href="" class="group-menu-current"><span>韩国</span></a>
+                                    <a href="group4_0.html" class=""><span>日本</span></a>
+                                    <a href="group6_0.html" class=""><span>影视</span></a>
+                                    <a href="group7_0.html" class=""><span>其他</span></a>
+                            </div>
+        </div>
+        <div class="group-content">
+            <div class="pageTitle">
+                                <h2>韩国</h2>
+                <a href="javascript:;" class="randplay" target="_blank"><span>随便听几首</span></a>
+                            </div>
+
+            <div class="singerIndex" id="singerIndex">
+                <p class="initials"><span>索引:</span> <a href="#recommendSinger">推荐</a>
+                                <a href="#YA">A</a>
+                                <a href="#YB">B</a>
+                                <a href="#YC">C</a>
+                                <a href="#YD">D</a>
+                                <a href="#YE">E</a>
+                                <a href="#YF">F</a>
+                                <a href="#YG">G</a>
+                                <a href="#YH">H</a>
+                                <a href="#YI">I</a>
+                                <a href="#YJ">J</a>
+                                <a href="#YK">K</a>
+                                <a href="#YL">L</a>
+                                <a href="#YM">M</a>
+                                <a href="#YN">N</a>
+                                <a href="#YO">O</a>
+                                <a href="#YP">P</a>
+                                <a href="#YQ">Q</a>
+                                <a href="#YR">R</a>
+                                <a href="#YS">S</a>
+                                <a href="#YT">T</a>
+                                <a href="#YU">U</a>
+                                <a href="#YV">V</a>
+                                <a href="#YW">W</a>
+                                <a href="#YX">X</a>
+                                <a href="#YY">Y</a>
+                                <a href="#YZ">Z</a>
+                                <a href="#Y0-9">0-9</a>
+                                </p>
+                                <p class="showhot">
+                    <input type="checkbox" id="onlyshowhot">
+                    <label for="onlyshowhot">仅显示热门歌手</label>
+                </p>
+                            </div>
+            <a name="recommendSinger" class="anchor"></a>
+            <div class="singerCommend">
+                <!-- u1561984 -->
+                <script type="text/javascript" src="../mhqegqpjd.js"></script>
+                <h3>推荐</h3>
+                <ul>
+                                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_5199.jpg" width="75" height="100" alt="少女时代资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">少女时代</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_8665.jpg" width="75" height="100" alt="FT Island资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">FT Island</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_15313.jpg" width="75" height="100" alt="EXO资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">EXO</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_4461.jpg" width="75" height="100" alt="Kara资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">Kara</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_8530.jpg" width="75" height="100" alt="2PM资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">2PM</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_9936.jpg" width="75" height="100" alt="2NE1资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">2NE1</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_5348.jpg" width="75" height="100" alt="Super Junior资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">Super Junior</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_10473.jpg" width="75" height="100" alt="4minute资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">4minute</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_12551.jpg" width="75" height="100" alt="Teen Top资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">Teen Top</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_11384.jpg" width="75" height="100" alt="ZE:A资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">ZE:A</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_12833.jpg" width="75" height="100" alt="Orange Caramel资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">Orange Caramel</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_14036.jpg" width="75" height="100" alt="A Pink资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">A Pink</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_9325.jpg" width="75" height="100" alt="2AM资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">2AM</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_9461.jpg" width="75" height="100" alt="After School资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">After School</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_5117.jpg" width="75" height="100" alt="Bigbang资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">Bigbang</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_8016.jpg" width="75" height="100" alt="U-KISS资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">U-KISS</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_10927.jpg" width="75" height="100" alt="Secret资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">Secret</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_13961.jpg" width="75" height="100" alt="Brave girls资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">Brave girls</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_10830.jpg" width="75" height="100" alt="Rainbow资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">Rainbow</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_10770.jpg" width="75" height="100" alt="MBLAQ资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">MBLAQ</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_10786.jpg" width="75" height="100" alt="f(x)资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">f(x)</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_12010.jpg" width="75" height="100" alt="Supreme Team资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">Supreme Team</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_10763.jpg" width="75" height="100" alt="BEAST资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">BEAST</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_12468.jpg" width="75" height="100" alt="SISTAR资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">SISTAR</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_14009.jpg" width="75" height="100" alt="B1A4资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">B1A4</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_14235.jpg" width="75" height="100" alt="Boyfriend资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">Boyfriend</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_82.jpg" width="75" height="100" alt="BoA (宝儿)资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">BoA (宝儿)</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_6072.jpg" width="75" height="100" alt="Jewelry资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">Jewelry</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_6738.jpg" width="75" height="100" alt="SHINee资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">SHINee</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_10153.jpg" width="75" height="100" alt="T-ara资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">T-ara</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_4793.jpg" width="75" height="100" alt="FT Island资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">FT Island</a></li>
+                                                    </ul>
+            </div>
+
+            
+            <a name="YA" class="anchor"> A </a>
+            <div class="singerList">
+                <h3> A </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">A-BLE</a></li>
+                                                <li><a href="javascript:;">A-Brother</a></li>
+                                                <li><a href="javascript:;">A.cian</a></li>
+                                                <li><a href="javascript:;">A-Daily</a></li>
+                                                <li><a href="javascript:;">A-Force</a></li>
+                                                <li><a href="javascript:;">A-Jax</a></li>
+                                                <li class="hot"><a href="javascript:;">A Pink</a></li>
+                                                <li><a href="javascript:;">A-PRINCE</a></li>
+                                                <li><a href="javascript:;">A.Sia</a></li>
+                                                <li><a href="javascript:;">A Team</a></li>
+                                                <li><a href="javascript:;">A.Tempo (에이템포)</a></li>
+                                                <li><a href="javascript:;">A'Tune</a></li>
+                                                <li><a href="javascript:;">A4</a></li>
+                                                <li><a href="javascript:;">AA(DOUBLE A)</a></li>
+                                                <li><a href="javascript:;">AB Avenue</a></li>
+                                                <li><a href="javascript:;">Achime</a></li>
+                                                <li><a href="javascript:;">Acourve</a></li>
+                                                <li><a href="javascript:;">Acoustic Collabo</a></li>
+                                                <li class="hot"><a href="javascript:;">After School</a></li>
+                                                <li><a href="javascript:;">Aile</a></li>
+                                                <li><a href="javascript:;">Ailee</a></li>
+                                                <li><a href="javascript:;">AJ(李起光)</a></li>
+                                                <li><a href="javascript:;">Ajoo</a></li>
+                                                <li><a href="javascript:;">Alex</a></li>
+                                                <li><a href="javascript:;">ALI</a></li>
+                                                <li><a href="javascript:;">All That</a></li>
+                                                <li><a href="javascript:;">Ally</a></li>
+                                                <li><a href="javascript:;">Amber</a></li>
+                                                <li><a href="javascript:;">安七炫</a></li>
+                                                <li><a href="javascript:;">安胜浩</a></li>
+                                                <li><a href="javascript:;">安艺恩(안예은)</a></li>
+                                                <li><a href="javascript:;">安在旭</a></li>
+                                                <li><a href="javascript:;">安贞京</a></li>
+                                                <li><a href="javascript:;">ANDAMIRO</a></li>
+                                                <li><a href="javascript:;">Andrew Choi</a></li>
+                                                <li><a href="javascript:;">Andup</a></li>
+                                                <li><a href="javascript:;">Andy</a></li>
+                                                <li><a href="javascript:;">Angie</a></li>
+                                                <li><a href="javascript:;">Anmoonsik</a></li>
+                                                <li><a href="javascript:;">Ann Hee-Jeoung 안희정</a></li>
+                                                <li><a href="javascript:;">AOA</a></li>
+                                                <li><a href="javascript:;">Apink</a></li>
+                                                <li><a href="javascript:;">APRIL</a></li>
+                                                <li><a href="javascript:;">As One</a></li>
+                                                <li><a href="javascript:;">애쉬 (Ash)</a></li>
+                                                <li><a href="javascript:;">ASHGRAY</a></li>
+                                                <li><a href="javascript:;">ASTRO</a></li>
+                                                <li><a href="javascript:;">Attack</a></li>
+                                                <li><a href="javascript:;">오로라 AURORA</a></li>
+                                                <li><a href="javascript:;">Ayn</a></li>
+                                                <li><a href="javascript:;">Az</a></li>
+                                                <li><a href="javascript:;">AZIATIX</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YB" class="anchor"> B </a>
+            <div class="singerList">
+                <h3> B </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">B.A.P</a></li>
+                                                <li><a href="javascript:;">B-Free</a></li>
+                                                <li><a href="javascript:;">B.I.G</a></li>
+                                                <li><a href="javascript:;">B-Zion</a></li>
+                                                <li class="hot"><a href="javascript:;">B1A4</a></li>
+                                                <li><a href="javascript:;">BABY VOX Re.V</a></li>
+                                                <li><a href="javascript:;">Baby VOX</a></li>
+                                                <li><a href="javascript:;">Bada</a></li>
+                                                <li><a href="javascript:;">배치기 (BaeChiGi)</a></li>
+                                                <li><a href="javascript:;">Baek Ji Young</a></li>
+                                                <li><a href="javascript:;">白承宪</a></li>
+                                                <li><a href="javascript:;">백합유리잔 (百合琉璃盏)</a></li>
+                                                <li><a href="javascript:;">白庆刚</a></li>
+                                                <li><a href="javascript:;">白日梦</a></li>
+                                                <li><a href="javascript:;">백예린 (白艺潾)</a></li>
+                                                <li><a href="javascript:;">白智薰 (백지훈)</a></li>
+                                                <li><a href="javascript:;">白智英</a></li>
+                                                <li><a href="javascript:;">Baily Shoo 베일리 슈</a></li>
+                                                <li><a href="javascript:;">Banana Girl</a></li>
+                                                <li><a href="javascript:;">宝娜</a></li>
+                                                <li><a href="javascript:;">Basick</a></li>
+                                                <li><a href="javascript:;">Basterd</a></li>
+                                                <li><a href="javascript:;">Battle</a></li>
+                                                <li><a href="javascript:;">Bay.B</a></li>
+                                                <li><a href="javascript:;">Bay</a></li>
+                                                <li><a href="javascript:;">BBde Girl</a></li>
+                                                <li class="hot"><a href="javascript:;">BEAST</a></li>
+                                                <li><a href="javascript:;">Beat Win</a></li>
+                                                <li><a href="javascript:;">Beatrevit</a></li>
+                                                <li><a href="javascript:;">Beautiful Days</a></li>
+                                                <li><a href="javascript:;">BeBe Mignon</a></li>
+                                                <li><a href="javascript:;">Beenzino</a></li>
+                                                <li><a href="javascript:;">Beige</a></li>
+                                                <li><a href="javascript:;">Belle Epoque</a></li>
+                                                <li><a href="javascript:;">Ben</a></li>
+                                                <li><a href="javascript:;">Berry Good</a></li>
+                                                <li><a href="javascript:;">Besweet</a></li>
+                                                <li><a href="javascript:;">Beyond the Secret</a></li>
+                                                <li><a href="javascript:;">Beyond</a></li>
+                                                <li><a href="javascript:;">BGM</a></li>
+                                                <li><a href="javascript:;">Big Brother</a></li>
+                                                <li><a href="javascript:;">BIG CRUISE</a></li>
+                                                <li><a href="javascript:;">Big Mama (빅마마)</a></li>
+                                                <li class="hot"><a href="javascript:;">Bigbang</a></li>
+                                                <li><a href="javascript:;">BIGFLO</a></li>
+                                                <li><a href="javascript:;">BILL STAX</a></li>
+                                                <li><a href="javascript:;">彬(全慧彬)</a></li>
+                                                <li><a href="javascript:;">Biscolate</a></li>
+                                                <li><a href="javascript:;">Biuret</a></li>
+                                                <li><a href="javascript:;">Bizniz</a></li>
+                                                <li><a href="javascript:;">Black Beat</a></li>
+                                                <li><a href="javascript:;">Black Eye</a></li>
+                                                <li><a href="javascript:;">Black Out</a></li>
+                                                <li><a href="javascript:;">Black Pearl</a></li>
+                                                <li><a href="javascript:;">Black Strike</a></li>
+                                                <li><a href="javascript:;">Blady</a></li>
+                                                <li><a href="javascript:;">Blakkk Banana</a></li>
+                                                <li><a href="javascript:;">블링블링(Bling Bling)</a></li>
+                                                <li><a href="javascript:;">Block B - BASTARZ</a></li>
+                                                <li><a href="javascript:;">Block B</a></li>
+                                                <li><a href="javascript:;">Blue&amp;Blue</a></li>
+                                                <li><a href="javascript:;">Blue Spring</a></li>
+                                                <li><a href="javascript:;">BMK</a></li>
+                                                <li><a href="javascript:;">BNR</a></li>
+                                                <li><a href="javascript:;">玻璃箱子（유리상자）</a></li>
+                                                <li class="hot"><a href="javascript:;">BoA (宝儿)</a></li>
+                                                <li><a href="javascript:;">BOB4</a></li>
+                                                <li><a href="javascript:;">Bobby Kim</a></li>
+                                                <li><a href="javascript:;">Boi B</a></li>
+                                                <li><a href="javascript:;">BoM</a></li>
+                                                <li><a href="javascript:;">Bomin</a></li>
+                                                <li><a href="javascript:;">BongFeel电气</a></li>
+                                                <li><a href="javascript:;">Boni</a></li>
+                                                <li><a href="javascript:;">Bonnie</a></li>
+                                                <li><a href="javascript:;">BORI</a></li>
+                                                <li class="hot"><a href="javascript:;">Boyfriend</a></li>
+                                                <li><a href="javascript:;">Boys Republic</a></li>
+                                                <li><a href="javascript:;">BP RANIA</a></li>
+                                                <li class="hot"><a href="javascript:;">Brave girls</a></li>
+                                                <li><a href="javascript:;">Brian[fly to the sky]</a></li>
+                                                <li><a href="javascript:;">broccoliyoutoo</a></li>
+                                                <li><a href="javascript:;">Brother Su</a></li>
+                                                <li><a href="javascript:;">Brown Eyed Girls</a></li>
+                                                <li><a href="javascript:;">Brown Eyed Soul</a></li>
+                                                <li><a href="javascript:;">BTOB</a></li>
+                                                <li><a href="javascript:;">버블시스터즈 Bubble Sisters</a></li>
+                                                <li><a href="javascript:;">Bumkey</a></li>
+                                                <li><a href="javascript:;">Bunnys</a></li>
+                                                <li><a href="javascript:;">Busker Busker</a></li>
+                                                <li><a href="javascript:;">Buzz</a></li>
+                                                <li><a href="javascript:;">Bye Bye Sea</a></li>
+                                                <li><a href="javascript:;">Bye Girl</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YC" class="anchor"> C </a>
+            <div class="singerList">
+                <h3> C </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">C-CLOWN</a></li>
+                                                <li><a href="javascript:;">C.N BLUE</a></li>
+                                                <li><a href="javascript:;">蔡东河</a></li>
+                                                <li><a href="javascript:;">蔡妍</a></li>
+                                                <li><a href="javascript:;">蔡英茵</a></li>
+                                                <li><a href="javascript:;">蔡贞安</a></li>
+                                                <li><a href="javascript:;">Canaan</a></li>
+                                                <li><a href="javascript:;">曹诚模</a></li>
+                                                <li><a href="javascript:;">曹成勋</a></li>
+                                                <li><a href="javascript:;">曹承衍Luizy</a></li>
+                                                <li><a href="javascript:;">曹奎灿</a></li>
+                                                <li><a href="javascript:;">曹秀美</a></li>
+                                                <li><a href="javascript:;">曹允燮</a></li>
+                                                <li><a href="javascript:;">Casker</a></li>
+                                                <li><a href="javascript:;">Cerulean Blue</a></li>
+                                                <li><a href="javascript:;">Chae Yoon Han</a></li>
+                                                <li><a href="javascript:;">챈슬러(Chancellor)</a></li>
+                                                <li><a href="javascript:;">Chang Hoon</a></li>
+                                                <li><a href="javascript:;">超新星</a></li>
+                                                <li><a href="javascript:;">Chapter Roller Idol</a></li>
+                                                <li><a href="javascript:;">Cheetah</a></li>
+                                                <li><a href="javascript:;">CHEEZE</a></li>
+                                                <li><a href="javascript:;">최강창민 (沈昌珉)</a></li>
+                                                <li><a href="javascript:;">沈恩珍</a></li>
+                                                <li><a href="javascript:;">심현보 (沈贤宝)</a></li>
+                                                <li><a href="javascript:;">沈贤甫</a></li>
+                                                <li><a href="javascript:;">成泰[M to M]</a></li>
+                                                <li><a href="javascript:;">成宥利</a></li>
+                                                <li><a href="javascript:;">成真焕(Sweet Sorrow)</a></li>
+                                                <li><a href="javascript:;">Cherry Filter</a></li>
+                                                <li><a href="javascript:;">CHI CHI</a></li>
+                                                <li><a href="javascript:;">Choco Tree</a></li>
+                                                <li><a href="javascript:;">Chocolat</a></li>
+                                                <li><a href="javascript:;">楚安</a></li>
+                                                <li><a href="javascript:;">春子</a></li>
+                                                <li><a href="javascript:;">CL(2NE1)</a></li>
+                                                <li><a href="javascript:;">CLC</a></li>
+                                                <li><a href="javascript:;">Click-B</a></li>
+                                                <li><a href="javascript:;">CLINAH</a></li>
+                                                <li><a href="javascript:;">CLOVER</a></li>
+                                                <li><a href="javascript:;">CLUMSY</a></li>
+                                                <li><a href="javascript:;">CNBLUE</a></li>
+                                                <li><a href="javascript:;">Cocoon Bells</a></li>
+                                                <li><a href="javascript:;">Code Kunst (코드쿤스트)</a></li>
+                                                <li><a href="javascript:;">Code V</a></li>
+                                                <li><a href="javascript:;">Coin Jackson</a></li>
+                                                <li><a href="javascript:;">COLOR</a></li>
+                                                <li><a href="javascript:;">Comma</a></li>
+                                                <li><a href="javascript:;">COOL</a></li>
+                                                <li><a href="javascript:;">Coolapica</a></li>
+                                                <li><a href="javascript:;">Cranfield</a></li>
+                                                <li><a href="javascript:;">Crayon Pop</a></li>
+                                                <li><a href="javascript:;">Creamchou</a></li>
+                                                <li><a href="javascript:;">CROSS GENE</a></li>
+                                                <li><a href="javascript:;">Crown J</a></li>
+                                                <li><a href="javascript:;">Crucial Star</a></li>
+                                                <li><a href="javascript:;">Crush</a></li>
+                                                <li><a href="javascript:;">최초이 (崔初理)</a></li>
+                                                <li><a href="javascript:;">崔仁英</a></li>
+                                                <li><a href="javascript:;">崔贤俊(V.O.S)</a></li>
+                                                <li><a href="javascript:;">崔新在</a></li>
+                                                <li><a href="javascript:;">崔秀珉</a></li>
+                                                <li><a href="javascript:;">崔在勋</a></li>
+                                                <li><a href="javascript:;">Cultwo</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YD" class="anchor"> D </a>
+            <div class="singerList">
+                <h3> D </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">D.Holic</a></li>
+                                                <li><a href="javascript:;">D.no</a></li>
+                                                <li><a href="javascript:;">D-Story</a></li>
+                                                <li><a href="javascript:;">D-UNIT</a></li>
+                                                <li><a href="javascript:;">Da Nu</a></li>
+                                                <li><a href="javascript:;">大成[BigBang]</a></li>
+                                                <li><a href="javascript:;">大国男儿</a></li>
+                                                <li><a href="javascript:;">殆死悲爱</a></li>
+                                                <li><a href="javascript:;">Dal★shabet</a></li>
+                                                <li><a href="javascript:;">Dalmatian</a></li>
+                                                <li><a href="javascript:;">Dalmoon (屋顶月光)</a></li>
+                                                <li><a href="javascript:;">丹熙</a></li>
+                                                <li><a href="javascript:;">Dana</a></li>
+                                                <li><a href="javascript:;">Daniel Moon</a></li>
+                                                <li><a href="javascript:;">道元京</a></li>
+                                                <li><a href="javascript:;">David Oh</a></li>
+                                                <li><a href="javascript:;">Davink</a></li>
+                                                <li><a href="javascript:;">DAY6</a></li>
+                                                <li><a href="javascript:;">Daybreak</a></li>
+                                                <li><a href="javascript:;">DEAN</a></li>
+                                                <li><a href="javascript:;">Dear Cloud</a></li>
+                                                <li><a href="javascript:;">DEB</a></li>
+                                                <li><a href="javascript:;">December</a></li>
+                                                <li><a href="javascript:;">Deepflow (딥플로우 / 류상구)</a></li>
+                                                <li><a href="javascript:;">Defconn</a></li>
+                                                <li><a href="javascript:;">Delight</a></li>
+                                                <li><a href="javascript:;">地天悲话</a></li>
+                                                <li><a href="javascript:;">Dia Tree</a></li>
+                                                <li><a href="javascript:;">Dia</a></li>
+                                                <li><a href="javascript:;">DIA</a></li>
+                                                <li><a href="javascript:;">Dia</a></li>
+                                                <li><a href="javascript:;">Discoduck</a></li>
+                                                <li><a href="javascript:;">diva</a></li>
+                                                <li><a href="javascript:;">DJ HYO</a></li>
+                                                <li><a href="javascript:;">DJ.Kigga</a></li>
+                                                <li><a href="javascript:;">DJ Wegun</a></li>
+                                                <li><a href="javascript:;">DNT</a></li>
+                                                <li><a href="javascript:;">Dok2</a></li>
+                                                <li><a href="javascript:;">DON SPIKE</a></li>
+                                                <li><a href="javascript:;">东方神起</a></li>
+                                                <li><a href="javascript:;">斗鱼</a></li>
+                                                <li><a href="javascript:;">Double Bill</a></li>
+                                                <li><a href="javascript:;">Double K</a></li>
+                                                <li><a href="javascript:;">Double Trouble</a></li>
+                                                <li><a href="javascript:;">DownStream</a></li>
+                                                <li><a href="javascript:;">DOZ</a></li>
+                                                <li><a href="javascript:;">DPR LIVE</a></li>
+                                                <li><a href="javascript:;">Dramatics</a></li>
+                                                <li><a href="javascript:;">DREAM CATCHER</a></li>
+                                                <li><a href="javascript:;">Dream Girls</a></li>
+                                                <li><a href="javascript:;">DREAMCATCHER</a></li>
+                                                <li><a href="javascript:;">Drug Restaurant</a></li>
+                                                <li><a href="javascript:;">Du GgEo Bi</a></li>
+                                                <li><a href="javascript:;">Due</a></li>
+                                                <li><a href="javascript:;">Dwayne</a></li>
+                                                <li><a href="javascript:;">Dynamic Duo</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YE" class="anchor"> E </a>
+            <div class="singerList">
+                <h3> E </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">E Sang</a></li>
+                                                <li><a href="javascript:;">E SENS</a></li>
+                                                <li><a href="javascript:;">E-Tribe</a></li>
+                                                <li><a href="javascript:;">e.via</a></li>
+                                                <li><a href="javascript:;">eAeon</a></li>
+                                                <li><a href="javascript:;">Eddy Kim</a></li>
+                                                <li><a href="javascript:;">Ego Trip</a></li>
+                                                <li><a href="javascript:;">Electroboyz</a></li>
+                                                <li><a href="javascript:;">Ellia</a></li>
+                                                <li><a href="javascript:;">Eloise</a></li>
+                                                <li><a href="javascript:;">ELSIE (恩静)</a></li>
+                                                <li><a href="javascript:;">Eluphant</a></li>
+                                                <li><a href="javascript:;">En-clasp</a></li>
+                                                <li><a href="javascript:;">Energy K Project</a></li>
+                                                <li><a href="javascript:;">에니악 (Eniac)</a></li>
+                                                <li><a href="javascript:;">Enjel</a></li>
+                                                <li><a href="javascript:;">Enters</a></li>
+                                                <li><a href="javascript:;">Epik High</a></li>
+                                                <li><a href="javascript:;">Epitone Project</a></li>
+                                                <li><a href="javascript:;">Eric Nam</a></li>
+                                                <li><a href="javascript:;">Espresso</a></li>
+                                                <li><a href="javascript:;">Esther</a></li>
+                                                <li><a href="javascript:;">Euen Sook Chang</a></li>
+                                                <li><a href="javascript:;">Eva & Sat</a></li>
+                                                <li><a href="javascript:;">Evan(由浩熙)</a></li>
+                                                <li><a href="javascript:;">EVE</a></li>
+                                                <li><a href="javascript:;">EXID</a></li>
+                                                <li><a href="javascript:;">EXO-CBX</a></li>
+                                                <li><a href="javascript:;">EXO-K</a></li>
+                                                <li class="hot"><a href="javascript:;">EXO</a></li>
+                                                <li><a href="javascript:;">EZ'M</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YF" class="anchor"> F </a>
+            <div class="singerList">
+                <h3> F </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">포커즈(F.Cuz)</a></li>
+                                                <li><a href="javascript:;">F.T Island</a></li>
+                                                <li class="hot"><a href="javascript:;">f(x)</a></li>
+                                                <li><a href="javascript:;">FAME-J</a></li>
+                                                <li><a href="javascript:;">FameUs</a></li>
+                                                <li><a href="javascript:;">Fana</a></li>
+                                                <li><a href="javascript:;">防弾少年団</a></li>
+                                                <li><a href="javascript:;">防弹少年团</a></li>
+                                                <li><a href="javascript:;">Fanny Fink</a></li>
+                                                <li><a href="javascript:;">Fany[fly to the sky]</a></li>
+                                                <li><a href="javascript:;">FatDoo</a></li>
+                                                <li><a href="javascript:;">Feelbay</a></li>
+                                                <li><a href="javascript:;">Feverdogs</a></li>
+                                                <li><a href="javascript:;">FIESTAR</a></li>
+                                                <li><a href="javascript:;">Filmstar</a></li>
+                                                <li><a href="javascript:;">Fin.K.L</a></li>
+                                                <li><a href="javascript:;">Fin</a></li>
+                                                <li><a href="javascript:;">Flower</a></li>
+                                                <li><a href="javascript:;">Fly To The Sky</a></li>
+                                                <li><a href="javascript:;">숨의숲 (Forest Of Breath)</a></li>
+                                                <li><a href="javascript:;">Foxy</a></li>
+                                                <li><a href="javascript:;">Free Style</a></li>
+                                                <li><a href="javascript:;">FreeQ</a></li>
+                                                <li><a href="javascript:;">FreeStyle</a></li>
+                                                <li><a href="javascript:;">Fresh Boyz</a></li>
+                                                <li><a href="javascript:;">Fromm</a></li>
+                                                <li class="hot"><a href="javascript:;">FT Island</a></li>
+                                                <li><a href="javascript:;">复活</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YG" class="anchor"> G </a>
+            <div class="singerList">
+                <h3> G </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">G-Dragon(BigBang)</a></li>
+                                                <li><a href="javascript:;">G-Friend</a></li>
+                                                <li><a href="javascript:;">G.IAM</a></li>
+                                                <li><a href="javascript:;">G.NA</a></li>
+                                                <li><a href="javascript:;">G.Soul</a></li>
+                                                <li><a href="javascript:;">G-Zone</a></li>
+                                                <li><a href="javascript:;">高耀太</a></li>
+                                                <li><a href="javascript:;">高佑镇</a></li>
+                                                <li><a href="javascript:;">Gary Gold Smith</a></li>
+                                                <li><a href="javascript:;">Gary (姜熙健/개리)</a></li>
+                                                <li><a href="javascript:;">Gavy NJ</a></li>
+                                                <li><a href="javascript:;">Gavy Queens</a></li>
+                                                <li><a href="javascript:;">GD &amp; TOP</a></li>
+                                                <li><a href="javascript:;">Gee</a></li>
+                                                <li><a href="javascript:;">Geeks</a></li>
+                                                <li><a href="javascript:;">Genius D</a></li>
+                                                <li><a href="javascript:;">GFRIEND</a></li>
+                                                <li><a href="javascript:;">Ghost Bus</a></li>
+                                                <li><a href="javascript:;">GilMe(길미)</a></li>
+                                                <li><a href="javascript:;">Giriboy</a></li>
+                                                <li><a href="javascript:;">Girl Friends</a></li>
+                                                <li><a href="javascript:;">Girl's Day</a></li>
+                                                <li><a href="javascript:;">GLAM</a></li>
+                                                <li><a href="javascript:;">GLEE</a></li>
+                                                <li><a href="javascript:;">Glen Check</a></li>
+                                                <li><a href="javascript:;">Glory Day</a></li>
+                                                <li><a href="javascript:;">GO GO STAR</a></li>
+                                                <li><a href="javascript:;">GOBRO</a></li>
+                                                <li><a href="javascript:;">Goddess</a></li>
+                                                <li><a href="javascript:;">Goeun(高恩)</a></li>
+                                                <li><a href="javascript:;">GoldRush</a></li>
+                                                <li><a href="javascript:;">Goofy</a></li>
+                                                <li><a href="javascript:;">Goonamguayeoridingstella</a></li>
+                                                <li><a href="javascript:;">GOT7</a></li>
+                                                <li><a href="javascript:;">GP Basic</a></li>
+                                                <li><a href="javascript:;">Grayscale</a></li>
+                                                <li><a href="javascript:;">Grs風</a></li>
+                                                <li><a href="javascript:;">gu9udan</a></li>
+                                                <li><a href="javascript:;">贵敏</a></li>
+                                                <li><a href="javascript:;">圭贤 Kyu Hyun (Super Junior)</a></li>
+                                                <li><a href="javascript:;">曺圭贤 (규현)</a></li>
+                                                <li><a href="javascript:;">Guinness</a></li>
+                                                <li><a href="javascript:;">GUMMY</a></li>
+                                                <li><a href="javascript:;">Gunamchin</a></li>
+                                                <li><a href="javascript:;">곽진언(郭真言)</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YH" class="anchor"> H </a>
+            <div class="singerList">
+                <h3> H </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">H•B</a></li>
+                                                <li><a href="javascript:;">H-Eugene</a></li>
+                                                <li><a href="javascript:;">H.JUNG</a></li>
+                                                <li><a href="javascript:;">H.O.T</a></li>
+                                                <li><a href="javascript:;">H.TINY</a></li>
+                                                <li><a href="javascript:;">H2</a></li>
+                                                <li><a href="javascript:;">H2O</a></li>
+                                                <li><a href="javascript:;">哈哈</a></li>
+                                                <li><a href="javascript:;">Ha Hyun Gon Factory</a></li>
+                                                <li><a href="javascript:;">Hachi &amp; Eri</a></li>
+                                                <li><a href="javascript:;">HAM</a></li>
+                                                <li><a href="javascript:;">한동근(韩东根)</a></li>
+                                                <li><a href="javascript:;">韩多英</a></li>
+                                                <li><a href="javascript:;">Han Gi Ran</a></li>
+                                                <li><a href="javascript:;">韩国群星</a></li>
+                                                <li><a href="javascript:;">韩国杂锦合辑</a></li>
+                                                <li><a href="javascript:;">韩进</a></li>
+                                                <li><a href="javascript:;">韩京日</a></li>
+                                                <li><a href="javascript:;">Han-Ryn</a></li>
+                                                <li><a href="javascript:;">Han's Band</a></li>
+                                                <li><a href="javascript:;">韩素雅</a></li>
+                                                <li><a href="javascript:;">韩熙贞 (한희정)</a></li>
+                                                <li><a href="javascript:;">韩艺书</a></li>
+                                                <li><a href="javascript:;">韩尤娜</a></li>
+                                                <li><a href="javascript:;">韩智恩</a></li>
+                                                <li><a href="javascript:;">韩智慧</a></li>
+                                                <li><a href="javascript:;">HAN</a></li>
+                                                <li><a href="javascript:;">Hana</a></li>
+                                                <li><a href="javascript:;">한해 (Hanhae)</a></li>
+                                                <li><a href="javascript:;">Happy Chair</a></li>
+                                                <li><a href="javascript:;">Happy Girls</a></li>
+                                                <li><a href="javascript:;">HAPPY TREE</a></li>
+                                                <li><a href="javascript:;">Happyface</a></li>
+                                                <li><a href="javascript:;">HARASORA</a></li>
+                                                <li><a href="javascript:;">HawL</a></li>
+                                                <li><a href="javascript:;">Hayn</a></li>
+                                                <li><a href="javascript:;">河东均(하동균)</a></li>
+                                                <li><a href="javascript:;">何东均</a></li>
+                                                <li><a href="javascript:;">河利秀</a></li>
+                                                <li><a href="javascript:;">河泰雄</a></li>
+                                                <li><a href="javascript:;">河贤坤 Factory</a></li>
+                                                <li><a href="javascript:;">河秀彬</a></li>
+                                                <li><a href="javascript:;">褐眼男子</a></li>
+                                                <li><a href="javascript:;">河幼真</a></li>
+                                                <li><a href="javascript:;">河长海 하늘해</a></li>
+                                                <li><a href="javascript:;">Heart</a></li>
+                                                <li><a href="javascript:;">HeartB (하트비)</a></li>
+                                                <li><a href="javascript:;">Hee Young</a></li>
+                                                <li><a href="javascript:;">Heize</a></li>
+                                                <li><a href="javascript:;">Hello Gayoung</a></li>
+                                                <li><a href="javascript:;">Hello Venus</a></li>
+                                                <li><a href="javascript:;">Hello</a></li>
+                                                <li><a href="javascript:;">刘宪华</a></li>
+                                                <li><a href="javascript:;">Her Min</a></li>
+                                                <li><a href="javascript:;">HERMIN</a></li>
+                                                <li><a href="javascript:;">Hey</a></li>
+                                                <li><a href="javascript:;">Hi-Skooler</a></li>
+                                                <li><a href="javascript:;">High4</a></li>
+                                                <li><a href="javascript:;">HIGHLIGHT</a></li>
+                                                <li><a href="javascript:;">HIGHSYDE</a></li>
+                                                <li><a href="javascript:;">History</a></li>
+                                                <li><a href="javascript:;">HITT</a></li>
+                                                <li><a href="javascript:;">Holla</a></li>
+                                                <li><a href="javascript:;">Holladang</a></li>
+                                                <li><a href="javascript:;">Hologram Party</a></li>
+                                                <li><a href="javascript:;">Homme</a></li>
+                                                <li><a href="javascript:;">Honey Dew</a></li>
+                                                <li><a href="javascript:;">HONEYST</a></li>
+                                                <li><a href="javascript:;">洪彩琳</a></li>
+                                                <li><a href="javascript:;">홍대광 (洪大光)</a></li>
+                                                <li><a href="javascript:;">홍단아 (洪丹雅)</a></li>
+                                                <li><a href="javascript:;">洪恩珠</a></li>
+                                                <li><a href="javascript:;">洪京民</a></li>
+                                                <li><a href="javascript:;">洪祥赫</a></li>
+                                                <li><a href="javascript:;">洪真英</a></li>
+                                                <li><a href="javascript:;">Hoony Hoon</a></li>
+                                                <li><a href="javascript:;">Hot Dogg</a></li>
+                                                <li><a href="javascript:;">Hot Potato</a></li>
+                                                <li><a href="javascript:;">HOTSHOT</a></li>
+                                                <li><a href="javascript:;">House Rulez</a></li>
+                                                <li><a href="javascript:;">HowL</a></li>
+                                                <li><a href="javascript:;">蝴蝶空间</a></li>
+                                                <li><a href="javascript:;">花的孩子们</a></li>
+                                                <li><a href="javascript:;">花人</a></li>
+                                                <li><a href="javascript:;">화요비 (花耀飞)</a></li>
+                                                <li><a href="javascript:;">花耀飞</a></li>
+                                                <li><a href="javascript:;">皇甫宁</a></li>
+                                                <li><a href="javascript:;">黄静茵</a></li>
+                                                <li><a href="javascript:;">黄致列</a></li>
+                                                <li><a href="javascript:;">Hue</a></li>
+                                                <li><a href="javascript:;">辉灿</a></li>
+                                                <li><a href="javascript:;">辉星</a></li>
+                                                <li><a href="javascript:;">慧智</a></li>
+                                                <li><a href="javascript:;">휘(徽)</a></li>
+                                                <li><a href="javascript:;">Humming.J</a></li>
+                                                <li><a href="javascript:;">Humming Urban Stereo</a></li>
+                                                <li><a href="javascript:;">HybRefine</a></li>
+                                                <li><a href="javascript:;">Hye Ryoung</a></li>
+                                                <li><a href="javascript:;">Hyo Rim Yoo</a></li>
+                                                <li><a href="javascript:;">Hyukoh</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YI" class="anchor"> I </a>
+            <div class="singerList">
+                <h3> I </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">이나 (I.Na)</a></li>
+                                                <li><a href="javascript:;">I.O.I</a></li>
+                                                <li><a href="javascript:;">Ich'e</a></li>
+                                                <li><a href="javascript:;">Ignite</a></li>
+                                                <li><a href="javascript:;">iKON</a></li>
+                                                <li><a href="javascript:;">Illinit</a></li>
+                                                <li><a href="javascript:;">Illusion</a></li>
+                                                <li><a href="javascript:;">IM</a></li>
+                                                <li><a href="javascript:;">IMFACT</a></li>
+                                                <li><a href="javascript:;">Hwang In A</a></li>
+                                                <li><a href="javascript:;">Infinite H</a></li>
+                                                <li><a href="javascript:;">INFINITE</a></li>
+                                                <li><a href="javascript:;">iNoo</a></li>
+                                                <li><a href="javascript:;">Insooni</a></li>
+                                                <li><a href="javascript:;">Instant Romantic Floor</a></li>
+                                                <li><a href="javascript:;">Irish Coffee</a></li>
+                                                <li><a href="javascript:;">iST (이스트)</a></li>
+                                                <li><a href="javascript:;">IU</a></li>
+                                                <li><a href="javascript:;">Ivy</a></li>
+                                                <li><a href="javascript:;">Iyagi</a></li>
+                                                <li><a href="javascript:;">Izi</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YJ" class="anchor"> J </a>
+            <div class="singerList">
+                <h3> J </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">J-AE</a></li>
+                                                <li><a href="javascript:;">J-Cera</a></li>
+                                                <li><a href="javascript:;">J.G project</a></li>
+                                                <li><a href="javascript:;">J-HO</a></li>
+                                                <li><a href="javascript:;">J-Hwan</a></li>
+                                                <li><a href="javascript:;">J-Min</a></li>
+                                                <li><a href="javascript:;">J-symphony</a></li>
+                                                <li><a href="javascript:;">J-Walk</a></li>
+                                                <li><a href="javascript:;">J</a></li>
+                                                <li><a href="javascript:;">Jami Soul</a></li>
+                                                <li><a href="javascript:;">Jaylogic</a></li>
+                                                <li><a href="javascript:;">JB</a></li>
+                                                <li><a href="javascript:;">Jerry.K</a></li>
+                                                <li><a href="javascript:;">Jerry</a></li>
+                                                <li><a href="javascript:;">Jessica H.o</a></li>
+                                                <li><a href="javascript:;">Jessica</a></li>
+                                                <li><a href="javascript:;">Jewelry S</a></li>
+                                                <li class="hot"><a href="javascript:;">Jewelry</a></li>
+                                                <li><a href="javascript:;">Ji-Eun</a></li>
+                                                <li><a href="javascript:;">Ji-hyun(智贤)</a></li>
+                                                <li><a href="javascript:;">吉学美</a></li>
+                                                <li><a href="javascript:;">Ji Young Sun</a></li>
+                                                <li><a href="javascript:;">吉</a></li>
+                                                <li><a href="javascript:;">简美妍</a></li>
+                                                <li><a href="javascript:;">简钟旭</a></li>
+                                                <li><a href="javascript:;">姜成勋</a></li>
+                                                <li><a href="javascript:;">姜恩日</a></li>
+                                                <li><a href="javascript:;">江陵少女</a></li>
+                                                <li><a href="javascript:;">姜昇润 (강승윤)</a></li>
+                                                <li><a href="javascript:;">姜秀智</a></li>
+                                                <li><a href="javascript:;">姜玄洙</a></li>
+                                                <li><a href="javascript:;">강지영 (姜智英)</a></li>
+                                                <li><a href="javascript:;">계범주 (阶范周)</a></li>
+                                                <li><a href="javascript:;">街头诗人</a></li>
+                                                <li><a href="javascript:;">Jiggy Dogg</a></li>
+                                                <li><a href="javascript:;">Jiggy Doog</a></li>
+                                                <li><a href="javascript:;">金宝京</a></li>
+                                                <li><a href="javascript:;">김창완 밴드 (金昌完乐队)</a></li>
+                                                <li><a href="javascript:;">金承熙</a></li>
+                                                <li><a href="javascript:;">金东律</a></li>
+                                                <li><a href="javascript:;">金东万</a></li>
+                                                <li><a href="javascript:;">金东熙</a></li>
+                                                <li><a href="javascript:;">金东旭</a></li>
+                                                <li><a href="javascript:;">김은아 (金恩儿)</a></li>
+                                                <li><a href="javascript:;">金范秀</a></li>
+                                                <li><a href="javascript:;">金范</a></li>
+                                                <li><a href="javascript:;">金圭钟[SS501]</a></li>
+                                                <li><a href="javascript:;">金亨俊[SS501]</a></li>
+                                                <li><a href="javascript:;">金亨钟</a></li>
+                                                <li><a href="javascript:;">金佳兰</a></li>
+                                                <li><a href="javascript:;">金建模</a></li>
+                                                <li><a href="javascript:;">金京浩</a></li>
+                                                <li><a href="javascript:;">金京禄</a></li>
+                                                <li><a href="javascript:;">金京贤(The Cross)</a></li>
+                                                <li><a href="javascript:;">金敬雅</a></li>
+                                                <li><a href="javascript:;">Jin Ju</a></li>
+                                                <li><a href="javascript:;">김준수 (金俊秀)</a></li>
+                                                <li><a href="javascript:;">金厉旭 (Kim Ryeo Wook)</a></li>
+                                                <li><a href="javascript:;">金满熙</a></li>
+                                                <li><a href="javascript:;">김나영(金娜英)</a></li>
+                                                <li><a href="javascript:;">김남길(金南吉)</a></li>
+                                                <li><a href="javascript:;">金茹希</a></li>
+                                                <li><a href="javascript:;">金润儿</a></li>
+                                                <li><a href="javascript:;">김윤아(金润雅)</a></li>
+                                                <li><a href="javascript:;">김성규 (金圣圭)</a></li>
+                                                <li><a href="javascript:;">金素丽Sori</a></li>
+                                                <li><a href="javascript:;">태연 (金泰妍)</a></li>
+                                                <li><a href="javascript:;">金泰宇</a></li>
+                                                <li><a href="javascript:;">김동완 (金烔完)</a></li>
+                                                <li><a href="javascript:;">Jin Woon Jeong</a></li>
+                                                <li><a href="javascript:;">金贤政</a></li>
+                                                <li><a href="javascript:;">金贤正</a></li>
+                                                <li><a href="javascript:;">金贤重(SS501)</a></li>
+                                                <li><a href="javascript:;">金相宇</a></li>
+                                                <li><a href="javascript:;">김효은(金孝恩)</a></li>
+                                                <li><a href="javascript:;">金孝妍</a></li>
+                                                <li><a href="javascript:;">金秀彬</a></li>
+                                                <li><a href="javascript:;">金秀妍</a></li>
+                                                <li><a href="javascript:;">金泫雅[4minute]</a></li>
+                                                <li><a href="javascript:;">金延宇</a></li>
+                                                <li><a href="javascript:;">金艺林</a></li>
+                                                <li><a href="javascript:;">김우주 (金宇宙)</a></li>
+                                                <li><a href="javascript:;">金元俊</a></li>
+                                                <li><a href="javascript:;">金允儿</a></li>
+                                                <li><a href="javascript:;">金在锡</a></li>
+                                                <li><a href="javascript:;">金在中</a></li>
+                                                <li><a href="javascript:;">金长勋</a></li>
+                                                <li><a href="javascript:;">金朝汉</a></li>
+                                                <li><a href="javascript:;">金振彪(JP)</a></li>
+                                                <li><a href="javascript:;">金震标(김진표)</a></li>
+                                                <li><a href="javascript:;">金桢勋</a></li>
+                                                <li><a href="javascript:;">金振宇</a></li>
+                                                <li><a href="javascript:;">金正勋</a></li>
+                                                <li><a href="javascript:;">金智秀(김지수)</a></li>
+                                                <li><a href="javascript:;">金智允</a></li>
+                                                <li><a href="javascript:;">金钟国</a></li>
+                                                <li><a href="javascript:;">金钟书</a></li>
+                                                <li><a href="javascript:;">金钟旭</a></li>
+                                                <li><a href="javascript:;">Jinbo</a></li>
+                                                <li><a href="javascript:;">JinJu</a></li>
+                                                <li><a href="javascript:;">JJ</a></li>
+                                                <li><a href="javascript:;">JJY BAND (郑俊英乐队)</a></li>
+                                                <li><a href="javascript:;">JM</a></li>
+                                                <li><a href="javascript:;">Joanne</a></li>
+                                                <li><a href="javascript:;">조아람 (Joe Aram)</a></li>
+                                                <li><a href="javascript:;">Joe Brown</a></li>
+                                                <li><a href="javascript:;">John Park</a></li>
+                                                <li><a href="javascript:;">JOJO</a></li>
+                                                <li><a href="javascript:;">존함욱(Jonhamwuk)</a></li>
+                                                <li><a href="javascript:;">JQ</a></li>
+                                                <li><a href="javascript:;">JTL</a></li>
+                                                <li><a href="javascript:;">구하라 (具荷拉)</a></li>
+                                                <li><a href="javascript:;">具惠善</a></li>
+                                                <li><a href="javascript:;">구혜선 (具惠善)</a></li>
+                                                <li><a href="javascript:;">车太贤</a></li>
+                                                <li><a href="javascript:;">车银优 (차은우)</a></li>
+                                                <li><a href="javascript:;">车志立</a></li>
+                                                <li><a href="javascript:;">July</a></li>
+                                                <li><a href="javascript:;">Jun Ha</a></li>
+                                                <li><a href="javascript:;">Jun Jin</a></li>
+                                                <li><a href="javascript:;">Jun.K</a></li>
+                                                <li><a href="javascript:;">Junggigo</a></li>
+                                                <li><a href="javascript:;">JUNIEL</a></li>
+                                                <li><a href="javascript:;">JunJin</a></li>
+                                                <li><a href="javascript:;">JUNU</a></li>
+                                                <li><a href="javascript:;">Just Music</a></li>
+                                                <li><a href="javascript:;">Just</a></li>
+                                                <li><a href="javascript:;">JYJ (JEJUNG / YUCHUN / JUNSU)</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YK" class="anchor"> K </a>
+            <div class="singerList">
+                <h3> K </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">K.will</a></li>
+                                                <li><a href="javascript:;">K</a></li>
+                                                <li><a href="javascript:;">咖啡少年</a></li>
+                                                <li><a href="javascript:;">Kai(카이)</a></li>
+                                                <li><a href="javascript:;">KangNam</a></li>
+                                                <li class="hot"><a href="javascript:;">Kara</a></li>
+                                                <li><a href="javascript:;">KCM</a></li>
+                                                <li><a href="javascript:;">Kebee</a></li>
+                                                <li><a href="javascript:;">KENVO</a></li>
+                                                <li><a href="javascript:;">Keysholic</a></li>
+                                                <li><a href="javascript:;">KeySwitch</a></li>
+                                                <li><a href="javascript:;">Kill Gun</a></li>
+                                                <li><a href="javascript:;">Kim bo kyung</a></li>
+                                                <li><a href="javascript:;">Kim Do Hyun</a></li>
+                                                <li><a href="javascript:;">김필 (Kim Feel)</a></li>
+                                                <li><a href="javascript:;">Kim Jinho (SG Wannabe)</a></li>
+                                                <li><a href="javascript:;">Kim Kyung Ho</a></li>
+                                                <li><a href="javascript:;">Kim Yeon Woo</a></li>
+                                                <li><a href="javascript:;">Kinetic Flow</a></li>
+                                                <li><a href="javascript:;">Kiroy Y</a></li>
+                                                <li><a href="javascript:;">Kiss</a></li>
+                                                <li><a href="javascript:;">Kisum</a></li>
+                                                <li><a href="javascript:;">KNK</a></li>
+                                                <li><a href="javascript:;">공민지 (孔敏智)</a></li>
+                                                <li><a href="javascript:;">콘소울 (Konsoul)</a></li>
+                                                <li><a href="javascript:;">Krucifix Kricc</a></li>
+                                                <li><a href="javascript:;">酷懒之味(Clazziquai)</a></li>
+                                                <li><a href="javascript:;">酷龙[Clon]</a></li>
+                                                <li><a href="javascript:;">狂恋乐团[LOVEHOLIC]</a></li>
+                                                <li><a href="javascript:;">Kuma Park</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YL" class="anchor"> L </a>
+            <div class="singerList">
+                <h3> L </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">L Class</a></li>
+                                                <li><a href="javascript:;">L.E.O.</a></li>
+                                                <li><a href="javascript:;">LABOUM</a></li>
+                                                <li><a href="javascript:;">Ladies' Code</a></li>
+                                                <li><a href="javascript:;">Lady Jane</a></li>
+                                                <li><a href="javascript:;">Lady Owl</a></li>
+                                                <li><a href="javascript:;">Lady Yoyo</a></li>
+                                                <li><a href="javascript:;">LC9</a></li>
+                                                <li><a href="javascript:;">Le Quattro</a></li>
+                                                <li><a href="javascript:;">Lee So Eun</a></li>
+                                                <li><a href="javascript:;">Leeds</a></li>
+                                                <li><a href="javascript:;">LeeOn</a></li>
+                                                <li><a href="javascript:;">LeeSsang</a></li>
+                                                <li><a href="javascript:;">Lemon Tree</a></li>
+                                                <li><a href="javascript:;">Lexy</a></li>
+                                                <li><a href="javascript:;">李安</a></li>
+                                                <li><a href="javascript:;">李秉宪</a></li>
+                                                <li><a href="javascript:;">李承焕</a></li>
+                                                <li><a href="javascript:;">李承铉</a></li>
+                                                <li><a href="javascript:;">李承哲 (이승철)</a></li>
+                                                <li><a href="javascript:;">이동우(李东宇)</a></li>
+                                                <li><a href="javascript:;">李恩敏</a></li>
+                                                <li><a href="javascript:;">李菲(LeeBie)</a></li>
+                                                <li><a href="javascript:;">李高恩</a></li>
+                                                <li><a href="javascript:;">이한철 (李汉哲)</a></li>
+                                                <li><a href="javascript:;">李荷娜</a></li>
+                                                <li><a href="javascript:;">이홍기 (李弘基)</a></li>
+                                                <li><a href="javascript:;">이지안(李继安)</a></li>
+                                                <li><a href="javascript:;">李基灿</a></li>
+                                                <li><a href="javascript:;">李基善</a></li>
+                                                <li><a href="javascript:;">이건율 (李健律)</a></li>
+                                                <li><a href="javascript:;">李玖哲</a></li>
+                                                <li><a href="javascript:;">이준호 (李俊昊)</a></li>
+                                                <li><a href="javascript:;">李路[Eru]</a></li>
+                                                <li><a href="javascript:;">李敏镐</a></li>
+                                                <li><a href="javascript:;">李民基</a></li>
+                                                <li><a href="javascript:;">李珉宇</a></li>
+                                                <li><a href="javascript:;">李闰珉(Yiruma)</a></li>
+                                                <li><a href="javascript:;">李善日</a></li>
+                                                <li><a href="javascript:;">李胜焕</a></li>
+                                                <li><a href="javascript:;">李升基 (이승기)</a></li>
+                                                <li><a href="javascript:;">李胜基</a></li>
+                                                <li><a href="javascript:;">李世俊</a></li>
+                                                <li><a href="javascript:;">이시몬 (李诗檬)</a></li>
+                                                <li><a href="javascript:;">李诗雅</a></li>
+                                                <li><a href="javascript:;">李诗英</a></li>
+                                                <li><a href="javascript:;">李素拉</a></li>
+                                                <li><a href="javascript:;">태민 (李泰民)</a></li>
+                                                <li><a href="javascript:;">이문세 (李文世)</a></li>
+                                                <li><a href="javascript:;">李玟雨</a></li>
+                                                <li><a href="javascript:;">李锡勋(Sg wanna be)</a></li>
+                                                <li><a href="javascript:;">李夏怡</a></li>
+                                                <li><a href="javascript:;">李贤(8eight)</a></li>
+                                                <li><a href="javascript:;">李孝利</a></li>
+                                                <li><a href="javascript:;">李秀(ISU)</a></li>
+                                                <li><a href="javascript:;">李秀英</a></li>
+                                                <li><a href="javascript:;">李瑶媛</a></li>
+                                                <li><a href="javascript:;">李英贤( Big Mama)</a></li>
+                                                <li><a href="javascript:;">이영훈 (李永勋)</a></li>
+                                                <li><a href="javascript:;">李在勋[Cool]</a></li>
+                                                <li><a href="javascript:;">李在元</a></li>
+                                                <li><a href="javascript:;">李宰镇</a></li>
+                                                <li><a href="javascript:;">李振成</a></li>
+                                                <li><a href="javascript:;">李贞贤</a></li>
+                                                <li><a href="javascript:;">李政明</a></li>
+                                                <li><a href="javascript:;">李正</a></li>
+                                                <li><a href="javascript:;">李志安</a></li>
+                                                <li><a href="javascript:;">李智慧</a></li>
+                                                <li><a href="javascript:;">李志贤</a></li>
+                                                <li><a href="javascript:;">李智秀</a></li>
+                                                <li><a href="javascript:;">李志勋</a></li>
+                                                <li><a href="javascript:;">李智雅</a></li>
+                                                <li><a href="javascript:;">李准基</a></li>
+                                                <li><a href="javascript:;">Liar Band</a></li>
+                                                <li><a href="javascript:;">Lily's Diary</a></li>
+                                                <li><a href="javascript:;">林昌正</a></li>
+                                                <li><a href="javascript:;">임형주 (林亨柱)</a></li>
+                                                <li><a href="javascript:;">林贤珠</a></li>
+                                                <li><a href="javascript:;">林秀晶</a></li>
+                                                <li><a href="javascript:;">林允儿 (少女时代)</a></li>
+                                                <li><a href="javascript:;">林在范</a></li>
+                                                <li><a href="javascript:;">林朱妍</a></li>
+                                                <li><a href="javascript:;">Linus's Blanket</a></li>
+                                                <li><a href="javascript:;">Lisa</a></li>
+                                                <li><a href="javascript:;">Listen</a></li>
+                                                <li><a href="javascript:;">刘成灿</a></li>
+                                                <li><a href="javascript:;">刘承俊</a></li>
+                                                <li><a href="javascript:;">유승우(刘胜宇)</a></li>
+                                                <li><a href="javascript:;">柳时元</a></li>
+                                                <li><a href="javascript:;">柳熙烈 토이 (Toy)</a></li>
+                                                <li><a href="javascript:;">柳真</a></li>
+                                                <li><a href="javascript:;">로꼬(Loco)</a></li>
+                                                <li><a href="javascript:;">龙俊亨</a></li>
+                                                <li><a href="javascript:;">Loopy</a></li>
+                                                <li><a href="javascript:;">Loptimist</a></li>
+                                                <li><a href="javascript:;">Louie</a></li>
+                                                <li><a href="javascript:;">Love Market</a></li>
+                                                <li><a href="javascript:;">LoveAge</a></li>
+                                                <li><a href="javascript:;">LOVELYZ</a></li>
+                                                <li><a href="javascript:;">러비(Lovey)</a></li>
+                                                <li><a href="javascript:;">LQ(엘큐)</a></li>
+                                                <li><a href="javascript:;">卢基太</a></li>
+                                                <li><a href="javascript:;">鲁裕敏</a></li>
+                                                <li><a href="javascript:;">노지훈 (卢志勋)</a></li>
+                                                <li><a href="javascript:;">Luanne</a></li>
+                                                <li><a href="javascript:;">심규선 (沈圭善)</a></li>
+                                                <li><a href="javascript:;">Lucid Fall</a></li>
+                                                <li><a href="javascript:;">Lucy</a></li>
+                                                <li><a href="javascript:;">Lui</a></li>
+                                                <li><a href="javascript:;">LUNA</a></li>
+                                                <li><a href="javascript:;">Lunafly</a></li>
+                                                <li><a href="javascript:;">나희경 (罗熙景)</a></li>
+                                                <li><a href="javascript:;">罗允权</a></li>
+                                                <li><a href="javascript:;">Lydia</a></li>
+                                                <li><a href="javascript:;">Lyn</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YM" class="anchor"> M </a>
+            <div class="singerList">
+                <h3> M </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">M&amp;D</a></li>
+                                                <li><a href="javascript:;">M.C The Max</a></li>
+                                                <li><a href="javascript:;">M.C. The Max!</a></li>
+                                                <li><a href="javascript:;">M.I.B</a></li>
+                                                <li><a href="javascript:;">M.I.L.K</a></li>
+                                                <li><a href="javascript:;">M.I.S.O</a></li>
+                                                <li><a href="javascript:;">M.Street</a></li>
+                                                <li><a href="javascript:;">M.Street</a></li>
+                                                <li><a href="javascript:;">M TO M</a></li>
+                                                <li><a href="javascript:;">M-zero</a></li>
+                                                <li><a href="javascript:;">M4M</a></li>
+                                                <li><a href="javascript:;">M+</a></li>
+                                                <li><a href="javascript:;">Maboos</a></li>
+                                                <li><a href="javascript:;">Mabus</a></li>
+                                                <li><a href="javascript:;">Mad Clown</a></li>
+                                                <li><a href="javascript:;">Madtown</a></li>
+                                                <li><a href="javascript:;">MAGOLPY</a></li>
+                                                <li><a href="javascript:;">Mai</a></li>
+                                                <li><a href="javascript:;">Mamamoo</a></li>
+                                                <li><a href="javascript:;">Man to Man</a></li>
+                                                <li><a href="javascript:;">猫头鹰</a></li>
+                                                <li><a href="javascript:;">MAP6</a></li>
+                                                <li><a href="javascript:;">Mario</a></li>
+                                                <li><a href="javascript:;">MARYJANE</a></li>
+                                                <li><a href="javascript:;">메이트(Mate)</a></li>
+                                                <li><a href="javascript:;">Maxx</a></li>
+                                                <li><a href="javascript:;">MAYA</a></li>
+                                                <li><a href="javascript:;">MayBee</a></li>
+                                                <li><a href="javascript:;">Maysecond</a></li>
+                                                <li><a href="javascript:;">Mayson the Soul</a></li>
+                                                <li><a href="javascript:;">Maytree</a></li>
+                                                <li><a href="javascript:;">Mazik FloW</a></li>
+                                                <li class="hot"><a href="javascript:;">MBLAQ</a></li>
+                                                <li><a href="javascript:;">MC haNsAi</a></li>
+                                                <li><a href="javascript:;">MC 몽 (MC梦)</a></li>
+                                                <li><a href="javascript:;">MC Mong</a></li>
+                                                <li><a href="javascript:;">MC Sniper</a></li>
+                                                <li><a href="javascript:;">MDS</a></li>
+                                                <li><a href="javascript:;">美达妮</a></li>
+                                                <li><a href="javascript:;">Melancholy Studio</a></li>
+                                                <li><a href="javascript:;">MelanKoly Studio</a></li>
+                                                <li><a href="javascript:;">Memory</a></li>
+                                                <li><a href="javascript:;">Mercury</a></li>
+                                                <li><a href="javascript:;">MFBTY</a></li>
+                                                <li><a href="javascript:;">米娜</a></li>
+                                                <li><a href="javascript:;">Michelle</a></li>
+                                                <li><a href="javascript:;">Microdot</a></li>
+                                                <li><a href="javascript:;">Mighty Mouth</a></li>
+                                                <li><a href="javascript:;">MIHO</a></li>
+                                                <li><a href="javascript:;">MIIII</a></li>
+                                                <li><a href="javascript:;">MIJI</a></li>
+                                                <li><a href="javascript:;">Mimi Sisters</a></li>
+                                                <li><a href="javascript:;">闵京勋</a></li>
+                                                <li><a href="javascript:;">Min Kyung Hoon</a></li>
+                                                <li><a href="javascript:;">闽雪</a></li>
+                                                <li><a href="javascript:;">민아 敏雅 / MINAH</a></li>
+                                                <li><a href="javascript:;">Mink</a></li>
+                                                <li><a href="javascript:;">Minu</a></li>
+                                                <li><a href="javascript:;">MINX</a></li>
+                                                <li><a href="javascript:;">Miss $</a></li>
+                                                <li><a href="javascript:;">Misty Blue</a></li>
+                                                <li><a href="javascript:;">MJ[Sunny Side]</a></li>
+                                                <li><a href="javascript:;">MK</a></li>
+                                                <li><a href="javascript:;">MOBB</a></li>
+                                                <li><a href="javascript:;">Mojo (모조)</a></li>
+                                                <li><a href="javascript:;">Molly.D</a></li>
+                                                <li><a href="javascript:;">momo</a></li>
+                                                <li><a href="javascript:;">MOMOLAND</a></li>
+                                                <li><a href="javascript:;">Monday Kiz</a></li>
+                                                <li><a href="javascript:;">Mongshil Sisters</a></li>
+                                                <li><a href="javascript:;">Monkey BeaTz</a></li>
+                                                <li><a href="javascript:;">Monni</a></li>
+                                                <li><a href="javascript:;">Monsta X</a></li>
+                                                <li><a href="javascript:;">Moonshine</a></li>
+                                                <li><a href="javascript:;">Mot</a></li>
+                                                <li><a href="javascript:;">Mr.Gordo</a></li>
+                                                <li><a href="javascript:;">Mr.King</a></li>
+                                                <li><a href="javascript:;">MR.MR</a></li>
+                                                <li><a href="javascript:;">Mstory</a></li>
+                                                <li><a href="javascript:;">木单车</a></li>
+                                                <li><a href="javascript:;">MY LITTLE BAND</a></li>
+                                                <li><a href="javascript:;">My-Q (NULL)</a></li>
+                                                <li><a href="javascript:;">My Q</a></li>
+                                                <li><a href="javascript:;">MYNAME</a></li>
+                                                <li><a href="javascript:;">Mystic Puzzle</a></li>
+                                                <li><a href="javascript:;">MYTEEN</a></li>
+                                                <li><a href="javascript:;">myunDo</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YN" class="anchor"> N </a>
+            <div class="singerList">
+                <h3> N </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">N.FLYing</a></li>
+                                                <li><a href="javascript:;">N-Sonic</a></li>
+                                                <li><a href="javascript:;">Nabi</a></li>
+                                                <li><a href="javascript:;">NABIDA</a></li>
+                                                <li><a href="javascript:;">Naco</a></li>
+                                                <li><a href="javascript:;">Nadia</a></li>
+                                                <li><a href="javascript:;">Nameless</a></li>
+                                                <li><a href="javascript:;">Namolla Family(我不管家族)</a></li>
+                                                <li><a href="javascript:;">南宝拉</a></li>
+                                                <li><a href="javascript:;">南圭丽</a></li>
+                                                <li><a href="javascript:;">南贤俊</a></li>
+                                                <li><a href="javascript:;">남우현(南优铉)</a></li>
+                                                <li><a href="javascript:;">NARA</a></li>
+                                                <li><a href="javascript:;">Narsha [Brown Eyed Girls]</a></li>
+                                                <li><a href="javascript:;">Naru</a></li>
+                                                <li><a href="javascript:;">Nassun</a></li>
+                                                <li><a href="javascript:;">Natural</a></li>
+                                                <li><a href="javascript:;">Navi</a></li>
+                                                <li><a href="javascript:;">Navizam</a></li>
+                                                <li><a href="javascript:;">NC.A</a></li>
+                                                <li><a href="javascript:;">NCT 127</a></li>
+                                                <li><a href="javascript:;">NCT DREAM</a></li>
+                                                <li><a href="javascript:;">Nell</a></li>
+                                                <li><a href="javascript:;">Nemesis</a></li>
+                                                <li><a href="javascript:;">Neons</a></li>
+                                                <li><a href="javascript:;">New Champ</a></li>
+                                                <li><a href="javascript:;">New Dynasty</a></li>
+                                                <li><a href="javascript:;">霓人</a></li>
+                                                <li><a href="javascript:;">Nia</a></li>
+                                                <li><a href="javascript:;">Nicasio</a></li>
+                                                <li><a href="javascript:;">Nicole 妮可</a></li>
+                                                <li><a href="javascript:;">Niel (니엘)</a></li>
+                                                <li><a href="javascript:;">Night Guest</a></li>
+                                                <li><a href="javascript:;">Nina</a></li>
+                                                <li><a href="javascript:;">Nine Ears</a></li>
+                                                <li><a href="javascript:;">Nine Muses</a></li>
+                                                <li><a href="javascript:;">Nine</a></li>
+                                                <li><a href="javascript:;">No Brain</a></li>
+                                                <li><a href="javascript:;">Noblesse</a></li>
+                                                <li><a href="javascript:;">노을 (Noel)</a></li>
+                                                <li><a href="javascript:;">Nom Nom Nom</a></li>
+                                                <li><a href="javascript:;">Norazo</a></li>
+                                                <li><a href="javascript:;">NoReply</a></li>
+                                                <li><a href="javascript:;">Notice</a></li>
+                                                <li><a href="javascript:;">NRG</a></li>
+                                                <li><a href="javascript:;">NS Yoon-G</a></li>
+                                                <li><a href="javascript:;">NS 윤지</a></li>
+                                                <li><a href="javascript:;">NU'EST</a></li>
+                                                <li><a href="javascript:;">Nucksal</a></li>
+                                                <li><a href="javascript:;">诺珉宇</a></li>
+                                                <li><a href="javascript:;">노르웨이 숲(挪威森林)</a></li>
+                                                <li><a href="javascript:;">NUOL</a></li>
+                                                <li><a href="javascript:;">Nuts, The</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YO" class="anchor"> O </a>
+            <div class="singerList">
+                <h3> O </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">Ocean Girls</a></li>
+                                                <li><a href="javascript:;">OH MY GIRL</a></li>
+                                                <li><a href="javascript:;">OK PUNK!</a></li>
+                                                <li><a href="javascript:;">Olltii</a></li>
+                                                <li><a href="javascript:;">On.U</a></li>
+                                                <li><a href="javascript:;">Once</a></li>
+                                                <li><a href="javascript:;">one project</a></li>
+                                                <li><a href="javascript:;">ONE TWO</a></li>
+                                                <li><a href="javascript:;">Oneway 원웨이</a></li>
+                                                <li class="hot"><a href="javascript:;">Orange Caramel</a></li>
+                                                <li><a href="javascript:;">Oriental Funk Stew</a></li>
+                                                <li><a href="javascript:;">Outsider</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YP" class="anchor"> P </a>
+            <div class="singerList">
+                <h3> P </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">P-Type (피 타입)</a></li>
+                                                <li><a href="javascript:;">Page</a></li>
+                                                <li><a href="javascript:;">PALOALTO</a></li>
+                                                <li><a href="javascript:;">Paran</a></li>
+                                                <li><a href="javascript:;">Park Bom(2NE1)</a></li>
+                                                <li><a href="javascript:;">Park Hey Kyoung</a></li>
+                                                <li><a href="javascript:;">Park Hyo Shin</a></li>
+                                                <li><a href="javascript:;">Park Jin Hyuk</a></li>
+                                                <li><a href="javascript:;">Park Sae Byul</a></li>
+                                                <li><a href="javascript:;">PASCOL</a></li>
+                                                <li><a href="javascript:;">Pastel Blue</a></li>
+                                                <li><a href="javascript:;">Pay money To my Pain</a></li>
+                                                <li><a href="javascript:;">PDBLUE</a></li>
+                                                <li><a href="javascript:;">Pe2ny</a></li>
+                                                <li><a href="javascript:;">裴多海</a></li>
+                                                <li><a href="javascript:;">裴瑟琪</a></li>
+                                                <li><a href="javascript:;">裴涩琪</a></li>
+                                                <li><a href="javascript:;">裴秀智(Suzy)</a></li>
+                                                <li><a href="javascript:;">裴勇俊</a></li>
+                                                <li><a href="javascript:;">PENTAGON</a></li>
+                                                <li><a href="javascript:;">Pento</a></li>
+                                                <li><a href="javascript:;">Peppermint</a></li>
+                                                <li><a href="javascript:;">Peppertones</a></li>
+                                                <li><a href="javascript:;">Peterpan Complex</a></li>
+                                                <li><a href="javascript:;">Phantom</a></li>
+                                                <li><a href="javascript:;">Phone Booth</a></li>
+                                                <li><a href="javascript:;">Pia (彼我 / 피아)</a></li>
+                                                <li><a href="javascript:;">PinkTokki (핑크토끼)</a></li>
+                                                <li><a href="javascript:;">피노다인 Pinodyne</a></li>
+                                                <li><a href="javascript:;">PK Heman</a></li>
+                                                <li><a href="javascript:;">Playa</a></li>
+                                                <li><a href="javascript:;">Poetic License</a></li>
+                                                <li><a href="javascript:;">Position</a></li>
+                                                <li><a href="javascript:;">포스트맨 (Postmen)</a></li>
+                                                <li><a href="javascript:;">Postmen (포스트맨)</a></li>
+                                                <li><a href="javascript:;">Prana</a></li>
+                                                <li><a href="javascript:;">Pretty Brown</a></li>
+                                                <li><a href="javascript:;">Primary</a></li>
+                                                <li><a href="javascript:;">PRISTIN</a></li>
+                                                <li><a href="javascript:;">PS Jun</a></li>
+                                                <li><a href="javascript:;">PS英俊</a></li>
+                                                <li><a href="javascript:;">PSY</a></li>
+                                                <li><a href="javascript:;">朴宝蓝</a></li>
+                                                <li><a href="javascript:;">朴灿烈</a></li>
+                                                <li><a href="javascript:;">朴寒星</a></li>
+                                                <li><a href="javascript:;">朴赫基</a></li>
+                                                <li><a href="javascript:;">朴和耀非</a></li>
+                                                <li><a href="javascript:;">朴惠京</a></li>
+                                                <li><a href="javascript:;">朴慧京</a></li>
+                                                <li><a href="javascript:;">朴火曜日</a></li>
+                                                <li><a href="javascript:;">朴基英</a></li>
+                                                <li><a href="javascript:;">朴嘉熙</a></li>
+                                                <li><a href="javascript:;">朴龙河</a></li>
+                                                <li><a href="javascript:;">朴璐美</a></li>
+                                                <li><a href="javascript:;">박미경(朴美静)</a></li>
+                                                <li><a href="javascript:;">朴民赫</a></li>
+                                                <li><a href="javascript:;">朴敏奎</a></li>
+                                                <li><a href="javascript:;">朴明秀</a></li>
+                                                <li><a href="javascript:;">朴善珠</a></li>
+                                                <li><a href="javascript:;">朴尚民</a></li>
+                                                <li><a href="javascript:;">박시환 (朴时焕)</a></li>
+                                                <li><a href="javascript:;">朴泰镇</a></li>
+                                                <li><a href="javascript:;">朴熙俊</a></li>
+                                                <li><a href="javascript:;">朴孝信</a></li>
+                                                <li><a href="javascript:;">朴信阳</a></li>
+                                                <li><a href="javascript:;">朴玄彬</a></li>
+                                                <li><a href="javascript:;">朴永峰</a></li>
+                                                <li><a href="javascript:;">朴勇河</a></li>
+                                                <li><a href="javascript:;">朴永孝</a></li>
+                                                <li><a href="javascript:;">박유천(朴有天)</a></li>
+                                                <li><a href="javascript:;">朴元奎</a></li>
+                                                <li><a href="javascript:;">朴在恩</a></li>
+                                                <li><a href="javascript:;">朴宰范</a></li>
+                                                <li><a href="javascript:;">朴贞贤</a></li>
+                                                <li><a href="javascript:;">朴贞雅</a></li>
+                                                <li><a href="javascript:;">朴正恩</a></li>
+                                                <li><a href="javascript:;">朴政玟</a></li>
+                                                <li><a href="javascript:;">朴正贤</a></li>
+                                                <li><a href="javascript:;">朴正炫</a></li>
+                                                <li><a href="javascript:;">朴志宪(V.O.S)</a></li>
+                                                <li><a href="javascript:;">박주원 (朴朱元)</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YQ" class="anchor"> Q </a>
+            <div class="singerList">
+                <h3> Q </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">七公主</a></li>
+                                                <li><a href="javascript:;">천수정 (千秀正)</a></li>
+                                                <li><a href="javascript:;">秋家烈</a></li>
+                                                <li><a href="javascript:;">秋日假期</a></li>
+                                                <li><a href="javascript:;">가을방학(秋天假期)</a></li>
+                                                <li><a href="javascript:;">Quaint Flow</a></li>
+                                                <li><a href="javascript:;">全慧善</a></li>
+                                                <li><a href="javascript:;">权相佑</a></li>
+                                                <li><a href="javascript:;">전효성 (全孝盛)</a></li>
+                                                <li><a href="javascript:;">全秀妍</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YR" class="anchor"> R </a>
+            <div class="singerList">
+                <h3> R </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">Ra.D</a></li>
+                                                <li><a href="javascript:;">Rain</a></li>
+                                                <li class="hot"><a href="javascript:;">Rainbow</a></li>
+                                                <li><a href="javascript:;">Ran</a></li>
+                                                <li><a href="javascript:;">RANIA</a></li>
+                                                <li><a href="javascript:;">RAPH</a></li>
+                                                <li><a href="javascript:;">RARE</a></li>
+                                                <li><a href="javascript:;">Raspberry Field</a></li>
+                                                <li><a href="javascript:;">Rb Free 알비프리</a></li>
+                                                <li><a href="javascript:;">Red Rain</a></li>
+                                                <li><a href="javascript:;">Red Roc</a></li>
+                                                <li><a href="javascript:;">RED SOUL</a></li>
+                                                <li><a href="javascript:;">Red Velvet</a></li>
+                                                <li><a href="javascript:;">任昌丁 (임창정)</a></li>
+                                                <li><a href="javascript:;">仁顺儿</a></li>
+                                                <li><a href="javascript:;">仁顺伊</a></li>
+                                                <li><a href="javascript:;">任宰范</a></li>
+                                                <li><a href="javascript:;">Rescue Jane</a></li>
+                                                <li><a href="javascript:;">Rhy Band</a></li>
+                                                <li><a href="javascript:;">Rhyme-A & Mild Beats</a></li>
+                                                <li><a href="javascript:;">Rich</a></li>
+                                                <li><a href="javascript:;">RIMI</a></li>
+                                                <li><a href="javascript:;">Risso</a></li>
+                                                <li><a href="javascript:;">Rizi (李智熙)</a></li>
+                                                <li><a href="javascript:;">RNP</a></li>
+                                                <li><a href="javascript:;">Rocoberry</a></li>
+                                                <li><a href="javascript:;">Roji Kiss</a></li>
+                                                <li><a href="javascript:;">Romantic Couch</a></li>
+                                                <li><a href="javascript:;">Romantic Melody Chobi</a></li>
+                                                <li><a href="javascript:;">Romantic Punch</a></li>
+                                                <li><a href="javascript:;">Romantic Soul</a></li>
+                                                <li><a href="javascript:;">Romantico</a></li>
+                                                <li><a href="javascript:;">ROMEO</a></li>
+                                                <li><a href="javascript:;">RoomMate</a></li>
+                                                <li><a href="javascript:;">RossyPP</a></li>
+                                                <li><a href="javascript:;">Roy Kim</a></li>
+                                                <li><a href="javascript:;">Royal Pirates</a></li>
+                                                <li><a href="javascript:;">女团4X</a></li>
+                                                <li><a href="javascript:;">Ruda</a></li>
+                                                <li><a href="javascript:;">Rudals</a></li>
+                                                <li><a href="javascript:;">Rude Paper</a></li>
+                                                <li><a href="javascript:;">Rui Lee</a></li>
+                                                <li><a href="javascript:;">Rumble Fish</a></li>
+                                                <li><a href="javascript:;">Rumeda</a></li>
+                                                <li><a href="javascript:;">Ruppina (KR)</a></li>
+                                                <li><a href="javascript:;">Ryan[Paran]</a></li>
+                                                <li><a href="javascript:;">RYU</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YS" class="anchor"> S </a>
+            <div class="singerList">
+                <h3> S </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">S.E.S</a></li>
+                                                <li><a href="javascript:;">S.M. THE BALLAD</a></li>
+                                                <li><a href="javascript:;">S.O.S</a></li>
+                                                <li><a href="javascript:;">S组合</a></li>
+                                                <li><a href="javascript:;">뚱's</a></li>
+                                                <li><a href="javascript:;">S</a></li>
+                                                <li><a href="javascript:;">S2</a></li>
+                                                <li><a href="javascript:;">Sage</a></li>
+                                                <li><a href="javascript:;">SALTNPAPER</a></li>
+                                                <li><a href="javascript:;">SAM KIM</a></li>
+                                                <li><a href="javascript:;">Sandara Park(2NE1)</a></li>
+                                                <li><a href="javascript:;">Sang Eun</a></li>
+                                                <li><a href="javascript:;">Sang Min Park</a></li>
+                                                <li><a href="javascript:;">Saph-Fire</a></li>
+                                                <li><a href="javascript:;">사포 (Sapo)</a></li>
+                                                <li><a href="javascript:;">Sara</a></li>
+                                                <li><a href="javascript:;">SAT</a></li>
+                                                <li><a href="javascript:;">SCHIZO</a></li>
+                                                <li><a href="javascript:;">SE7EN</a></li>
+                                                <li><a href="javascript:;">Seconds</a></li>
+                                                <li class="hot"><a href="javascript:;">Secret</a></li>
+                                                <li><a href="javascript:;">Sentimental Scenery (센티멘탈 시너리)</a></li>
+                                                <li><a href="javascript:;">세렝게티(Serengeti)</a></li>
+                                                <li><a href="javascript:;">Seul-A</a></li>
+                                                <li><a href="javascript:;">Seven Size</a></li>
+                                                <li><a href="javascript:;">Seventeen</a></li>
+                                                <li><a href="javascript:;">SF9</a></li>
+                                                <li><a href="javascript:;">SG Wanna Be</a></li>
+                                                <li><a href="javascript:;">샤넌 (Shannon)</a></li>
+                                                <li class="hot"><a href="javascript:;">少女时代</a></li>
+                                                <li><a href="javascript:;">신해철 (申海哲)</a></li>
+                                                <li><a href="javascript:;">申赫森</a></li>
+                                                <li><a href="javascript:;">神话</a></li>
+                                                <li><a href="javascript:;">申慧星</a></li>
+                                                <li><a href="javascript:;">申彗星</a></li>
+                                                <li><a href="javascript:;">신승훈 (申升勋)</a></li>
+                                                <li><a href="javascript:;">申胜勋</a></li>
+                                                <li><a href="javascript:;">申胜勋</a></li>
+                                                <li><a href="javascript:;">申泰权</a></li>
+                                                <li><a href="javascript:;">申泰允</a></li>
+                                                <li><a href="javascript:;">신용재 (申勇在)</a></li>
+                                                <li><a href="javascript:;">申载</a></li>
+                                                <li><a href="javascript:;">胜利</a></li>
+                                                <li><a href="javascript:;">晟敏(SuperJunior)</a></li>
+                                                <li><a href="javascript:;">时候</a></li>
+                                                <li><a href="javascript:;">시현(诗贤)</a></li>
+                                                <li><a href="javascript:;">诗英</a></li>
+                                                <li><a href="javascript:;">时雨</a></li>
+                                                <li><a href="javascript:;">Shine</a></li>
+                                                <li class="hot"><a href="javascript:;">SHINee</a></li>
+                                                <li><a href="javascript:;">Shingun</a></li>
+                                                <li><a href="javascript:;">Shinvi</a></li>
+                                                <li><a href="javascript:;">Shoo</a></li>
+                                                <li><a href="javascript:;">ShowTime</a></li>
+                                                <li><a href="javascript:;">SHU-I</a></li>
+                                                <li><a href="javascript:;">淑熙</a></li>
+                                                <li><a href="javascript:;">水晶男孩(Sechs Kies)</a></li>
+                                                <li><a href="javascript:;">Sik-K</a></li>
+                                                <li><a href="javascript:;">Simo</a></li>
+                                                <li class="hot"><a href="javascript:;">SISTAR</a></li>
+                                                <li><a href="javascript:;">SKARF</a></li>
+                                                <li><a href="javascript:;">SKY-HI</a></li>
+                                                <li><a href="javascript:;">Slake</a></li>
+                                                <li><a href="javascript:;">SM☆SH</a></li>
+                                                <li><a href="javascript:;">Snuper</a></li>
+                                                <li><a href="javascript:;">Sogyumo Acacia Band</a></li>
+                                                <li><a href="javascript:;">Sol B</a></li>
+                                                <li><a href="javascript:;">Sol</a></li>
+                                                <li><a href="javascript:;">SolBi</a></li>
+                                                <li><a href="javascript:;">Someday</a></li>
+                                                <li><a href="javascript:;">SONAMOO</a></li>
+                                                <li><a href="javascript:;">宋秉洋</a></li>
+                                                <li><a href="javascript:;">宋昌义</a></li>
+                                                <li><a href="javascript:;">宋承宪</a></li>
+                                                <li><a href="javascript:;">宋恩</a></li>
+                                                <li><a href="javascript:;">SONG G</a></li>
+                                                <li><a href="javascript:;">송소희 (宋素姬)</a></li>
+                                                <li><a href="javascript:;">松雨</a></li>
+                                                <li><a href="javascript:;">宋智恩[Secret]</a></li>
+                                                <li><a href="javascript:;">SongCryGirlz</a></li>
+                                                <li><a href="javascript:;">沈守峰</a></li>
+                                                <li><a href="javascript:;">Soo Han</a></li>
+                                                <li><a href="javascript:;">SORA</a></li>
+                                                <li><a href="javascript:;">Soran</a></li>
+                                                <li><a href="javascript:;">Sorea D</a></li>
+                                                <li><a href="javascript:;">SORI</a></li>
+                                                <li><a href="javascript:;">Soriheda</a></li>
+                                                <li><a href="javascript:;">sorri</a></li>
+                                                <li><a href="javascript:;">Sosun</a></li>
+                                                <li><a href="javascript:;">Soul Company</a></li>
+                                                <li><a href="javascript:;">Soul Dive</a></li>
+                                                <li><a href="javascript:;">Soul N'Gene</a></li>
+                                                <li><a href="javascript:;">Soul Star</a></li>
+                                                <li><a href="javascript:;">Soulights</a></li>
+                                                <li><a href="javascript:;">Soulman</a></li>
+                                                <li><a href="javascript:;">Soulstar</a></li>
+                                                <li><a href="javascript:;">Soulways</a></li>
+                                                <li><a href="javascript:;">소울진(Soulzean)</a></li>
+                                                <li><a href="javascript:;">South Cide</a></li>
+                                                <li><a href="javascript:;">Space Cowboy</a></li>
+                                                <li><a href="javascript:;">SPICA</a></li>
+                                                <li><a href="javascript:;">SS301</a></li>
+                                                <li><a href="javascript:;">SS501</a></li>
+                                                <li><a href="javascript:;">Standing Egg</a></li>
+                                                <li><a href="javascript:;">Star(星)</a></li>
+                                                <li><a href="javascript:;">STARDUST REVUE</a></li>
+                                                <li><a href="javascript:;">Start Easy Humming</a></li>
+                                                <li><a href="javascript:;">Stay</a></li>
+                                                <li><a href="javascript:;">STELLAR</a></li>
+                                                <li><a href="javascript:;">STI</a></li>
+                                                <li><a href="javascript:;">Stocking</a></li>
+                                                <li><a href="javascript:;">Storm</a></li>
+                                                <li><a href="javascript:;">StorySeller</a></li>
+                                                <li><a href="javascript:;">苏灿辉</a></li>
+                                                <li><a href="javascript:;">苏允</a></li>
+                                                <li><a href="javascript:;">苏志燮</a></li>
+                                                <li><a href="javascript:;">Subin(秀彬)</a></li>
+                                                <li><a href="javascript:;">Sugar Bubble</a></li>
+                                                <li><a href="javascript:;">Sugar</a></li>
+                                                <li><a href="javascript:;">Sugarbowl</a></li>
+                                                <li><a href="javascript:;">Suh Young Eun</a></li>
+                                                <li><a href="javascript:;">SuHo</a></li>
+                                                <li><a href="javascript:;">Sultan Of The Disco</a></li>
+                                                <li><a href="javascript:;">孙丹菲</a></li>
+                                                <li><a href="javascript:;">孙淡妃(손담비)</a></li>
+                                                <li><a href="javascript:;">孙东云 (손동운)</a></li>
+                                                <li><a href="javascript:;">孙浩英</a></li>
+                                                <li><a href="javascript:;">Sunday Brunch</a></li>
+                                                <li><a href="javascript:;">SunMin</a></li>
+                                                <li><a href="javascript:;">Sunny Side</a></li>
+                                                <li><a href="javascript:;">Super B</a></li>
+                                                <li><a href="javascript:;">SUPER JUNIOR-D&amp;E(东海&amp;银赫)</a></li>
+                                                <li><a href="javascript:;">Super Junior-T</a></li>
+                                                <li class="hot"><a href="javascript:;">Super Junior</a></li>
+                                                <li><a href="javascript:;">Supersonic</a></li>
+                                                <li><a href="javascript:;">Supremacy</a></li>
+                                                <li class="hot"><a href="javascript:;">Supreme Team</a></li>
+                                                <li><a href="javascript:;">스웨덴세탁소(Sweden Laundry)</a></li>
+                                                <li><a href="javascript:;">Sweet Beat</a></li>
+                                                <li><a href="javascript:;">Sweet Rain</a></li>
+                                                <li><a href="javascript:;">Sweet Sorrow</a></li>
+                                                <li><a href="javascript:;">Swimming Fish</a></li>
+                                                <li><a href="javascript:;">Swing Girls</a></li>
+                                                <li><a href="javascript:;">Swings</a></li>
+                                                <li><a href="javascript:;">SZ</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YT" class="anchor"> T </a>
+            <div class="singerList">
+                <h3> T </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">T.A Copy</a></li>
+                                                <li class="hot"><a href="javascript:;">T-ara</a></li>
+                                                <li><a href="javascript:;">T-Blue</a></li>
+                                                <li><a href="javascript:;">T-MAX</a></li>
+                                                <li><a href="javascript:;">T-Sound</a></li>
+                                                <li><a href="javascript:;">T(尹美莱)</a></li>
+                                                <li><a href="javascript:;">Tae One</a></li>
+                                                <li><a href="javascript:;">Tae Yun &amp; Show Gun</a></li>
+                                                <li><a href="javascript:;">TaeGoon</a></li>
+                                                <li><a href="javascript:;">TaeYang-太阳(BigBang)</a></li>
+                                                <li><a href="javascript:;">Tahiti</a></li>
+                                                <li><a href="javascript:;">泰仁</a></li>
+                                                <li><a href="javascript:;">太妍</a></li>
+                                                <li><a href="javascript:;">Take Urban</a></li>
+                                                <li><a href="javascript:;">Take</a></li>
+                                                <li><a href="javascript:;">Takers</a></li>
+                                                <li><a href="javascript:;">Taru</a></li>
+                                                <li><a href="javascript:;">Taw</a></li>
+                                                <li><a href="javascript:;">TBNY</a></li>
+                                                <li><a href="javascript:;">TEAM B</a></li>
+                                                <li class="hot"><a href="javascript:;">Teen Top</a></li>
+                                                <li><a href="javascript:;">Tei</a></li>
+                                                <li><a href="javascript:;">Telepathy</a></li>
+                                                <li><a href="javascript:;">Tensi Love</a></li>
+                                                <li><a href="javascript:;">Tenyard</a></li>
+                                                <li><a href="javascript:;">The A.D</a></li>
+                                                <li><a href="javascript:;">The Barberettes</a></li>
+                                                <li><a href="javascript:;">The Black Skirts</a></li>
+                                                <li><a href="javascript:;">The Black</a></li>
+                                                <li><a href="javascript:;">The Breeze</a></li>
+                                                <li><a href="javascript:;">The Cross</a></li>
+                                                <li><a href="javascript:;">the D.A.Y</a></li>
+                                                <li><a href="javascript:;">The Daisy</a></li>
+                                                <li><a href="javascript:;">the Daydream</a></li>
+                                                <li><a href="javascript:;">The Essence</a></li>
+                                                <li><a href="javascript:;">The Film</a></li>
+                                                <li><a href="javascript:;">The Hidden</a></li>
+                                                <li><a href="javascript:;">The Legend</a></li>
+                                                <li><a href="javascript:;">더 라임 (The lime)</a></li>
+                                                <li><a href="javascript:;">The Men</a></li>
+                                                <li><a href="javascript:;">The Plastic Girl</a></li>
+                                                <li><a href="javascript:;">The Quiett</a></li>
+                                                <li><a href="javascript:;">The SHINBI</a></li>
+                                                <li><a href="javascript:;">The Stray</a></li>
+                                                <li><a href="javascript:;">The The Band</a></li>
+                                                <li><a href="javascript:;">The Tourist</a></li>
+                                                <li><a href="javascript:;">The Trax</a></li>
+                                                <li><a href="javascript:;">Thirdwave</a></li>
+                                                <li><a href="javascript:;">Thomas Cook</a></li>
+                                                <li><a href="javascript:;">Tia</a></li>
+                                                <li><a href="javascript:;">天才Nochang (천재노창)</a></li>
+                                                <li><a href="javascript:;">천둥 (天动 / 朴尚玄)</a></li>
+                                                <li><a href="javascript:;">天上智喜</a></li>
+                                                <li><a href="javascript:;">Tie</a></li>
+                                                <li><a href="javascript:;">Tiffany</a></li>
+                                                <li><a href="javascript:;">Tim</a></li>
+                                                <li><a href="javascript:;">티라미스 Tiramisu</a></li>
+                                                <li><a href="javascript:;">Tmonster</a></li>
+                                                <li><a href="javascript:;">Tony An</a></li>
+                                                <li><a href="javascript:;">Top Cloud</a></li>
+                                                <li><a href="javascript:;">Topp Dogg</a></li>
+                                                <li><a href="javascript:;">TOUCH</a></li>
+                                                <li><a href="javascript:;">TOV</a></li>
+                                                <li><a href="javascript:;">Trans Fixion</a></li>
+                                                <li><a href="javascript:;">Transfixion</a></li>
+                                                <li><a href="javascript:;">TRAX</a></li>
+                                                <li><a href="javascript:;">Trespass</a></li>
+                                                <li><a href="javascript:;">Trice-B</a></li>
+                                                <li><a href="javascript:;">TURAN</a></li>
+                                                <li><a href="javascript:;">Turbo Tronic</a></li>
+                                                <li><a href="javascript:;">Turbo</a></li>
+                                                <li><a href="javascript:;">TWICE</a></li>
+                                                <li><a href="javascript:;">Two Piano</a></li>
+                                                <li><a href="javascript:;">Typhoon</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YU" class="anchor"> U </a>
+            <div class="singerList">
+                <h3> U </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">U &amp; Me Blue</a></li>
+                                                <li class="hot"><a href="javascript:;">U-KISS</a></li>
+                                                <li><a href="javascript:;">U;nee</a></li>
+                                                <li><a href="javascript:;">uBEAT</a></li>
+                                                <li><a href="javascript:;">Ugly Star</a></li>
+                                                <li><a href="javascript:;">Ukulele Picnic</a></li>
+                                                <li><a href="javascript:;">UN</a></li>
+                                                <li><a href="javascript:;">Untouchable</a></li>
+                                                <li><a href="javascript:;">Up10Tion</a></li>
+                                                <li><a href="javascript:;">UPT</a></li>
+                                                <li><a href="javascript:;">Urban Corner</a></li>
+                                                <li><a href="javascript:;">Urban Romantic City</a></li>
+                                                <li><a href="javascript:;">Urban Zakapa</a></li>
+                                                <li><a href="javascript:;">UV</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YV" class="anchor"> V </a>
+            <div class="singerList">
+                <h3> V </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">V.O.S</a></li>
+                                                <li><a href="javascript:;">V-One</a></li>
+                                                <li><a href="javascript:;">Vanilla Acoustic</a></li>
+                                                <li><a href="javascript:;">Vanilla City</a></li>
+                                                <li><a href="javascript:;">Vanilla Sky</a></li>
+                                                <li><a href="javascript:;">Various artists</a></li>
+                                                <li><a href="javascript:;">Vasco</a></li>
+                                                <li><a href="javascript:;">VAV</a></li>
+                                                <li><a href="javascript:;">Verandah Project</a></li>
+                                                <li><a href="javascript:;">Verbal Jint</a></li>
+                                                <li><a href="javascript:;">Vibe</a></li>
+                                                <li><a href="javascript:;">VICTON</a></li>
+                                                <li><a href="javascript:;">Vistee</a></li>
+                                                <li><a href="javascript:;">VIXX LR</a></li>
+                                                <li><a href="javascript:;">VIXX</a></li>
+                                                <li><a href="javascript:;">VNT</a></li>
+                                                <li><a href="javascript:;">VodkaRain</a></li>
+                                                <li><a href="javascript:;">Voice Holic</a></li>
+                                                <li><a href="javascript:;">Voice One</a></li>
+                                                <li><a href="javascript:;">VON The Ghost</a></li>
+                                                <li><a href="javascript:;">VROMANCE</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YW" class="anchor"> W </a>
+            <div class="singerList">
+                <h3> W </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">W &amp; Whale</a></li>
+                                                <li><a href="javascript:;">W</a></li>
+                                                <li><a href="javascript:;">Wanted</a></li>
+                                                <li><a href="javascript:;">Water Course</a></li>
+                                                <li><a href="javascript:;">WAX</a></li>
+                                                <li><a href="javascript:;">We Are The Night</a></li>
+                                                <li><a href="javascript:;">WE</a></li>
+                                                <li><a href="javascript:;">wednesday</a></li>
+                                                <li><a href="javascript:;">文彬</a></li>
+                                                <li><a href="javascript:;">文根英</a></li>
+                                                <li><a href="javascript:;">文熙俊</a></li>
+                                                <li><a href="javascript:;">왓!(What!)</a></li>
+                                                <li><a href="javascript:;">White Brown</a></li>
+                                                <li><a href="javascript:;">WILL2</a></li>
+                                                <li><a href="javascript:;">Wind Hold Venus</a></li>
+                                                <li><a href="javascript:;">Window Brush</a></li>
+                                                <li><a href="javascript:;">Windy City</a></li>
+                                                <li><a href="javascript:;">Wink</a></li>
+                                                <li><a href="javascript:;">WINNER</a></li>
+                                                <li><a href="javascript:;">Winterplay</a></li>
+                                                <li><a href="javascript:;">Witches</a></li>
+                                                <li><a href="javascript:;">With Mellow</a></li>
+                                                <li><a href="javascript:;">Won Joon Hee</a></li>
+                                                <li><a href="javascript:;">Wonder Boy</a></li>
+                                                <li><a href="javascript:;">Woong San</a></li>
+                                                <li><a href="javascript:;">Worre</a></li>
+                                                <li><a href="javascript:;">악동뮤지션</a></li>
+                                                <li><a href="javascript:;">吴贤兰</a></li>
+                                                <li><a href="javascript:;">无限挑战 (무한도전)</a></li>
+                                                <li><a href="javascript:;">吴秀敏</a></li>
+                                                <li><a href="javascript:;">吴源斌</a></li>
+                                                <li><a href="javascript:;">吴允惠</a></li>
+                                                <li><a href="javascript:;">吴宗赫(OJ)</a></li>
+                                                <li><a href="javascript:;">WuTan (우탄)</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YX" class="anchor"> X </a>
+            <div class="singerList">
+                <h3> X </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">X-5</a></li>
+                                                <li><a href="javascript:;">X-Cross</a></li>
+                                                <li><a href="javascript:;">X' Girlz</a></li>
+                                                <li><a href="javascript:;">咸恩晶</a></li>
+                                                <li><a href="javascript:;">小海胆</a></li>
+                                                <li><a href="javascript:;">효린(孝琳)</a></li>
+                                                <li><a href="javascript:;">효민 (孝敏)</a></li>
+                                                <li><a href="javascript:;">辛太胤</a></li>
+                                                <li><a href="javascript:;">Xing</a></li>
+                                                <li><a href="javascript:;">秀晶</a></li>
+                                                <li><a href="javascript:;">秀妍</a></li>
+                                                <li><a href="javascript:;">허각 (许阁)</a></li>
+                                                <li><a href="javascript:;">徐仁国</a></li>
+                                                <li><a href="javascript:;">徐仁英[Jewelry]</a></li>
+                                                <li><a href="javascript:;">서인영 (徐仁英)</a></li>
+                                                <li><a href="javascript:;">徐太志和孩子们</a></li>
+                                                <li><a href="javascript:;">徐太志 (서태지)</a></li>
+                                                <li><a href="javascript:;">徐玄(서주현)</a></li>
+                                                <li><a href="javascript:;">徐妍</a></li>
+                                                <li><a href="javascript:;">徐英恩</a></li>
+                                                <li><a href="javascript:;">许永生</a></li>
+                                                <li><a href="javascript:;">徐允</a></li>
+                                                <li><a href="javascript:;">徐智英</a></li>
+                                                <li><a href="javascript:;">玄彬</a></li>
+                                                <li><a href="javascript:;">宣河</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YY" class="anchor"> Y </a>
+            <div class="singerList">
+                <h3> Y </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">Y.E.S.</a></li>
+                                                <li><a href="javascript:;">Y(와이)</a></li>
+                                                <li><a href="javascript:;">延宇(연우)</a></li>
+                                                <li><a href="javascript:;">严正花</a></li>
+                                                <li><a href="javascript:;">양다일(Yang Dail)</a></li>
+                                                <li><a href="javascript:;">杨东根</a></li>
+                                                <li><a href="javascript:;">양희은 杨熙恩 Yang Hee Eun</a></li>
+                                                <li><a href="javascript:;">Yang Yang</a></li>
+                                                <li><a href="javascript:;">Yangpa</a></li>
+                                                <li><a href="javascript:;">Yankie</a></li>
+                                                <li><a href="javascript:;">Yein(霓人)</a></li>
+                                                <li><a href="javascript:;">YEOMI</a></li>
+                                                <li><a href="javascript:;">YessLee</a></li>
+                                                <li><a href="javascript:;">YEYO</a></li>
+                                                <li><a href="javascript:;">Yezi</a></li>
+                                                <li><a href="javascript:;">예성(艺声)</a></li>
+                                                <li><a href="javascript:;">한살차이 (一岁之差)</a></li>
+                                                <li><a href="javascript:;">Yi Sung Yol</a></li>
+                                                <li><a href="javascript:;">一乐</a></li>
+                                                <li><a href="javascript:;">YB (尹道贤乐队)</a></li>
+                                                <li><a href="javascript:;">尹花才人</a></li>
+                                                <li><a href="javascript:;">尹健</a></li>
+                                                <li><a href="javascript:;">尹汝圭</a></li>
+                                                <li><a href="javascript:;">윤현상 (尹尚贤)</a></li>
+                                                <li><a href="javascript:;">殷志源</a></li>
+                                                <li><a href="javascript:;">윤종신 (尹钟信)</a></li>
+                                                <li><a href="javascript:;">英锡</a></li>
+                                                <li><a href="javascript:;">YMGA</a></li>
+                                                <li><a href="javascript:;">Yojoh &amp; JP</a></li>
+                                                <li><a href="javascript:;">勇敢兄弟</a></li>
+                                                <li><a href="javascript:;">Yoo Young Seok</a></li>
+                                                <li><a href="javascript:;">Yoon Gun</a></li>
+                                                <li><a href="javascript:;">Yoonmi</a></li>
+                                                <li><a href="javascript:;">尤恩美</a></li>
+                                                <li><a href="javascript:;">侑英</a></li>
+                                                <li><a href="javascript:;">Youme</a></li>
+                                                <li><a href="javascript:;">Young Boyz</a></li>
+                                                <li><a href="javascript:;">YOUNG GUN</a></li>
+                                                <li><a href="javascript:;">Young Jee</a></li>
+                                                <li><a href="javascript:;">Youngji</a></li>
+                                                <li><a href="javascript:;">Younha</a></li>
+                                                <li><a href="javascript:;">Yozoh</a></li>
+                                                <li><a href="javascript:;">유성은 (俞胜恩)</a></li>
+                                                <li><a href="javascript:;">余勋敏</a></li>
+                                                <li><a href="javascript:;">우연수(禹妍秀)</a></li>
+                                                <li><a href="javascript:;">俞永镇</a></li>
+                                                <li><a href="javascript:;">宇宙少女</a></li>
+                                                <li><a href="javascript:;">玉珠贤</a></li>
+                                                <li><a href="javascript:;">玉珠铉</a></li>
+                                                <li><a href="javascript:;">元美妍</a></li>
+                                                <li><a href="javascript:;">율(Yul)</a></li>
+                                                <li><a href="javascript:;">Yuri(Cool)</a></li>
+                                                <li><a href="javascript:;">Yuri</a></li>
+                                                <li><a href="javascript:;">유리아 Yuria</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YZ" class="anchor"> Z </a>
+            <div class="singerList">
+                <h3> Z </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">ZAC</a></li>
+                                                <li><a href="javascript:;">在勋</a></li>
+                                                <li><a href="javascript:;">ZAZA</a></li>
+                                                <li><a href="javascript:;">ZE:A J 帝国之子</a></li>
+                                                <li class="hot"><a href="javascript:;">ZE:A</a></li>
+                                                <li><a href="javascript:;">Zeno Blade</a></li>
+                                                <li><a href="javascript:;">张根硕</a></li>
+                                                <li><a href="javascript:;">张韩娜</a></li>
+                                                <li><a href="javascript:;">张慧珍</a></li>
+                                                <li><a href="javascript:;">张惠珍</a></li>
+                                                <li><a href="javascript:;">张娜拉</a></li>
+                                                <li><a href="javascript:;">张娜拉</a></li>
+                                                <li><a href="javascript:;">张润贞</a></li>
+                                                <li><a href="javascript:;">张世勇</a></li>
+                                                <li><a href="javascript:;">장현승 (张贤胜)</a></li>
+                                                <li><a href="javascript:;">张佑赫</a></li>
+                                                <li><a href="javascript:;">장우영 (张佑荣)</a></li>
+                                                <li><a href="javascript:;">张在仁</a></li>
+                                                <li><a href="javascript:;">张真英</a></li>
+                                                <li><a href="javascript:;">赵成振</a></li>
+                                                <li><a href="javascript:;">赵慧莲</a></li>
+                                                <li><a href="javascript:;">赵慧仙</a></li>
+                                                <li><a href="javascript:;">赵敏基</a></li>
+                                                <li><a href="javascript:;">赵PD</a></li>
+                                                <li><a href="javascript:;">赵容弼</a></li>
+                                                <li><a href="javascript:;">赵英修</a></li>
+                                                <li><a href="javascript:;">赵侑娜</a></li>
+                                                <li><a href="javascript:;">조정민 赵正敏</a></li>
+                                                <li><a href="javascript:;">赵正模</a></li>
+                                                <li><a href="javascript:;">赵正治</a></li>
+                                                <li><a href="javascript:;">郑成河</a></li>
+                                                <li><a href="javascript:;">郑俊日</a></li>
+                                                <li><a href="javascript:;">정준영 郑俊英 Jung Joon Young</a></li>
+                                                <li><a href="javascript:;">郑仁</a></li>
+                                                <li><a href="javascript:;">정용화 (郑容和)</a></li>
+                                                <li><a href="javascript:;">郑涩琪</a></li>
+                                                <li><a href="javascript:;">정승환(郑胜焕)</a></li>
+                                                <li><a href="javascript:;">郑烨 (정엽)</a></li>
+                                                <li><a href="javascript:;">郑宇胜</a></li>
+                                                <li><a href="javascript:;">郑允浩 (유노윤호)</a></li>
+                                                <li><a href="javascript:;">郑在娟</a></li>
+                                                <li><a href="javascript:;">郑载日</a></li>
+                                                <li><a href="javascript:;">智侯</a></li>
+                                                <li><a href="javascript:;">芝麻与棉花糖</a></li>
+                                                <li><a href="javascript:;">智善</a></li>
+                                                <li><a href="javascript:;">智贤</a></li>
+                                                <li><a href="javascript:;">志勋(Zi Hoon)</a></li>
+                                                <li><a href="javascript:;">周觅</a></li>
+                                                <li><a href="javascript:;">朱宝拉</a></li>
+                                                <li><a href="javascript:;">朱亨镇</a></li>
+                                                <li><a href="javascript:;">子然</a></li>
+                                                <li><a href="javascript:;">紫雨林</a></li>
+                                                <li><a href="javascript:;">Zia</a></li>
+                                                <li><a href="javascript:;">Zico (禹智皓)</a></li>
+                                                <li><a href="javascript:;">Zion.T</a></li>
+                                                <li><a href="javascript:;">Zion</a></li>
+                                                <li><a href="javascript:;">Zitten</a></li>
+                                                <li><a href="javascript:;">Zuno</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="Y0-9" class="anchor"> 0-9 </a>
+            <div class="singerList">
+                <h3> 0-9 </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">015B</a></li>
+                                                <li><a href="javascript:;">10cm</a></li>
+                                                <li><a href="javascript:;">1PUNCH</a></li>
+                                                <li><a href="javascript:;">1SaGain</a></li>
+                                                <li><a href="javascript:;">1TYM</a></li>
+                                                <li><a href="javascript:;">24K</a></li>
+                                                <li><a href="javascript:;">2BiC</a></li>
+                                                <li><a href="javascript:;">2eyes</a></li>
+                                                <li><a href="javascript:;">2LSON</a></li>
+                                                <li><a href="javascript:;">2NB</a></li>
+                                                <li class="hot"><a href="javascript:;">2NE1</a></li>
+                                                <li><a href="javascript:;">2NISE</a></li>
+                                                <li class="hot"><a href="javascript:;">2PM</a></li>
+                                                <li><a href="javascript:;">2Shai</a></li>
+                                                <li><a href="javascript:;">3ome</a></li>
+                                                <li><a href="javascript:;">4 Men</a></li>
+                                                <li><a href="javascript:;">45RPM</a></li>
+                                                <li><a href="javascript:;">4Cus</a></li>
+                                                <li><a href="javascript:;">4men</a></li>
+                                                <li class="hot"><a href="javascript:;">4minute</a></li>
+                                                <li><a href="javascript:;">4TEN</a></li>
+                                                <li><a href="javascript:;">4tomorrow</a></li>
+                                                <li><a href="javascript:;">7 Dayz</a></li>
+                                                <li><a href="javascript:;">8eight</a></li>
+                                                <li><a href="javascript:;">박강수</a></li>
+                                                <li><a href="javascript:;">일루미나</a></li>
+                                                <li><a href="javascript:;">더 크로스</a></li>
+                                                <li><a href="javascript:;">라이머</a></li>
+                                                <li><a href="javascript:;">혜리</a></li>
+                                                <li><a href="javascript:;">티지어스</a></li>
+                                                <li><a href="javascript:;">어른아이</a></li>
+                                                <li><a href="javascript:;">규원</a></li>
+                                                <li><a href="javascript:;">이하랑</a></li>
+                                                <li><a href="javascript:;">옥상달빛</a></li>
+                                                <li><a href="javascript:;">스폰지밴드</a></li>
+                                                <li><a href="javascript:;">타래</a></li>
+                                                <li><a href="javascript:;">마인드큐브</a></li>
+                                                <li><a href="javascript:;">고니</a></li>
+                                                <li><a href="javascript:;">페퍼민트</a></li>
+                                                <li><a href="javascript:;">애니</a></li>
+                                                <li><a href="javascript:;">김단아</a></li>
+                                                <li><a href="javascript:;">송크라이</a></li>
+                                                <li><a href="javascript:;">삼총사</a></li>
+                                                <li><a href="javascript:;">노바소닉</a></li>
+                                                <li><a href="javascript:;">달빛요정 역전만루홈런</a></li>
+                                                <li><a href="javascript:;">치즈스테레오</a></li>
+                                                <li><a href="javascript:;">휘도</a></li>
+                                                <li><a href="javascript:;">그늘</a></li>
+                                                <li><a href="javascript:;">가인</a></li>
+                                                <li><a href="javascript:;">참깨와 솜사탕</a></li>
+                                                <li><a href="javascript:;">호란</a></li>
+                                                <li><a href="javascript:;">타린</a></li>
+                                                <li><a href="javascript:;">한요한</a></li>
+                                                <li><a href="javascript:;">거인</a></li>
+                                                <li><a href="javascript:;">종현</a></li>
+                                                <li><a href="javascript:;">박원</a></li>
+                                                <li><a href="javascript:;">소녀시대-태티서</a></li>
+                                                <li><a href="javascript:;">장범준</a></li>
+                                                <li><a href="javascript:;">정은지</a></li>
+                                                <li><a href="javascript:;">종현</a></li>
+                                                <li><a href="javascript:;">문준영</a></li>
+                                                <li><a href="javascript:;">송희란</a></li>
+                                                <li><a href="javascript:;">장기하와 얼굴들</a></li>
+                                                <li><a href="javascript:;">최낙타</a></li>
+                                                <li><a href="javascript:;">梁耀燮</a></li>
+                                                <li><a href="javascript:;">IU (아이유)</a></li>
+                                                <li><a href="javascript:;">俞宙 (유주)</a></li>
+                                                <li><a href="javascript:;">SAya (사야)</a></li>
+                                                <li><a href="javascript:;">宣美 (선미)</a></li>
+                                                <li><a href="javascript:;">찬희 (澯熙)</a></li>
+                                                <li><a href="javascript:;">张凡俊</a></li>
+                                                <li><a href="javascript:;">河成云 (하성운)</a></li>
+                                                <li><a href="javascript:;">脸红的思春期</a></li>
+                                                <li><a href="javascript:;">Hajin (하진)</a></li>
+                                                <li><a href="javascript:;">황인엽 (黄寅烨)</a></li>
+                                                <li><a href="javascript:;">姜丹尼尔</a></li>
+                                                <li><a href="javascript:;">华莎 (화사)</a></li>
+                                                <li><a href="javascript:;">颂乐 (솔라)</a></li>
+                                                <li><a href="javascript:;">ROSÉ (로제)</a></li>
+                                                <li><a href="javascript:;">Jessi (제시)</a></li>
+                                                <li><a href="javascript:;">金龙国 (김용국)</a></li>
+                                                <li><a href="javascript:;">尹智圣 (윤지성)</a></li>
+                                                <li><a href="javascript:;">(G)I-DLE</a></li>
+                                                <li><a href="javascript:;">아폴로 18</a></li>
+                                                <li><a href="javascript:;">100%</a></li>
+                                                <li><a href="javascript:;">1415</a></li>
+                                                            </ul>
+            </div>
+                    </div>
+    </div>
+
+    <link href="../v5/r4/style/suggest.css" rel="stylesheet" type="text/css">
+<script src="../v5/r4/js/suggest.js"></script>
+<div class="footer center">
+    <!--<p class="footlink"> <a href="/faq/etc/about.html">关于一听</a> |--> <a href="../faq/etc/copyright.html">版权声明</a> <!--| <a href="/faq/etc/recruit.html">诚聘英才</a> -->| <a href="../faq/etc/contact_us.html">联系我们</a> | <a href="../index1.html">歌曲入库</a> | <a href="../faq/etc/history.html">历史合作</a> | <a href="../faq/etc/links.html">友情链接</a> | <a href="../faq/etc/help.html">帮助中心</a> <!--| <a href="https://h5.lezicartoon.cn">移动一听</a> </p>-->
+  <p class="copyright">&copy; 2003-2020   <a href="javascript:;" class="homepage">www.lezicartoon.cn</a> All Rights Reserved 沪ICP备19024260号-3</p>
+</div>
+
+<script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F32c12acc9a2efc3fa896bb3ebcd47ee7' type='text/javascript'%3E%3C/script%3E"));</script>
+<script src='../c-30001746.js' language='JavaScript'></script>
+    <!-- 广告位：左下角悬浮 -->
+    <script>
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div id="' + s + '"></div>');
+        (window.slotbydup=window.slotbydup || []).push({
+            id: '3221626',
+            container: s,
+            size: '300,250',
+            display: 'float'
+        });
+    })();
+    </script>
+
+    <!-- 广告位：富媒体补余 -->
+    <script>
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div id="' + s + '"></div>');
+        (window.slotbydup=window.slotbydup || []).push({
+            id: '2861847',
+            container: s,
+            size: '300,250',
+            display: 'float'
+        });
+    })();
+    </script>
+
+    <script id="bdshare_js" data="type=tools&amp;uid=14170"></script>
+    <script id="bdshell_js"></script>
+    <script>
+    var bds_config = {
+        //'wbUid':1671108633,
+        'bdPopTitle':'杭州乐米动漫',
+        'snsKey':{'tqq':'403a778463634ece8f0c75a66c4e230d', 'tsina':'1435846576'},            
+        'bdPic':'//img.lezicartoon.cn/images/singer/7416.jpg'
+            };
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+    </script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="zh">
+ <head>
+    <meta charset="UTF-8">
+    <title>杭州乐米动漫 - 客服中心 -  友情链接</title>
+    
+    <meta name="robots" content="index, follow">
+    <meta name="MSSmartTagsPreventParsing" content="true">
+    <link rel="canonical" href="http://www.www.com/faq/">
+    <link rel="stylesheet" type="text/css" media="all" href="../css/style.css">
+    <script src="../../v5/r4/js/jquery.min.js"></script>
+    <script>
+        function loadjs(url){
+            var id       = 'loadScript';
+            var params   = {'id':id,'type':'text/javascript','src':url+'&t='+new Date().getTime()};
+            $('<script/>').attr(params).appendTo($('head').remove('#' + id));
+        }
+        function callback_login(data){
+            if(data.error == 0){
+                init();
+            }else{
+                alert(data.response);
+            }
+        }
+        function callback_logout(){
+            setTimeout(function(){
+                $(".userlogin").show();
+                $(".userinfo").hide();
+            }, 1);
+        }
+        function login(){
+            var user_login  = $("input[name='user_login']");
+            var user_passwd = $("input[name='user_passwd']");
+            if(user_login.val().length == 0){
+                alert('请输入用户名!');
+                user_login.focus();
+            }else if(user_passwd.val().length == 0){
+                alert('请输入登录密码!');
+                user_passwd.focus();
+            }else{
+                loadjs('http://my.lezicartoon.cn/login?jsonp=callback_login&remember=1&user_login='
+                    +encodeURIComponent(user_login.val())
+                   +'&user_passwd='+encodeURIComponent(user_passwd.val()));
+            }
+            return false;
+        }
+        function logout(){
+            loadjs('http://my.lezicartoon.cn/logout?jsonp=callback_logout');
+            return false;
+        }
+    </script>
+ </head>
+ <body id="body">
+ <div id="content">
+    <div class="header" id="header">
+        <div class="top" id="top">
+            <h1>
+                <a title="杭州乐米动漫 - 客服中心" href="javascript:;"><img src="../images/logo.png" width="144" height="44"></a>
+            </h1>
+            <span class="service"><img src="../images/service.jpg"></span>
+            <form id="search" action="/faq/search" method="get" onsubmit="return $.trim($('#q').val()).length > 1" name="search">
+                <input type="text" id="q" name="q" placeholder="输入你要查询的关键词" value="" required="required"><button type="submit">搜索</button>
+            </form>
+            <ul class="problem">
+                <li>
+                    <a href="javascript:;">提问题</a>
+                </li>
+            </ul>
+        </div>
+        <ul class="log" id="logined" style="display:none;">
+            <li>
+                <a href="javascript:;" onclick="return logout();">退出</a>
+            </li>
+            <li>
+                <a href="javascript:;" target="_blank" id="uname" name="uname"></a>
+            </li>
+        </ul>
+        <ul class="log" id="logout">
+            <li>
+                <a href="#">注册</a>
+            </li>
+            <li>
+                <a href="#">登录</a>
+            </li>
+        </ul>
+    </div>
+    <div class="columns">
+        <div class="leftcolumn">
+            <div class="content">
+                <div id="categories">
+                    <ul>
+                                                <!--<li>
+                            <a href="/faq/about.html">关于一听</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/copyright.html">版权声明</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/contact_us.html">联系我们</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/history.html">历史合作</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/disc.html">唱片公司</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/ad.html">广告服务</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/links.html">友情链接</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/help.html">帮助中心</a>
+                        </li>-->
+                        
+                        <li>
+                            <a href="javascript:;">版权声明</a>
+                        </li>
+                                                <li>
+                            <a href="javascript:;">联系我们</a>
+                        </li>
+                                                <li>
+                            <a href="javascript:;">历史合作</a>
+                        </li>
+                                                <li>
+                            <a href="javascript:;">唱片公司</a>
+                        </li>
+                                                <li>
+                            <a href="javascript:;">广告服务</a>
+                        </li>
+                                                <li>
+                            <a href="javascript:;">友情链接</a>
+                        </li>
+                                                <li>
+                            <a href="javascript:;">帮助中心</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <h2>
+                友情链接            </h2>
+            <div id="faq-content"><ul class="product"></ul>
+
+
+<p style="text-indent: 2em; line-height: 18px">
+    <strong>链接说明：</strong></p>
+
+<p style="text-indent: 2em; line-height: 18px">本站链接不收费,需要相互链接,本站友情链接条件如下：</p>
+<p style="text-indent: 2em; line-height: 18px">
+    1.alexa排名在20000名以内；</p>
+<p style="text-indent: 2em; line-height: 18px">
+    2.<strong>首页链接要求贵站</strong><strong style="text-indent: 2em;">PR值＞＝5或者百度权重＞＝6；内页链接要求贵站PR值＞＝3或者百度权重＞＝4</strong></p>
+<p style="text-indent: 2em; line-height: 18px">
+    3.无不恰当内容，无作弊前科；</p>
+<p style="text-indent: 2em; line-height: 18px">
+    4.只做文字链接；</p>
+<p style="text-indent: 2em; line-height: 18px">
+    联系邮箱: lipengpeng602@126.com</p></div>
+                        <div id="faq-answer"><br></div>
+                    </div>
+    </div>
+    <div class="clearing"></div>
+    <div id="footer" class="footer">
+        <p class="copyright">
+            Copyright &copy; 2003-2020 <a class="homepage" href="javascript:;">www.lezicartoon.cn</a> All Rights Reserved
+        </p>
+    </div>
+ </div>
+ </body>
+</html>
+

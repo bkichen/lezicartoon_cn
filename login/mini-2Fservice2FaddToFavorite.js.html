@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>一听用户登录</title>
+    <style type="text/css">
+    *{ padding:0px; margin:0px; } html{ background:#EEE;} body{ width:360px; height:220px; overflow:hidden; font:12px/1.2 Verdana; background:#FFF; overflow:hidden; border-radius: 6px;} li{ list-style:none; } a{ color:#09F; } a:hover{ color:#F30;}
+    dl{ width:360px; padding:16px 0px 4px; overflow:hidden; } dl dt{ width:72px; height:29px; line-height:29px; float:left; text-align:right; color:#333; padding-right:8px; } dl dd{ width:280px; float:right; } dl dd .ipt_txt{ width:180px; line-height:23px; height:23px; padding:2px 4px; border:1px solid #CCC; border-top:1px solid #888; font-size:12px; } dl dd .ipt_check{ padding:0px; float:left; margin:-3px 0px 0px -4px; font-size:12px; } dl dd .ipt_check[type='checkbox']{ margin:2px 3px 0px 2px; +margin:-3px 0px 0px -2px; } dl dd label{ color:#666; } dl dd button.btn_submit{ width:80px; height:29px; border:0px; background:url(../theme/v5/r4/images/btn_bg3.png) 0px 0px no-repeat; text-align:center; line-height:27px; color:#FFF; font-size:12px; cursor:pointer; margin-right:8px; vertical-align:middle; } dl dd a.findpassword{ margin-left:12px; } .toreg{ width:352px; height:25px; line-height:25px; text-align:right; padding:0px 4px; background:#EAF8FD; color:#999; margin-top:16px; }
+    .f1{ height:29px;} .f2{ height:24px;} .f3{ height:29px; padding-top:4px; }
+    .error{ float:left; border:1px solid #F63; margin:2px; padding:2px; color:#F30; background-color:#FFF7F7; }
+    </style>
+    <script>document.domain='lezicartoon.cn';</script>
+    <script src="../theme/js/jquery.js"></script>
+    <script src="../theme/js/jquery.validate.pack.js"></script>
+    <script src="../theme/js/profile.js"></script>
+</head>
+
+<body>
+    <div class="tab-content">
+        <dl class="f3">
+            <dd>
+                &nbsp;<a href="../login.html" target="_blank">使用第三方帐号登录</a>
+            </dd>
+        </dl>
+
+    </div>
+    <div class="tab-content">
+    </div>
+    <script>check_login();</script>
+    <script type="text/javascript">
+        var cookie = {
+            get: function (s) {
+                var b = new RegExp("\\b" + s + "\\s*=\\s*([^;]*)", "i"),
+                    a = b.exec(document.cookie);
+                return a && a.length > 1 ? decodeURIComponent(a[1]) : "";
+            }
+        };
+        window.setInterval(function(){
+            if (cookie.get('OneId')) {
+                location.href = $('#redirect').val();
+            }
+        }, 1000);
+        window.onload = function(){
+            setTimeout(function(){
+                if(parent.lightBox){
+                    parent.lightBox.set({width:360,height:260,title:document.title})
+                }
+            },400);
+        }
+    </script>
+</body>
+</html>

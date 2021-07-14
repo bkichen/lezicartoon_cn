@@ -1,0 +1,1229 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="影视歌曲歌手列表,杭州乐米动漫">
+<meta name="keywords" content="影视歌曲,免费音乐,在线试听,杭州乐米动漫"> 
+<title>全部 影视歌曲 歌手列表 - 杭州乐米动漫</title>
+<link href="../v5/r5/style/common.css" rel="stylesheet" type="text/css">
+<link href="../v5/r4/style/group.css" rel="stylesheet" type="text/css">
+<script src="../v5/r4/js/jquery.min.js"></script>
+<script src="../v5/r4/js/common.js"></script>
+<script src="../v5/r4/js/group.js"></script>
+<script src="../js/ds.js"></script>
+
+</head>
+<body>
+        <div class="site-nav">
+        <div class="center">
+            <ul class="navlink">
+                <li><a href="javascript:;">保存到桌面</a></li>
+                <li><a href="../genre/index.html">曲风</a></li>
+                <li><a href="../rank.html">排行榜</a></li>
+                <li><a href="../archives/index.html">专辑库</a></li>
+            </ul>
+            <!--div class="bshare-custom"><a title="分享到微信" class="bshare-weixin"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到QQ空间" class="bshare-qzone"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div-->
+            <!--div class="sinaweibo_iframe">
+                <iframe width="120" height="24" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="https://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=136&height=24&uid=1671108633&style=2&btn=light&dpc=1"></iframe>
+            </div-->
+
+            <!--<ul style="height:19px;width:110px;padding-top:5px;float:left;"><li><a style="color:#333" href="https://h5.lezicartoon.cn" title="手机访问一听">手机版:h5.lezicartoon.cn</a></li></ul>-->
+            <ul class="siteaction" style="height:24px;padding-top:1px;"> 
+                <li class="favorite" style="margin-top:5px"><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">加入收藏</a></li>
+            </ul>
+        </div>
+    </div>
+               <script type="text/javascript" language="javascript">
+                function AddFavorite(sURL, sTitle) {
+                    sURL = encodeURI(sURL); 
+                try{   
+                    window.external.addFavorite(sURL, sTitle);   
+                }catch(e) {   
+                    try{   
+                        window.sidebar.addPanel(sTitle, sURL, "");   
+                    }catch (e) {   
+                        alert("加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.");
+         
+                        }   
+                    }
+                }
+              </script>
+    <!-- /site-nav -->
+    <div class="header center">
+        <div class="logo">
+            <h1>
+                <a href="../index.html" title="返回一听首页?">杭州乐米动漫</a>
+            </h1>
+        </div>
+        <div class="search">
+            <div class="option_selected" id="search_option_selected">
+                <a href="javascript:void(0);" id="st" target="_self">全部</a>
+            </div>
+            <div class="option_list" id="search_option_list">
+                <ul>
+                    <li class="selected"><a href="javascript:void(0);" target="_self">全部</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌曲</a></li>
+                    <li><a href="javascript:void(0);" target="_self">专辑</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌手</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌词</a></li>
+                </ul>
+            </div>
+            <div class="search_box"><form method="get" action="//so.lezicartoon.cn/all.do" onsubmit="return search(this);">
+                <input type="text" name="q" id="sq" x-webkit-speech="" x-webkit-grammar="builtin:search" onwebkitspeechchange="(function(e){e.target.form.submit();})(event)">
+                <button type="submit">搜索</button></form>
+            </div>
+        </div>
+        <div class="userbox">
+            <div class="user-guest" id="user-guest">
+                <p class="sitelogin">
+                    <a href="../register.html" class="link-reg">免费注册</a> -
+                    <a href="../login.html" class="link-login">登录</a>
+                </p>
+                <p class="pluginlogin">
+                    <a href="../oauth2/authorize-1435846576_http2F2Fmy..html" class="login-weibo">微博登录</a>
+                    <a href="../oauth2.0/show-Login_pc_101501725_https2F2.html" class="login-qq">QQ登录</a>
+                    <a href="../login.html" class="link-favor">我的收藏</a>
+                </p>
+            </div>
+            <div class="user-login" id="user-login">
+                <p class="user-welcome">
+                    <a href="../login.html" class="link-username" id="username"></a>
+                    <span id="greeting"></span>
+                </p>
+                <div class="user-action" id="user_login_action">
+                    <a href="../login.html" class="act-fav">我的收藏</a>
+                    <div style="display: none;">
+                        <a href="../login.html" target="_blank">用户中心</a>
+                        <a href="../login.html">退出登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+        (function(){
+            function cookie(k){
+                var v = "";
+                var s = k+"=",c = document.cookie,l=c.length;
+                if (l > 0) {
+                    var os = c.indexOf(s);
+                    if (os != -1) {
+                        os += s.length;
+                        var ed = c.indexOf(";", os);
+                        if (ed == -1) ed = l;
+                        v = decodeURIComponent(c.substring(os, ed)).replace(/\+/g,' ');
+                    }
+                }
+                return v;
+            }
+            function receive(){
+                var greeting,
+                    hour = new Date().getHours(),
+                    id = cookie('OneId'),
+                    user = cookie('OneNick')||cookie('OneUser');
+                if(hour >= 6 && hour < 12){
+                    greeting='上午好!';
+                }else if(hour>=12 && hour<18){
+                    greeting='下午好!';
+                }else if(hour>=18 && hour<23){
+                    greeting='晚上好!';
+                }else{
+                    greeting='夜深了 请注意休息!';
+                }
+                if(id && /^\d+$/.test(id) && user && /^[^<>\"\']+$/.test(user)){
+                    $('#username').html(user);
+                    $('#greeting').html(greeting);
+                    $('#user-login').show();
+                    $('#user-guest').hide();
+                }else{
+                    $('#user-guest').show();
+                    $('#user-login').hide();
+                }
+            }
+            (function(ctn) {
+                var timeId, time = 500,
+                    slideTime = 200,
+                    child = ctn.children("div"),
+                    upClass = "user-action-arrow-up";
+                ctn.hover(function() {
+                    timeId = setTimeout(function() {
+                        ctn.addClass(upClass);
+                        child.slideDown(slideTime);
+                    }, time);
+                }, function() {
+                    ctn.removeClass(upClass);
+                    clearTimeout(timeId);
+                    child.slideUp(slideTime);
+                });
+            })($("#user_login_action"));
+            receive();
+            setInterval(receive, 3000);
+        })();
+        </script>
+        <div class="nav">
+            <ul class="allcate" id="nav_list">
+                <li><a href="../index.html" target="_self"><span>首页</span></a></li>
+                <li><a href="../group.html" class="has-sub" target="_self"><i style="display:block" target="_self"></i><span>歌手</span></a></li>
+                <li><a href="../archives/index.html" target="_self"><span>专辑</span></a></li>
+                <li><a href="../rank.html" target="_self"><span>排行榜</span></a></li>
+                <li><a href="#" class="has-sub" target="_self"><span>高清MV</span></a></li>
+            </ul>
+            <div class="randplay">
+                <a href="../rand.html">随便一听</a>
+            </div>
+            <div class="nav-category">
+                <a href="../genre/index.html" target="_self">曲风分类</a>
+                <!--span>|</span>
+                <a href="/topic" target="_self">专题 &bull; 活动</a-->
+                
+            </div>
+        </div>
+        <div class="nav-secondary" id="nav_secondary">
+            <p style="display:block;">
+                <a href="group0_2.html"><span>华语女歌手</span></a> |
+                <a href="group0_1.html"><span>华语男歌手</span></a> |
+                <a href="group0_3.html"><span>华语组合</span></a> |
+                <a href="group3_15.html"><span>欧美女歌手</span></a> |
+                <a href="group3_14.html"><span>欧美男歌手</span></a> |
+                <a href="group3_16.html"><span>欧美组合</span></a> |
+                <a href="group5_0.html"><span>韩国</span></a> |
+                <a href="group4_0.html"><span>日本</span></a> |
+                <a href=""><span>影视</span></a> |
+                <a href="group7_0.html"><span>其他</span></a> |
+                <span><!--a class="misc" href="/fo/">佛教音乐</a><a href="/prenatal/">胎教/儿歌</a><a href="http://5.lezicartoon.cn">广场舞</a><a href="/xiqu/">戏曲</a--><a href="../mv/index.html">高清MV</a></span>
+            </p>
+            <p style="text-align:center;width:736px;">
+                 <a href="../mv/cate/3.html">港台歌手MV</a>  | <a href="../mv/cate/6.html">内地歌手MV</a> | <a href="../mv/cate/2.html">韩国歌手MV</a> | <a href="../mv/cate/5.html">日本歌手MV</a> | <a href="../mv/cate/4.html">欧美歌手MV</a> | <a href="../mv/search-E6BC94E594B1E4BC9A.html">演唱会视频</a>   
+            </p>
+        </div>
+    </div>
+    <!-- /header -->
+    <script>
+    (function(){
+        var menus = $("#nav_list").find("a.has-sub"),
+            subMenu = $("#nav_secondary");
+        $.each(menus, function(index, ele) {
+            $(ele).mouseover(function() {
+                menus.children("i").hide();
+                $(ele).children("i").show();
+                subMenu.children("p").hide()
+                            .eq(index).show();
+            });
+        });
+        /*var links = [{'name': '明星美图',  'path': 'star'}, 
+                     {'name': '街拍美女',  'path': 'jiepai'}, 
+                     /*{'name': '流行服饰',  'path': 'dress'}, 
+                     {'name': '时尚彩妆',  'path': 'face'}, 
+                     {'name': '潮流发型',  'path': 'tide'}, 
+                     {'name': '清新美女',  'path': 'meinv'}, 
+                     {'name': '车模美女',  'path': 'chemo'},
+                     {'name': '唯美女生',  'path': 'fennen'}, 
+                     {'name': '非主流女生',  'path': 'feizhuliu'}, 
+                     {'name': 'Show Girl',   'path': 'showgirl'}, 
+                     {'name': 'Cosplay女神', 'path': 'cosplay'},
+                     {'name': '婚纱秀欣赏',  'path': 'hunsha'}];
+        setInterval(function(){
+            var d = links[Math.ceil(Math.random()*links.length)-1];
+            $('#picture').attr('href', 'https://ent.lezicartoon.cn/pictures/'+d.path).text(d.name);
+        }, 10000);*/
+    })();
+    </script>
+    <a href="javascript:void(0);" class="go-top" id="go_top">返回顶部</a>
+    <div class="center">
+        <div class="group-menu">
+            <div class="group-menu-component">
+                <a href="../group.html" class="group-menu-title">全部歌手</a>
+            </div>
+            <div class="group-menu-component">
+                <a href="#" class="group-menu-title">华语</a>
+                                                    <a href="group0_2.html" class=""><span>华语女歌手</span></a>
+                                    <a href="group0_1.html" class=""><span>华语男歌手</span></a>
+                                    <a href="group0_3.html" class=""><span>华语组合</span></a>
+                            </div>
+            <div class="group-menu-component">
+                <a href="#" class="group-menu-title">欧美</a>
+                                                    <a href="group3_15.html" class=""><span>欧美女歌手</span></a>
+                                    <a href="group3_14.html" class=""><span>欧美男歌手</span></a>
+                                    <a href="group3_16.html" class=""><span>欧美组合</span></a>
+                            </div>
+            <div class="group-menu-component group-menu-component-last">
+                                                    <a href="group5_0.html" class=""><span>韩国</span></a>
+                                    <a href="group4_0.html" class=""><span>日本</span></a>
+                                    <a href="" class="group-menu-current"><span>影视</span></a>
+                                    <a href="group7_0.html" class=""><span>其他</span></a>
+                            </div>
+        </div>
+        <div class="group-content">
+            <div class="pageTitle">
+                                <h2>影视歌曲</h2>
+                <a href="javascript:;" class="randplay" target="_blank"><span>随便听几首</span></a>
+                            </div>
+
+            <div class="singerIndex" id="singerIndex">
+                <p class="initials"><span>索引:</span> <a href="#recommendSinger">推荐</a>
+                                <a href="#YA">A</a>
+                                <a href="#YB">B</a>
+                                <a href="#YC">C</a>
+                                <a href="#YD">D</a>
+                                <a href="#YE">E</a>
+                                <a href="#YF">F</a>
+                                <a href="#YG">G</a>
+                                <a href="#YH">H</a>
+                                <a href="#YI">I</a>
+                                <a href="#YJ">J</a>
+                                <a href="#YK">K</a>
+                                <a href="#YL">L</a>
+                                <a href="#YM">M</a>
+                                <a href="#YN">N</a>
+                                <a href="#YO">O</a>
+                                <a href="#YP">P</a>
+                                <a href="#YQ">Q</a>
+                                <a href="#YR">R</a>
+                                <a href="#YS">S</a>
+                                <a href="#YT">T</a>
+                                <a href="#YU">U</a>
+                                <a href="#YV">V</a>
+                                <a href="#YW">W</a>
+                                <a href="#YX">X</a>
+                                <a href="#YY">Y</a>
+                                <a href="#YZ">Z</a>
+                                <a href="#Y0-9">0-9</a>
+                                </p>
+                                <p class="showhot">
+                    <input type="checkbox" id="onlyshowhot">
+                    <label for="onlyshowhot">仅显示热门歌手</label>
+                </p>
+                            </div>
+            <a name="recommendSinger" class="anchor"></a>
+            <div class="singerCommend">
+                <!-- u1561984 -->
+                <script type="text/javascript" src="../mhqegqpjd.js"></script>
+                <h3>推荐</h3>
+                <ul>
+                                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_5339.jpg" width="75" height="100" alt="色·戒资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">色·戒</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_2710.jpg" width="75" height="100" alt="长恨歌资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">长恨歌</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_1612.jpg" width="75" height="100" alt="灌篮高手资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">灌篮高手</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_4908.jpg" width="75" height="100" alt="又见一帘幽梦资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">又见一帘幽梦</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_3884.jpg" width="75" height="100" alt="歌舞青春资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">歌舞青春</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_6540.jpg" width="75" height="100" alt="功夫熊猫资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">功夫熊猫</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_7232.jpg" width="75" height="100" alt="电影原声资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">电影原声</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_387.jpg" width="75" height="100" alt="电视剧歌曲大全资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">电视剧歌曲大全</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_7222.jpg" width="75" height="100" alt="木乃伊资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">木乃伊</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_2179.jpg" width="75" height="100" alt="仙剑奇侠传资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">仙剑奇侠传</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_6313.jpg" width="75" height="100" alt="命中注定我爱你资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">命中注定我爱你</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_7115.jpg" width="75" height="100" alt="赤壁 原声资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">赤壁 原声</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_759.jpg" width="75" height="100" alt="007系列电影原声资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">007系列电影原声</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_6649.jpg" width="75" height="100" alt="My Blueberry Nights (蓝莓之夜)资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">My Blueberry Nights (蓝莓之夜)</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_7477.jpg" width="75" height="100" alt="星球大战三部曲资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">星球大战三部曲</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_7666.jpg" width="75" height="100" alt="黑糖群侠传资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">黑糖群侠传</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_6678.jpg" width="75" height="100" alt="Speed Racer 急速赛车资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">Speed Racer 急速赛车</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_6537.jpg" width="75" height="100" alt="欲望都市资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">欲望都市</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_5594.jpg" width="75" height="100" alt="士兵突击资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">士兵突击</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_7305.jpg" width="75" height="100" alt="花吃了那女孩资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">花吃了那女孩</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_8812.jpg" width="75" height="100" alt="叶问资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">叶问</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_3462.jpg" width="75" height="100" alt="加勒比海盗资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">加勒比海盗</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_4823.jpg" width="75" height="100" alt="虫师资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">虫师</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_7132.jpg" width="75" height="100" alt="蝙蝠侠资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">蝙蝠侠</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_4618.jpg" width="75" height="100" alt="NANA2资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">NANA2</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_1281.jpg" width="75" height="100" alt="爱上女主播资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">爱上女主播</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_4654.jpg" width="75" height="100" alt="霸王别姬资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">霸王别姬</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_1565.jpg" width="75" height="100" alt="海豚湾恋人资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">海豚湾恋人</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_4665.jpg" width="75" height="100" alt="火影忍者资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">火影忍者</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_2615.jpg" width="75" height="100" alt="神话资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">神话</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_26.jpg" width="75" height="100" alt="泰坦尼克号资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">泰坦尼克号</a></li>
+                                                    </ul>
+            </div>
+
+            
+            <a name="YA" class="anchor"> A </a>
+            <div class="singerList">
+                <h3> A </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">阿甘正传</a></li>
+                                                <li><a href="javascript:;">阿虎</a></li>
+                                                <li><a href="javascript:;">阿司匹林</a></li>
+                                                <li><a href="javascript:;">Adrian Johnston</a></li>
+                                                <li><a href="javascript:;">爱君如梦</a></li>
+                                                <li><a href="javascript:;">爱情经纪约电视原声带</a></li>
+                                                <li><a href="javascript:;">爱情经纪约</a></li>
+                                                <li><a href="javascript:;">爱情灵药</a></li>
+                                                <li><a href="javascript:;">爱情魔发师</a></li>
+                                                <li><a href="javascript:;">爱情魔戒</a></li>
+                                                <li class="hot"><a href="javascript:;">爱上女主播</a></li>
+                                                <li><a href="javascript:;">爱上主题曲</a></li>
+                                                <li><a href="javascript:;">爱之日剧恋曲</a></li>
+                                                <li><a href="javascript:;">Air City</a></li>
+                                                <li><a href="javascript:;">Alain Goraguer</a></li>
+                                                <li><a href="javascript:;">Alberto Iglesias</a></li>
+                                                <li><a href="javascript:;">Alice In Wonderland 爱丽丝梦游仙境</a></li>
+                                                <li><a href="javascript:;">Alicia Morton, Audra McDonald, Kathy Bates, Victor Garber</a></li>
+                                                <li><a href="javascript:;">Alvin and the Chipmunks</a></li>
+                                                <li><a href="javascript:;">Angelo Badalamenti</a></li>
+                                                <li><a href="javascript:;">Anne Dudley</a></li>
+                                                <li><a href="javascript:;">Antarctica</a></li>
+                                                <li><a href="javascript:;">奥特曼</a></li>
+                                                <li><a href="javascript:;">Arie Band</a></li>
+                                                <li><a href="javascript:;">Ask Kirmizi (Motion Picture Soundtrack)</a></li>
+                                                <li><a href="javascript:;">August Rush</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YB" class="anchor"> B </a>
+            <div class="singerList">
+                <h3> B </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">巴黎恋人</a></li>
+                                                <li><a href="javascript:;">八两金</a></li>
+                                                <li class="hot"><a href="javascript:;">霸王别姬</a></li>
+                                                <li><a href="javascript:;">败犬女王</a></li>
+                                                <li><a href="javascript:;">白色巨塔</a></li>
+                                                <li><a href="javascript:;">百万新娘</a></li>
+                                                <li><a href="javascript:;">棒球英豪</a></li>
+                                                <li><a href="javascript:;">宝贝计划</a></li>
+                                                <li><a href="javascript:;">宝莲灯</a></li>
+                                                <li><a href="javascript:;">Barbie</a></li>
+                                                <li><a href="javascript:;">Bear McCreary</a></li>
+                                                <li><a href="javascript:;">北京我的爱</a></li>
+                                                <li><a href="javascript:;">悲情城市</a></li>
+                                                <li><a href="javascript:;">Belle and Sebastian</a></li>
+                                                <li><a href="javascript:;">彼得潘的公式</a></li>
+                                                <li class="hot"><a href="javascript:;">蝙蝠侠</a></li>
+                                                <li><a href="javascript:;">变形金刚</a></li>
+                                                <li><a href="javascript:;">别爱我</a></li>
+                                                <li><a href="javascript:;">蹩脚英语</a></li>
+                                                <li><a href="javascript:;">Big Mama Soul</a></li>
+                                                <li><a href="javascript:;">Bill Conti</a></li>
+                                                <li><a href="javascript:;">Bill Whelan</a></li>
+                                                <li><a href="javascript:;">兵临城下</a></li>
+                                                <li><a href="javascript:;">Blixa Bargeld</a></li>
+                                                <li><a href="javascript:;">Block B</a></li>
+                                                <li><a href="javascript:;">波丽士大人</a></li>
+                                                <li><a href="javascript:;">Brian</a></li>
+                                                <li><a href="javascript:;">不可能的任务III</a></li>
+                                                <li><a href="javascript:;">布拉格恋人</a></li>
+                                                <li><a href="javascript:;">不良家族</a></li>
+                                                <li><a href="javascript:;">不能说的秘密</a></li>
+                                                <li><a href="javascript:;">Burt Bacharach</a></li>
+                                                <li><a href="javascript:;">Bye Bye Birdie</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YC" class="anchor"> C </a>
+            <div class="singerList">
+                <h3> C </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">CAGNET</a></li>
+                                                <li><a href="javascript:;">Camp Rock 摇滚青春</a></li>
+                                                <li><a href="javascript:;">Carlos Núñez</a></li>
+                                                <li><a href="javascript:;">Catch & Release</a></li>
+                                                <li><a href="javascript:;">查理·卓别林</a></li>
+                                                <li><a href="javascript:;">陈其钢</a></li>
+                                                <li><a href="javascript:;">陈勋奇</a></li>
+                                                <li><a href="javascript:;">成长的烦恼</a></li>
+                                                <li class="hot"><a href="javascript:;">赤壁 原声</a></li>
+                                                <li><a href="javascript:;">CHI-CHI</a></li>
+                                                <li><a href="javascript:;">China Drum</a></li>
+                                                <li class="hot"><a href="javascript:;">虫师</a></li>
+                                                <li><a href="javascript:;">Chris Joss</a></li>
+                                                <li><a href="javascript:;">触不到的恋人 The Lake House</a></li>
+                                                <li><a href="javascript:;">初恋嗱喳面</a></li>
+                                                <li><a href="javascript:;">初恋的回忆</a></li>
+                                                <li><a href="javascript:;">出云战记</a></li>
+                                                <li><a href="javascript:;">穿红靴的猫</a></li>
+                                                <li><a href="javascript:;">创世纪</a></li>
+                                                <li><a href="javascript:;">春光乍泻</a></li>
+                                                <li><a href="javascript:;">春天华尔兹</a></li>
+                                                <li><a href="javascript:;">刺青</a></li>
+                                                <li><a href="javascript:;">Cliff Martinez</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YD" class="anchor"> D </a>
+            <div class="singerList">
+                <h3> D </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">达.芬奇密码</a></li>
+                                                <li><a href="javascript:;">大城小事</a></li>
+                                                <li><a href="javascript:;">大敦煌</a></li>
+                                                <li><a href="javascript:;">大话西游</a></li>
+                                                <li><a href="javascript:;">大板根之恋</a></li>
+                                                <li><a href="javascript:;">大卫营</a></li>
+                                                <li><a href="javascript:;">当幸福来敲门</a></li>
+                                                <li><a href="javascript:;">Dario Marianelli</a></li>
+                                                <li><a href="javascript:;">Deli Spice</a></li>
+                                                <li><a href="javascript:;">第8号当铺</a></li>
+                                                <li><a href="javascript:;">第三代</a></li>
+                                                <li><a href="javascript:;">地下铁</a></li>
+                                                <li><a href="javascript:;">地狱男爵</a></li>
+                                                <li class="hot"><a href="javascript:;">电视剧歌曲大全</a></li>
+                                                <li><a href="javascript:;">电视原声</a></li>
+                                                <li class="hot"><a href="javascript:;">电影原声</a></li>
+                                                <li><a href="javascript:;">刁蛮公主</a></li>
+                                                <li><a href="javascript:;">谍影重重</a></li>
+                                                <li><a href="javascript:;">东方茱丽叶</a></li>
+                                                <li><a href="javascript:;">冬季恋歌</a></li>
+                                                <li><a href="javascript:;">东京爱情故事</a></li>
+                                                <li><a href="javascript:;">东京攻略</a></li>
+                                                <li><a href="javascript:;">东邪西毒</a></li>
+                                                <li><a href="javascript:;">斗牛,要不要</a></li>
+                                                <li><a href="javascript:;">斗鱼</a></li>
+                                                <li><a href="javascript:;">斗鱼Ⅱ</a></li>
+                                                <li><a href="javascript:;">Dreamgirls</a></li>
+                                                <li><a href="javascript:;">断臂山</a></li>
+                                                <li><a href="javascript:;">对不起，我爱你</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YE" class="anchor"> E </a>
+            <div class="singerList">
+                <h3> E </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">Eleni Karaindrou</a></li>
+                                                <li><a href="javascript:;">Elliot Goldenthal</a></li>
+                                                <li><a href="javascript:;">Eternal Morning (Tablo and Pe2ny)</a></li>
+                                                <li><a href="javascript:;">EVA OST</a></li>
+                                                <li><a href="javascript:;">Every Single Day</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YF" class="anchor"> F </a>
+            <div class="singerList">
+                <h3> F </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">翻滚吧! 蛋炒饭</a></li>
+                                                <li><a href="javascript:;">翻滚吧,男孩</a></li>
+                                                <li><a href="javascript:;">防火墙</a></li>
+                                                <li><a href="javascript:;">放羊的星星</a></li>
+                                                <li><a href="javascript:;">飞刀又见飞刀</a></li>
+                                                <li><a href="javascript:;">飞天舞</a></li>
+                                                <li><a href="javascript:;">飞一般的爱情小说</a></li>
+                                                <li><a href="javascript:;">粉红教父小甜甜</a></li>
+                                                <li><a href="javascript:;">蜂蜜幸运草 电视原声带</a></li>
+                                                <li><a href="javascript:;">风月俏佳人</a></li>
+                                                <li><a href="javascript:;">风云</a></li>
+                                                <li><a href="javascript:;">风中战士</a></li>
+                                                <li><a href="javascript:;">Fool's Gold 淘金俏冤家 原声</a></li>
+                                                <li><a href="javascript:;">弗莱迪大战杰森</a></li>
+                                                <li><a href="javascript:;">福气又安康</a></li>
+                                                <li><a href="javascript:;">赴宴</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YG" class="anchor"> G </a>
+            <div class="singerList">
+                <h3> G </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">钢琴</a></li>
+                                                <li><a href="javascript:;">《钢铁侠》电影原声</a></li>
+                                                <li><a href="javascript:;">高达SEED</a></li>
+                                                <li class="hot"><a href="javascript:;">歌舞青春</a></li>
+                                                <li><a href="javascript:;">George Fenton</a></li>
+                                                <li><a href="javascript:;">Glee Cast</a></li>
+                                                <li><a href="javascript:;">Go (Motion Picture Soundtrack)</a></li>
+                                                <li class="hot"><a href="javascript:;">功夫熊猫</a></li>
+                                                <li><a href="javascript:;">功夫[周星驰]</a></li>
+                                                <li><a href="javascript:;">攻壳机动队</a></li>
+                                                <li><a href="javascript:;">Goodbye Solo With UTO</a></li>
+                                                <li><a href="javascript:;">Goran Bregovic</a></li>
+                                                <li><a href="javascript:;">古惑仔</a></li>
+                                                <li><a href="javascript:;">孤恋花</a></li>
+                                                <li><a href="javascript:;">古墓丽影</a></li>
+                                                <li><a href="javascript:;">怪物史莱克2</a></li>
+                                                <li class="hot"><a href="javascript:;">灌篮高手</a></li>
+                                                <li><a href="javascript:;">关峡</a></li>
+                                                <li><a href="javascript:;">Gundam</a></li>
+                                                <li><a href="javascript:;">Guru</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YH" class="anchor"> H </a>
+            <div class="singerList">
+                <h3> H </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">哈利波特</a></li>
+                                                <li><a href="javascript:;">嗨！亲爱的</a></li>
+                                                <li><a href="javascript:;">海上钢琴师</a></li>
+                                                <li><a href="javascript:;">海豚爱上猫</a></li>
+                                                <li class="hot"><a href="javascript:;">海豚湾恋人</a></li>
+                                                <li><a href="javascript:;">海贼王</a></li>
+                                                <li><a href="javascript:;">韩城攻略</a></li>
+                                                <li><a href="javascript:;">汉城奇缘</a></li>
+                                                <li><a href="javascript:;">憨豆特工</a></li>
+                                                <li><a href="javascript:;">韩国影视原声</a></li>
+                                                <li><a href="javascript:;">韩国原声带</a></li>
+                                                <li><a href="javascript:;">韩剧《纯真年代》</a></li>
+                                                <li><a href="javascript:;">豪杰春香</a></li>
+                                                <li><a href="javascript:;">好美丽诊所.嘿哈</a></li>
+                                                <li><a href="javascript:;">Harry Connick, Jr.</a></li>
+                                                <li><a href="javascript:;">Haze</a></li>
+                                                <li><a href="javascript:;">河东狮吼</a></li>
+                                                <li><a href="javascript:;">何国杰</a></li>
+                                                <li><a href="javascript:;">黑糖玛奇朵</a></li>
+                                                <li class="hot"><a href="javascript:;">黑糖群侠传</a></li>
+                                                <li><a href="javascript:;">Henry Mancini</a></li>
+                                                <li><a href="javascript:;">Heroes OST</a></li>
+                                                <li><a href="javascript:;">High On Hope</a></li>
+                                                <li><a href="javascript:;">红.爱你一万年</a></li>
+                                                <li><a href="javascript:;">红遍全球</a></li>
+                                                <li><a href="javascript:;">侯鸟e人</a></li>
+                                                <li><a href="javascript:;">后天</a></li>
+                                                <li><a href="javascript:;">蝴蝶效应</a></li>
+                                                <li><a href="javascript:;">虎姑婆</a></li>
+                                                <li><a href="javascript:;">胡伟立</a></li>
+                                                <li class="hot"><a href="javascript:;">花吃了那女孩</a></li>
+                                                <li><a href="javascript:;">花天走地</a></li>
+                                                <li><a href="javascript:;">花样的年华</a></li>
+                                                <li><a href="javascript:;">花样年华</a></li>
+                                                <li><a href="javascript:;">花样少年少女</a></li>
+                                                <li><a href="javascript:;">坏女人，好女人</a></li>
+                                                <li><a href="javascript:;">还珠格格</a></li>
+                                                <li><a href="javascript:;">黄英华</a></li>
+                                                <li><a href="javascript:;">黄真伊</a></li>
+                                                <li><a href="javascript:;">火花游戏</a></li>
+                                                <li><a href="javascript:;">火线任务</a></li>
+                                                <li class="hot"><a href="javascript:;">火影忍者</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YI" class="anchor"> I </a>
+            <div class="singerList">
+                <h3> I </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">Immediate Music</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YJ" class="anchor"> J </a>
+            <div class="singerList">
+                <h3> J </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">J Rabbit</a></li>
+                                                <li><a href="javascript:;">Je-A</a></li>
+                                                <li><a href="javascript:;">Jeff Danna</a></li>
+                                                <li><a href="javascript:;">极道学园</a></li>
+                                                <li><a href="javascript:;">极品飞车</a></li>
+                                                <li><a href="javascript:;">吉俣良</a></li>
+                                                <li><a href="javascript:;">甲贺忍法帖</a></li>
+                                                <li class="hot"><a href="javascript:;">加勒比海盗</a></li>
+                                                <li><a href="javascript:;">家有菲菲</a></li>
+                                                <li><a href="javascript:;">金刚 King Kong</a></li>
+                                                <li><a href="javascript:;">金鸡电影</a></li>
+                                                <li><a href="javascript:;">金枝玉叶</a></li>
+                                                <li><a href="javascript:;">经过</a></li>
+                                                <li><a href="javascript:;">京华烟云</a></li>
+                                                <li><a href="javascript:;">John Morris</a></li>
+                                                <li><a href="javascript:;">Jonathan Elias</a></li>
+                                                <li><a href="javascript:;">Jozef Van Wissem</a></li>
+                                                <li><a href="javascript:;">角斗士</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YK" class="anchor"> K </a>
+            <div class="singerList">
+                <h3> K </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">K Veru</a></li>
+                                                <li><a href="javascript:;">咖啡王子1号店</a></li>
+                                                <li><a href="javascript:;">Kaada</a></li>
+                                                <li><a href="javascript:;">看看我 比利金</a></li>
+                                                <li><a href="javascript:;">柯南</a></li>
+                                                <li><a href="javascript:;">Kid Loco</a></li>
+                                                <li><a href="javascript:;">Kit Kittredge: An American Girl</a></li>
+                                                <li><a href="javascript:;">恐龙</a></li>
+                                                <li><a href="javascript:;">Kongar-ol Ondar</a></li>
+                                                <li><a href="javascript:;">快乐星猫</a></li>
+                                                <li><a href="javascript:;">狂爱龙卷风</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YL" class="anchor"> L </a>
+            <div class="singerList">
+                <h3> L </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">L. Subramaniam</a></li>
+                                                <li><a href="javascript:;">La Jeune Fille Et Les Loups</a></li>
+                                                <li><a href="javascript:;">蓝色生死恋</a></li>
+                                                <li><a href="javascript:;">蓝烟火</a></li>
+                                                <li><a href="javascript:;">浪淘沙</a></li>
+                                                <li><a href="javascript:;">老夫子</a></li>
+                                                <li><a href="javascript:;">Lasse Lindh</a></li>
+                                                <li><a href="javascript:;">Le Papillon OST</a></li>
+                                                <li><a href="javascript:;">雷霆战警</a></li>
+                                                <li><a href="javascript:;">李海鹰</a></li>
+                                                <li><a href="javascript:;">礼物</a></li>
+                                                <li><a href="javascript:;">黎允文</a></li>
+                                                <li><a href="javascript:;">恋爱初歌</a></li>
+                                                <li><a href="javascript:;">恋人哟</a></li>
+                                                <li><a href="javascript:;">练习曲</a></li>
+                                                <li><a href="javascript:;">恋香</a></li>
+                                                <li><a href="javascript:;">恋战冲绳</a></li>
+                                                <li><a href="javascript:;">亮剑</a></li>
+                                                <li><a href="javascript:;">靓女郎</a></li>
+                                                <li><a href="javascript:;">梁山伯与祝英台</a></li>
+                                                <li><a href="javascript:;">梁祝</a></li>
+                                                <li><a href="javascript:;">林华全</a></li>
+                                                <li><a href="javascript:;">林ゆうき</a></li>
+                                                <li><a href="javascript:;">Lisa Gerrard</a></li>
+                                                <li><a href="javascript:;">流氓医生</a></li>
+                                                <li><a href="javascript:;">流星花园</a></li>
+                                                <li><a href="javascript:;">龙凤斗</a></li>
+                                                <li><a href="javascript:;">龙虎门</a></li>
+                                                <li><a href="javascript:;">鹿鼎记</a></li>
+                                                <li><a href="javascript:;">露露公主(Princess LuLu)</a></li>
+                                                <li><a href="javascript:;">Luis Bacalov</a></li>
+                                                <li><a href="javascript:;">轮舞曲</a></li>
+                                                <li><a href="javascript:;">罗拉快跑</a></li>
+                                                <li><a href="javascript:;">罗密欧与茱丽叶</a></li>
+                                                <li><a href="javascript:;">绿光森林</a></li>
+                                                <li><a href="javascript:;">绿野仙踪</a></li>
+                                                <li><a href="javascript:;">律政俏佳人</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YM" class="anchor"> M </a>
+            <div class="singerList">
+                <h3> M </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">马达加斯加</a></li>
+                                                <li><a href="javascript:;">麻辣鲜师</a></li>
+                                                <li><a href="javascript:;">Mad Soul Child</a></li>
+                                                <li><a href="javascript:;">猫的报恩</a></li>
+                                                <li><a href="javascript:;">Mark Snow</a></li>
+                                                <li><a href="javascript:;">MARS战神</a></li>
+                                                <li><a href="javascript:;">Max Steiner</a></li>
+                                                <li><a href="javascript:;">美国女孩</a></li>
+                                                <li><a href="javascript:;">美国甜心</a></li>
+                                                <li><a href="javascript:;">美国往事</a></li>
+                                                <li><a href="javascript:;">美丽人生</a></li>
+                                                <li><a href="javascript:;">美丽新世界</a></li>
+                                                <li><a href="javascript:;">美妙人生</a></li>
+                                                <li><a href="javascript:;">美人鱼</a></li>
+                                                <li><a href="javascript:;">美女与野兽</a></li>
+                                                <li><a href="javascript:;">美味关系</a></li>
+                                                <li><a href="javascript:;">妹尾武</a></li>
+                                                <li><a href="javascript:;">Melody Day</a></li>
+                                                <li><a href="javascript:;">Men in Black</a></li>
+                                                <li><a href="javascript:;">梦幻的情侣</a></li>
+                                                <li><a href="javascript:;">盟军敢死队</a></li>
+                                                <li><a href="javascript:;">梦游夏威夷</a></li>
+                                                <li><a href="javascript:;">米迦勒之舞</a></li>
+                                                <li><a href="javascript:;">庙街皇后</a></li>
+                                                <li><a href="javascript:;">妙手仁心</a></li>
+                                                <li><a href="javascript:;">Michael Andrews</a></li>
+                                                <li><a href="javascript:;">Michael Brook</a></li>
+                                                <li><a href="javascript:;">Min</a></li>
+                                                <li><a href="javascript:;">明明</a></li>
+                                                <li><a href="javascript:;">明星志愿3</a></li>
+                                                <li><a href="javascript:;">名扬四海</a></li>
+                                                <li class="hot"><a href="javascript:;">命中注定我爱你</a></li>
+                                                <li><a href="javascript:;">Mio Min Mio</a></li>
+                                                <li><a href="javascript:;">魔戒</a></li>
+                                                <li><a href="javascript:;">魔女的条件</a></li>
+                                                <li><a href="javascript:;">魔术男</a></li>
+                                                <li class="hot"><a href="javascript:;">木乃伊</a></li>
+                                                <li><a href="javascript:;">MVP情人</a></li>
+                                                <li class="hot"><a href="javascript:;">My Blueberry Nights (蓝莓之夜)</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YN" class="anchor"> N </a>
+            <div class="singerList">
+                <h3> N </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">纳尔尼亚传奇2: 凯斯宾王子</a></li>
+                                                <li><a href="javascript:;">男丁格尔</a></li>
+                                                <li><a href="javascript:;">男生女生向前走</a></li>
+                                                <li class="hot"><a href="javascript:;">NANA2</a></li>
+                                                <li><a href="javascript:;">你为我著迷 电视原声带</a></li>
+                                                <li><a href="javascript:;">Nico Muhly</a></li>
+                                                <li><a href="javascript:;">Nim's Island</a></li>
+                                                <li><a href="javascript:;">Nino Rota</a></li>
+                                                <li><a href="javascript:;">纽约的秋天</a></li>
+                                                <li><a href="javascript:;">Notting Hill</a></li>
+                                                <li><a href="javascript:;">挪亚方舟惊世启示</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YO" class="anchor"> O </a>
+            <div class="singerList">
+                <h3> O </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">Once</a></li>
+                                                <li><a href="javascript:;">Only you</a></li>
+                                                <li><a href="javascript:;">Original Motion Picture Soundtrack</a></li>
+                                                <li><a href="javascript:;">Original Soundtrack</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YP" class="anchor"> P </a>
+            <div class="singerList">
+                <h3> P </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">P.R. Murali</a></li>
+                                                <li><a href="javascript:;">霹雳皇龙纪</a></li>
+                                                <li><a href="javascript:;">霹雳英雄</a></li>
+                                                <li><a href="javascript:;">痞子英雄</a></li>
+                                                <li><a href="javascript:;">苹果核战记</a></li>
+                                                <li><a href="javascript:;">乒乓</a></li>
+                                                <li><a href="javascript:;">Pixote</a></li>
+                                                <li><a href="javascript:;">Praise Hymn Tracks</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YQ" class="anchor"> Q </a>
+            <div class="singerList">
+                <h3> Q </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">Q狼特勤组</a></li>
+                                                <li><a href="javascript:;">棋魂OST</a></li>
+                                                <li><a href="javascript:;">七剑</a></li>
+                                                <li><a href="javascript:;">汽车总动员</a></li>
+                                                <li><a href="javascript:;">七年级生</a></li>
+                                                <li><a href="javascript:;">其他原声带</a></li>
+                                                <li><a href="javascript:;">齐天周大圣之西游记</a></li>
+                                                <li><a href="javascript:;">七武士</a></li>
+                                                <li><a href="javascript:;">钱的战争</a></li>
+                                                <li><a href="javascript:;">千金百分百</a></li>
+                                                <li><a href="javascript:;">倩女幽魂</a></li>
+                                                <li><a href="javascript:;">牵手向明天</a></li>
+                                                <li><a href="javascript:;">将爱情进行到底</a></li>
+                                                <li><a href="javascript:;">蔷薇之恋</a></li>
+                                                <li><a href="javascript:;">情敌</a></li>
+                                                <li><a href="javascript:;">情癫大圣</a></li>
+                                                <li><a href="javascript:;">情定爱琴海</a></li>
+                                                <li><a href="javascript:;">情归阿拉巴马</a></li>
+                                                <li><a href="javascript:;">青龙好汉</a></li>
+                                                <li><a href="javascript:;">情深深雨濛濛</a></li>
+                                                <li><a href="javascript:;">求婚事务所</a></li>
+                                                <li><a href="javascript:;">QUAGUA</a></li>
+                                                <li><a href="javascript:;">拳皇</a></li>
+                                                <li><a href="javascript:;">全民超人汉考克</a></li>
+                                                <li><a href="javascript:;">犬夜叉</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YR" class="anchor"> R </a>
+            <div class="singerList">
+                <h3> R </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">Rachel Portman</a></li>
+                                                <li><a href="javascript:;">燃烧天堂</a></li>
+                                                <li><a href="javascript:;">染血王国</a></li>
+                                                <li><a href="javascript:;">Randy Edelman</a></li>
+                                                <li><a href="javascript:;">Ray Conniff</a></li>
+                                                <li><a href="javascript:;">热情仲夏</a></li>
+                                                <li><a href="javascript:;">Red Buddha</a></li>
+                                                <li><a href="javascript:;">人工智能</a></li>
+                                                <li><a href="javascript:;">人间四月天</a></li>
+                                                <li><a href="javascript:;">人妖打排球</a></li>
+                                                <li><a href="javascript:;">Riz Ortolani</a></li>
+                                                <li><a href="javascript:;">Ronan Hardiman</a></li>
+                                                <li><a href="javascript:;">如果·爱</a></li>
+                                                <li><a href="javascript:;">女巫布莱尔2</a></li>
+                                                <li><a href="javascript:;">阮玲玉(葬心)</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YS" class="anchor"> S </a>
+            <div class="singerList">
+                <h3> S </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">三叶草 原声OST</a></li>
+                                                <li><a href="javascript:;">三姊妹的情人</a></li>
+                                                <li><a href="javascript:;">涩女郎</a></li>
+                                                <li><a href="javascript:;">Semi-Pro</a></li>
+                                                <li><a href="javascript:;">色即是空</a></li>
+                                                <li class="hot"><a href="javascript:;">色·戒</a></li>
+                                                <li><a href="javascript:;">闪灵二人组</a></li>
+                                                <li><a href="javascript:;">伤城</a></li>
+                                                <li><a href="javascript:;">上书房</a></li>
+                                                <li><a href="javascript:;">少年吔, 安啦</a></li>
+                                                <li><a href="javascript:;">少年包青天VS红楼梦</a></li>
+                                                <li><a href="javascript:;">少年梁祝</a></li>
+                                                <li><a href="javascript:;">少年史艳文</a></li>
+                                                <li><a href="javascript:;">少年杨家将</a></li>
+                                                <li><a href="javascript:;">少儿不宜</a></li>
+                                                <li><a href="javascript:;">神雕侠侣(CCTV)</a></li>
+                                                <li class="hot"><a href="javascript:;">神话</a></li>
+                                                <li><a href="javascript:;">神奇四侠</a></li>
+                                                <li><a href="javascript:;">深情密码</a></li>
+                                                <li><a href="javascript:;">圣斗士OST</a></li>
+                                                <li><a href="javascript:;">圣母在上</a></li>
+                                                <li><a href="javascript:;">生日快乐</a></li>
+                                                <li><a href="javascript:;">盛夏光年</a></li>
+                                                <li><a href="javascript:;">圣夏零度C</a></li>
+                                                <li><a href="javascript:;">十八岁的天空</a></li>
+                                                <li class="hot"><a href="javascript:;">士兵突击</a></li>
+                                                <li><a href="javascript:;">十二夜</a></li>
+                                                <li><a href="javascript:;">十九楼半的夏天</a></li>
+                                                <li><a href="javascript:;">十面埋伏</a></li>
+                                                <li><a href="javascript:;">十三罗汉</a></li>
+                                                <li><a href="javascript:;">狮子王</a></li>
+                                                <li><a href="javascript:;">熟女欲望日记</a></li>
+                                                <li><a href="javascript:;">双恋</a></li>
+                                                <li><a href="javascript:;">水晶之恋</a></li>
+                                                <li><a href="javascript:;">四大名捕</a></li>
+                                                <li><a href="javascript:;">食神</a></li>
+                                                <li><a href="javascript:;">死神</a></li>
+                                                <li><a href="javascript:;">死亡笔记</a></li>
+                                                <li><a href="javascript:;">Silent Hill 4 - The Room</a></li>
+                                                <li><a href="javascript:;">SMASH Cast</a></li>
+                                                <li><a href="javascript:;">Sonny Rollins</a></li>
+                                                <li><a href="javascript:;">Sonya</a></li>
+                                                <li><a href="javascript:;">Sound City - Real to Reel</a></li>
+                                                <li class="hot"><a href="javascript:;">Speed Racer 急速赛车</a></li>
+                                                <li><a href="javascript:;">Step Up 舞出我人生</a></li>
+                                                <li><a href="javascript:;">Stephen Warbeck</a></li>
+                                                <li><a href="javascript:;">隋唐英雄传</a></li>
+                                                <li><a href="javascript:;">Sunny Hill</a></li>
+                                                <li><a href="javascript:;">Surf's Up</a></li>
+                                                <li><a href="javascript:;">Suzy</a></li>
+                                                <li><a href="javascript:;">Sylvester Levay</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YT" class="anchor"> T </a>
+            <div class="singerList">
+                <h3> T </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">台风</a></li>
+                                                <li class="hot"><a href="javascript:;">泰坦尼克号</a></li>
+                                                <li><a href="javascript:;">太阳照常升起</a></li>
+                                                <li><a href="javascript:;">淘金俏冤家</a></li>
+                                                <li><a href="javascript:;">桃色</a></li>
+                                                <li><a href="javascript:;">特警新人类2</a></li>
+                                                <li><a href="javascript:;">Tenacious D</a></li>
+                                                <li><a href="javascript:;">The 4400</a></li>
+                                                <li><a href="javascript:;">The Notebook</a></li>
+                                                <li><a href="javascript:;">The One</a></li>
+                                                <li><a href="javascript:;">Theodore Shapiro</a></li>
+                                                <li><a href="javascript:;">天地英雄</a></li>
+                                                <li><a href="javascript:;">天狗捉鬼帮</a></li>
+                                                <li><a href="javascript:;">天国的嫁衣</a></li>
+                                                <li><a href="javascript:;">天脉传奇</a></li>
+                                                <li><a href="javascript:;">甜柠檬之恋</a></li>
+                                                <li><a href="javascript:;">天上星星天下星星</a></li>
+                                                <li><a href="javascript:;">天使爱美丽</a></li>
+                                                <li><a href="javascript:;">天使情人</a></li>
+                                                <li><a href="javascript:;">天使之城</a></li>
+                                                <li><a href="javascript:;">天堂来的孩子</a></li>
+                                                <li><a href="javascript:;">天外飞仙</a></li>
+                                                <li><a href="javascript:;">天下无双</a></li>
+                                                <li><a href="javascript:;">天下无贼</a></li>
+                                                <li><a href="javascript:;">天下足球</a></li>
+                                                <li><a href="javascript:;">天一生水</a></li>
+                                                <li><a href="javascript:;">铁臂阿童木</a></li>
+                                                <li><a href="javascript:;">听不到的恋人</a></li>
+                                                <li><a href="javascript:;">听见小城之春</a></li>
+                                                <li><a href="javascript:;">童梦奇缘</a></li>
+                                                <li><a href="javascript:;">通缉犯</a></li>
+                                                <li><a href="javascript:;">偷天换日</a></li>
+                                                <li><a href="javascript:;">头文字D</a></li>
+                                                <li><a href="javascript:;">吐司男之吻</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YU" class="anchor"> U </a>
+            <div class="singerList">
+                <h3> U </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">Ulala Session</a></li>
+                                                <li><a href="javascript:;">Ultimate Disney Princess</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YV" class="anchor"> V </a>
+            <div class="singerList">
+                <h3> V </h3>
+                <ul class="allSinger">
+                                        <li class="nohot">本类暂无歌手</li>
+                                    </ul>
+            </div>
+            
+            <a name="YW" class="anchor"> W </a>
+            <div class="singerList">
+                <h3> W </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">外出</a></li>
+                                                <li><a href="javascript:;">完美风暴</a></li>
+                                                <li><a href="javascript:;">网剧原声</a></li>
+                                                <li><a href="javascript:;">网球王子</a></li>
+                                                <li><a href="javascript:;">王子变青蛙</a></li>
+                                                <li><a href="javascript:;">伟大的遗产</a></li>
+                                                <li><a href="javascript:;">维纳斯之恋</a></li>
+                                                <li><a href="javascript:;">危险心灵</a></li>
+                                                <li><a href="javascript:;">微笑PASTA</a></li>
+                                                <li><a href="javascript:;">West Side Story</a></li>
+                                                <li><a href="javascript:;">我的宠物老公</a></li>
+                                                <li><a href="javascript:;">我的秘密花园</a></li>
+                                                <li><a href="javascript:;">我的儿子是老大</a></li>
+                                                <li><a href="javascript:;">我的女孩</a></li>
+                                                <li><a href="javascript:;">我的失忆男友</a></li>
+                                                <li><a href="javascript:;">我的野蛮初恋</a></li>
+                                                <li><a href="javascript:;">我的野蛮千金</a></li>
+                                                <li><a href="javascript:;">我的野蛮女友</a></li>
+                                                <li><a href="javascript:;">我的野蛮王妃/宫</a></li>
+                                                <li><a href="javascript:;">我的主人</a></li>
+                                                <li><a href="javascript:;">我和僵尸有个约会III</a></li>
+                                                <li><a href="javascript:;">我和僵尸有个约会</a></li>
+                                                <li><a href="javascript:;">卧虎藏龙</a></li>
+                                                <li><a href="javascript:;">我叫金三顺</a></li>
+                                                <li><a href="javascript:;">我是谁</a></li>
+                                                <li><a href="javascript:;">我为歌狂</a></li>
+                                                <li><a href="javascript:;">我心飞翔</a></li>
+                                                <li><a href="javascript:;">我亚妈发仔瘟</a></li>
+                                                <li><a href="javascript:;">我要变成硬柿子</a></li>
+                                                <li><a href="javascript:;">我只在乎你</a></li>
+                                                <li><a href="javascript:;">无敌珊宝妹</a></li>
+                                                <li><a href="javascript:;">屋顶上的绿宝石</a></li>
+                                                <li><a href="javascript:;">无极</a></li>
+                                                <li><a href="javascript:;">无间道</a></li>
+                                                <li><a href="javascript:;">恶灵'05电视原声带</a></li>
+                                                <li><a href="javascript:;">恶灵05</a></li>
+                                                <li><a href="javascript:;">恶男宅急电</a></li>
+                                                <li><a href="javascript:;">武器种族传说</a></li>
+                                                <li><a href="javascript:;">五月之恋</a></li>
+                                                <li><a href="javascript:;">恶作剧之吻</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YX" class="anchor"> X </a>
+            <div class="singerList">
+                <h3> X </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">X Men</a></li>
+                                                <li><a href="javascript:;">西村由紀江</a></li>
+                                                <li><a href="javascript:;">西街少年</a></li>
+                                                <li><a href="javascript:;">吸血鬼猎人D</a></li>
+                                                <li><a href="javascript:;">吸血鬼女王</a></li>
+                                                <li><a href="javascript:;">夕阳天使</a></li>
+                                                <li><a href="javascript:;">西游记贰</a></li>
+                                                <li><a href="javascript:;">夏天的尾巴</a></li>
+                                                <li><a href="javascript:;">XIAH Junsu</a></li>
+                                                <li class="hot"><a href="javascript:;">仙剑奇侠传</a></li>
+                                                <li><a href="javascript:;">现在只想爱你</a></li>
+                                                <li><a href="javascript:;">香草的天空</a></li>
+                                                <li><a href="javascript:;">想飞</a></li>
+                                                <li><a href="javascript:;">向左爱.向右爱</a></li>
+                                                <li><a href="javascript:;">向左走.向右走</a></li>
+                                                <li><a href="javascript:;">笑傲江湖</a></li>
+                                                <li><a href="javascript:;">新白娘子传奇</a></li>
+                                                <li><a href="javascript:;">心动的日子</a></li>
+                                                <li><a href="javascript:;">心动列车</a></li>
+                                                <li><a href="javascript:;">心恋</a></li>
+                                                <li><a href="javascript:;">新上海滩</a></li>
+                                                <li><a href="javascript:;">新神雕侠侣</a></li>
+                                                <li><a href="javascript:;">星光闪闪耀华星</a></li>
+                                                <li><a href="javascript:;">星际传奇2</a></li>
+                                                <li><a href="javascript:;">星空</a></li>
+                                                <li><a href="javascript:;">星球大战前传3:西斯的反击</a></li>
+                                                <li class="hot"><a href="javascript:;">星球大战三部曲</a></li>
+                                                <li><a href="javascript:;">星星知我心</a></li>
+                                                <li><a href="javascript:;">星愿</a></li>
+                                                <li><a href="javascript:;">行运超人</a></li>
+                                                <li><a href="javascript:;">熊的传说</a></li>
+                                                <li><a href="javascript:;">兄弟</a></li>
+                                                <li><a href="javascript:;">雪地里的星星</a></li>
+                                                <li><a href="javascript:;">雪天使</a></li>
+                                                <li><a href="javascript:;">雪中情人</a></li>
+                                                <li><a href="javascript:;">熏衣草</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YY" class="anchor"> Y </a>
+            <div class="singerList">
+                <h3> Y </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">亚卡比枪击事件</a></li>
+                                                <li><a href="javascript:;">亚瑟王</a></li>
+                                                <li><a href="javascript:;">艳光四射歌舞团</a></li>
+                                                <li><a href="javascript:;">演戏家族遇上1941的女孩</a></li>
+                                                <li><a href="javascript:;">妖精旋律</a></li>
+                                                <li><a href="javascript:;">遥远时空中</a></li>
+                                                <li><a href="javascript:;">夜半歌声</a></li>
+                                                <li><a href="javascript:;">野蛮师姐</a></li>
+                                                <li class="hot"><a href="javascript:;">叶问</a></li>
+                                                <li><a href="javascript:;">夜宴</a></li>
+                                                <li><a href="javascript:;">一个好爸爸</a></li>
+                                                <li><a href="javascript:;">一年之初</a></li>
+                                                <li><a href="javascript:;">一球成名</a></li>
+                                                <li><a href="javascript:;">伊莎贝拉</a></li>
+                                                <li><a href="javascript:;">倚天屠龙记</a></li>
+                                                <li><a href="javascript:;">异形</a></li>
+                                                <li><a href="javascript:;">吟游默示録</a></li>
+                                                <li><a href="javascript:;">影视歌曲合集</a></li>
+                                                <li><a href="javascript:;">影视音乐集锦</a></li>
+                                                <li><a href="javascript:;">英雄本色</a></li>
+                                                <li><a href="javascript:;">英雄电影原声大碟</a></li>
+                                                <li><a href="javascript:;">樱野3加1</a></li>
+                                                <li><a href="javascript:;">Yisabel</a></li>
+                                                <li><a href="javascript:;">勇敢的心</a></li>
+                                                <li><a href="javascript:;">幽灵骑士</a></li>
+                                                <li><a href="javascript:;">又见橘花香</a></li>
+                                                <li class="hot"><a href="javascript:;">又见一帘幽梦</a></li>
+                                                <li class="hot"><a href="javascript:;">欲望都市</a></li>
+                                                <li><a href="javascript:;">欲望人生之歌</a></li>
+                                                <li><a href="javascript:;">宇宙无敌奖门人</a></li>
+                                                <li><a href="javascript:;">原点</a></li>
+                                                <li><a href="javascript:;">冤家宜结不宜解</a></li>
+                                                <li><a href="javascript:;">缘来是你</a></li>
+                                                <li><a href="javascript:;">原声带</a></li>
+                                                <li><a href="javascript:;">缘邀知音</a></li>
+                                                <li><a href="javascript:;">越狱</a></li>
+                                                <li><a href="javascript:;">乐作剧</a></li>
+                                                <li><a href="javascript:;">云之彼端</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YZ" class="anchor"> Z </a>
+            <div class="singerList">
+                <h3> Z </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">Zbigniew Preisner</a></li>
+                                                <li><a href="javascript:;">摘星奇缘</a></li>
+                                                <li><a href="javascript:;">摘星</a></li>
+                                                <li><a href="javascript:;">战火兄弟连</a></li>
+                                                <li class="hot"><a href="javascript:;">长恨歌</a></li>
+                                                <li><a href="javascript:;">这该死的爱</a></li>
+                                                <li><a href="javascript:;">这里发现爱</a></li>
+                                                <li><a href="javascript:;">真爱赌注</a></li>
+                                                <li><a href="javascript:;">贞观长歌</a></li>
+                                                <li><a href="javascript:;">真情告白</a></li>
+                                                <li><a href="javascript:;">侦探物语</a></li>
+                                                <li><a href="javascript:;">真相大白</a></li>
+                                                <li><a href="javascript:;">黃真伊</a></li>
+                                                <li><a href="javascript:;">珍珠港</a></li>
+                                                <li><a href="javascript:;">真珠美人鱼</a></li>
+                                                <li><a href="javascript:;">争分夺秒</a></li>
+                                                <li><a href="javascript:;">芝加哥</a></li>
+                                                <li><a href="javascript:;">蜘蛛侠</a></li>
+                                                <li><a href="javascript:;">重返中世纪</a></li>
+                                                <li><a href="javascript:;">中国好声音</a></li>
+                                                <li><a href="javascript:;">终极一班</a></li>
+                                                <li><a href="javascript:;">终极一家</a></li>
+                                                <li><a href="javascript:;">钟无艳</a></li>
+                                                <li><a href="javascript:;">侏罗纪公园3</a></li>
+                                                <li><a href="javascript:;">主题曲片尾曲</a></li>
+                                                <li><a href="javascript:;">主题曲</a></li>
+                                                <li><a href="javascript:;">住左边住右边幸福小套房</a></li>
+                                                <li><a href="javascript:;">转角遇到爱</a></li>
+                                                <li><a href="javascript:;">Zi-A</a></li>
+                                                <li><a href="javascript:;">走向海边</a></li>
+                                                <li><a href="javascript:;">最遥远的距离</a></li>
+                                                <li><a href="javascript:;">最终兵器彼女</a></li>
+                                                <li><a href="javascript:;">佐罗传奇</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="Y0-9" class="anchor"> 0-9 </a>
+            <div class="singerList">
+                <h3> 0-9 </h3>
+                <ul class="allSinger">
+                                                                                                                    <li class="hot"><a href="javascript:;">007系列电影原声</a></li>
+                                                <li><a href="javascript:;">101次求婚</a></li>
+                                                <li><a href="javascript:;">102条斑点狗</a></li>
+                                                <li><a href="javascript:;">20 30 40</a></li>
+                                                <li><a href="javascript:;">20 Feet From Stardom - Music From The Motion Picture</a></li>
+                                                <li><a href="javascript:;">281封信</a></li>
+                                                <li><a href="javascript:;">300斯巴达勇士</a></li>
+                                                <li><a href="javascript:;">45℃天空下</a></li>
+                                                <li><a href="javascript:;">サンキュー!!</a></li>
+                                                <li><a href="javascript:;">박정원</a></li>
+                                                <li><a href="javascript:;">백지영</a></li>
+                                                <li><a href="javascript:;">김수현</a></li>
+                                                <li><a href="javascript:;">장근석</a></li>
+                                                <li><a href="javascript:;">강민혁</a></li>
+                                                <li><a href="javascript:;">박신혜</a></li>
+                                                <li><a href="javascript:;">정엽</a></li>
+                                                <li><a href="javascript:;">나윤권</a></li>
+                                                <li><a href="javascript:;">정일우</a></li>
+                                                <li><a href="javascript:;">박완규</a></li>
+                                                <li><a href="javascript:;">김현중</a></li>
+                                                <li><a href="javascript:;">서영은</a></li>
+                                                <li><a href="javascript:;">신재</a></li>
+                                                <li><a href="javascript:;">조현재</a></li>
+                                                <li><a href="javascript:;">성준</a></li>
+                                                <li><a href="javascript:;">윤화재인</a></li>
+                                                <li><a href="javascript:;">성시경</a></li>
+                                                <li><a href="javascript:;">대성</a></li>
+                                                <li><a href="javascript:;">장재인</a></li>
+                                                <li><a href="javascript:;">이지영</a></li>
+                                                <li><a href="javascript:;">서현</a></li>
+                                                <li><a href="javascript:;">이진성</a></li>
+                                                <li><a href="javascript:;">정동하</a></li>
+                                                <li><a href="javascript:;">투개월</a></li>
+                                                <li><a href="javascript:;">오현란</a></li>
+                                                <li><a href="javascript:;">이현</a></li>
+                                                <li><a href="javascript:;">이기찬</a></li>
+                                                <li><a href="javascript:;">난아진</a></li>
+                                                <li><a href="javascript:;">이정</a></li>
+                                                <li><a href="javascript:;">허가윤</a></li>
+                                                <li><a href="javascript:;">이수영</a></li>
+                                                <li><a href="javascript:;">김형준</a></li>
+                                                <li><a href="javascript:;">김범수</a></li>
+                                                <li><a href="javascript:;">김연우</a></li>
+                                                <li><a href="javascript:;">이영현</a></li>
+                                                <li><a href="javascript:;">이창민</a></li>
+                                                <li><a href="javascript:;">서인영</a></li>
+                                                <li><a href="javascript:;">휘성</a></li>
+                                                <li><a href="javascript:;">임재범</a></li>
+                                                <li><a href="javascript:;">노민우</a></li>
+                                                <li><a href="javascript:;">이민기</a></li>
+                                                <li><a href="javascript:;">양요섭</a></li>
+                                                <li><a href="javascript:;">환희</a></li>
+                                                <li><a href="javascript:;">이지혜</a></li>
+                                                <li><a href="javascript:;">2046</a></li>
+                                                            </ul>
+            </div>
+                    </div>
+    </div>
+
+    <link href="../v5/r4/style/suggest.css" rel="stylesheet" type="text/css">
+<script src="../v5/r4/js/suggest.js"></script>
+<div class="footer center">
+    <!--<p class="footlink"> <a href="/faq/etc/about.html">关于一听</a> |--> <a href="../faq/etc/copyright.html">版权声明</a> <!--| <a href="/faq/etc/recruit.html">诚聘英才</a> -->| <a href="../faq/etc/contact_us.html">联系我们</a> | <a href="../index1.html">歌曲入库</a> | <a href="../faq/etc/history.html">历史合作</a> | <a href="../faq/etc/links.html">友情链接</a> | <a href="../faq/etc/help.html">帮助中心</a> <!--| <a href="https://h5.lezicartoon.cn">移动一听</a> </p>-->
+  <p class="copyright">&copy; 2003-2020   <a href="javascript:;" class="homepage">www.lezicartoon.cn</a> All Rights Reserved 沪ICP备19024260号-3</p>
+</div>
+
+<script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F32c12acc9a2efc3fa896bb3ebcd47ee7' type='text/javascript'%3E%3C/script%3E"));</script>
+<script src='../c-30001746.js' language='JavaScript'></script>
+    <!-- 广告位：左下角悬浮 -->
+    <script>
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div id="' + s + '"></div>');
+        (window.slotbydup=window.slotbydup || []).push({
+            id: '3221626',
+            container: s,
+            size: '300,250',
+            display: 'float'
+        });
+    })();
+    </script>
+
+    <!-- 广告位：富媒体补余 -->
+    <script>
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div id="' + s + '"></div>');
+        (window.slotbydup=window.slotbydup || []).push({
+            id: '2861847',
+            container: s,
+            size: '300,250',
+            display: 'float'
+        });
+    })();
+    </script>
+
+    <script id="bdshare_js" data="type=tools&amp;uid=14170"></script>
+    <script id="bdshell_js"></script>
+    <script>
+    var bds_config = {
+        //'wbUid':1671108633,
+        'bdPopTitle':'杭州乐米动漫',
+        'snsKey':{'tqq':'403a778463634ece8f0c75a66c4e230d', 'tsina':'1435846576'},            
+        'bdPic':'//img.lezicartoon.cn/images/singer/7416.jpg'
+            };
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+    </script>
+</body>
+</html>

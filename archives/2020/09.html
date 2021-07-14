@@ -1,0 +1,666 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>2020年9月 发行专辑列表 - 杭州乐米动漫</title>
+<meta name="Description" content="2020年9月,杭州乐米动漫">
+<meta name="Keywords" content="2020年9月,杭州乐米动漫">
+<link href="../../v5/r5/style/common.css" rel="stylesheet" type="text/css">
+<link href="../../v5/r4/style/rank.css" rel="stylesheet" type="text/css">
+<script src="../../v5/r4/js/jquery.min.js"></script>
+<script src="../../v5/r4/js/common.js"></script>
+<script src="../../js/ds.js"></script>
+<script src="../../v5/r4/js/lightbox.js"></script>
+</head>
+
+<body>
+    <div class="site-nav">
+        <div class="center">
+            <ul class="navlink">
+                <li><a href="javascript:;">保存到桌面</a></li>
+                <li><a href="../../genre/index.html">曲风</a></li>
+                <li><a href="../../rank.html">排行榜</a></li>
+                <li><a href="../index.html">专辑库</a></li>
+            </ul>
+            <!--div class="bshare-custom"><a title="分享到微信" class="bshare-weixin"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到QQ空间" class="bshare-qzone"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div-->
+            <!--div class="sinaweibo_iframe">
+                <iframe width="120" height="24" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="https://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=136&height=24&uid=1671108633&style=2&btn=light&dpc=1"></iframe>
+            </div-->
+
+            <!--<ul style="height:19px;width:110px;padding-top:5px;float:left;"><li><a style="color:#333" href="https://h5.lezicartoon.cn" title="手机访问一听">手机版:h5.lezicartoon.cn</a></li></ul>-->
+            <ul class="siteaction" style="height:24px;padding-top:1px;"> 
+                <li class="favorite" style="margin-top:5px"><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">加入收藏</a></li>
+            </ul>
+        </div>
+    </div>
+               <script type="text/javascript" language="javascript">
+                function AddFavorite(sURL, sTitle) {
+                    sURL = encodeURI(sURL); 
+                try{   
+                    window.external.addFavorite(sURL, sTitle);   
+                }catch(e) {   
+                    try{   
+                        window.sidebar.addPanel(sTitle, sURL, "");   
+                    }catch (e) {   
+                        alert("加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.");
+         
+                        }   
+                    }
+                }
+              </script>
+    <!-- /site-nav -->
+    <div class="header center">
+        <div class="logo">
+            <h1>
+                <a href="../../index.html" title="返回一听首页?">杭州乐米动漫</a>
+            </h1>
+        </div>
+        <div class="search">
+            <div class="option_selected" id="search_option_selected">
+                <a href="javascript:void(0);" id="st" target="_self">全部</a>
+            </div>
+            <div class="option_list" id="search_option_list">
+                <ul>
+                    <li class="selected"><a href="javascript:void(0);" target="_self">全部</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌曲</a></li>
+                    <li><a href="javascript:void(0);" target="_self">专辑</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌手</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌词</a></li>
+                </ul>
+            </div>
+            <div class="search_box"><form method="get" action="//so.lezicartoon.cn/all.do" onsubmit="return search(this);">
+                <input type="text" name="q" id="sq" x-webkit-speech="" x-webkit-grammar="builtin:search" onwebkitspeechchange="(function(e){e.target.form.submit();})(event)">
+                <button type="submit">搜索</button></form>
+            </div>
+        </div>
+        <div class="userbox">
+            <div class="user-guest" id="user-guest">
+                <p class="sitelogin">
+                    <a href="../../register.html" class="link-reg">免费注册</a> -
+                    <a href="../../login.html" class="link-login">登录</a>
+                </p>
+                <p class="pluginlogin">
+                    <a href="../../oauth2/authorize-1435846576_http2F2Fmy..html" class="login-weibo">微博登录</a>
+                    <a href="../../oauth2.0/show-Login_pc_101501725_https2F2.html" class="login-qq">QQ登录</a>
+                    <a href="../../login.html" class="link-favor">我的收藏</a>
+                </p>
+            </div>
+            <div class="user-login" id="user-login">
+                <p class="user-welcome">
+                    <a href="../../login.html" class="link-username" id="username"></a>
+                    <span id="greeting"></span>
+                </p>
+                <div class="user-action" id="user_login_action">
+                    <a href="../../login.html" class="act-fav">我的收藏</a>
+                    <div style="display: none;">
+                        <a href="../../login.html" target="_blank">用户中心</a>
+                        <a href="../../login.html">退出登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+        (function(){
+            function cookie(k){
+                var v = "";
+                var s = k+"=",c = document.cookie,l=c.length;
+                if (l > 0) {
+                    var os = c.indexOf(s);
+                    if (os != -1) {
+                        os += s.length;
+                        var ed = c.indexOf(";", os);
+                        if (ed == -1) ed = l;
+                        v = decodeURIComponent(c.substring(os, ed)).replace(/\+/g,' ');
+                    }
+                }
+                return v;
+            }
+            function receive(){
+                var greeting,
+                    hour = new Date().getHours(),
+                    id = cookie('OneId'),
+                    user = cookie('OneNick')||cookie('OneUser');
+                if(hour >= 6 && hour < 12){
+                    greeting='上午好!';
+                }else if(hour>=12 && hour<18){
+                    greeting='下午好!';
+                }else if(hour>=18 && hour<23){
+                    greeting='晚上好!';
+                }else{
+                    greeting='夜深了 请注意休息!';
+                }
+                if(id && /^\d+$/.test(id) && user && /^[^<>\"\']+$/.test(user)){
+                    $('#username').html(user);
+                    $('#greeting').html(greeting);
+                    $('#user-login').show();
+                    $('#user-guest').hide();
+                }else{
+                    $('#user-guest').show();
+                    $('#user-login').hide();
+                }
+            }
+            (function(ctn) {
+                var timeId, time = 500,
+                    slideTime = 200,
+                    child = ctn.children("div"),
+                    upClass = "user-action-arrow-up";
+                ctn.hover(function() {
+                    timeId = setTimeout(function() {
+                        ctn.addClass(upClass);
+                        child.slideDown(slideTime);
+                    }, time);
+                }, function() {
+                    ctn.removeClass(upClass);
+                    clearTimeout(timeId);
+                    child.slideUp(slideTime);
+                });
+            })($("#user_login_action"));
+            receive();
+            setInterval(receive, 3000);
+        })();
+        </script>
+        <div class="nav">
+            <ul class="allcate" id="nav_list">
+                <li><a href="../../index.html" target="_self"><span>首页</span></a></li>
+                <li><a href="../../group.html" class="has-sub" target="_self"><i style="display:block" target="_self"></i><span>歌手</span></a></li>
+                <li><a href="../index.html" target="_self"><span>专辑</span></a></li>
+                <li><a href="../../rank.html" target="_self"><span>排行榜</span></a></li>
+                <li><a href="#" class="has-sub" target="_self"><span>高清MV</span></a></li>
+            </ul>
+            <div class="randplay">
+                <a href="../../rand.html">随便一听</a>
+            </div>
+            <div class="nav-category">
+                <a href="../../genre/index.html" target="_self">曲风分类</a>
+                <!--span>|</span>
+                <a href="/topic" target="_self">专题 &bull; 活动</a-->
+                
+            </div>
+        </div>
+        <div class="nav-secondary" id="nav_secondary">
+            <p style="display:block;">
+                <a href="../../group/group0_2.html"><span>华语女歌手</span></a> |
+                <a href="../../group/group0_1.html"><span>华语男歌手</span></a> |
+                <a href="../../group/group0_3.html"><span>华语组合</span></a> |
+                <a href="../../group/group3_15.html"><span>欧美女歌手</span></a> |
+                <a href="../../group/group3_14.html"><span>欧美男歌手</span></a> |
+                <a href="../../group/group3_16.html"><span>欧美组合</span></a> |
+                <a href="../../group/group5_0.html"><span>韩国</span></a> |
+                <a href="../../group/group4_0.html"><span>日本</span></a> |
+                <a href="../../group/group6_0.html"><span>影视</span></a> |
+                <a href="../../group/group7_0.html"><span>其他</span></a> |
+                <span><!--a class="misc" href="/fo/">佛教音乐</a><a href="/prenatal/">胎教/儿歌</a><a href="http://5.lezicartoon.cn">广场舞</a><a href="/xiqu/">戏曲</a--><a href="../../mv/index.html">高清MV</a></span>
+            </p>
+            <p style="text-align:center;width:736px;">
+                 <a href="../../mv/cate/3.html">港台歌手MV</a>  | <a href="../../mv/cate/6.html">内地歌手MV</a> | <a href="../../mv/cate/2.html">韩国歌手MV</a> | <a href="../../mv/cate/5.html">日本歌手MV</a> | <a href="../../mv/cate/4.html">欧美歌手MV</a> | <a href="../../mv/search-E6BC94E594B1E4BC9A.html">演唱会视频</a>   
+            </p>
+        </div>
+    </div>
+    <!-- /header -->
+    <script>
+    (function(){
+        var menus = $("#nav_list").find("a.has-sub"),
+            subMenu = $("#nav_secondary");
+        $.each(menus, function(index, ele) {
+            $(ele).mouseover(function() {
+                menus.children("i").hide();
+                $(ele).children("i").show();
+                subMenu.children("p").hide()
+                            .eq(index).show();
+            });
+        });
+        /*var links = [{'name': '明星美图',  'path': 'star'}, 
+                     {'name': '街拍美女',  'path': 'jiepai'}, 
+                     /*{'name': '流行服饰',  'path': 'dress'}, 
+                     {'name': '时尚彩妆',  'path': 'face'}, 
+                     {'name': '潮流发型',  'path': 'tide'}, 
+                     {'name': '清新美女',  'path': 'meinv'}, 
+                     {'name': '车模美女',  'path': 'chemo'},
+                     {'name': '唯美女生',  'path': 'fennen'}, 
+                     {'name': '非主流女生',  'path': 'feizhuliu'}, 
+                     {'name': 'Show Girl',   'path': 'showgirl'}, 
+                     {'name': 'Cosplay女神', 'path': 'cosplay'},
+                     {'name': '婚纱秀欣赏',  'path': 'hunsha'}];
+        setInterval(function(){
+            var d = links[Math.ceil(Math.random()*links.length)-1];
+            $('#picture').attr('href', 'https://ent.lezicartoon.cn/pictures/'+d.path).text(d.name);
+        }, 10000);*/
+    })();
+    </script>
+<div class="pageTitle center">
+    <h2><a href="../../rank.html">排行榜</a> - <span>2020年9月</span></h2>
+    <ul class="pagemenu">
+                <li class="thisclass">
+        <a href="javascript:;">全部</a></li>
+                <li>
+        <a href="javascript:;">华语</a></li>
+                <li>
+        <a href="javascript:;">欧美</a></li>
+                <li>
+        <a href="javascript:;">日韩</a></li>
+                <li>
+        <a href="javascript:;">其它</a></li>
+            </ul>
+</div>
+
+<div class="center">
+        <div class="lbar">
+        <dl>
+            <dt><strong>一听之最</strong></dt>
+            <dd>
+                <ul>
+                    <li><a href="javascript:;">热门歌曲</a></li>
+                    <li><a href="javascript:;">最新歌曲</a></li>
+                    <li><a href="javascript:;">独家&首发</a></li>
+                    <li><a href="javascript:;">经典老歌</a></li>
+                    <li><a href="javascript:;">欧美歌曲</a></li>
+                    <li><a href="javascript:;">日韩歌曲</a></li>
+                    <li><a href="javascript:;">热门专辑</a></li>
+                    <li><a href="../../album_n.html">最新专辑</a></li>
+                    <li><a href="javascript:;">热门歌手</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl>
+            <dt><strong>推荐排行</strong></dt>
+            <dd>
+                <ul>
+                    <li><a href="javascript:;">情歌对唱</a></li>
+                    <li><a href="javascript:;">电视剧歌曲</a></li>
+                    <li><a href="javascript:;">韩国影视歌曲</a></li>
+                    <li><a href="javascript:;">Indie流行歌曲</a></li>
+                    <li><a href="javascript:;">dj舞曲</a></li>
+                    <li><a href="javascript:;">军营歌曲</a></li>
+                    <li><a href="javascript:;">古典音乐</a></li>
+                    <li><a href="javascript:;">民谣、乡村</a></li>
+                    <li><a href="javascript:;">轻音乐</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl>
+            <dt><strong>特别榜单</strong></dt>
+            <dd>
+                <ul>
+                    <li><a href="javascript:;">摇滚歌曲榜</a></li>
+                    <li><a href="javascript:;">跑步音乐榜</a></li>
+                    <li><a href="javascript:;">篮球音乐榜</a></li>
+                    <li><a href="javascript:;">台湾百佳唱片</a></li>
+                    <li><a href="javascript:;"><font color="#ff6600">新媒体流行榜</font></a></li>
+                </ul>
+            </dd>
+        </dl>
+    </div>
+    <!-- /lbar -->
+<script>
+(function(){
+    var a = $('div.lbar'), b = a.get(0),c = b.getElementsByTagName('a'),d,e=location.href;
+    if(e.indexOf('rank.html')>=0){return;}
+    try{
+        for(d=0;d<c.length;d++){
+            if((e.indexOf('/archives')!==-1 && c[d].getAttribute('href')==='/album_n.html')
+                || e.indexOf(c[d].getAttribute('href').replace('.html',''))>=0){
+                c[d].parentNode.className = 'thisclass';
+                break;
+            }
+        }
+    }catch(e){}
+})();
+</script>
+    <!-- /lbar -->
+    <div class="albumList">
+        <!-- 新增功能 -->
+        <div class="rank-classification clearfix">
+            <div class="common-sort clearfix">
+                <a href="javascript:;">热门专辑</a>
+                <a href="../../album_n.html" class="common-sort-current">最新专辑</a>
+            </div>
+            <div class="rank-by-date">
+                <form action="" id="goto">
+                    <input type="text" value="2020" size="4" id="year" maxlength="4">
+                    年
+                    <select id="month">
+                        <option value=""></option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">6</option>
+                                                <option value="7">7</option>
+                                                <option value="8">8</option>
+                                                <option value="9" selected="selected">9</option>
+                                                <option value="10">10</option>
+                                                <option value="11">11</option>
+                                                <option value="12">12</option>
+                                            </select>
+                    月
+                    <button type="submit" class="rank-by-date-button">查看</button>
+                </form>
+                <script type="text/javascript">
+                    $('#goto').submit(function(){
+                        var year = parseInt($('#year').val(), 10),
+                            month = parseInt($('#month').val(), 10),
+                            d  = new Date;
+                        if(isNaN(month)){
+                            month = '';
+                        }
+                        if(isNaN(year)
+                            || year < 1900
+                            || year > d.getFullYear()
+                            || (month && (month<1 || month>12) || (year===d.getFullYear() && month > d.getMonth()+1))){
+                            return false;
+                        }
+                        location.replace('/archives/' + year + '/'  + month)
+                        return false;
+                    });
+                </script>
+            </div>
+        </div>
+        <!-- 新增功能结束 -->
+        <ul class="albumUL">
+                <li>
+                <small>1.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_de099d7d7ac8ea6863cf12f408f.jpg" width="150" height="150" class="albumPic" alt="黄昏咖啡店（单曲）试听">
+                    <span class="albumName">黄昏咖啡店（单曲）</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">李元</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-29</a></span>
+            </li>
+                <li>
+                <small>2.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_3d4d48ea6a6fca903b26d537d8e.jpg" width="150" height="150" class="albumPic" alt="我心碎的时候(单曲)试听">
+                    <span class="albumName">我心碎的时候(单曲)</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">陆伟</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-28</a></span>
+            </li>
+                <li>
+                <small>3.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_9678bed4324413e30eb97bd2040.jpg" width="150" height="150" class="albumPic" alt="Forever Young(电影《一点就到家》热血推广曲)(单曲)试听">
+                    <span class="albumName">Forever Young(电影《一点就到家》热血推广曲)(单曲)</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">气运联盟</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-27</a></span>
+            </li>
+                <li>
+                <small>4.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_7ead48757de1f67f443a3691e70.jpg" width="150" height="150" class="albumPic" alt="我是三江合川人（单曲）试听">
+                    <span class="albumName">我是三江合川人（单曲）</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">李志林</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-27</a></span>
+            </li>
+                <li>
+                <small>5.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_ff91fd750a6f73bc9f4d4837ff2.jpg" width="150" height="150" class="albumPic" alt="病毒无情人有情(新版)（单曲）试听">
+                    <span class="albumName">病毒无情人有情(新版)（单曲）</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">卢玉琼</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-27</a></span>
+            </li>
+                <li>
+                <small>6.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_884368c252da530a811a4c28541.jpg" width="150" height="150" class="albumPic" alt="别大王（单曲）试听">
+                    <span class="albumName">别大王（单曲）</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">梅湘茗</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-27</a></span>
+            </li>
+                <li>
+                <small>7.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_92fccbe9ddaa739654270493e3c.jpg" width="150" height="150" class="albumPic" alt="心碎（单曲）试听">
+                    <span class="albumName">心碎（单曲）</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">赵维中</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-27</a></span>
+            </li>
+                <li>
+                <small>8.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_d35a70a3a99a1905b0740434193.jpg" width="150" height="150" class="albumPic" alt="真心英雄（电影《夺冠》推广曲）(单曲)试听">
+                    <span class="albumName">真心英雄（电影《夺冠》推广曲）(单曲)</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">刺猬乐队</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-27</a></span>
+            </li>
+                <li>
+                <small>9.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_8ad9239f3f33ede4c3d1e230d98.jpg" width="150" height="150" class="albumPic" alt="生命(单曲)试听">
+                    <span class="albumName">生命(单曲)</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">左伊玄</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-24</a></span>
+            </li>
+                <li>
+                <small>10.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_2378ce6e0779f4f28f99d3d776b.jpg" width="150" height="150" class="albumPic" alt="九月的兰州（单曲）试听">
+                    <span class="albumName">九月的兰州（单曲）</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">楚桐笛笛</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-24</a></span>
+            </li>
+                <li>
+                <small>11.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_e1498d74440522473fe9ef6faa3.jpg" width="150" height="150" class="albumPic" alt="祖国了不起（单曲）试听">
+                    <span class="albumName">祖国了不起（单曲）</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">贾小东</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-24</a></span>
+            </li>
+                <li>
+                <small>12.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_3a211b2c36406ae55f6cc0bcfd3.jpg" width="150" height="150" class="albumPic" alt="上海的明朝会更好（单曲）试听">
+                    <span class="albumName">上海的明朝会更好（单曲）</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">kerry-F组合</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-23</a></span>
+            </li>
+                <li>
+                <small>13.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_4fb487516d1d3982b55656db717.jpg" width="150" height="150" class="albumPic" alt="我最美的故乡(单曲)试听">
+                    <span class="albumName">我最美的故乡(单曲)</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">华语群星</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-23</a></span>
+            </li>
+                <li>
+                <small>14.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_bc77412f284736e10486f0d6199.jpg" width="150" height="150" class="albumPic" alt="我为家乡代言（单曲）试听">
+                    <span class="albumName">我为家乡代言（单曲）</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">银悦西</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-23</a></span>
+            </li>
+                <li>
+                <small>15.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_8f459dd51077fb3233723397a9e.jpg" width="150" height="150" class="albumPic" alt="喜乐（单曲）试听">
+                    <span class="albumName">喜乐（单曲）</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">银悦西</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-23</a></span>
+            </li>
+                <li>
+                <small>16.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_2a9dfc56931a59096fffd904080.jpg" width="150" height="150" class="albumPic" alt="雷祖•十字天经（单曲）试听">
+                    <span class="albumName">雷祖•十字天经（单曲）</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">玄雷子张伟杰</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-23</a></span>
+            </li>
+                <li>
+                <small>17.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_dbd52b14fd8da4a61838265b39c.jpg" width="150" height="150" class="albumPic" alt="何时能坦然dj版（单曲）试听">
+                    <span class="albumName">何时能坦然dj版（单曲）</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">音果迷城</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-22</a></span>
+            </li>
+                <li>
+                <small>18.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_343fea0314b61e25d02ccc12493.jpg" width="150" height="150" class="albumPic" alt="背影留给我(单曲)试听">
+                    <span class="albumName">背影留给我(单曲)</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">吴星娆</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-21</a></span>
+            </li>
+                <li>
+                <small>19.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_a851df32906cf258a19bfa28461.jpg" width="150" height="150" class="albumPic" alt="阳光总在风雨后(电影《夺冠》推广曲)（单曲）试听">
+                    <span class="albumName">阳光总在风雨后(电影《夺冠》推广曲)（单曲）</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">痛仰乐队</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-21</a></span>
+            </li>
+                <li>
+                <small>20.</small>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../../images/special/429/s150_3c06f773b9c9f2e542aeca49133.jpg" width="150" height="150" class="albumPic" alt="我是十三姨（单曲）试听">
+                    <span class="albumName">我是十三姨（单曲）</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" target="_blank">十三姨</a></span>
+                <span class="albumDate"><a href="" target="_blank">2020-09-21</a></span>
+            </li>
+                </ul>
+        <div class="cPages">
+    <ul>
+            
+                            <li class="thispage"><a href="javascript:;">1</a></li>
+                            <li class="pageitem"><a href="javascript:;">2</a></li>
+                            <li class="pageitem"><a href="javascript:;">3</a></li>
+                            <li class="pageitem"><a href="javascript:;">4</a></li>
+                            <li class="pageitem"><a href="javascript:;">5</a></li>
+            
+                        <li><a href="javascript:;">下一页</a></li>
+                </ul>
+</div>
+    </div>
+    <!-- /albumList -->
+</div>
+<!-- 广告位：左下角悬浮 -->
+<script>
+(function() {
+    var s = "_" + Math.random().toString(36).slice(2);
+    document.write('<div id="' + s + '"></div>');
+    (window.slotbydup=window.slotbydup || []).push({
+        id: '3221626',
+        container: s,
+        size: '300,250',
+        display: 'float'
+    });
+})();
+</script>
+
+<!-- 广告位：富媒体补余 -->
+<script>
+(function() {
+    var s = "_" + Math.random().toString(36).slice(2);
+    document.write('<div id="' + s + '"></div>');
+    (window.slotbydup=window.slotbydup || []).push({
+        id: '2861847',
+        container: s,
+        size: '300,250',
+        display: 'float'
+    });
+})();
+</script>
+
+<link href="../../v5/r4/style/suggest.css" rel="stylesheet" type="text/css">
+<script src="../../v5/r4/js/suggest.js"></script>
+<div class="footer center">
+    <!--<p class="footlink"> <a href="/faq/etc/about.html">关于一听</a> |--> <a href="../../faq/etc/copyright.html">版权声明</a> <!--| <a href="/faq/etc/recruit.html">诚聘英才</a> -->| <a href="../../faq/etc/contact_us.html">联系我们</a> | <a href="../../index1.html">歌曲入库</a> | <a href="../../faq/etc/history.html">历史合作</a> | <a href="../../faq/etc/links.html">友情链接</a> | <a href="../../faq/etc/help.html">帮助中心</a> <!--| <a href="https://h5.lezicartoon.cn">移动一听</a> </p>-->
+  <p class="copyright">&copy; 2003-2020   <a href="javascript:;" class="homepage">www.lezicartoon.cn</a> All Rights Reserved 沪ICP备19024260号-3</p>
+</div>
+
+<script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F32c12acc9a2efc3fa896bb3ebcd47ee7' type='text/javascript'%3E%3C/script%3E"));</script>
+<script src='../../c-30001746.js' language='JavaScript'></script>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=14170"></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    var bds_config = {
+        //'wbUid':1671108633,
+        'bdPopTitle':'杭州乐米动漫',
+        'snsKey':{'tqq':'403a778463634ece8f0c75a66c4e230d', 'tsina':'1435846576'},            
+        'bdPic':'//img.lezicartoon.cn/images/singer/7416.jpg'
+            };
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+</script>
+</body>
+</html>

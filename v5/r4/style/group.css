@@ -1,0 +1,160 @@
+.singerIndex{
+    margin:8px auto 0px;
+    height: 26px;
+}
+.singerIndex p.initials{
+    height:26px;
+    line-height:26px;
+    float: left;
+}
+.singerIndex p.initials span{
+    font-size: 14px;
+    color:#999;
+    float:left;
+    margin-right: 5px;
+}
+.singerIndex p.initials a {
+    font-size:14px;
+    color:#0093E1;
+    float:left;
+    padding:0px 5px;
+    margin-right: 1px;
+}
+.singerIndex p.initials a:hover{
+    text-decoration: underline;
+}
+.singerIndex .showhot {
+    float: left;
+    margin-top: 5px;
+    *margin-top:3px;
+}
+.singerIndex .showhot input {
+    margin:0 2px 0 10px;
+    vertical-align: -2px;
+}
+.singerIndex .showhot label {
+    color: #999;
+}
+.singerCommend{
+
+}
+.singerCommend h3 {
+    color:#0093E1;
+    font-size: 14px;
+    padding-top: 15px;
+    font-weight: normal;
+}
+.singerCommend ul {
+    padding-top:14px;
+}
+.singerCommend ul li {
+    width:75px;
+    height:114px;
+    float:left;
+    overflow:hidden;
+    display: inline;
+    margin-right: 16px;
+}
+.singerCommend ul li a.singerPic {
+    width:75px;
+    height:75px;
+    display:block;
+    overflow:hidden;
+}
+.singerCommend ul li a.singerPic img {
+
+}
+.singerCommend ul li a.singerName{
+    width:81px;
+    height:34px;
+    overflow:hidden;
+    display:block;
+    text-align:center;
+    padding-top:3px;
+    line-height:17px;
+    color:#0093E1;
+}
+.singerList{
+
+}
+.singerList h3 {
+    padding:20px 0 8px;
+    font-size:14px;
+    font-weight: normal;
+    color:#0093E1;
+    border-bottom: #cdd4dc solid 1px;
+}
+.singerList ul{
+    padding-top:6px;
+    overflow:hidden;
+}
+.singerList ul li{
+    width:181px;
+    height:20px;
+    margin:8px 8px 8px 0;
+    float:left;
+    display: inline;
+    font-size:14px;
+    white-space:nowrap;
+    color:#999;
+    overflow:hidden;
+}
+.singerList ul li a{
+    color:#0093E1;
+}
+.singerList ul li a:hover{
+    color:#F30;
+}
+.singerList ul li.hot a{
+    color:#F30;
+}
+.anchor{
+    display:block;
+    width:100%;
+    height:1px;
+    overflow:hidden;
+}
+.group-menu, .group-content {
+    float: left;
+    margin-top:15px;
+}
+.group-menu {
+    width: 170px;
+}
+.group-content {
+    width: 764px;
+    padding-left:25px;
+    border-left: #cdd4dc solid 1px;
+}
+.group-menu-component {
+    background: url("https://www.1ting.com/v5/r4/images/group-menu-bg.png") repeat-x left bottom;
+    padding: 5px 0 11px;
+}
+.group-menu-component-last {
+    background: #FFF;
+}
+.group-menu-component a {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    font-size: 14px;
+    padding-left: 9px;
+    color: #0093E1;
+    margin-top: 2px;
+}
+.group-menu-component a:hover {
+    color: #FFF;
+    background: #0093E1;
+    text-decoration: none;
+}
+.group-menu-component a.group-menu-title {
+    color: #666;
+}
+.group-menu-component a.group-menu-title:hover {
+    color: #FFF;
+}
+.group-menu-component .group-menu-current {
+    color: #FFF;
+    background: #0093E1;
+    text-decoration: none;
+}

@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>胡彦斌_包袱LRC滚动歌词下载</title>
+<link href="v5/style/lrc/lrc.css" rel="stylesheet" type="text/css">
+<script>
+if(self==top){document.write('<style>#nav{position:absolute;top:0;left:0;padding:0 0;background:#fff url("/v5/r4/images/top_logo.png") no-repeat;border-top:4px solid #22A5E9;border-bottom:1px solid #AACBEE; width:100%;height:60px;}#nav p{padding:6px;height:30px;line-height:30px;margin-left:200px;}body{margin-top:80px;}#container{height:auto;width:auto;text-align:left;padding:10px;}.ting_5{text-align:left;}</style>');}
+</script>
+<script>
+document.domain='lezicartoon.cn';
+function the(s){return document.getElementById(s);}
+</script>
+</head>
+<body>
+<div class="ting_5">
+</div>
+        <div id="container"></div>
+    <div id="lrc">[ti:包袱]
+[ar:胡彦斌]
+[00:-0.29]包袱
+
+[00:02.58]作词：汤雅琳 作曲：黄启莹
+[00:12.17]演唱：胡彦斌
+[00:24.73]
+[00:32.06]我一直付出
+[00:32.97]直到感情起了冲突
+[00:35.69]才有所领悟
+[00:39.10]爱情的起伏反反复复
+[00:40.72]来的唐突
+[00:42.07]什么都会变得不清楚
+[00:45.70]我一直在乎知道你对我的辜负
+[00:49.63]才有所无助
+[00:53.03]爱情的歧路走得好苦
+[00:55.10]回到最初
+[00:56.60]曾经的承诺已不算数
+[01:01.41]我不是你的包袱
+[01:04.08]你说你那么辛苦
+[01:05.64]我背负你给我的无辜
+[01:08.79]你只在乎你的在乎
+[01:12.15]却忘了我的付出
+[01:15.91]我不是你的包袱
+[01:17.98]你说你那么辛苦
+[01:19.35]我承受你给我的痛楚
+[01:22.99]你只在乎你的付出
+[01:26.88]却忘了我的在乎
+[01:31.57]
+[01:41.91]我一直付出
+[01:43.42]直到感情起了冲突
+[01:45.72]才有所领悟
+[01:49.24]爱情的起伏反反复复
+[01:51.43]来的唐突
+[01:52.98]什么都会变得不清楚
+[01:56.30]
+[01:57.88]小朋友你想来
+[02:00.35]跟我说say goodbay
+[02:03.45]爱情的岔路走得好苦
+[02:05.67]回到最初
+[02:07.27]曾经的承诺已不算数
+[02:11.65]我不是你的包袱
+[02:13.92]你说你那么辛苦
+[02:15.74]我背负你给我的无辜
+[02:18.98]你只在乎你的在乎
+[02:22.53]却忘了我的付出
+[02:26.39]我不是你的包袱
+[02:27.69]你说你那么辛苦
+[02:30.06]我承受你给我的痛楚
+[02:33.29]你只在乎你的付出
+[02:36.58]却忘了我的在乎
+[02:41.28]
+[02:57.21]我不是你的包袱
+[02:59.75]你说你那么辛苦
+[03:01.84]我背负你给我的无辜
+[03:05.19]你只在乎你的在乎
+[03:08.65]却忘了我的付出
+[03:12.37]我不是你的包袱
+[03:14.44]你说你那么辛苦
+[03:16.44]我承受你给我的痛楚
+[03:19.45]你只在乎你的付出
+[03:23.03]却忘了我的在乎
+[03:28.01]
+</div>
+    <script>
+        var Lyric = function(){
+            var that = this;
+            this.preTime = 0;
+            this.nextTime = 0;
+            this.currIndex = 0;
+            this.lrc = the("lrc").innerHTML.split("[");
+            this.array = [];
+
+            this.init = function(){
+                var array = [];
+                if (that.lrc.length > 5){
+                    for (var i = 0; i < that.lrc.length; i++){
+                        var g = {};
+                        var t = that.lrc[i].split("]");
+                        g.time = that.getTime(t[0]);
+                        if (isNaN(g.time))
+                            continue;
+                        g.c = t[1];
+                        if (g.c == "")
+                            g.c = that.getNext(i);
+                        array.push(g);
+                    }
+
+                    array.sort(function(x, y) {
+                        if (x.time > y.time)
+                            return 1;
+                        else if (x.time < y.time)
+                            return -1;
+                        else
+                            return 0;
+                    });
+                    var tc = '';
+                    for (var i = 0; i < array.length; i++){
+                        var g = array[i];
+                        if (!g.c) {
+                            g.c = "";
+                        }
+                        tc+=("<div id='lrc" + i + "'>" + g.c + "</div>");
+                    }
+                    the('container').innerHTML=tc;
+
+                    if(top == self){
+                        return;
+                    }
+
+                    var time = window.setInterval(function() {
+                        try {
+                            if (parent.document.getElementById('not-allowed-scroll').checked) {
+                                that.lrcList();
+                            }
+                        } catch(e) {
+                            that.lrcList();
+                        }
+                    }, 500);
+                } else {
+                    the("container").innerHTML = the("lrc").innerHTML;
+                }
+                that.lines = array;
+            };
+
+            this.getNext = function(i){
+                var result = "";
+                var i = i + 1;
+                if(that.lrc[i]){
+                    t = that.lrc[i].split("]");
+                    if (t[1] == "")
+                        result = that.getNext(i);
+                    else
+                        result = t[1]
+                }
+                return result;
+            };
+
+            this.getTime = function(str){
+                var time = 0;
+                var ta = str.split(":");
+                if (ta.length < 2)
+                    return time;
+
+                if (ta[1].indexOf(".") > 0) {
+                    var tb = ta[1].split(".");
+                    time = ta[0] * 60 * 1000 + tb[0] * 1000 + tb[1] * 10;
+                }
+                else
+                    time = ta[0] * 60 * 1000 + ta[1] * 1000;
+                return time;
+            };
+
+            this.lrcList = function(){
+                var s = 0;
+                try {
+                    s = parent.Instance.time();
+                } catch(e) {
+                    return;
+                }
+                s = s * 1000;
+
+                function getTop(idx) {
+                    return Math.max(80, the("lrc" + idx).offsetTop - 23) - 80;
+                }
+
+                function moveScrollbar(idx) {
+                    var t = getTop(idx);
+                    var ch = the('container').scrollHeight;
+
+                    the("container").scrollTop = t;
+                }
+
+                if (s == 0) {
+                    that.currIndex = 0;
+                    moveScrollbar(that.currIndex);
+
+                    for (var i = 0; i < that.lines.length; i++) {
+                        the("lrc" + i).style.color = '#000000';
+                    }
+                    return;
+                }
+
+                if (s > 0 && that.currIndex < that.lines.length - 1)
+                {
+                    that.preTime = that.lines[that.currIndex].time;
+
+                    that.nextTime = that.lines[that.currIndex + 1].time;
+
+                    if (s >= that.preTime && s < that.nextTime) {
+
+                    } else if (s >= that.nextTime) {
+                        the("lrc" + that.currIndex).style.color = '#000';
+                        moveScrollbar(++that.currIndex);
+                        the("lrc" + that.currIndex).style.color = '#06adf3';
+                        that.lrcList();
+                    } else {
+                        the("lrc" + that.currIndex).style.color = '#000';
+                        moveScrollbar(--that.currIndex);
+                        the("lrc" + that.currIndex).style.color = '#06adf3';
+                        that.lrcList();
+                    }
+                }
+                else
+                {
+                    if (s < that.lines[that.lines.length - 1].time) {
+                        that.currIndex = 0;
+                        moveScrollbar(that.currIndex);
+                        for (var i = 0; i < that.lines.length; i++) {
+                            the("lrc" + i).style.color = '#000';
+                        }
+                        that.lrcList();
+                    }
+                }
+            };
+        };
+        new Lyric().init();
+    </script>
+    <!--歌词下标签云22-->
+
+<div id="nav"><a href="index.html"><div style="width:300px;height:90px;"></div></a><p class="songtitle" style="margin-top:-45px">试听<a href="singer/64/singer_481.html" target="_blank">胡彦斌</a>的<a href="player/54/player_9156.html" target="_blank">包袱</a></p></div>
+<script src='c-30065998.js' language='JavaScript'></script>
+
+
+</body>
+</html>

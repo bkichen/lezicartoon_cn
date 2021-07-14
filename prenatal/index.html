@@ -1,0 +1,1609 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>胎教儿歌 - 提供最新最全的胎教音乐和儿歌</title>
+    <link rel="stylesheet" href="css/common.css">
+    <meta name="keywords" content="胎教音乐,最新胎教音乐,好听的胎教音乐,胎教音乐大全,孕早期,孕晚期,孕中期,儿歌,儿童歌曲">
+    <meta name="Description" content="根据不同年龄段,精选出对应的胎教音乐和儿童歌曲！">
+    <link href="../v5/r4/style/suggest.css" rel="stylesheet" type="text/css">
+    <script src="../v5/r4/js/jquery.min.js"></script>
+</head>
+<body>
+<div class="container clearfix logo-ctn">
+    <a href="../index.html" class="logo" title="返回杭州乐米动漫首页?">杭州乐米动漫</a>
+    <div class="search-ctn">
+        <form action="http://so.lezicartoon.cn/song" method="get" autocomplete="off">
+            <div class="search-ctn-type">
+                <div class="search-ctn-type-all" check-current="0" id="search_title">
+                    <span></span>
+                    <p>全部</p>
+                </div>
+                <div class="search-ctn-type-secondary clearfix" id="search_cont">
+                    <a href="javascript:void(0);" check-num="0">全部</a>
+                    <a href="javascript:void(0);" check-num="1">歌曲</a>
+                    <a href="javascript:void(0);" check-num="2">专辑</a>
+                    <a href="javascript:void(0);" check-num="3">歌手</a>
+                    <a href="javascript:void(0);" check-num="4">歌词</a>
+                </div>
+            </div>
+            <div class="search-content">
+                <input type="text" id="sq" name="q" value="支持拼音搜索，如找周杰伦输入zj即可">
+            </div>
+            <div class="button-ctn">
+                <button type="submit">搜索</button>
+            </div>
+        </form>
+    </div>
+    <script type="text/javascript">
+        (function() {
+            var title = $("#search_title"), cont = $("#search_cont");
+            title.click(function() {
+                cont.show();
+                cont.children().removeClass()
+                .eq( $(this).attr("check-current") ).addClass("current");
+            });
+            cont.click(function(e) {
+                var sor = $(e.target);
+                $(this).hide();
+                title.attr("check-current", sor.attr("check-num"))
+                .children("p").text( sor.text() );
+            });
+        })();
+    </script>
+
+    <div class="userbox">
+        <div class="user-guest" id="user-guest">
+            <p class="sitelogin">
+                <a href="javascript:;" class="link-reg">注册</a> -
+                <a href="javascript:;" class="link-login">登录</a>
+            </p>
+            <p class="pluginlogin">
+                <a href="javascript:;" class="login-weibo">微博登录</a>
+                <a href="javascript:;" class="login-qq">QQ登录</a>
+                <a href="javascript:;" class="link-favor">我的收藏</a>
+            </p>
+        </div>
+        <div class="user-login" id="user-login">
+            <p class="user-welcome">
+                <a href="javascript:;" class="link-username">yuanjainhang</a>上午好
+            </p>
+            <div class="user-action" id="user_login_action">
+                <a href="javascript:;" class="act-fav">我的收藏</a>
+                <div>
+                    <a href="javascript:;" target="_blank">用户中心</a>
+                    <a href="javascript:;">退出登录</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+    (function(){
+        function cookie(k){
+            var v = "";
+            var s = k+"=",c = document.cookie,l=c.length;
+            if (l > 0) {
+                var os = c.indexOf(s);
+                if (os != -1) {
+                    os += s.length;
+                    var ed = c.indexOf(";", os);
+                    if (ed == -1) ed = l;
+                    v = decodeURIComponent(c.substring(os, ed)).replace(/\+/g,' ');
+                }
+            }
+            return v;
+        }
+        function receive(){
+            var greeting,hour = new Date().getHours(),
+                id = cookie('OneId'),
+                user = cookie('OneNick')||cookie('OneUser'),
+                ht = "";
+            if(hour >= 6 && hour < 12){
+                greeting='上午好!';
+            }else if(hour>=12 && hour<18){
+                greeting='下午好!';
+            }else if(hour>=18 && hour<23){
+                greeting='晚上好!';
+            }else{
+                greeting='夜深了 请注意休息!';
+            }
+            if(id && /^\d+$/.test(id) && user && /^[^<>\"\']+$/.test(user)){
+                ht = '<p class="user-welcome">'+
+                        '<a href="http://my.lezicartoon.cn/profile" class="link-username">'+user+'</a>'+greeting+
+                    '</p>'+
+                    '<div class="user-action" id="user_login_action">'+
+                        '<a href="http://my.lezicartoon.cn/" class="act-fav">我的收藏</a>'+
+                        '<div>'+
+                            '<a href="http://my.lezicartoon.cn/" target="_blank">用户中心</a>'+
+                            '<a href="http://my.lezicartoon.cn/logout">退出登录</a>'+
+                        '</div>'+
+                    '</div>';
+                $('#user-login').html(ht).show();
+                $('#user-guest').hide();
+                bindEvent( $("#user_login_action") );
+            }else{
+                $('#user-guest').show();
+                $('#user-login').hide();
+            }
+        }
+        function bindEvent(ctn) {
+            var timeId, time = 500,
+                slideTime = 200,
+                child = ctn.children("div"),
+                upClass = "user-action-arrow-up";
+            ctn.hover(function() {
+                timeId = setTimeout(function() {
+                    ctn.addClass(upClass);
+                    child.slideDown(slideTime);
+                }, time);
+            }, function() {
+                ctn.removeClass(upClass);
+                clearTimeout(timeId);
+                child.slideUp(slideTime);
+            });
+        }
+        receive();
+        setInterval(receive, 3000);
+    })();
+    </script>
+</div>
+<!-- 头部结束 -->
+<div class="container">
+    <div class="banner" id="banner">
+        <ul>
+            <li>
+                <a data-for="b-content-01" href="javascript:void(0);" class="current">
+                    <span class="banner-list-bg"></span><span class="banner-list-text">孕早期（1~3个月）</span>
+                </a>
+            </li>
+            <li>
+                <a data-for="b-content-02" href="javascript:void(0);">
+                    <span class="banner-list-bg"></span><span class="banner-list-text">孕中期（4~7个月）</span>
+                </a>
+            </li>
+            <li>
+                <a data-for="b-content-03" href="javascript:void(0);">
+                    <span class="banner-list-bg"></span><span class="banner-list-text">孕晚期（8~10个月）</span>
+                </a>
+            </li>
+            <li>
+                <a data-for="b-content-04" href="javascript:void(0);">
+                    <span class="banner-list-bg"></span><span class="banner-list-text">新生儿（出生1个月）</span>
+                </a>
+            </li>
+            <li>
+                <a data-for="b-content-05" href="javascript:void(0);">
+                    <span class="banner-list-bg"></span><span class="banner-list-text">0至1岁</span>
+                </a>
+            </li>
+            <li>
+                <a data-for="b-content-06" href="javascript:void(0);">
+                    <span class="banner-list-bg"></span><span class="banner-list-text">2至3岁</span>
+                </a>
+            </li>
+        </ul>
+        <div data-source="b-content-01" class="banner-content banner-content-01" style="display:block">
+            <h2>
+                孕早期<span>（1-3个月）</span>
+            </h2>
+            <div>
+                <p>孕期的头3个月称为孕早期，这个阶段孕妇的身心变化很大，孕早期期间妈妈不要剧烈运动，要注意个人卫生并保持充足的休息以及做好相应的检查工作。每日最好进食4餐，间隔不要过长，少食辛辣刺激性的食物，不饮浓茶、咖啡、吸烟、酗酒。</p>
+                <p>这个期间胎儿在母体内的生长发育非常快。怀孕后前8周，受精卵就由一个单细胞发育成有2亿个细胞的成型人体，此期称为胚胎；孕8周后即称为胎儿。怀孕6周时，胚胎的脊柱和脑部开始形成，心脏开始跳动，用B超就能测出胚胎和心脏的活动，此时孕妇可有早孕反应。7周后，四肢开始形成。8周后胚胎有了眼睛，但没有脸和外耳道；胚胎开始蠕动，但孕妇还感觉不到。12周时，胎儿大约有7厘米长，20克重，可看出人型，头与身体其他部位相比，显得较大。用多普勒听诊仪可听到胎心。</p>
+            </div>
+            <a href="javascript:;" target="_1ting">立即播放</a>
+        </div>
+        <div data-source="b-content-02" class="banner-content banner-content-02">
+            <h2>
+                孕中期<span>（4~7个月）</span>
+            </h2>
+            <div>
+                <p>这个阶段，多数孕妈妈已经告别了早孕反应，身体舒适，食欲大开，情绪也日益稳定，此时可以适度地活动了。孕妈们可以在早晚做适量的运动，像散步、体操都可以，但是不可以从事剧烈的体力劳动。还要有规律的生活，要保证充足的睡眠时间，这样孕妈们才有足够的精力来应付孕期中出现的一些情况，也有利于腹中胎儿的发育。</p>
+<p>怀孕4个月，是胎儿大脑神经系统发育的高峰，绝大部分器官已经建立，心脏搏动更有力了，四肢开始活动。怀孕5个月时，胎儿的各种器官已经具备了基本功能，骨骼更结实，活动量也增加了，不少孕妈妈已经能够感觉到胎动，腹部日渐隆起，皮肤的色素沉着加重。怀孕6个月后，胎儿已经发育得比较成熟，五官面目清晰，视觉、听觉也正在形成中，是进行胎教的好时机。怀孕7个月时，胎儿已经接近新生儿了，各器官和骨骼肌肉皆已经完备，皮下有少量脂肪。而孕妈妈随着肚子的增大，又开始进入新一轮的不适阶段。如发生腿抽筋、眩晕、眼花、体重猛增、行动不便、血糖异常、贫血等情况。</p>
+            </div>
+            <a href="javascript:;" target="_1ting">立即播放</a>
+        </div>
+        <div data-source="b-content-03" class="banner-content banner-content-03">
+            <h2>
+                孕晚期<span>（8~10个月）</span>
+            </h2>
+            <div>
+                <p>孕晚期是指从孕妇28周开始就算起，直到分娩结束（到40周），其中包括了怀孕8月、9月、10月3个月份。（30—32周）—进入孕晚期后，胎动强度会逐渐减弱，但由于不少孕妇缺乏一定的医学知识，生怕胎动减弱是由于孩子出现什么问题所致。这种想法使孕妇在无形中产生了焦虑，而这种情绪却对胎儿的发育极为不利。</p>
+                <p>专家表示：孕晚期，孕妇应该注意的是胎动次数，而不是胎动的强弱。因为在晚期，孩子个头长大了，肢体只能弯曲，子宫没有多余的位置让胎儿在妈妈肚子里活动了，因此，胎动减弱是正常现象。正常情况下，早、午、晚胎动的三次平均数为5-10次，少于5次就不正常了。</p>
+                <p>孕妇应该在安静的环境下，放松地感觉胎动。当然，孕晚期是胎儿最容易出现问题的时候，有条件的话，可以在怀孕36周后一周1次定期做胎心监护。</p>
+            </div>
+            <a href="javascript:;" target="_1ting">立即播放</a>
+        </div>
+        <div data-source="b-content-04" class="banner-content banner-content-04">
+            <h2>
+                新生儿<span>（出生1个月）</span>
+            </h2>
+            <div>
+                <p>新生儿是指自脐带结扎至生后满28天。在孩子刚出生时，按时喂奶，照顾好他，多让他听听音乐，给他讲讲故事，多陪她聊聊，尽管他可能不会说话，但可以培养他的语感多带他出去呼吸新鲜空气，让他尽早对周围环境有所认知。</p>
+                <p>宝宝出生后， 应尽早进行哺乳，这样可以促进母亲乳汁分泌。初乳含有丰富的抗体，应该及时让宝宝吃上母亲的初乳。一般情况下，若分娩的母亲、宝宝一切正常，0.5～2小时就可以开奶。1～3天的宝宝，按需哺乳，每次喂10～15分钟(要遵循按需哺乳的原则，根据个体差异而定)。4～14天的宝宝，每4小时喂奶一次，每次喂15～20分钟，每次喂30～90毫升(要遵循按需哺乳的原则，根据个体差异而定)。15～30天的宝宝，每隔3小时喂奶一次，每次15～20分钟。 喂奶时间可安排在早上6、9、12时;下午3、6、9时及夜间12时、后半夜3时，每次喂奶70～100毫升(要遵循按需哺乳的原则，根据个体差异而定)。</p>
+            </div>
+            <a href="javascript:;" target="_1ting">立即播放</a>
+        </div>
+        <div data-source="b-content-05" class="banner-content banner-content-05">
+            <h2>
+                0至1岁
+            </h2>
+            <div>
+                <p>0-1岁是宝宝出生后，在生理、心理、社会意识等方面的觉醒期，从混沌走向开明，从无知到探索认知。而这时期大脑的发育也是他们一生中尤显突飞猛进的一年，那么妈妈们从0-1岁早教课程可以从以下几方面来开展：听觉训练 、视觉训练、触觉训练、味、嗅、温度等感知觉训练、颜色感知练习、方位听觉训练。</p>
+                <p>应当坚持母乳喂养，但母亲实在没有奶或在患某种疾病不宜于喂奶的情况下，完全用动物乳或其他代乳品喂养宝宝为人工喂养。鲜牛奶和全脂奶粉是人工喂养宝宝的首选代乳品，除非宝宝实在不适应牛奶，才考虑用其他食品。</p>
+            </div>
+            <a href="javascript:;" target="_1ting">立即播放</a>
+        </div>
+        <div data-source="b-content-06" class="banner-content banner-content-06">
+            <h2>
+                2至3岁
+            </h2>
+            <div>
+                <p>2至3岁的幼儿，可以独立做许多事了，不再需要垫尿布了。能自己吃饭，也记住了许多话语，可以自如地和大人讲话。独立能力逐渐增强。</p>
+                <p>虽然孩子的生长速度在２～３岁之间减慢，然而他的身体还会继续发生经历从婴儿到儿童的明显变化。最大的变化是身体各部分的比例：婴儿时头相对较大，腿和胳膊相对短；目前头部的生长速度减慢，从第２年一年生长２厘米，到以后１０年内生长２～４．４厘米。同时身高增加，主要是因为孩子腿部和躯干生长速度加快。随着身体各部生长速度的改变，他的身体和腿看起来比较均衡了。</p>
+                <p>本阶段孩子的行动姿势也会发生很大的变化。矮胖、幼稚外观部分是因行动姿势造成的，特别是鼓出的腹部和凹进的腰部。但随着肌肉张力的改善，孩子的姿势变得更加直立，将形成更高、更瘦、更强壮的外表。</p>
+            　 　<p>记住在２岁以后，同龄孩子身高和体重的差异会非常大，因此不要花费太多的时间把你的孩子与其他孩子进行比较。只要他按照自己独特的生长速度发育，就没有必要担心。</p>
+            </div>
+            <a href="javascript:;" target="_1ting">立即播放</a>
+        </div>
+    </div>
+    <dl class="special-list">
+        <dt>编辑精选</dt>
+                <dd>
+            <a href="javascript:;" target="_1ting">
+                <span class="special-list-icon"><img src="../images/special/82/s100_f318bf79adff960975978cf6b69.jpg" alt="越听越聪明"></span>
+                <span class="special-list-title"></span>
+                <span class="special-list-name">越听越聪明</span>
+            </a>
+        </dd>
+                <dd>
+            <a href="javascript:;" target="_1ting">
+                <span class="special-list-icon"><img src="../images/special/142/s100_40a4dd45cac72c050c4e64086e0.jpg" alt="精灵花园 Spiritual Garden"></span>
+                <span class="special-list-title"></span>
+                <span class="special-list-name">精灵花园 Spiritual Garden</span>
+            </a>
+        </dd>
+                <dd>
+            <a href="javascript:;" target="_1ting">
+                <span class="special-list-icon"><img src="../images/special/158/s100_41a9dc2e4eae6b74d74b18c9c6c.jpg" alt="宝宝成长音乐(怀孕后期)"></span>
+                <span class="special-list-title"></span>
+                <span class="special-list-name">宝宝成长音乐(怀孕后期)</span>
+            </a>
+        </dd>
+                <dd>
+            <a href="javascript:;" target="_1ting">
+                <span class="special-list-icon"><img src="../images/special/202/s100_d39d954d82cedef607f5abedc08.jpg" alt="からだにいいおと for your daily health"></span>
+                <span class="special-list-title"></span>
+                <span class="special-list-name">からだにいいおと for your daily health</span>
+            </a>
+        </dd>
+                <dd>
+            <a href="javascript:;" target="_1ting">
+                <span class="special-list-icon"><img src="../images/special/53/s100_555ad3d5f05a92719d3b5003ba1.jpg" alt="音乐工厂3 儿童乐园"></span>
+                <span class="special-list-title"></span>
+                <span class="special-list-name">音乐工厂3 儿童乐园</span>
+            </a>
+        </dd>
+                <dd>
+            <a href="javascript:;" target="_1ting">
+                <span class="special-list-icon"><img src="../images/special/60/s100_e1bbca3d838a4c7b31fefe8b900.jpg" alt="宝贝的歌"></span>
+                <span class="special-list-title"></span>
+                <span class="special-list-name">宝贝的歌</span>
+            </a>
+        </dd>
+            </dl>
+    <div class="rank-ctn">
+        <h3>∷ <a href="javascript:;" target="_blank" title="推荐最好听的胎教音乐、胎教歌曲的试听，并提供免费APP下载">胎教音乐APP下载</a> ∷</h3>
+        <div class="common-tab-list rank-tab-list" id="rank_title">
+            <a data-for="rank-taijiao" href="javascript:void(0);" class="current">胎教</a>
+            <a data-for="rank-erge" href="javascript:void(0);">儿歌</a>
+        </div>
+        <div class="rank-content" id="rank_cont">
+            <ul data-source="rank-taijiao" class="common-music-list rank-music-list" style="display:block">
+                                <li>1.<a href="javascript:;" target="_1ting" title="数鸭子(完整版)">数鸭子(完整版)</a></li>
+                                <li>2.<a href="javascript:;" target="_1ting" title="踏古">踏古</a></li>
+                                <li>3.<a href="javascript:;" target="_1ting" title="Grand Canyon (USA)">Grand Canyon (USA)</a></li>
+                                <li>4.<a href="javascript:;" target="_1ting" title="数星星">数星星</a></li>
+                                <li>5.<a href="javascript:;" target="_1ting" title="Prelude & Fugue No.15 in D flat major">Prelude & Fugue No.15 in D flat major</a></li>
+                                <li>6.<a href="javascript:;" target="_1ting" title="The Sound of Silence from Morning Has Broken">The Sound of Silence from Morning Has Broken</a></li>
+                            </ul>
+            <ul data-source="rank-erge" class="common-music-list rank-music-list">
+                                <li>1.<a href="javascript:;" target="_1ting" title="西游记">西游记</a></li>
+                                <li>2.<a href="javascript:;" target="_1ting" title="数鸭子(完整版)">数鸭子(完整版)</a></li>
+                                <li>3.<a href="javascript:;" target="_1ting" title="聪明的一休">聪明的一休</a></li>
+                                <li>4.<a href="javascript:;" target="_1ting" title="走天涯 - 王希美泰">走天涯 - 王希美泰</a></li>
+                                <li>5.<a href="javascript:;" target="_1ting" title="踏古">踏古</a></li>
+                                <li>6.<a href="javascript:;" target="_1ting" title="儿歌新动力2">儿歌新动力2</a></li>
+                            </ul>
+        </div>
+    </div>
+    <div class="clear"></div>
+    <div class="main-content">
+        <div class="common-tab-list main-content-tab" id="music_type_title">
+            <a data-for="type-youmei" href="javascript:void(0);" class="current">优美动听</a>
+            <a data-for="type-rouhe" href="javascript:void(0);">柔和舒缓</a>
+            <a data-for="type-qingsong" href="javascript:void(0);">轻松愉快</a>
+            <a data-for="type-jiezou" href="javascript:void(0);">节奏活泼</a>
+            <a data-for="type-daziran" href="javascript:void(0);">大自然</a>
+            <a data-for="type-erge" href="javascript:void(0);" class="main-content-tab-last-link">儿歌</a>
+        </div>
+        <div class="main-content-bg" id="music_type_con">
+            <div data-source="type-youmei" class="music-list-info clearfix" style="display:block">
+                <div class="music-list-info-mess">优美动听的音乐适合在休息时播放。能够让听者放松心情，舒缓神经。同时，播放这样的音乐，可以让宝宝敲开幼小的心灵，纾解烦躁的“小脾气”，甚至还可以做到某些程度的心灵治疗，在无形中促进了宝宝的身心健康。对于孕妇来说，优美动听的旋律可以使人心旷神怡，浮想联翩，从而改善不良情绪，产生良好的心境，并将这种信息传递给腹中的胎儿，使其深受感染。</div>
+                <div class="music-list-info-list clearfix">
+                    <div class="rank-ten-title">
+                        <h3>Top10</h3>
+                        <a href="javascript:;" class="play_now"><span></span>立即播放</a>
+                    </div>
+                    <ul class="common-music-list rank-ten-list">
+                                                                            <li data-song-id="1031588">1.<a href="javascript:;" target="_1ting" title="游来游去的鱼儿">游来游去的鱼儿</a></li>
+                                                    <li data-song-id="1031587">2.<a href="javascript:;" target="_1ting" title="油菜花开（选自降E大调第九钢琴协奏曲） ">油菜花开（选自降E大调第九钢琴协奏曲） </a></li>
+                                                    <li data-song-id="1031586">3.<a href="javascript:;" target="_1ting" title="一幅画像(选自D大调哈夫纳小夜曲) ">一幅画像(选自D大调哈夫纳小夜曲) </a></li>
+                                                    <li data-song-id="1031585">4.<a href="javascript:;" target="_1ting" title="小小鸭子水中游(选自降E大调第三十九交响曲) ">小小鸭子水中游(选自降E大调第三十九交响曲) </a></li>
+                                                    <li data-song-id="1031584">5.<a href="javascript:;" target="_1ting" title="小舵手 ">小舵手 </a></li>
+                                            </ul>
+                    <ul class="common-music-list rank-ten-list">
+                                                                            <li data-song-id="1031583">6.<a href="javascript:;" target="_1ting" title="我家的牵牛花(选自D大调哈夫纳小夜曲) ">我家的牵牛花(选自D大调哈夫纳小夜曲) </a></li>
+                                                    <li data-song-id="1031582">7.<a href="javascript:;" target="_1ting" title="蜗牛的家(选自D大调哈夫纳小夜曲) ">蜗牛的家(选自D大调哈夫纳小夜曲) </a></li>
+                                                    <li data-song-id="1031581">8.<a href="javascript:;" target="_1ting" title="土耳其进行曲 ">土耳其进行曲 </a></li>
+                                                    <li data-song-id="1031580">9.<a href="javascript:;" target="_1ting" title="珍惜好晨光 ">珍惜好晨光 </a></li>
+                                                    <li data-song-id="1031579">10.<a href="javascript:;" target="_1ting" title="月夜船歌 ">月夜船歌 </a></li>
+                                            </ul>
+                </div>
+            </div>
+            <div data-source="type-rouhe" class="music-list-info clearfix">
+                <div class="music-list-info-mess">这种类型的音乐可以伴随听者入眠，让劳累了一天的父母或者处于成长期的新生儿能够在音乐的伴随下很快入睡做一个美梦。对于父母来说，柔和舒缓的音乐可谓是睡前最佳选择，不仅可以让身体放轻松，纾解压力，还可以避免因自律神经紧张失调而导致慢性疾病的产生。正在孕育宝宝的准妈妈在此类音乐下能够给躁动于腹中的胎儿留下深刻的印象，使他朦胧地意识到，世界是多么和谐，多么美好。</div>
+                <div class="music-list-info-list clearfix">
+                    <div class="rank-ten-title">
+                        <h3>Top10</h3>
+                        <a href="javascript:;" class="play_now"><span></span>立即播放</a>
+                    </div>
+                    <ul class="common-music-list rank-ten-list">
+                                                                            <li data-song-id="1031578">1.<a href="javascript:;" target="_1ting" title="一支草仔一点露 ">一支草仔一点露 </a></li>
+                                                    <li data-song-id="1031577">2.<a href="javascript:;" target="_1ting" title="小诗 ">小诗 </a></li>
+                                                    <li data-song-id="1031576">3.<a href="javascript:;" target="_1ting" title="小皮球 ">小皮球 </a></li>
+                                                    <li data-song-id="1031575">4.<a href="javascript:;" target="_1ting" title="小风铃 ">小风铃 </a></li>
+                                                    <li data-song-id="1031574">5.<a href="javascript:;" target="_1ting" title="小宝贝做蛋糕 ">小宝贝做蛋糕 </a></li>
+                                            </ul>
+                    <ul class="common-music-list rank-ten-list">
+                                                                            <li data-song-id="1031573">6.<a href="javascript:;" target="_1ting" title="乌鸦 ">乌鸦 </a></li>
+                                                    <li data-song-id="1031572">7.<a href="javascript:;" target="_1ting" title="望郎 ">望郎 </a></li>
+                                                    <li data-song-id="1031571">8.<a href="javascript:;" target="_1ting" title="生日礼物 ">生日礼物 </a></li>
+                                                    <li data-song-id="1031570">9.<a href="javascript:;" target="_1ting" title="情书 ">情书 </a></li>
+                                                    <li data-song-id="1031569">10.<a href="javascript:;" target="_1ting" title="偶然 ">偶然 </a></li>
+                                            </ul>
+                </div>
+            </div>
+            <div data-source="type-qingsong" class="music-list-info clearfix">
+                <div class="music-list-info-mess">轻松愉快的音乐可以作为父母陪伴自己宝宝游戏的背景音乐，能够培养父母和宝宝之间的感情。这样的音乐可以大大提升创造力、企划力以及刺激右脑，对右脑的训练与发展是很有帮助的。同时如果有时候胃口不好，听一些轻松愉快的乐曲可以改善胎儿的肠胃运动，从而达到促进食欲的作用。总的来说，对胎儿的身体、性格、创作力等是有百利而无一害的。</div>
+                <div class="music-list-info-list clearfix">
+                    <div class="rank-ten-title">
+                        <h3>Top10</h3>
+                        <a href="javascript:;" class="play_now"><span></span>立即播放</a>
+                    </div>
+                    <ul class="common-music-list rank-ten-list">
+                                                                            <li data-song-id="1031568">1.<a href="javascript:;" target="_1ting" title="你是一首情歌 ">你是一首情歌 </a></li>
+                                                    <li data-song-id="1031567">2.<a href="javascript:;" target="_1ting" title="你的头发 ">你的头发 </a></li>
+                                                    <li data-song-id="1031566">3.<a href="javascript:;" target="_1ting" title="那会响遍他拉大堂的竖琴 ">那会响遍他拉大堂的竖琴 </a></li>
+                                                    <li data-song-id="1031565">4.<a href="javascript:;" target="_1ting" title="牧童情歌 ">牧童情歌 </a></li>
+                                                    <li data-song-id="1031564">5.<a href="javascript:;" target="_1ting" title="梦里的小河 ">梦里的小河 </a></li>
+                                            </ul>
+                    <ul class="common-music-list rank-ten-list">
+                                                                            <li data-song-id="1031563">6.<a href="javascript:;" target="_1ting" title="梦 ">梦 </a></li>
+                                                    <li data-song-id="1031562">7.<a href="javascript:;" target="_1ting" title="美丽的春天 ">美丽的春天 </a></li>
+                                                    <li data-song-id="1031561">8.<a href="javascript:;" target="_1ting" title="老鼠嫁新娘 ">老鼠嫁新娘 </a></li>
+                                                    <li data-song-id="1031560">9.<a href="javascript:;" target="_1ting" title="卡农钢琴版 ">卡农钢琴版 </a></li>
+                                                    <li data-song-id="1031559">10.<a href="javascript:;" target="_1ting" title="欢乐歌 ">欢乐歌 </a></li>
+                                            </ul>
+                </div>
+            </div>
+            <div data-source="type-jiezou" class="music-list-info clearfix">
+                <div class="music-list-info-mess">多听一些节奏活泼的音乐可以培养宝宝开朗的性格，让宝宝能够变得积极、开朗，让宝宝能够融入到小伙伴当中去。适当的节奏刺激对脑部的活动有很大的帮助，经常听一些节奏跳跃活泼的音乐，通过系统、周期性的刺激，可以活化脑细胞，达到防止老化的功效，还可以促进胎宝宝大脑发育更充分，神经网络更丰富。</div>
+                <div class="music-list-info-list clearfix">
+                    <div class="rank-ten-title">
+                        <h3>Top10</h3>
+                        <a href="javascript:;" class="play_now"><span></span>立即播放</a>
+                    </div>
+                    <ul class="common-music-list rank-ten-list">
+                                                                            <li data-song-id="1031558">1.<a href="javascript:;" target="_1ting" title="花开大地 ">花开大地 </a></li>
+                                                    <li data-song-id="1031557">2.<a href="javascript:;" target="_1ting" title="给妈妈的歌 ">给妈妈的歌 </a></li>
+                                                    <li data-song-id="1031556">3.<a href="javascript:;" target="_1ting" title="道情 ">道情 </a></li>
+                                                    <li data-song-id="1031555">4.<a href="javascript:;" target="_1ting" title="大家欢笑 ">大家欢笑 </a></li>
+                                                    <li data-song-id="1031554">5.<a href="javascript:;" target="_1ting" title="慈母颂 ">慈母颂 </a></li>
+                                            </ul>
+                    <ul class="common-music-list rank-ten-list">
+                                                                            <li data-song-id="1031553">6.<a href="javascript:;" target="_1ting" title="窗">窗</a></li>
+                                                    <li data-song-id="1031552">7.<a href="javascript:;" target="_1ting" title="常常在静夜里">常常在静夜里</a></li>
+                                                    <li data-song-id="1031551">8.<a href="javascript:;" target="_1ting" title="爸爸的心.">爸爸的心.</a></li>
+                                                    <li data-song-id="1031550">9.<a href="javascript:;" target="_1ting" title="爱上你">爱上你</a></li>
+                                                    <li data-song-id="1031549">10.<a href="javascript:;" target="_1ting" title="舒曼-梦幻曲">舒曼-梦幻曲</a></li>
+                                            </ul>
+                </div>
+            </div>
+            <div data-source="type-daziran" class="music-list-info clearfix">
+                <div class="music-list-info-mess">大自然音乐由自然韵律组成，比如淅淅沥沥的雨声，叮咚缠绵的泉水声，千回百转的鸟鸣声等，给人纯净、一尘不染的感觉，让人身临其境，唤起心中美好的感觉。特别是当宝宝在聆听泉水声的时候，能诱发大脑产生更多的α脑电波，而这种频率的脑电波是大脑处于平静放松状态下的理想波动频率，不仅可以使宝宝心情宁静，对睡眠也大有裨益。</div>
+                <div class="music-list-info-list clearfix">
+                    <div class="rank-ten-title">
+                        <h3>Top10</h3>
+                        <a href="javascript:;" class="play_now"><span></span>立即播放</a>
+                    </div>
+                    <ul class="common-music-list rank-ten-list">
+                                                                            <li data-song-id="352187">1.<a href="javascript:;" target="_1ting" title="天际">天际</a></li>
+                                                    <li data-song-id="352191">2.<a href="javascript:;" target="_1ting" title="风言风语">风言风语</a></li>
+                                                    <li data-song-id="352179">3.<a href="javascript:;" target="_1ting" title="微笑的上弦月">微笑的上弦月</a></li>
+                                                    <li data-song-id="352421">4.<a href="javascript:;" target="_1ting" title="远古的邂逅">远古的邂逅</a></li>
+                                                    <li data-song-id="352425">5.<a href="javascript:;" target="_1ting" title="海底游龙">海底游龙</a></li>
+                                            </ul>
+                    <ul class="common-music-list rank-ten-list">
+                                                                            <li data-song-id="352199">6.<a href="javascript:;" target="_1ting" title="黑夜的眼泪">黑夜的眼泪</a></li>
+                                                    <li data-song-id="352202">7.<a href="javascript:;" target="_1ting" title="午后的天堂岛-Resort SPA">午后的天堂岛-Resort SPA</a></li>
+                                                    <li data-song-id="352195">8.<a href="javascript:;" target="_1ting" title="相思花雨">相思花雨</a></li>
+                                                    <li data-song-id="352428">9.<a href="javascript:;" target="_1ting" title="鲸艳">鲸艳</a></li>
+                                                    <li data-song-id="352189">10.<a href="javascript:;" target="_1ting" title="不睡">不睡</a></li>
+                                            </ul>
+                </div>
+            </div>
+            <div data-source="type-erge" class="music-list-info clearfix">
+                <div class="music-list-info-mess"> 儿歌的吟唱中，优美的旋律、和谐的节奏、真挚的情感可以给孩子以美的享受和情感熏陶。可以形象有趣地帮助儿童认识自然界，认识社会生活，开发他们的智力，启迪引发他们的思维和想象能力。从一定意义上说，儿歌是引导孩子认识世界、认识自己、步入人生的第一个领路人、启蒙者。</div>
+                <div class="music-list-info-list clearfix">
+                    <div class="rank-ten-title">
+                        <h3>Top10</h3>
+                        <a href="javascript:;" class="play_now"><span></span>立即播放</a>
+                    </div>
+                    <ul class="common-music-list rank-ten-list">
+                                                                            <li data-song-id="1104012">1.<a href="javascript:;" target="_1ting" title="西游记">西游记</a></li>
+                                                    <li data-song-id="1024582">2.<a href="javascript:;" target="_1ting" title="数鸭子(完整版)">数鸭子(完整版)</a></li>
+                                                    <li data-song-id="1104007">3.<a href="javascript:;" target="_1ting" title="聪明的一休">聪明的一休</a></li>
+                                                    <li data-song-id="1165139">4.<a href="javascript:;" target="_1ting" title="走天涯 - 王希美泰">走天涯 - 王希美泰</a></li>
+                                                    <li data-song-id="1024575">5.<a href="javascript:;" target="_1ting" title="踏古">踏古</a></li>
+                                            </ul>
+                    <ul class="common-music-list rank-ten-list">
+                                                                            <li data-song-id="1103813">6.<a href="javascript:;" target="_1ting" title="儿歌新动力2">儿歌新动力2</a></li>
+                                                    <li data-song-id="1024574">7.<a href="javascript:;" target="_1ting" title="Grand Canyon (USA)">Grand Canyon (USA)</a></li>
+                                                    <li data-song-id="1103814">8.<a href="javascript:;" target="_1ting" title="儿歌新动力3">儿歌新动力3</a></li>
+                                                    <li data-song-id="1031486">9.<a href="javascript:;" target="_1ting" title="Camille Saint-Saens-天鹅">Camille Saint-Saens-天鹅</a></li>
+                                                    <li data-song-id="1103817">10.<a href="javascript:;" target="_1ting" title="儿歌新动力6">儿歌新动力6</a></li>
+                                            </ul>
+                </div>
+            </div>
+            <div class="recommendation" id="recommendation">
+                                                <div data-source="type-youmei">
+                    <dl class="special-list recommendation-list clearfix">
+                        <dt>专辑推荐</dt>
+                                                                        <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/97/s100_c168ae7feeb5a3b98306923800e.jpg" alt="梦幻童年 甜美童歌 50首童年儿歌经典"></span>
+                                <span class="special-list-title">儿童歌曲</span>
+                                <span class="special-list-name">梦幻童年 甜美童歌 50首童年儿歌经典</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/158/s100_7253fd8e2f4e0d39d73f6a8b99c.jpg" alt="宝宝成长音乐(婴幼儿期)"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">宝宝成长音乐(婴幼儿期)</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/203/s100_db672cb65f69e0106a0e02ecf12.jpg" alt="MOZART Piano Concertos 7, 8, 11 Disc 2"></span>
+                                <span class="special-list-title">古典音乐</span>
+                                <span class="special-list-name">MOZART Piano Concertos 7, 8, 11 Disc 2</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/212/s100_3ce45e56b2133ec14888e826c22.jpg" alt="阿尔法全能全脑音乐:儿童古典 CD7 宝宝随想"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">阿尔法全能全脑音乐:儿童古典 CD7 宝宝随想</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/212/s100_d8665619ce53e48e9a7facbd480.jpg" alt="双语幼儿园系列:新七田真天才胎教音乐 CD 2"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">双语幼儿园系列:新七田真天才胎教音乐 CD 2</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/257/s100_be87f317f8c69b4889e54e03428.jpg" alt="To exypno moro - Ta prota Hristougenna tou morou"></span>
+                                <span class="special-list-title">Instrumental</span>
+                                <span class="special-list-name">To exypno moro - Ta prota Hristougenna tou morou</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/260/s100_0fecb9fbeec964c0ae2be7aa8c2.jpg" alt="Louna Park"></span>
+                                <span class="special-list-title">Notis Mavroudis</span>
+                                <span class="special-list-name">Louna Park</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/260/s100_9e5bb2374fd180b62b6321452da.jpg" alt="Hronia polla - Efhes kai tragoudia gia agoria"></span>
+                                <span class="special-list-title">Zouzounia</span>
+                                <span class="special-list-name">Hronia polla - Efhes kai tragoudia gia agoria</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/260/s100_24034463eee4766c983d7e6100a.jpg" alt="Horepste oloi Bamba"></span>
+                                <span class="special-list-title">Zouzounia</span>
+                                <span class="special-list-name">Horepste oloi Bamba</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/260/s100_5d1d9057fc4429b9c2679112944.jpg" alt="Konta sti fysi kai alla oikologika tragoudia"></span>
+                                <span class="special-list-title">Kiki Kapsaski</span>
+                                <span class="special-list-name">Konta sti fysi kai alla oikologika tragoudia</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/260/s100_9480ed91c05951865f3d63070c8.jpg" alt="To tragoudi tis petaloudas"></span>
+                                <span class="special-list-title">Panagiotis Margaris, Paidiki Horodia Dimitri Typaldou</span>
+                                <span class="special-list-name">To tragoudi tis petaloudas</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/260/s100_79744275ded72cfa39bf43977a6.jpg" alt="Mythoi tou Aisopou"></span>
+                                <span class="special-list-title">Kiki Kapsaski</span>
+                                <span class="special-list-name">Mythoi tou Aisopou</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/260/s100_c814dbd2db02e75f26671f477a0.jpg" alt="Oula oula"></span>
+                                <span class="special-list-title">Mimis Plessas</span>
+                                <span class="special-list-name">Oula oula</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/261/s100_baf3ee6b21a2a4a91c885797ff4.jpg" alt="Dyo mousika paramythia"></span>
+                                <span class="special-list-title">Thanasis Dritsas</span>
+                                <span class="special-list-name">Dyo mousika paramythia</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/261/s100_59203c9aa4ad9db13e77402b58e.jpg" alt="Oi peirates - Ela ki esy"></span>
+                                <span class="special-list-title">Bebe Lilly</span>
+                                <span class="special-list-name">Oi peirates - Ela ki esy</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/262/s100_342c38d8678c7aa5cce8c21a036.jpg" alt="Choo Choo Boogaloo"></span>
+                                <span class="special-list-title">Buckwheat Zydeco</span>
+                                <span class="special-list-name">Choo Choo Boogaloo</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/262/s100_eebb4754d7c9963efd8eb63f84d.jpg" alt="Everyone Loves To Dance"></span>
+                                <span class="special-list-title">Aaron Nigel Smith</span>
+                                <span class="special-list-name">Everyone Loves To Dance</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/266/s100_3a6873e477adf34971922727b40.jpg" alt="Mors lilla Olle - Guldkorn"></span>
+                                <span class="special-list-title">Gunnar Hahns Orkester</span>
+                                <span class="special-list-name">Mors lilla Olle - Guldkorn</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/274/s100_55dc97884eda931fe707eb01c75.jpg" alt="Peikkometsä"></span>
+                                <span class="special-list-title">Peikkometsä</span>
+                                <span class="special-list-name">Peikkometsä</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/274/s100_c12855eca65a96fd832ccb65604.jpg" alt="DE PELICULA"></span>
+                                <span class="special-list-title">MILIKI</span>
+                                <span class="special-list-name">DE PELICULA</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/277/s100_b8d686dd650c69ce00319387f5d.jpg" alt="O Pequeno Polegar"></span>
+                                <span class="special-list-title">O Pequeno Polegar</span>
+                                <span class="special-list-name">O Pequeno Polegar</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/277/s100_e815fa24175eb7ec101b30fe213.jpg" alt="A Cigarra e a Formiga"></span>
+                                <span class="special-list-title">A Cigarra e a Formiga</span>
+                                <span class="special-list-name">A Cigarra e a Formiga</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/277/s100_0c920eb69236490865c97c44f5a.jpg" alt="Wild Geraas"></span>
+                                <span class="special-list-title">Jochem van Gelder</span>
+                                <span class="special-list-name">Wild Geraas</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/277/s100_bc5d920be300a1ef9cc9a946d5c.jpg" alt="Coleção Disquinho 2002 - O Violino e o Gato"></span>
+                                <span class="special-list-title">Elenco Disquinho</span>
+                                <span class="special-list-name">Coleção Disquinho 2002 - O Violino e o Gato</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/277/s100_0c2f976992110ee2cb6d9e263bd.jpg" alt="Coleção Disquinho 2002 - O Velho o Garoto e o Burro"></span>
+                                <span class="special-list-title">Elenco Teatro Disquinho</span>
+                                <span class="special-list-name">Coleção Disquinho 2002 - O Velho o Garoto e o Burro</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/286/s100_4bfdf76df080c1055e32671c5b1.jpg" alt="Tremei i kardia mou"></span>
+                                <span class="special-list-title">Candy Girls</span>
+                                <span class="special-list-name">Tremei i kardia mou</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/286/s100_ec1a436b76fa9223e66b3f48f7c.jpg" alt="O Karagkiozis kai oi dimotikes ekloges"></span>
+                                <span class="special-list-title">Evgenios Spatharis</span>
+                                <span class="special-list-name">O Karagkiozis kai oi dimotikes ekloges</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/286/s100_01becfbe02e29bc8fc66effcfb6.jpg" alt="The orchestra"></span>
+                                <span class="special-list-title">Magda Giannikou</span>
+                                <span class="special-list-name">The orchestra</span>
+                            </a>
+                        </dd>
+                                                                    </dl>
+                    <a href="javascript:;" class="load-more">点击加载更多</a>
+                </div>
+                                <div data-source="type-rouhe" style="display:none;">
+                    <dl class="special-list recommendation-list clearfix">
+                        <dt>专辑推荐</dt>
+                                                                        <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/349/s100_ecd160efa62d3c1806c8d6496e2.jpg" alt="胎教音乐100首必听 胎教音乐精选 好听"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">胎教音乐100首必听 胎教音乐精选 好听</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/98/s100_f15ea7aacd236f4d60e19991a6a.jpg" alt="现代胎教音乐大全"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">现代胎教音乐大全</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/158/s100_7253fd8e2f4e0d39d73f6a8b99c.jpg" alt="宝宝成长音乐(婴幼儿期)"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">宝宝成长音乐(婴幼儿期)</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/212/s100_3ce45e56b2133ec14888e826c22.jpg" alt="阿尔法全能全脑音乐:儿童古典 CD7 宝宝随想"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">阿尔法全能全脑音乐:儿童古典 CD7 宝宝随想</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/212/s100_d8665619ce53e48e9a7facbd480.jpg" alt="双语幼儿园系列:新七田真天才胎教音乐 CD 2"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">双语幼儿园系列:新七田真天才胎教音乐 CD 2</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/38/s100_7d5b1f3fb129461e7d7f6301aaf.jpg" alt="胎教音乐之天使宝贝"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">胎教音乐之天使宝贝</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/38/s100_8a117272f93a09b112d90fd9fe6.jpg" alt="胎教音乐之妈咪的爱"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">胎教音乐之妈咪的爱</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/52/s100_859acd2909ff0d676994bcef3cf.jpg" alt="爱和乐 全能全脑音乐精华篇 美乐 (1)"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">爱和乐 全能全脑音乐精华篇 美乐 (1)</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/52/s100_859acd2909ff0d676994bcef3cf.jpg" alt="爱和乐 全能全脑音乐精华篇 美乐 (2)"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">爱和乐 全能全脑音乐精华篇 美乐 (2)</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/52/s100_859acd2909ff0d676994bcef3cf.jpg" alt="爱和乐 全能全脑音乐精华篇 美乐 (3)"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">爱和乐 全能全脑音乐精华篇 美乐 (3)</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/52/s100_859acd2909ff0d676994bcef3cf.jpg" alt="爱和乐 全能全脑音乐精华篇 美乐 (4)"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">爱和乐 全能全脑音乐精华篇 美乐 (4)</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/60/s100_e1bbca3d838a4c7b31fefe8b900.jpg" alt="零岁前音乐会"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">零岁前音乐会</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/60/s100_e1bbca3d838a4c7b31fefe8b900.jpg" alt="宝贝的歌"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">宝贝的歌</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/82/s100_f318bf79adff960975978cf6b69.jpg" alt="越听越聪明"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">越听越聪明</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/98/s100_4e05e615bda00e56bd2ba4ac7bb.jpg" alt="聪明宝宝爱心胎教音乐全集(1)"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">聪明宝宝爱心胎教音乐全集(1)</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/98/s100_1d9ed24dd4cf53cdfd5d6308be0.jpg" alt="聪明宝宝爱心胎教音乐全集(2)"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">聪明宝宝爱心胎教音乐全集(2)</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/98/s100_bb691efccba7e5c5e23ded85907.jpg" alt="聪明宝宝爱心胎教音乐全集(3)"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">聪明宝宝爱心胎教音乐全集(3)</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/98/s100_1bb45983111c49d3217e650ade0.jpg" alt="聪明宝宝爱心胎教音乐全集(4)"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">聪明宝宝爱心胎教音乐全集(4)</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/98/s100_4f2f9bbf475e87ea4e45b1af3ff.jpg" alt="聪明宝宝爱心胎教音乐全集(5)"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">聪明宝宝爱心胎教音乐全集(5)</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/98/s100_4035197729077faace3b78f9f91.jpg" alt="聪明宝宝爱心胎教音乐全集(6)"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">聪明宝宝爱心胎教音乐全集(6)</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/158/s100_3115449b5c23741d2ba6445c548.jpg" alt="枕边摇篮曲1"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">枕边摇篮曲1</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/158/s100_8f5d3e20f906a2c8f5e09c3b285.jpg" alt="枕边摇篮曲2"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">枕边摇篮曲2</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/158/s100_2afe49e412069ecb99bd37d7417.jpg" alt="温柔妈妈与快乐宝贝"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">温柔妈妈与快乐宝贝</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/158/s100_d3817fecdb5d38b37d3aebe7307.jpg" alt="母与婴"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">母与婴</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/158/s100_41a9dc2e4eae6b74d74b18c9c6c.jpg" alt="宝宝成长音乐(怀孕后期)"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">宝宝成长音乐(怀孕后期)</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/211/s100_ce02006afc473bbed74347d5f1f.jpg" alt="阿尔法全能全脑音乐:儿童古典 CD1 爱乐晨醒"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">阿尔法全能全脑音乐:儿童古典 CD1 爱乐晨醒</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/211/s100_6aaf4c08549c03f7b20efe82017.jpg" alt="阿尔法全能全脑音乐:儿童古典 CD2 美乐进餐"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">阿尔法全能全脑音乐:儿童古典 CD2 美乐进餐</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/211/s100_27e3b1531a38887fc2e23a38c41.jpg" alt="阿尔法全能全脑音乐:儿童古典 CD3 欢乐胎动"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">阿尔法全能全脑音乐:儿童古典 CD3 欢乐胎动</span>
+                            </a>
+                        </dd>
+                                                                    </dl>
+                    <a href="javascript:;" class="load-more">点击加载更多</a>
+                </div>
+                                <div data-source="type-qingsong" style="display:none;">
+                    <dl class="special-list recommendation-list clearfix">
+                        <dt>专辑推荐</dt>
+                                                                        <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/377/s100_c04337c48291393ed47eabdf308.jpg" alt="My Favorite Songs"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">My Favorite Songs</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/353/s100_383a2b1fe4a73064dd553930596.jpg" alt="Brasil"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">Brasil</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/157/s100_7564b4fbc5eebe2be658bd8285f.jpg" alt="班得瑞20周年精选集"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">班得瑞20周年精选集</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/92/s100_7113cdecc5417282aa08316fb14.jpg" alt="旭日之丘 Sunrise Hill"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">旭日之丘 Sunrise Hill</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/38/s100_216bf917c1cc7182340194b9969.jpg" alt="翡翠谷 Emerald Valley"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">翡翠谷 Emerald Valley</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/24/s100_91dc63df76a6a1594735d34b330.jpg" alt="雾色山脉 Mistyland"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">雾色山脉 Mistyland</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/12/s100_365bca797e0d3dbdb750d9cea0a.jpg" alt="Breezy Valley"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">Breezy Valley</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/11/s100_f2a6ffd671fcacf3d805a5a11ca.jpg" alt="恋爱SPA"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">恋爱SPA</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/11/s100_b5c5699ce6c9370f29db148938a.jpg" alt="森林之月"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">森林之月</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/8/s100_a7923b1fb6304af351ce2757a40.jpg" alt="迷雾森林"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">迷雾森林</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/8/s100_d4b00e91744101bae2079a90258.jpg" alt="日光海岸"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">日光海岸</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/8/s100_6aa3191a3bc8376d2a07b762a45.jpg" alt="蓝色天际"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">蓝色天际</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/8/s100_006e062d2d47079d18c1f6b8f96.jpg" alt="春野"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">春野</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/8/s100_93d98e159d563884ea7fac38ade.jpg" alt="寂静山林"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">寂静山林</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/8/s100_b647b234395566f266fe8e0bcbd.jpg" alt="仙境"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">仙境</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/8/s100_b085fc520d73d9e5af1d4925553.jpg" alt="琉璃湖畔"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">琉璃湖畔</span>
+                            </a>
+                        </dd>
+                                                                    </dl>
+                    <a href="javascript:;" class="load-more">点击加载更多</a>
+                </div>
+                                <div data-source="type-jiezou" style="display:none;">
+                    <dl class="special-list recommendation-list clearfix">
+                        <dt>专辑推荐</dt>
+                                                                        <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/311/s100_54fd79f26c58ed91bd89c07733a.jpg" alt="Salud! Joao Gilberto, Originator Of The Bossa Nova"></span>
+                                <span class="special-list-title">Jon Hendricks</span>
+                                <span class="special-list-name">Salud! Joao Gilberto, Originator Of The Bossa Nova</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/366/s100_6bfd36aa4259784ce998dbc726d.jpg" alt="Fall In Love With Bossa Nova"></span>
+                                <span class="special-list-title">이나 (I.Na)</span>
+                                <span class="special-list-name">Fall In Love With Bossa Nova</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/21/s100_62531730123fcb0683d8ec52126.jpg" alt="Just A Little Bossa Nova"></span>
+                                <span class="special-list-title">Susan Wong</span>
+                                <span class="special-list-name">Just A Little Bossa Nova</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/31/s100_5f8a508bb203ec644ffcacef9ad.jpg" alt="A Girl Meets Bossa Nova 2"></span>
+                                <span class="special-list-title">Olivia Ong</span>
+                                <span class="special-list-name">A Girl Meets Bossa Nova 2</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/43/s100_e619c2440c51299566a17617de7.jpg" alt="The New Bossa Nova"></span>
+                                <span class="special-list-title">Luciana Souza</span>
+                                <span class="special-list-name">The New Bossa Nova</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/75/s100_ab9c38362fcb3c96a94b0684041.jpg" alt="Bossa Nova Songbook 1"></span>
+                                <span class="special-list-title">Naomi &amp; Goro</span>
+                                <span class="special-list-name">Bossa Nova Songbook 1</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/77/s100_ea20264dc3b86f05af06b1f0d65.jpg" alt="Colecao Folha 50 Anos De Bossa Nova"></span>
+                                <span class="special-list-title">Roberto Menescal</span>
+                                <span class="special-list-name">Colecao Folha 50 Anos De Bossa Nova</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/83/s100_0f54314bcfdfee9108961b0eb60.jpg" alt="Fino Bossa Nova 巴萨诺瓦 新时代"></span>
+                                <span class="special-list-title">欧美金曲</span>
+                                <span class="special-list-name">Fino Bossa Nova 巴萨诺瓦 新时代</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/93/s100_9f18f02259d20fb3c1a52d45c35.jpg" alt="小野丽莎の真情私语-维纳斯般完美的25首Bossa Nova代表作"></span>
+                                <span class="special-list-title">小野丽莎</span>
+                                <span class="special-list-name">小野丽莎の真情私语-维纳斯般完美的25首Bossa Nova代表作</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/146/s100_98d7e8f652d067b3b09703eae99.jpg" alt="Big Band Bossa Nova"></span>
+                                <span class="special-list-title">Quincy Jones</span>
+                                <span class="special-list-name">Big Band Bossa Nova</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/212/s100_c95e17b10fece79e04e34d440d4.jpg" alt="巴萨诺瓦海洋 Fino Bossa Nova Mar"></span>
+                                <span class="special-list-title">爵士专辑</span>
+                                <span class="special-list-name">巴萨诺瓦海洋 Fino Bossa Nova Mar</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/246/s100_33471fe5d542cf1face8a4b77cd.jpg" alt="Bossa Nova (US Release)"></span>
+                                <span class="special-list-title">Barney Kessel</span>
+                                <span class="special-list-name">Bossa Nova (US Release)</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/262/s100_7c8c387f45a666c638f0fab9c4b.jpg" alt="Bossa Nova Hotel"></span>
+                                <span class="special-list-title">Michael Sembello</span>
+                                <span class="special-list-name">Bossa Nova Hotel</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/273/s100_2753951dd871a1de7bb6a34382b.jpg" alt="My Bossa Nova"></span>
+                                <span class="special-list-title">Sitti</span>
+                                <span class="special-list-name">My Bossa Nova</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/281/s100_50d46f89de0ad20502bcfbe488f.jpg" alt="Mad About You [Bossa Nova Remix]"></span>
+                                <span class="special-list-title">Vegas & Tomer G</span>
+                                <span class="special-list-name">Mad About You [Bossa Nova Remix]</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/288/s100_b3ab853475f4364b14663bf9ae1.jpg" alt="Do the Bossa Nova"></span>
+                                <span class="special-list-title">Herbie Mann</span>
+                                <span class="special-list-name">Do the Bossa Nova</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/311/s100_ea1057003fafdfe888d662d28e5.jpg" alt="The Hi-Lo's Happen To Bossa Nova"></span>
+                                <span class="special-list-title">The Hi-Lo's</span>
+                                <span class="special-list-name">The Hi-Lo's Happen To Bossa Nova</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/341/s100_cbe0212302db45e2bdf4cda5c84.jpg" alt="Bossa Nova RCA Victor"></span>
+                                <span class="special-list-title">Various</span>
+                                <span class="special-list-name">Bossa Nova RCA Victor</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/149/s100_e7c288dabd808a2b5ad58a76370.jpg" alt="蓝色夏威夷 Lisa`s Ono Bossa Hula Nova"></span>
+                                <span class="special-list-title">小野丽莎</span>
+                                <span class="special-list-name">蓝色夏威夷 Lisa`s Ono Bossa Hula Nova</span>
+                            </a>
+                        </dd>
+                                                                    </dl>
+                    <a href="javascript:;" class="load-more">点击加载更多</a>
+                </div>
+                                <div data-source="type-daziran" style="display:none;">
+                    <dl class="special-list recommendation-list clearfix">
+                        <dt>专辑推荐</dt>
+                                                                        <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/220/s100_b26f625283e3d570a4d2a8cdd28.jpg" alt="タマユラ"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">タマユラ</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/163/s100_92e435e3097f8c0be05e224b5d9.jpg" alt="空海之旅4 Sacred Journey of Ku-Kai, Vol. 4"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">空海之旅4 Sacred Journey of Ku-Kai, Vol. 4</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/156/s100_8d93257ddff5a3bc397f7d10339.jpg" alt="Grammy Nominated"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">Grammy Nominated</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/156/s100_3bf706790a925e6192737c38ce2.jpg" alt="In Person Digital"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">In Person Digital</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/142/s100_c2ab4a88c0e70fb4d89605c399f.jpg" alt="四国巡礼 Shikoku 88 kasho"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">四国巡礼 Shikoku 88 kasho</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/142/s100_1a2ee1777bf6f5a57f2d83f457f.jpg" alt="水畔祈祷 Mizu ni Inorite"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">水畔祈祷 Mizu ni Inorite</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/142/s100_40a4dd45cac72c050c4e64086e0.jpg" alt="精灵花园 Spiritual Garden"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">精灵花园 Spiritual Garden</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/142/s100_827491d7926cb1c272994d86bb0.jpg" alt="天地绝响来台纪念精选 Kitaro Best cd2"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">天地绝响来台纪念精选 Kitaro Best cd2</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/142/s100_7d4c62e437f3c8dc9802acea2ad.jpg" alt="天地绝响来台纪念精选 Kitaro Best cd1"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">天地绝响来台纪念精选 Kitaro Best cd1</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/142/s100_2277f9df1ac6e5042ef3fd85b85.jpg" alt="西方 Towards The West"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">西方 Towards The West</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/142/s100_825c2d93be65f551f49bc0a1fad.jpg" alt="空海之旅3Sacred Journey of Ku-Kai Vol3"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">空海之旅3Sacred Journey of Ku-Kai Vol3</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/142/s100_3342130ad63827c9897cebaab60.jpg" alt="丝绸之路精选 Best of Silk Road"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">丝绸之路精选 Best of Silk Road</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/142/s100_2280f19acd32fc2d055d41f2c39.jpg" alt="空海之旅1 Sacred Journey of Ku-Kai 1"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">空海之旅1 Sacred Journey of Ku-Kai 1</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/142/s100_e8bd47c587b7f01aeb65d640a69.jpg" alt="空海之旅2 Sacred.Journey.of.Ku-Kai.Vol.2"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">空海之旅2 Sacred.Journey.of.Ku-Kai.Vol.2</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/83/s100_eb06d3e795b682514820a991472.jpg" alt="Serenade 夜曲"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">Serenade 夜曲</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/75/s100_9dba0b36cbea226225ea0c4ae48.jpg" alt="癒"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">癒</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/75/s100_9f29a2b919acb642338916d1fca.jpg" alt="兰 2"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">兰 2</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/75/s100_020067c89046f867cd9d0604d63.jpg" alt="华 2"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">华 2</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/75/s100_3007411490d4cdc0912aa944895.jpg" alt="华"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">华</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/74/s100_608ec9f3e3960ab5610cae875c3.jpg" alt="翔"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">翔</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/74/s100_7ce4597f81bef400334120a2b05.jpg" alt="日本人的遥远旅途"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">日本人的遥远旅途</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/74/s100_bad7e11062615c9fcfe232a173b.jpg" alt="日本人的遥远旅途"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">日本人的遥远旅途</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/74/s100_2b3115788dc21655ff9b3b5716d.jpg" alt="雅 MIYABI"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">雅 MIYABI</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/74/s100_304a52cf87407ddf5090ad9b238.jpg" alt="兰"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">兰</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/74/s100_ae4e25426dd4daff8c7a6c7a11e.jpg" alt="絹の道 SONG OF SILK ROAD"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">絹の道 SONG OF SILK ROAD</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/74/s100_813d69b2960d616473f4f12f1e3.jpg" alt="祭"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">祭</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/74/s100_88600afe9b9e0ba1d1f3b7ce5ad.jpg" alt="侍"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">侍</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/74/s100_c5e4886e29b43444786a6d2bec1.jpg" alt="幻"></span>
+                                <span class="special-list-title"></span>
+                                <span class="special-list-name">幻</span>
+                            </a>
+                        </dd>
+                                                                    </dl>
+                    <a href="javascript:;" class="load-more">点击加载更多</a>
+                </div>
+                                <div data-source="type-erge" style="display:none;">
+                    <dl class="special-list recommendation-list clearfix">
+                        <dt>专辑推荐</dt>
+                                                                        <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/349/s100_ecd160efa62d3c1806c8d6496e2.jpg" alt="胎教音乐100首必听 胎教音乐精选 好听"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">胎教音乐100首必听 胎教音乐精选 好听</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/377/s100_075e5374cbd92e2bbc62abec8e5.jpg" alt="贝瓦儿歌-儿歌新动力"></span>
+                                <span class="special-list-title">儿童歌曲</span>
+                                <span class="special-list-name">贝瓦儿歌-儿歌新动力</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/27/s100_69681dba9d9e6eecf8e8f3a4c29.jpg" alt="小燕子"></span>
+                                <span class="special-list-title">儿童歌曲</span>
+                                <span class="special-list-name">小燕子</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/35/s100_817684ac8b816f8d0036184377b.jpg" alt="年的故事 新年又来了"></span>
+                                <span class="special-list-title">新年系列</span>
+                                <span class="special-list-name">年的故事 新年又来了</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/96/s100_c45f1ab589db90138a8c737820e.jpg" alt="新学堂歌 古诗词歌曲20首 (谷建芬监制)"></span>
+                                <span class="special-list-title">儿童歌曲</span>
+                                <span class="special-list-name">新学堂歌 古诗词歌曲20首 (谷建芬监制)</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/97/s100_c168ae7feeb5a3b98306923800e.jpg" alt="梦幻童年 甜美童歌 50首童年儿歌经典"></span>
+                                <span class="special-list-title">儿童歌曲</span>
+                                <span class="special-list-name">梦幻童年 甜美童歌 50首童年儿歌经典</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/158/s100_7253fd8e2f4e0d39d73f6a8b99c.jpg" alt="宝宝成长音乐(婴幼儿期)"></span>
+                                <span class="special-list-title">胎教音乐</span>
+                                <span class="special-list-name">宝宝成长音乐(婴幼儿期)</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/257/s100_be87f317f8c69b4889e54e03428.jpg" alt="To exypno moro - Ta prota Hristougenna tou morou"></span>
+                                <span class="special-list-title">Instrumental</span>
+                                <span class="special-list-name">To exypno moro - Ta prota Hristougenna tou morou</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/260/s100_0fecb9fbeec964c0ae2be7aa8c2.jpg" alt="Louna Park"></span>
+                                <span class="special-list-title">Notis Mavroudis</span>
+                                <span class="special-list-name">Louna Park</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/260/s100_9e5bb2374fd180b62b6321452da.jpg" alt="Hronia polla - Efhes kai tragoudia gia agoria"></span>
+                                <span class="special-list-title">Zouzounia</span>
+                                <span class="special-list-name">Hronia polla - Efhes kai tragoudia gia agoria</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/260/s100_24034463eee4766c983d7e6100a.jpg" alt="Horepste oloi Bamba"></span>
+                                <span class="special-list-title">Zouzounia</span>
+                                <span class="special-list-name">Horepste oloi Bamba</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/260/s100_5d1d9057fc4429b9c2679112944.jpg" alt="Konta sti fysi kai alla oikologika tragoudia"></span>
+                                <span class="special-list-title">Kiki Kapsaski</span>
+                                <span class="special-list-name">Konta sti fysi kai alla oikologika tragoudia</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/260/s100_9480ed91c05951865f3d63070c8.jpg" alt="To tragoudi tis petaloudas"></span>
+                                <span class="special-list-title">Panagiotis Margaris, Paidiki Horodia Dimitri Typaldou</span>
+                                <span class="special-list-name">To tragoudi tis petaloudas</span>
+                            </a>
+                        </dd>
+                                                <dd>
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/260/s100_79744275ded72cfa39bf43977a6.jpg" alt="Mythoi tou Aisopou"></span>
+                                <span class="special-list-title">Kiki Kapsaski</span>
+                                <span class="special-list-name">Mythoi tou Aisopou</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/260/s100_c814dbd2db02e75f26671f477a0.jpg" alt="Oula oula"></span>
+                                <span class="special-list-title">Mimis Plessas</span>
+                                <span class="special-list-name">Oula oula</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/261/s100_baf3ee6b21a2a4a91c885797ff4.jpg" alt="Dyo mousika paramythia"></span>
+                                <span class="special-list-title">Thanasis Dritsas</span>
+                                <span class="special-list-name">Dyo mousika paramythia</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/261/s100_59203c9aa4ad9db13e77402b58e.jpg" alt="Oi peirates - Ela ki esy"></span>
+                                <span class="special-list-title">Bebe Lilly</span>
+                                <span class="special-list-name">Oi peirates - Ela ki esy</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/262/s100_342c38d8678c7aa5cce8c21a036.jpg" alt="Choo Choo Boogaloo"></span>
+                                <span class="special-list-title">Buckwheat Zydeco</span>
+                                <span class="special-list-name">Choo Choo Boogaloo</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/262/s100_eebb4754d7c9963efd8eb63f84d.jpg" alt="Everyone Loves To Dance"></span>
+                                <span class="special-list-title">Aaron Nigel Smith</span>
+                                <span class="special-list-name">Everyone Loves To Dance</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/266/s100_3a6873e477adf34971922727b40.jpg" alt="Mors lilla Olle - Guldkorn"></span>
+                                <span class="special-list-title">Gunnar Hahns Orkester</span>
+                                <span class="special-list-name">Mors lilla Olle - Guldkorn</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/274/s100_55dc97884eda931fe707eb01c75.jpg" alt="Peikkometsä"></span>
+                                <span class="special-list-title">Peikkometsä</span>
+                                <span class="special-list-name">Peikkometsä</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/274/s100_c12855eca65a96fd832ccb65604.jpg" alt="DE PELICULA"></span>
+                                <span class="special-list-title">MILIKI</span>
+                                <span class="special-list-name">DE PELICULA</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/277/s100_b8d686dd650c69ce00319387f5d.jpg" alt="O Pequeno Polegar"></span>
+                                <span class="special-list-title">O Pequeno Polegar</span>
+                                <span class="special-list-name">O Pequeno Polegar</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/277/s100_e815fa24175eb7ec101b30fe213.jpg" alt="A Cigarra e a Formiga"></span>
+                                <span class="special-list-title">A Cigarra e a Formiga</span>
+                                <span class="special-list-name">A Cigarra e a Formiga</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/277/s100_0c920eb69236490865c97c44f5a.jpg" alt="Wild Geraas"></span>
+                                <span class="special-list-title">Jochem van Gelder</span>
+                                <span class="special-list-name">Wild Geraas</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/277/s100_bc5d920be300a1ef9cc9a946d5c.jpg" alt="Coleção Disquinho 2002 - O Violino e o Gato"></span>
+                                <span class="special-list-title">Elenco Disquinho</span>
+                                <span class="special-list-name">Coleção Disquinho 2002 - O Violino e o Gato</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/277/s100_0c2f976992110ee2cb6d9e263bd.jpg" alt="Coleção Disquinho 2002 - O Velho o Garoto e o Burro"></span>
+                                <span class="special-list-title">Elenco Teatro Disquinho</span>
+                                <span class="special-list-name">Coleção Disquinho 2002 - O Velho o Garoto e o Burro</span>
+                            </a>
+                        </dd>
+                                                <dd style="display:none;">
+                            <a href="javascript:;" target="_1ting">
+                                <span class="special-list-icon"><img src="../images/special/286/s100_4bfdf76df080c1055e32671c5b1.jpg" alt="Tremei i kardia mou"></span>
+                                <span class="special-list-title">Candy Girls</span>
+                                <span class="special-list-name">Tremei i kardia mou</span>
+                            </a>
+                        </dd>
+                                                                    </dl>
+                    <a href="javascript:;" class="load-more">点击加载更多</a>
+                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+<script src="../v5/r4/js/suggest.js"></script>
+<div class="footer">
+    <p class="footlink"> <!--<a href="/faq/etc/about.html">关于一听</a> |--> <a href="../faq/etc/copyright.html">版权声明</a> | <a href="javascript:;">诚聘英才</a> | <a href="../faq/etc/contact_us.html">联系我们</a> | <a href="../faq/etc/history.html">历史合作</a> | <a href="javascript:;">唱片公司</a> | <a href="javascript:;">广告服务</a> | <a href="../faq/etc/links.html">友情链接</a> | <a href="../faq/etc/help.html">帮助中心</a> </p>
+  <p class="copyright"> Copyright &copy; 2003-2020   <a href="javascript:;" class="homepage">www.lezicartoon.cn</a> All Rights Reserved 沪ICP备19024260号-3 </p>
+</div>
+<script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F32c12acc9a2efc3fa896bb3ebcd47ee7' type='text/javascript'%3E%3C/script%3E"));</script>
+<script src='../c-300017461.js' language='JavaScript'></script>
+
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="0" height="0" id="play_list_send">
+    <param name="allowScriptAccess" value="always">
+    <param name="movie" value="/v5/flash/play_list_send.swf">
+    <embed src="../v5/flash/play_list_send.swf" quality="high" width="0" height="0" name="play_list_send" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+</object>
+<script>
+(function() {
+    function bindHoverEvent($titles, $targets) {
+        var currentClass = "current";
+        $titles.each(function() {
+            var self = this;
+            $(self).mouseover(function() {
+                $titles.removeClass(currentClass);
+                $(self).addClass(currentClass);
+                $targets.hide();
+                $.each($targets, function(index, ele) {
+                    if ( $(ele).attr("data-source") === $(self).attr("data-for") ) {
+                        $(ele).show();
+                    }
+                });
+            });
+        });
+    }
+
+    bindHoverEvent($("#music_type_title").children(),
+        $("#music_type_con").children(".music-list-info")
+        .add($('#recommendation').children("div"))
+    );
+
+    bindHoverEvent($("#banner").children("ul").find("a"),
+        $("#banner").find(".banner-content"));
+
+    bindHoverEvent($("#rank_title").children("a"),
+        $("#rank_cont").children("ul"));
+
+    $('.play_now').click(function(){
+        var song_ids = [];
+        $(this).parent().parent().find('li').each(function(){
+            song_ids.push($(this).attr('data-song-id'));
+        });
+        window.open('/p_' + song_ids.join('_') + '.html', '_1ting');
+        return false;
+    });
+
+    $('.load-more').click(function(){
+        $(this).hide().prev().children('dd').show();
+        return false;
+    });
+
+})();
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?573b075f5b0af1f6298059629db2254c";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+</body>
+</html>
+

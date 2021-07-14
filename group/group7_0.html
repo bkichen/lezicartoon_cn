@@ -1,0 +1,1328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="description" content="其它歌手列表,杭州乐米动漫">
+<meta name="keywords" content="其它,免费音乐,在线试听,杭州乐米动漫"> 
+<title>全部 其它 歌手列表 - 杭州乐米动漫</title>
+<link href="../v5/r5/style/common.css" rel="stylesheet" type="text/css">
+<link href="../v5/r4/style/group.css" rel="stylesheet" type="text/css">
+<script src="../v5/r4/js/jquery.min.js"></script>
+<script src="../v5/r4/js/common.js"></script>
+<script src="../v5/r4/js/group.js"></script>
+<script src="../js/ds.js"></script>
+
+</head>
+<body>
+        <div class="site-nav">
+        <div class="center">
+            <ul class="navlink">
+                <li><a href="javascript:;">保存到桌面</a></li>
+                <li><a href="../genre/index.html">曲风</a></li>
+                <li><a href="../rank.html">排行榜</a></li>
+                <li><a href="../archives/index.html">专辑库</a></li>
+            </ul>
+            <!--div class="bshare-custom"><a title="分享到微信" class="bshare-weixin"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到QQ空间" class="bshare-qzone"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div-->
+            <!--div class="sinaweibo_iframe">
+                <iframe width="120" height="24" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="https://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=136&height=24&uid=1671108633&style=2&btn=light&dpc=1"></iframe>
+            </div-->
+
+            <!--<ul style="height:19px;width:110px;padding-top:5px;float:left;"><li><a style="color:#333" href="https://h5.lezicartoon.cn" title="手机访问一听">手机版:h5.lezicartoon.cn</a></li></ul>-->
+            <ul class="siteaction" style="height:24px;padding-top:1px;"> 
+                <li class="favorite" style="margin-top:5px"><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">加入收藏</a></li>
+            </ul>
+        </div>
+    </div>
+               <script type="text/javascript" language="javascript">
+                function AddFavorite(sURL, sTitle) {
+                    sURL = encodeURI(sURL); 
+                try{   
+                    window.external.addFavorite(sURL, sTitle);   
+                }catch(e) {   
+                    try{   
+                        window.sidebar.addPanel(sTitle, sURL, "");   
+                    }catch (e) {   
+                        alert("加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.");
+         
+                        }   
+                    }
+                }
+              </script>
+    <!-- /site-nav -->
+    <div class="header center">
+        <div class="logo">
+            <h1>
+                <a href="../index.html" title="返回一听首页?">杭州乐米动漫</a>
+            </h1>
+        </div>
+        <div class="search">
+            <div class="option_selected" id="search_option_selected">
+                <a href="javascript:void(0);" id="st" target="_self">全部</a>
+            </div>
+            <div class="option_list" id="search_option_list">
+                <ul>
+                    <li class="selected"><a href="javascript:void(0);" target="_self">全部</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌曲</a></li>
+                    <li><a href="javascript:void(0);" target="_self">专辑</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌手</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌词</a></li>
+                </ul>
+            </div>
+            <div class="search_box"><form method="get" action="//so.lezicartoon.cn/all.do" onsubmit="return search(this);">
+                <input type="text" name="q" id="sq" x-webkit-speech="" x-webkit-grammar="builtin:search" onwebkitspeechchange="(function(e){e.target.form.submit();})(event)">
+                <button type="submit">搜索</button></form>
+            </div>
+        </div>
+        <div class="userbox">
+            <div class="user-guest" id="user-guest">
+                <p class="sitelogin">
+                    <a href="../register.html" class="link-reg">免费注册</a> -
+                    <a href="../login.html" class="link-login">登录</a>
+                </p>
+                <p class="pluginlogin">
+                    <a href="../oauth2/authorize-1435846576_http2F2Fmy..html" class="login-weibo">微博登录</a>
+                    <a href="../oauth2.0/show-Login_pc_101501725_https2F2.html" class="login-qq">QQ登录</a>
+                    <a href="../login.html" class="link-favor">我的收藏</a>
+                </p>
+            </div>
+            <div class="user-login" id="user-login">
+                <p class="user-welcome">
+                    <a href="../login.html" class="link-username" id="username"></a>
+                    <span id="greeting"></span>
+                </p>
+                <div class="user-action" id="user_login_action">
+                    <a href="../login.html" class="act-fav">我的收藏</a>
+                    <div style="display: none;">
+                        <a href="../login.html" target="_blank">用户中心</a>
+                        <a href="../login.html">退出登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+        (function(){
+            function cookie(k){
+                var v = "";
+                var s = k+"=",c = document.cookie,l=c.length;
+                if (l > 0) {
+                    var os = c.indexOf(s);
+                    if (os != -1) {
+                        os += s.length;
+                        var ed = c.indexOf(";", os);
+                        if (ed == -1) ed = l;
+                        v = decodeURIComponent(c.substring(os, ed)).replace(/\+/g,' ');
+                    }
+                }
+                return v;
+            }
+            function receive(){
+                var greeting,
+                    hour = new Date().getHours(),
+                    id = cookie('OneId'),
+                    user = cookie('OneNick')||cookie('OneUser');
+                if(hour >= 6 && hour < 12){
+                    greeting='上午好!';
+                }else if(hour>=12 && hour<18){
+                    greeting='下午好!';
+                }else if(hour>=18 && hour<23){
+                    greeting='晚上好!';
+                }else{
+                    greeting='夜深了 请注意休息!';
+                }
+                if(id && /^\d+$/.test(id) && user && /^[^<>\"\']+$/.test(user)){
+                    $('#username').html(user);
+                    $('#greeting').html(greeting);
+                    $('#user-login').show();
+                    $('#user-guest').hide();
+                }else{
+                    $('#user-guest').show();
+                    $('#user-login').hide();
+                }
+            }
+            (function(ctn) {
+                var timeId, time = 500,
+                    slideTime = 200,
+                    child = ctn.children("div"),
+                    upClass = "user-action-arrow-up";
+                ctn.hover(function() {
+                    timeId = setTimeout(function() {
+                        ctn.addClass(upClass);
+                        child.slideDown(slideTime);
+                    }, time);
+                }, function() {
+                    ctn.removeClass(upClass);
+                    clearTimeout(timeId);
+                    child.slideUp(slideTime);
+                });
+            })($("#user_login_action"));
+            receive();
+            setInterval(receive, 3000);
+        })();
+        </script>
+        <div class="nav">
+            <ul class="allcate" id="nav_list">
+                <li><a href="../index.html" target="_self"><span>首页</span></a></li>
+                <li><a href="../group.html" class="has-sub" target="_self"><i style="display:block" target="_self"></i><span>歌手</span></a></li>
+                <li><a href="../archives/index.html" target="_self"><span>专辑</span></a></li>
+                <li><a href="../rank.html" target="_self"><span>排行榜</span></a></li>
+                <li><a href="#" class="has-sub" target="_self"><span>高清MV</span></a></li>
+            </ul>
+            <div class="randplay">
+                <a href="../rand.html">随便一听</a>
+            </div>
+            <div class="nav-category">
+                <a href="../genre/index.html" target="_self">曲风分类</a>
+                <!--span>|</span>
+                <a href="/topic" target="_self">专题 &bull; 活动</a-->
+                
+            </div>
+        </div>
+        <div class="nav-secondary" id="nav_secondary">
+            <p style="display:block;">
+                <a href="group0_2.html"><span>华语女歌手</span></a> |
+                <a href="group0_1.html"><span>华语男歌手</span></a> |
+                <a href="group0_3.html"><span>华语组合</span></a> |
+                <a href="group3_15.html"><span>欧美女歌手</span></a> |
+                <a href="group3_14.html"><span>欧美男歌手</span></a> |
+                <a href="group3_16.html"><span>欧美组合</span></a> |
+                <a href="group5_0.html"><span>韩国</span></a> |
+                <a href="group4_0.html"><span>日本</span></a> |
+                <a href="group6_0.html"><span>影视</span></a> |
+                <a href=""><span>其他</span></a> |
+                <span><!--a class="misc" href="/fo/">佛教音乐</a><a href="/prenatal/">胎教/儿歌</a><a href="http://5.lezicartoon.cn">广场舞</a><a href="/xiqu/">戏曲</a--><a href="../mv/index.html">高清MV</a></span>
+            </p>
+            <p style="text-align:center;width:736px;">
+                 <a href="../mv/cate/3.html">港台歌手MV</a>  | <a href="../mv/cate/6.html">内地歌手MV</a> | <a href="../mv/cate/2.html">韩国歌手MV</a> | <a href="../mv/cate/5.html">日本歌手MV</a> | <a href="../mv/cate/4.html">欧美歌手MV</a> | <a href="../mv/search-E6BC94E594B1E4BC9A.html">演唱会视频</a>   
+            </p>
+        </div>
+    </div>
+    <!-- /header -->
+    <script>
+    (function(){
+        var menus = $("#nav_list").find("a.has-sub"),
+            subMenu = $("#nav_secondary");
+        $.each(menus, function(index, ele) {
+            $(ele).mouseover(function() {
+                menus.children("i").hide();
+                $(ele).children("i").show();
+                subMenu.children("p").hide()
+                            .eq(index).show();
+            });
+        });
+        /*var links = [{'name': '明星美图',  'path': 'star'}, 
+                     {'name': '街拍美女',  'path': 'jiepai'}, 
+                     /*{'name': '流行服饰',  'path': 'dress'}, 
+                     {'name': '时尚彩妆',  'path': 'face'}, 
+                     {'name': '潮流发型',  'path': 'tide'}, 
+                     {'name': '清新美女',  'path': 'meinv'}, 
+                     {'name': '车模美女',  'path': 'chemo'},
+                     {'name': '唯美女生',  'path': 'fennen'}, 
+                     {'name': '非主流女生',  'path': 'feizhuliu'}, 
+                     {'name': 'Show Girl',   'path': 'showgirl'}, 
+                     {'name': 'Cosplay女神', 'path': 'cosplay'},
+                     {'name': '婚纱秀欣赏',  'path': 'hunsha'}];
+        setInterval(function(){
+            var d = links[Math.ceil(Math.random()*links.length)-1];
+            $('#picture').attr('href', 'https://ent.lezicartoon.cn/pictures/'+d.path).text(d.name);
+        }, 10000);*/
+    })();
+    </script>
+    <a href="javascript:void(0);" class="go-top" id="go_top">返回顶部</a>
+    <div class="center">
+        <div class="group-menu">
+            <div class="group-menu-component">
+                <a href="../group.html" class="group-menu-title">全部歌手</a>
+            </div>
+            <div class="group-menu-component">
+                <a href="#" class="group-menu-title">华语</a>
+                                                    <a href="group0_2.html" class=""><span>华语女歌手</span></a>
+                                    <a href="group0_1.html" class=""><span>华语男歌手</span></a>
+                                    <a href="group0_3.html" class=""><span>华语组合</span></a>
+                            </div>
+            <div class="group-menu-component">
+                <a href="#" class="group-menu-title">欧美</a>
+                                                    <a href="group3_15.html" class=""><span>欧美女歌手</span></a>
+                                    <a href="group3_14.html" class=""><span>欧美男歌手</span></a>
+                                    <a href="group3_16.html" class=""><span>欧美组合</span></a>
+                            </div>
+            <div class="group-menu-component group-menu-component-last">
+                                                    <a href="group5_0.html" class=""><span>韩国</span></a>
+                                    <a href="group4_0.html" class=""><span>日本</span></a>
+                                    <a href="group6_0.html" class=""><span>影视</span></a>
+                                    <a href="" class="group-menu-current"><span>其他</span></a>
+                            </div>
+        </div>
+        <div class="group-content">
+            <div class="pageTitle">
+                                <h2>其它</h2>
+                <a href="javascript:;" class="randplay" target="_blank"><span>随便听几首</span></a>
+                            </div>
+
+            <div class="singerIndex" id="singerIndex">
+                <p class="initials"><span>索引:</span> <a href="#recommendSinger">推荐</a>
+                                <a href="#YA">A</a>
+                                <a href="#YB">B</a>
+                                <a href="#YC">C</a>
+                                <a href="#YD">D</a>
+                                <a href="#YE">E</a>
+                                <a href="#YF">F</a>
+                                <a href="#YG">G</a>
+                                <a href="#YH">H</a>
+                                <a href="#YI">I</a>
+                                <a href="#YJ">J</a>
+                                <a href="#YK">K</a>
+                                <a href="#YL">L</a>
+                                <a href="#YM">M</a>
+                                <a href="#YN">N</a>
+                                <a href="#YO">O</a>
+                                <a href="#YP">P</a>
+                                <a href="#YQ">Q</a>
+                                <a href="#YR">R</a>
+                                <a href="#YS">S</a>
+                                <a href="#YT">T</a>
+                                <a href="#YU">U</a>
+                                <a href="#YV">V</a>
+                                <a href="#YW">W</a>
+                                <a href="#YX">X</a>
+                                <a href="#YY">Y</a>
+                                <a href="#YZ">Z</a>
+                                <a href="#Y0-9">0-9</a>
+                                </p>
+                                <p class="showhot">
+                    <input type="checkbox" id="onlyshowhot">
+                    <label for="onlyshowhot">仅显示热门歌手</label>
+                </p>
+                            </div>
+            <a name="recommendSinger" class="anchor"></a>
+            <div class="singerCommend">
+                <!-- u1561984 -->
+                <script type="text/javascript" src="../mhqegqpjd.js"></script>
+                <h3>推荐</h3>
+                <ul>
+                                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_6105.jpg" width="75" height="100" alt="最爱的主打歌资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">最爱的主打歌</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_844.jpg" width="75" height="100" alt="奥斯卡百年金曲典藏资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">奥斯卡百年金曲典藏</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_1582.jpg" width="75" height="100" alt="百代唱片资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">百代唱片</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_120.jpg" width="75" height="100" alt="宝丽金资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">宝丽金</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_32641.jpg" width="75" height="100" alt="新加坡净宗学会资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">新加坡净宗学会</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_32641.jpg" width="75" height="100" alt="儿歌童谣资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">儿歌童谣</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_3125.jpg" width="75" height="100" alt="佛教音乐资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">佛教音乐</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_32641.jpg" width="75" height="100" alt="般若海合唱团资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">般若海合唱团</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_32641.jpg" width="75" height="100" alt="蔡可荔资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">蔡可荔</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_32717.jpg" width="75" height="100" alt="有声佛书资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">有声佛书</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_32641.jpg" width="75" height="100" alt="乔安舞资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">乔安舞</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_957.jpg" width="75" height="100" alt="纯音乐资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">纯音乐</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_1099.jpg" width="75" height="100" alt="电子琴音乐资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">电子琴音乐</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_3214.jpg" width="75" height="100" alt="儿童歌曲资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">儿童歌曲</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_927.jpg" width="75" height="100" alt="古典音乐资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">古典音乐</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_1317.jpg" width="75" height="100" alt="吉它曲资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">吉它曲</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_59.jpg" width="75" height="100" alt="留声岁月-老歌新唱资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">留声岁月-老歌新唱</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_5173.jpg" width="75" height="100" alt="汽车音乐资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">汽车音乐</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_60.jpg" width="75" height="100" alt="同一首歌资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">同一首歌</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_4569.jpg" width="75" height="100" alt="胎教音乐资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">胎教音乐</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_1937.jpg" width="75" height="100" alt="心灵SPA水晶音乐资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">心灵SPA水晶音乐</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_10797.jpg" width="75" height="100" alt="有声读物资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">有声读物</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_6773.jpg" width="75" height="100" alt="助眠音乐资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">助眠音乐</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_404.jpg" width="75" height="100" alt="2000钢琴恋曲资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">2000钢琴恋曲</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_6002.jpg" width="75" height="100" alt="音乐疗法资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">音乐疗法</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_425.jpg" width="75" height="100" alt="闽南歌专辑资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">闽南歌专辑</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_410.jpg" width="75" height="100" alt="红色摇滚资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">红色摇滚</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_423.jpg" width="75" height="100" alt="环球音乐资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">环球音乐</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_4566.jpg" width="75" height="100" alt="经典老歌资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">经典老歌</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_1378.jpg" width="75" height="100" alt="港台群星资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">港台群星</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_48.jpg" width="75" height="100" alt="爱在情歌蔓延时资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">爱在情歌蔓延时</a></li>
+                                            <li><a href="javascript:;" class="singerPic"><img src="../images/singer/s75_58.jpg" width="75" height="100" alt="草原牧歌资料,歌曲和专辑"></a><a href="javascript:;" class="singerName">草原牧歌</a></li>
+                                                    </ul>
+            </div>
+
+            
+            <a name="YA" class="anchor"> A </a>
+            <div class="singerList">
+                <h3> A </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">A Day's Work</a></li>
+                                                <li><a href="javascript:;">A Kanyakumari</a></li>
+                                                <li><a href="javascript:;">阿鲲</a></li>
+                                                <li><a href="javascript:;">A.P. Pattanaik</a></li>
+                                                <li><a href="javascript:;">A.R. Rahman</a></li>
+                                                <li><a href="javascript:;">A Walk In The Forest[森林漫步]</a></li>
+                                                <li><a href="javascript:;">Abuse The Youth</a></li>
+                                                <li><a href="javascript:;">Adithyan</a></li>
+                                                <li><a href="javascript:;">Adityan</a></li>
+                                                <li><a href="javascript:;">Agus Hafiluddin</a></li>
+                                                <li><a href="javascript:;">Ah-Kin</a></li>
+                                                <li><a href="javascript:;">Ahmad Busu &amp; Sabri Yunus</a></li>
+                                                <li><a href="javascript:;">艾回唱片</a></li>
+                                                <li class="hot"><a href="javascript:;">爱在情歌蔓延时</a></li>
+                                                <li><a href="javascript:;">Aishah</a></li>
+                                                <li><a href="javascript:;">Ajay Singha</a></li>
+                                                <li><a href="javascript:;">Ajit Kadkade</a></li>
+                                                <li><a href="javascript:;">Alejandro Sanz</a></li>
+                                                <li><a href="javascript:;">Alfonso X El Sabio</a></li>
+                                                <li><a href="javascript:;">Ali Haider</a></li>
+                                                <li><a href="javascript:;">Alisha Chinoy</a></li>
+                                                <li><a href="javascript:;">Alla Rakha</a></li>
+                                                <li><a href="javascript:;">Amadou &amp; Mariam</a></li>
+                                                <li><a href="javascript:;">Amit Trivedi</a></li>
+                                                <li><a href="javascript:;">Anamika</a></li>
+                                                <li><a href="javascript:;">Anayampatti S. Dhandapani</a></li>
+                                                <li><a href="javascript:;">ANTARCTICA[南极物语]</a></li>
+                                                <li><a href="javascript:;">Anu Malik</a></li>
+                                                <li><a href="javascript:;">ANU</a></li>
+                                                <li><a href="javascript:;">Anuradha Sriram</a></li>
+                                                <li><a href="javascript:;">Anurag Sharan</a></li>
+                                                <li class="hot"><a href="javascript:;">奥斯卡百年金曲典藏</a></li>
+                                                <li><a href="javascript:;">奥运北京</a></li>
+                                                <li><a href="javascript:;">Archana</a></li>
+                                                <li><a href="javascript:;">Arin Panpoom</a></li>
+                                                <li><a href="javascript:;">Armchair</a></li>
+                                                <li><a href="javascript:;">Arom Phoharnrattanakul</a></li>
+                                                <li><a href="javascript:;">Arpita Thakkar</a></li>
+                                                <li><a href="javascript:;">Arun Dahanukar</a></li>
+                                                <li><a href="javascript:;">Ash Chandler</a></li>
+                                                <li><a href="javascript:;">Ashanti</a></li>
+                                                <li><a href="javascript:;">ASPIDISTRAFLY</a></li>
+                                                <li><a href="javascript:;">ATV</a></li>
+                                                <li><a href="javascript:;">Ayah</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YB" class="anchor"> B </a>
+            <div class="singerList">
+                <h3> B </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">B.R. Chaya</a></li>
+                                                <li><a href="javascript:;">B.V. Srinivas</a></li>
+                                                <li><a href="javascript:;">巴雅尔其其格</a></li>
+                                                <li><a href="javascript:;">巴音</a></li>
+                                                <li><a href="javascript:;">Baba Sehgal</a></li>
+                                                <li class="hot"><a href="javascript:;">百代唱片</a></li>
+                                                <li><a href="javascript:;">百慕文化</a></li>
+                                                <li><a href="javascript:;">白天不亮</a></li>
+                                                <li><a href="javascript:;">Ballet Folklórico De México De Amalia Hernández</a></li>
+                                                <li><a href="javascript:;">Balvinder Singh</a></li>
+                                                <li><a href="javascript:;">Banda Monumental El Toreo</a></li>
+                                                <li><a href="javascript:;">Bangalore Sisters</a></li>
+                                                <li><a href="javascript:;">宝丽金群星</a></li>
+                                                <li class="hot"><a href="javascript:;">宝丽金</a></li>
+                                                <li><a href="javascript:;">包朝克</a></li>
+                                                <li><a href="javascript:;">Bappu Vellipparambu</a></li>
+                                                <li><a href="javascript:;">Bela Shende</a></li>
+                                                <li><a href="javascript:;">Best Of 2001</a></li>
+                                                <li><a href="javascript:;">Best Of Forever Love 18</a></li>
+                                                <li><a href="javascript:;">Better Weather</a></li>
+                                                <li><a href="javascript:;">Bhai Avtar Singh Ragi</a></li>
+                                                <li><a href="javascript:;">Bharadwaj</a></li>
+                                                <li><a href="javascript:;">Bharani</a></li>
+                                                <li><a href="javascript:;">Bhupinder Chawla</a></li>
+                                                <li><a href="javascript:;">Bhurit BhiromBhakdi</a></li>
+                                                <li><a href="javascript:;">Bhuvana Chandra</a></li>
+                                                <li><a href="javascript:;">编辑选择</a></li>
+                                                <li><a href="javascript:;">Biddu</a></li>
+                                                <li><a href="javascript:;">BIE</a></li>
+                                                <li><a href="javascript:;">Biju Narayan</a></li>
+                                                <li><a href="javascript:;">Biju Narayanan</a></li>
+                                                <li><a href="javascript:;">Bina Mistry</a></li>
+                                                <li><a href="javascript:;">BK Sumitra</a></li>
+                                                <li><a href="javascript:;">BMG唱片</a></li>
+                                                <li><a href="javascript:;">Boaz Mauda</a></li>
+                                                <li><a href="javascript:;">Bobby Angel</a></li>
+                                                <li><a href="javascript:;">Bobby Cash</a></li>
+                                                <li><a href="javascript:;">Bobin</a></li>
+                                                <li><a href="javascript:;">Bombay Jayashri</a></li>
+                                                <li><a href="javascript:;">Boyd Kosiyabong</a></li>
+                                                <li><a href="javascript:;">不道音乐</a></li>
+                                                <li><a href="javascript:;">Buachompoo</a></li>
+                                                <li><a href="javascript:;">Burbur.</a></li>
+                                                <li><a href="javascript:;">BURNS</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YC" class="anchor"> C </a>
+            <div class="singerList">
+                <h3> C </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">C. Ashwath</a></li>
+                                                <li><a href="javascript:;">C. Rajamani</a></li>
+                                                <li><a href="javascript:;">C.S. Babu</a></li>
+                                                <li><a href="javascript:;">Calanit</a></li>
+                                                <li class="hot"><a href="javascript:;">草原牧歌</a></li>
+                                                <li><a href="javascript:;">茶道音乐</a></li>
+                                                <li><a href="javascript:;">超级偶像</a></li>
+                                                <li><a href="javascript:;">超级星光大道</a></li>
+                                                <li><a href="javascript:;">Charan</a></li>
+                                                <li><a href="javascript:;">Charice</a></li>
+                                                <li><a href="javascript:;">Chart Hits</a></li>
+                                                <li><a href="javascript:;">Charumathi Ramachandran</a></li>
+                                                <li><a href="javascript:;">Chitra</a></li>
+                                                <li><a href="javascript:;">Christian Bautista</a></li>
+                                                <li class="hot"><a href="javascript:;">纯音乐</a></li>
+                                                <li><a href="javascript:;">Cinem Ocean[电影海洋]</a></li>
+                                                <li><a href="javascript:;">Cinem Ocean</a></li>
+                                                <li><a href="javascript:;">Circle 22</a></li>
+                                                <li><a href="javascript:;">Cirque du Soleil(太阳马戏团)</a></li>
+                                                <li><a href="javascript:;">ClassyMenace</a></li>
+                                                <li><a href="javascript:;">Cochin Navodaya</a></li>
+                                                <li><a href="javascript:;">Corinne Bailey Rae</a></li>
+                                                <li><a href="javascript:;">COX MUSIC</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YD" class="anchor"> D </a>
+            <div class="singerList">
+                <h3> D </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">D. Imman</a></li>
+                                                <li><a href="javascript:;">D.K. Jayaraman</a></li>
+                                                <li><a href="javascript:;">D.S. Thyagarajan</a></li>
+                                                <li><a href="javascript:;">D. Srinivas</a></li>
+                                                <li><a href="javascript:;">大爱剧场</a></li>
+                                                <li><a href="javascript:;">大陆群星</a></li>
+                                                <li><a href="javascript:;">Dalagita</a></li>
+                                                <li><a href="javascript:;">Daler Mehndi</a></li>
+                                                <li><a href="javascript:;">Damares</a></li>
+                                                <li><a href="javascript:;">dance hits 2000</a></li>
+                                                <li><a href="javascript:;">Daria Gabdull</a></li>
+                                                <li><a href="javascript:;">Data Darancharas Sukheviriya</a></li>
+                                                <li><a href="javascript:;">Deutschland sucht den Superstar</a></li>
+                                                <li><a href="javascript:;">Deva</a></li>
+                                                <li><a href="javascript:;">Devarajan</a></li>
+                                                <li><a href="javascript:;">Devi Sri Prasad</a></li>
+                                                <li><a href="javascript:;">Devinder Khannewala</a></li>
+                                                <li><a href="javascript:;">Dharan Kumar</a></li>
+                                                <li><a href="javascript:;">Dheerendra Gopal</a></li>
+                                                <li><a href="javascript:;">Dhirendra</a></li>
+                                                <li><a href="javascript:;">迪玛希</a></li>
+                                                <li><a href="javascript:;">电音舞曲</a></li>
+                                                <li class="hot"><a href="javascript:;">电子琴音乐</a></li>
+                                                <li><a href="javascript:;">电子音乐</a></li>
+                                                <li><a href="javascript:;">Dicky Adam</a></li>
+                                                <li><a href="javascript:;">Dilip Naik</a></li>
+                                                <li><a href="javascript:;">Dilip Param</a></li>
+                                                <li><a href="javascript:;">Dilip Verman</a></li>
+                                                <li><a href="javascript:;">Dilraj Kaur</a></li>
+                                                <li><a href="javascript:;">Dimension-X</a></li>
+                                                <li><a href="javascript:;">Dinesh Arry</a></li>
+                                                <li><a href="javascript:;">订做一个天堂</a></li>
+                                                <li><a href="javascript:;">DJ Shadow</a></li>
+                                                <li><a href="javascript:;">Dobe Music Production</a></li>
+                                                <li><a href="javascript:;">Dolly Guleria</a></li>
+                                                <li><a href="javascript:;">动漫原声</a></li>
+                                                <li><a href="javascript:;">Dr. Balamuralikrishna</a></li>
+                                                <li><a href="javascript:;">Dr. Emani Shankara Sastry</a></li>
+                                                <li><a href="javascript:;">Dr. Fr. Charles Vas Svd</a></li>
+                                                <li><a href="javascript:;">Dr.Jitkamol Tanasak</a></li>
+                                                <li><a href="javascript:;">Dr. N. Ramani</a></li>
+                                                <li><a href="javascript:;">Dr. Namagiripettai K. Krishnan</a></li>
+                                                <li><a href="javascript:;">Dr. Rajkumar</a></li>
+                                                <li><a href="javascript:;">Dream Canyon(梦峡谷)</a></li>
+                                                <li><a href="javascript:;">Dream Canyon[梦峡谷]</a></li>
+                                                <li><a href="javascript:;">独立音乐合辑</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YE" class="anchor"> E </a>
+            <div class="singerList">
+                <h3> E </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">E K Bobby</a></li>
+                                                <li><a href="javascript:;">Ecotek</a></li>
+                                                <li><a href="javascript:;">ELEMOTHO</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YF" class="anchor"> F </a>
+            <div class="singerList">
+                <h3> F </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">发烧榜</a></li>
+                                                <li><a href="javascript:;">发烧HiFi</a></li>
+                                                <li><a href="javascript:;">发烧专辑</a></li>
+                                                <li><a href="javascript:;">Fatin</a></li>
+                                                <li><a href="javascript:;">Fauziah Latiff</a></li>
+                                                <li><a href="javascript:;">非凡探险家系列</a></li>
+                                                <li><a href="javascript:;">Fellow Fellow</a></li>
+                                                <li><a href="javascript:;">Fernando Ibarra</a></li>
+                                                <li><a href="javascript:;">four mod</a></li>
+                                                <li><a href="javascript:;">Francfranc</a></li>
+                                                <li><a href="javascript:;">佛光山梵呗团</a></li>
+                                                <li><a href="javascript:;">福茂唱片</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YG" class="anchor"> G </a>
+            <div class="singerList">
+                <h3> G </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">G Balakrishna Prasad</a></li>
+                                                <li><a href="javascript:;">G.V. Prakash Kumar</a></li>
+                                                <li><a href="javascript:;">G Venugopal</a></li>
+                                                <li class="hot"><a href="javascript:;">港台群星</a></li>
+                                                <li><a href="javascript:;">Gangai Amaren</a></li>
+                                                <li><a href="javascript:;">Gangubai Hangal</a></li>
+                                                <li><a href="javascript:;">告别的摇滚</a></li>
+                                                <li><a href="javascript:;">Gary Lawyer</a></li>
+                                                <li><a href="javascript:;">各地民乐</a></li>
+                                                <li><a href="javascript:;">革命歌曲</a></li>
+                                                <li><a href="javascript:;">Gede Bagus</a></li>
+                                                <li><a href="javascript:;">Gene Rockwell</a></li>
+                                                <li><a href="javascript:;">Ghost Wolf</a></li>
+                                                <li><a href="javascript:;">Ghulam Ali</a></li>
+                                                <li><a href="javascript:;">Giovanni Lindo Ferretti</a></li>
+                                                <li><a href="javascript:;">Gireesh Puthenchery</a></li>
+                                                <li><a href="javascript:;">Girija Devi</a></li>
+                                                <li><a href="javascript:;">Girish Puthenchery</a></li>
+                                                <li><a href="javascript:;">Giulia</a></li>
+                                                <li><a href="javascript:;">Glen La' Rive</a></li>
+                                                <li><a href="javascript:;">Gods Robots</a></li>
+                                                <li><a href="javascript:;">Golf &amp; Mike</a></li>
+                                                <li><a href="javascript:;">公益歌曲</a></li>
+                                                <li><a href="javascript:;">Goodnight Wembley</a></li>
+                                                <li><a href="javascript:;">Grammy</a></li>
+                                                <li class="hot"><a href="javascript:;">古典音乐</a></li>
+                                                <li><a href="javascript:;">广告歌曲</a></li>
+                                                <li><a href="javascript:;">广州亚运会</a></li>
+                                                <li><a href="javascript:;">滚石群星</a></li>
+                                                <li><a href="javascript:;">国际游戏音乐节</a></li>
+                                                <li><a href="javascript:;">国家大剧院管弦乐团</a></li>
+                                                <li><a href="javascript:;">Guru Kalyan</a></li>
+                                                <li><a href="javascript:;">Gurukiran</a></li>
+                                                <li><a href="javascript:;">Gypsy &amp; The Cat</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YH" class="anchor"> H </a>
+            <div class="singerList">
+                <h3> H </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">H H Acharya Goswami Gokulotsav Ji Maharaj</a></li>
+                                                <li><a href="javascript:;">海蝶音乐</a></li>
+                                                <li><a href="javascript:;">Hamsalekha</a></li>
+                                                <li><a href="javascript:;">韩歌原味</a></li>
+                                                <li><a href="javascript:;">韩国疯之眉飞色舞[Korea Now]</a></li>
+                                                <li><a href="javascript:;">航海世纪</a></li>
+                                                <li><a href="javascript:;">好好先生&amp;魏如萱</a></li>
+                                                <li><a href="javascript:;">Hariharan</a></li>
+                                                <li><a href="javascript:;">合辑</a></li>
+                                                <li><a href="javascript:;">Heer Kamal</a></li>
+                                                <li><a href="javascript:;">Hijau Daun</a></li>
+                                                <li><a href="javascript:;">Hip Hop Project 2000</a></li>
+                                                <li class="hot"><a href="javascript:;">红色摇滚</a></li>
+                                                <li><a href="javascript:;">红音乐唱片</a></li>
+                                                <li><a href="javascript:;">话剧</a></li>
+                                                <li><a href="javascript:;">华纳群星</a></li>
+                                                <li><a href="javascript:;">华为主题</a></li>
+                                                <li><a href="javascript:;">华语群星</a></li>
+                                                <li class="hot"><a href="javascript:;">环球音乐</a></li>
+                                                <li><a href="javascript:;">环星唱片</a></li>
+                                                <li><a href="javascript:;">欢乐电子中国年</a></li>
+                                                <li><a href="javascript:;">黄梅戏</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YI" class="anchor"> I </a>
+            <div class="singerList">
+                <h3> I </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">Ice Saranyu</a></li>
+                                                <li><a href="javascript:;">iFani</a></li>
+                                                <li><a href="javascript:;">Il Giardino Armonico</a></li>
+                                                <li><a href="javascript:;">Ilayaraja</a></li>
+                                                <li><a href="javascript:;">In Each Hand A Cutlass</a></li>
+                                                <li><a href="javascript:;">Isa Raja</a></li>
+                                                <li><a href="javascript:;">Ivete Sangalo</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YJ" class="anchor"> J </a>
+            <div class="singerList">
+                <h3> J </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">Jagjit Singh</a></li>
+                                                <li><a href="javascript:;">Jaheim</a></li>
+                                                <li><a href="javascript:;">Jaishree Arvind</a></li>
+                                                <li><a href="javascript:;">Janardanan</a></li>
+                                                <li><a href="javascript:;">Jaspinder Nirula</a></li>
+                                                <li><a href="javascript:;">Jaya Chandran</a></li>
+                                                <li><a href="javascript:;">Jayachandran</a></li>
+                                                <li><a href="javascript:;">Jeronimo's</a></li>
+                                                <li><a href="javascript:;">Jesús Silva</a></li>
+                                                <li><a href="javascript:;">Jessica&amp;Krystal (郑氏姐妹)</a></li>
+                                                <li class="hot"><a href="javascript:;">吉它曲</a></li>
+                                                <li><a href="javascript:;">金革唱片</a></li>
+                                                <li class="hot"><a href="javascript:;">经典老歌</a></li>
+                                                <li><a href="javascript:;">劲舞团</a></li>
+                                                <li><a href="javascript:;">井陉群星</a></li>
+                                                <li><a href="javascript:;">鲸英计划首部曲</a></li>
+                                                <li><a href="javascript:;">Jitendra Abhisheki</a></li>
+                                                <li><a href="javascript:;">JK Sudhakar</a></li>
+                                                <li><a href="javascript:;">John Ellis</a></li>
+                                                <li><a href="javascript:;">Jonas Gwangwa</a></li>
+                                                <li><a href="javascript:;">Jose Mari Chan</a></li>
+                                                <li><a href="javascript:;">Joyous Celebration</a></li>
+                                                <li><a href="javascript:;">JSL Singh</a></li>
+                                                <li><a href="javascript:;">Juancho Y Lolita</a></li>
+                                                <li><a href="javascript:;">Judika</a></li>
+                                                <li><a href="javascript:;">Judith Sephuma</a></li>
+                                                <li><a href="javascript:;">爵士专辑</a></li>
+                                                <li><a href="javascript:;">军旅红歌</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YK" class="anchor"> K </a>
+            <div class="singerList">
+                <h3> K </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">K Atchi Reddy</a></li>
+                                                <li><a href="javascript:;">K.J. Yesudas</a></li>
+                                                <li><a href="javascript:;">K J Yesudas</a></li>
+                                                <li><a href="javascript:;">K Krishnakumar Naveen</a></li>
+                                                <li><a href="javascript:;">K.R.Y.T.I.C</a></li>
+                                                <li><a href="javascript:;">K.S. Chitra</a></li>
+                                                <li><a href="javascript:;">K.S. Surekha</a></li>
+                                                <li><a href="javascript:;">Kaavalam Sreekumar</a></li>
+                                                <li><a href="javascript:;">Kadhalmathi</a></li>
+                                                <li><a href="javascript:;">Kadri Gopalnath</a></li>
+                                                <li><a href="javascript:;">Kalamandalam Girish</a></li>
+                                                <li><a href="javascript:;">Kalanilayam Unnikrishnan</a></li>
+                                                <li><a href="javascript:;">Kannan</a></li>
+                                                <li><a href="javascript:;">Karthik Raja</a></li>
+                                                <li><a href="javascript:;">Kavita Krishnamurthy</a></li>
+                                                <li><a href="javascript:;">Keeravani</a></li>
+                                                <li><a href="javascript:;">Keko</a></li>
+                                                <li><a href="javascript:;">Kemavit Bhangananda</a></li>
+                                                <li><a href="javascript:;">Kevalin Sriwanna and Kandol Akashan</a></li>
+                                                <li><a href="javascript:;">KG Marcose</a></li>
+                                                <li><a href="javascript:;">Kinnera</a></li>
+                                                <li><a href="javascript:;">Kirti Anurag</a></li>
+                                                <li><a href="javascript:;">Kishori Amonkar</a></li>
+                                                <li><a href="javascript:;">Krea</a></li>
+                                                <li><a href="javascript:;">Krishnakumar</a></li>
+                                                <li><a href="javascript:;">Krit Viriyasiri</a></li>
+                                                <li><a href="javascript:;">快乐女声</a></li>
+                                                <li><a href="javascript:;">Kunnakudi Vaidyanathan</a></li>
+                                                <li><a href="javascript:;">Kusuma</a></li>
+                                                <li><a href="javascript:;">Kwstas Martakhs</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YL" class="anchor"> L </a>
+            <div class="singerList">
+                <h3> L </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">L.V. Ganesan</a></li>
+                                                <li><a href="javascript:;">L. Vai</a></li>
+                                                <li><a href="javascript:;">拉阔音乐会</a></li>
+                                                <li><a href="javascript:;">LADY JAYDEE</a></li>
+                                                <li><a href="javascript:;">Lalgudi Jayaraman</a></li>
+                                                <li><a href="javascript:;">Laxmikant</a></li>
+                                                <li><a href="javascript:;">Lazar Berman</a></li>
+                                                <li><a href="javascript:;">Leslie Lewis</a></li>
+                                                <li><a href="javascript:;">Lipta</a></li>
+                                                <li class="hot"><a href="javascript:;">留声岁月-老歌新唱</a></li>
+                                                <li><a href="javascript:;">流行恋曲</a></li>
+                                                <li><a href="javascript:;">Lola Flores</a></li>
+                                                <li><a href="javascript:;">RUDKLAO AMRATISHA &amp; PAN PHAIBUN</a></li>
+                                                <li><a href="javascript:;">Lucila Mariscal</a></li>
+                                                <li><a href="javascript:;">Lydia</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YM" class="anchor"> M </a>
+            <div class="singerList">
+                <h3> M </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">M. G. Radhakrishnan</a></li>
+                                                <li><a href="javascript:;">M.G. Sreekumar</a></li>
+                                                <li><a href="javascript:;">M.L. Vasanthakumari</a></li>
+                                                <li><a href="javascript:;">M M Srilekha</a></li>
+                                                <li><a href="javascript:;">M.N. Krupakar</a></li>
+                                                <li><a href="javascript:;">M. Narayana Sharalaya</a></li>
+                                                <li><a href="javascript:;">M.S. Sheela</a></li>
+                                                <li><a href="javascript:;">M.S. Viswanathan</a></li>
+                                                <li><a href="javascript:;">Madhuri</a></li>
+                                                <li><a href="javascript:;">Magenta</a></li>
+                                                <li><a href="javascript:;">Mahanadhi Shobana</a></li>
+                                                <li><a href="javascript:;">Maharajapuram Santhanam</a></li>
+                                                <li><a href="javascript:;">Mahinder Pal</a></li>
+                                                <li><a href="javascript:;">Mahitosh</a></li>
+                                                <li><a href="javascript:;">Mahmood Khan</a></li>
+                                                <li><a href="javascript:;">Malathi Sharma</a></li>
+                                                <li><a href="javascript:;">Mali Music</a></li>
+                                                <li><a href="javascript:;">Mallikarjuna Sharma</a></li>
+                                                <li><a href="javascript:;">Manhar Udhas</a></li>
+                                                <li><a href="javascript:;">Mani Sharma</a></li>
+                                                <li><a href="javascript:;">Manjula Gururaj</a></li>
+                                                <li><a href="javascript:;">Mano</a></li>
+                                                <li><a href="javascript:;">Mantra</a></li>
+                                                <li><a href="javascript:;">Marcose</a></li>
+                                                <li><a href="javascript:;">Margareth</a></li>
+                                                <li><a href="javascript:;">Master Ravikiran</a></li>
+                                                <li><a href="javascript:;">Matrimony</a></li>
+                                                <li><a href="javascript:;">Mattanoor Sankaran Kutty</a></li>
+                                                <li><a href="javascript:;">MDSK</a></li>
+                                                <li><a href="javascript:;">Meet Bros Anjjan</a></li>
+                                                <li><a href="javascript:;">Megha</a></li>
+                                                <li><a href="javascript:;">玫瑰之约</a></li>
+                                                <li><a href="javascript:;">Melorythe</a></li>
+                                                <li><a href="javascript:;">猛士</a></li>
+                                                <li><a href="javascript:;">MG Sreekumar</a></li>
+                                                <li><a href="javascript:;">Michel Camilo</a></li>
+                                                <li><a href="javascript:;">Mika Singh</a></li>
+                                                <li><a href="javascript:;">Mikha Angelo</a></li>
+                                                <li><a href="javascript:;">民歌</a></li>
+                                                <li><a href="javascript:;">民歌情（二）</a></li>
+                                                <li><a href="javascript:;">民歌情（一）</a></li>
+                                                <li class="hot"><a href="javascript:;">闽南歌专辑</a></li>
+                                                <li><a href="javascript:;">民谣合辑</a></li>
+                                                <li><a href="javascript:;">民谣</a></li>
+                                                <li><a href="javascript:;">民乐大师</a></li>
+                                                <li><a href="javascript:;">民乐红</a></li>
+                                                <li><a href="javascript:;">民族音乐</a></li>
+                                                <li><a href="javascript:;">明日之星Super Star</a></li>
+                                                <li><a href="javascript:;">Mirkelam</a></li>
+                                                <li><a href="javascript:;">Mohammed Vakil</a></li>
+                                                <li><a href="javascript:;">Mohan Sithara</a></li>
+                                                <li><a href="javascript:;">Musikimia</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YN" class="anchor"> N </a>
+            <div class="singerList">
+                <h3> N </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">N. Nagarajan</a></li>
+                                                <li><a href="javascript:;">N. Rajam</a></li>
+                                                <li><a href="javascript:;">Nakarin Kingsak</a></li>
+                                                <li><a href="javascript:;">Nanook</a></li>
+                                                <li><a href="javascript:;">Narasimhan V.S.</a></li>
+                                                <li><a href="javascript:;">Naveen Kumar</a></li>
+                                                <li><a href="javascript:;">Naveen Madhav</a></li>
+                                                <li><a href="javascript:;">Nawapan Aung-insombut</a></li>
+                                                <li><a href="javascript:;">Nazia Hassan</a></li>
+                                                <li><a href="javascript:;">内地杂锦合辑</a></li>
+                                                <li><a href="javascript:;">Neko Jump</a></li>
+                                                <li><a href="javascript:;">Nikhil Dsouza</a></li>
+                                                <li><a href="javascript:;">Niladri Kumar</a></li>
+                                                <li><a href="javascript:;">Niranjan Pandya</a></li>
+                                                <li><a href="javascript:;">Nityanand Haldipur</a></li>
+                                                <li><a href="javascript:;">Niyaz</a></li>
+                                                <li><a href="javascript:;">No One Else</a></li>
+                                                <li><a href="javascript:;">Novita Dewi</a></li>
+                                                <li><a href="javascript:;">Now Japan Best</a></li>
+                                                <li><a href="javascript:;">Nu Dimension</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YO" class="anchor"> O </a>
+            <div class="singerList">
+                <h3> O </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">O.N.V. Kurup</a></li>
+                                                <li><a href="javascript:;">O N V Kurup</a></li>
+                                                <li><a href="javascript:;">OH</a></li>
+                                                <li><a href="javascript:;">Om Pawar</a></li>
+                                                <li><a href="javascript:;">Onpailin Prayoonsuk</a></li>
+                                                <li><a href="javascript:;">Original Broadway Cast Recording</a></li>
+                                                <li><a href="javascript:;">Orquesta Merida De Secundino Pech</a></li>
+                                                <li><a href="javascript:;">欧美金曲</a></li>
+                                                <li><a href="javascript:;">欧美群星</a></li>
+                                                <li><a href="javascript:;">欧美杂锦合辑</a></li>
+                                                <li><a href="javascript:;">Ouseppachan</a></li>
+                                                <li><a href="javascript:;">Outtrigger</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YP" class="anchor"> P </a>
+            <div class="singerList">
+                <h3> P </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">P Chinna Babu</a></li>
+                                                <li><a href="javascript:;">P.O.P (Period Of Party)</a></li>
+                                                <li><a href="javascript:;">Paco Sierra</a></li>
+                                                <li><a href="javascript:;">Palladam S. Venkataramana Rao</a></li>
+                                                <li><a href="javascript:;">Pallagummi Jyothi</a></li>
+                                                <li><a href="javascript:;">Pallavur Kanjukutta Marar</a></li>
+                                                <li><a href="javascript:;">Panita Thanachottharakon</a></li>
+                                                <li><a href="javascript:;">Parupally</a></li>
+                                                <li><a href="javascript:;">Parveen Sultana</a></li>
+                                                <li><a href="javascript:;">Penaz Masani</a></li>
+                                                <li><a href="javascript:;">Pentagram</a></li>
+                                                <li><a href="javascript:;">Peruvanam Kuttan Marar</a></li>
+                                                <li><a href="javascript:;">Phongsaphat Thinaraj</a></li>
+                                                <li><a href="javascript:;">霹雳奇象</a></li>
+                                                <li><a href="javascript:;">Popetorn Soonthornyanakij</a></li>
+                                                <li><a href="javascript:;">Port-Royal</a></li>
+                                                <li><a href="javascript:;">Pradeep Roy</a></li>
+                                                <li><a href="javascript:;">Pranati Mhatre</a></li>
+                                                <li><a href="javascript:;">Pravin Mani</a></li>
+                                                <li><a href="javascript:;">Pritam</a></li>
+                                                <li><a href="javascript:;">Priti</a></li>
+                                                <li><a href="javascript:;">Priyesh Vakil</a></li>
+                                                <li><a href="javascript:;">Prof. Mohini Mohan Patnaik</a></li>
+                                                <li><a href="javascript:;">Promila Gupta</a></li>
+                                                <li><a href="javascript:;">Pt. Bhimsen Joshi</a></li>
+                                                <li><a href="javascript:;">Pt. Channulal Mishra</a></li>
+                                                <li><a href="javascript:;">Pt. D.K. Datar</a></li>
+                                                <li><a href="javascript:;">Pt. Hariprasad Chaurasia</a></li>
+                                                <li><a href="javascript:;">Pt. Jasraj</a></li>
+                                                <li><a href="javascript:;">Pt. Mallikarjun Mansur</a></li>
+                                                <li><a href="javascript:;">Pt. Om Prakash Chaurasia</a></li>
+                                                <li><a href="javascript:;">Pt. Rajan Mishra</a></li>
+                                                <li><a href="javascript:;">Pt. Shivkumar Sharma</a></li>
+                                                <li><a href="javascript:;">Pukazhenthi</a></li>
+                                                <li><a href="javascript:;">Purushottam Upadhyay</a></li>
+                                                <li><a href="javascript:;">Puttur Narasimha Nayak</a></li>
+                                                <li><a href="javascript:;">Putumayo</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YQ" class="anchor"> Q </a>
+            <div class="singerList">
+                <h3> Q </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">Q仔</a></li>
+                                                <li><a href="javascript:;">Q</a></li>
+                                                <li class="hot"><a href="javascript:;">汽车音乐</a></li>
+                                                <li><a href="javascript:;">奇林智媒</a></li>
+                                                <li><a href="javascript:;">其他</a></li>
+                                                <li><a href="javascript:;">起笑蛙 Crazy Frog</a></li>
+                                                <li><a href="javascript:;">将门</a></li>
+                                                <li><a href="javascript:;">情歌对唱</a></li>
+                                                <li><a href="javascript:;">清华大学音乐梦想计划</a></li>
+                                                <li><a href="javascript:;">情人节专题</a></li>
+                                                <li><a href="javascript:;">Quinteto de Chucho Zarzosa</a></li>
+                                                <li><a href="javascript:;">群星杂辑</a></li>
+                                                <li><a href="javascript:;">群星</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YR" class="anchor"> R </a>
+            <div class="singerList">
+                <h3> R </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">R&B合辑</a></li>
+                                                <li><a href="javascript:;">儿歌</a></li>
+                                                <li class="hot"><a href="javascript:;">儿童歌曲</a></li>
+                                                <li><a href="javascript:;">R. Vedavalli</a></li>
+                                                <li><a href="javascript:;">Raajeshwari Choudhary</a></li>
+                                                <li><a href="javascript:;">Raaz</a></li>
+                                                <li><a href="javascript:;">Raghavendra Rajkumar</a></li>
+                                                <li><a href="javascript:;">Rahat Fateh Ali Khan</a></li>
+                                                <li><a href="javascript:;">Raj-Koti</a></li>
+                                                <li><a href="javascript:;">Rajamani</a></li>
+                                                <li><a href="javascript:;">Rajesh Krishnan</a></li>
+                                                <li><a href="javascript:;">Rajeshwari Sachdev</a></li>
+                                                <li><a href="javascript:;">Ramani Bharadwaj</a></li>
+                                                <li><a href="javascript:;">Ramani - Prasad</a></li>
+                                                <li><a href="javascript:;">Ramesh Erra</a></li>
+                                                <li><a href="javascript:;">Ramkumar</a></li>
+                                                <li><a href="javascript:;">《燃烧吧！少女》选手</a></li>
+                                                <li><a href="javascript:;">Ravi Pawar</a></li>
+                                                <li><a href="javascript:;">Ravi Shankar</a></li>
+                                                <li><a href="javascript:;">热门搜索</a></li>
+                                                <li><a href="javascript:;">Remo</a></li>
+                                                <li><a href="javascript:;">日本浪漫男与女原创作精选</a></li>
+                                                <li><a href="javascript:;">日本影视原声</a></li>
+                                                <li><a href="javascript:;">Rikhi Ray</a></li>
+                                                <li><a href="javascript:;">熔艺音乐</a></li>
+                                                <li><a href="javascript:;">Ronu Majumdar</a></li>
+                                                <li><a href="javascript:;">Room 39</a></li>
+                                                <li><a href="javascript:;">ROSE MUHANDO</a></li>
+                                                <li><a href="javascript:;">Rudklao Amratisha</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YS" class="anchor"> S </a>
+            <div class="singerList">
+                <h3> S </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">S.A. Rajkumar</a></li>
+                                                <li><a href="javascript:;">S. Janaki</a></li>
+                                                <li><a href="javascript:;">S.P. Balasubrahmanyam</a></li>
+                                                <li><a href="javascript:;">S.P. Balasubramanyam</a></li>
+                                                <li><a href="javascript:;">S.P. Venkatesh</a></li>
+                                                <li><a href="javascript:;">S.S. Kumaran</a></li>
+                                                <li><a href="javascript:;">Saapna Mukherjee</a></li>
+                                                <li><a href="javascript:;">Sachin Jigar</a></li>
+                                                <li><a href="javascript:;">Sadhna Sargam</a></li>
+                                                <li><a href="javascript:;">Sadhu Kokila</a></li>
+                                                <li><a href="javascript:;">Sahiti</a></li>
+                                                <li><a href="javascript:;">Sajid Khan</a></li>
+                                                <li><a href="javascript:;">Sajid Wajid</a></li>
+                                                <li><a href="javascript:;">Saksit Vejsupaporn</a></li>
+                                                <li><a href="javascript:;">Sandeep Chowta</a></li>
+                                                <li><a href="javascript:;">Sandhy Sondoro</a></li>
+                                                <li><a href="javascript:;">Sangeeta Shankar</a></li>
+                                                <li><a href="javascript:;">Sangeetha Shankar</a></li>
+                                                <li><a href="javascript:;">Sangeetha Shivakumar</a></li>
+                                                <li><a href="javascript:;">Saniyah Azhar</a></li>
+                                                <li><a href="javascript:;">Sanjay Raina</a></li>
+                                                <li><a href="javascript:;">Sankaran Embrandiri</a></li>
+                                                <li><a href="javascript:;">Sara</a></li>
+                                                <li><a href="javascript:;">Sarangapaani</a></li>
+                                                <li><a href="javascript:;">ScarletAllen</a></li>
+                                                <li><a href="javascript:;">Schengen</a></li>
+                                                <li><a href="javascript:;">Scrubb</a></li>
+                                                <li><a href="javascript:;">Sensation</a></li>
+                                                <li><a href="javascript:;">Shaantanu Mukherjee</a></li>
+                                                <li><a href="javascript:;">Shakuntala jadhav</a></li>
+                                                <li><a href="javascript:;">Shalini Singh</a></li>
+                                                <li><a href="javascript:;">Shaman</a></li>
+                                                <li><a href="javascript:;">Shankar Ehsaan Loy</a></li>
+                                                <li><a href="javascript:;">Sharreth</a></li>
+                                                <li><a href="javascript:;">She</a></li>
+                                                <li><a href="javascript:;">Shekhar Krishnamoorthy</a></li>
+                                                <li><a href="javascript:;">圣诞歌曲</a></li>
+                                                <li><a href="javascript:;">圣诞节音乐</a></li>
+                                                <li><a href="javascript:;">圣元文化</a></li>
+                                                <li><a href="javascript:;">Sherine</a></li>
+                                                <li><a href="javascript:;">世纪军歌</a></li>
+                                                <li><a href="javascript:;">世界杯足球赛(FIFA World Cup)</a></li>
+                                                <li><a href="javascript:;">世界童谣大赏</a></li>
+                                                <li><a href="javascript:;">世界音乐图书馆</a></li>
+                                                <li><a href="javascript:;">十五亿分贝</a></li>
+                                                <li><a href="javascript:;">试音天碟</a></li>
+                                                <li><a href="javascript:;">Shining Star</a></li>
+                                                <li><a href="javascript:;">Shivrajkumar</a></li>
+                                                <li><a href="javascript:;">Shortstraw</a></li>
+                                                <li><a href="javascript:;">Shubha Mudgal</a></li>
+                                                <li><a href="javascript:;">Shubhaa</a></li>
+                                                <li><a href="javascript:;">Shweta Shetty</a></li>
+                                                <li><a href="javascript:;">Sibilla</a></li>
+                                                <li><a href="javascript:;">Sikkand</a></li>
+                                                <li><a href="javascript:;">Sikkil Sisters</a></li>
+                                                <li><a href="javascript:;">Silly Fools</a></li>
+                                                <li><a href="javascript:;">Sirasak Ittipholpanich (Pingpong)</a></li>
+                                                <li><a href="javascript:;">Sixty Miles</a></li>
+                                                <li><a href="javascript:;">SM Town</a></li>
+                                                <li><a href="javascript:;">Somesh Kumar</a></li>
+                                                <li><a href="javascript:;">Sons of Zion</a></li>
+                                                <li><a href="javascript:;">Sonu Nigam</a></li>
+                                                <li><a href="javascript:;">Soorya</a></li>
+                                                <li><a href="javascript:;">Soul After Six (2012)</a></li>
+                                                <li><a href="javascript:;">Soul After Six</a></li>
+                                                <li><a href="javascript:;">Sowmya</a></li>
+                                                <li><a href="javascript:;">SP Balasubramaniam</a></li>
+                                                <li><a href="javascript:;">Spirit</a></li>
+                                                <li><a href="javascript:;">Sree Vidyabhooshana</a></li>
+                                                <li><a href="javascript:;">Sreekumari Ramachandran</a></li>
+                                                <li><a href="javascript:;">Sri Palagummi Viswanathan</a></li>
+                                                <li><a href="javascript:;">Srikumaran Thampi</a></li>
+                                                <li><a href="javascript:;">Sriram</a></li>
+                                                <li><a href="javascript:;">Srivennela Seetharam Sastry</a></li>
+                                                <li><a href="javascript:;">SS Thaman</a></li>
+                                                <li><a href="javascript:;">Stamp</a></li>
+                                                <li><a href="javascript:;">Studio Cast Recording</a></li>
+                                                <li><a href="javascript:;">Style Bhai</a></li>
+                                                <li><a href="javascript:;">Suchitra Krishnamurthy</a></li>
+                                                <li><a href="javascript:;">Sudeep Banerjee</a></li>
+                                                <li><a href="javascript:;">Sudeep</a></li>
+                                                <li><a href="javascript:;">Sudha</a></li>
+                                                <li><a href="javascript:;">Sugar Eyes (2013)</a></li>
+                                                <li><a href="javascript:;">Sujata Trivedi</a></li>
+                                                <li><a href="javascript:;">Superman Is Dead</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YT" class="anchor"> T </a>
+            <div class="singerList">
+                <h3> T </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">T.H. Vinayakam</a></li>
+                                                <li><a href="javascript:;">T. L. Maharajan</a></li>
+                                                <li><a href="javascript:;">T M Krishna</a></li>
+                                                <li><a href="javascript:;">Tabitha Venkataraman</a></li>
+                                                <li class="hot"><a href="javascript:;">胎教音乐</a></li>
+                                                <li><a href="javascript:;">台湾地下音乐档案</a></li>
+                                                <li><a href="javascript:;">Tata Young</a></li>
+                                                <li><a href="javascript:;">The Begins</a></li>
+                                                <li><a href="javascript:;">The Best Of Asia Dance 2000</a></li>
+                                                <li><a href="javascript:;">The Muppets</a></li>
+                                                <li><a href="javascript:;">Tierra Caliente</a></li>
+                                                <li><a href="javascript:;">听遍中国系列</a></li>
+                                                <li><a href="javascript:;">Tmf Hitzone</a></li>
+                                                <li><a href="javascript:;">童谣宝宝</a></li>
+                                                <li class="hot"><a href="javascript:;">同一首歌</a></li>
+                                                <li><a href="javascript:;">Tosaporn Achawanuntagul</a></li>
+                                                <li><a href="javascript:;">Tresdias</a></li>
+                                                <li><a href="javascript:;">Trippunithara Krishnadas</a></li>
+                                                <li><a href="javascript:;">Tropical America</a></li>
+                                                <li><a href="javascript:;">真爱如血原声 True Blood Soundtrack</a></li>
+                                                <li><a href="javascript:;">Tshedi Mholo</a></li>
+                                                <li><a href="javascript:;">兔子舞</a></li>
+                                                <li><a href="javascript:;">TVB艺员</a></li>
+                                                <li><a href="javascript:;">Two Steps From Hell</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YU" class="anchor"> U </a>
+            <div class="singerList">
+                <h3> U </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">U. Mohammed</a></li>
+                                                <li><a href="javascript:;">U. Srinivas</a></li>
+                                                <li><a href="javascript:;">UEFA Euro 2008 Soundtrack</a></li>
+                                                <li><a href="javascript:;">Ultra Mix 01 EP</a></li>
+                                                <li><a href="javascript:;">Uma</a></li>
+                                                <li><a href="javascript:;">Umayalpuram K. Sivaraman</a></li>
+                                                <li><a href="javascript:;">Umpere Skumper</a></li>
+                                                <li><a href="javascript:;">Unni Menon</a></li>
+                                                <li><a href="javascript:;">Unnikrishnan</a></li>
+                                                <li><a href="javascript:;">Ustad Alla Rakha</a></li>
+                                                <li><a href="javascript:;">Ustad Amjad Ali Khan</a></li>
+                                                <li><a href="javascript:;">Ustad Ghulam Mustafa Khan</a></li>
+                                                <li><a href="javascript:;">Ustad Shujaat Khan</a></li>
+                                                <li><a href="javascript:;">Utpal Biswas</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YV" class="anchor"> V </a>
+            <div class="singerList">
+                <h3> V </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">V. Manohar</a></li>
+                                                <li><a href="javascript:;">V.R. Manika Vinayakam</a></li>
+                                                <li><a href="javascript:;">V.R. Manikka Vinayakam</a></li>
+                                                <li><a href="javascript:;">V. Selvaganesh</a></li>
+                                                <li><a href="javascript:;">Vadepalli Srinivas</a></li>
+                                                <li><a href="javascript:;">Vairamuthu</a></li>
+                                                <li><a href="javascript:;">Vandemataram Srinivas</a></li>
+                                                <li><a href="javascript:;">Vanraj Bhatia</a></li>
+                                                <li><a href="javascript:;">Varija Menon</a></li>
+                                                <li><a href="javascript:;">Various</a></li>
+                                                <li><a href="javascript:;">Vasundhara Das</a></li>
+                                                <li><a href="javascript:;">Vennelakanti</a></li>
+                                                <li><a href="javascript:;">Venugopal</a></li>
+                                                <li><a href="javascript:;">Vertical Mind</a></li>
+                                                <li><a href="javascript:;">Veturi Sundaramamurthy</a></li>
+                                                <li><a href="javascript:;">Vidyasagar</a></li>
+                                                <li><a href="javascript:;">Vijay Antony</a></li>
+                                                <li><a href="javascript:;">Vijay Ebenezer</a></li>
+                                                <li><a href="javascript:;">Vijay Raghav Rao</a></li>
+                                                <li><a href="javascript:;">Vijay Talpade</a></li>
+                                                <li><a href="javascript:;">Vijayalakshmi</a></li>
+                                                <li><a href="javascript:;">Vikku Vinayakram</a></li>
+                                                <li><a href="javascript:;">Vinaya Prasad</a></li>
+                                                <li><a href="javascript:;">Vinayan</a></li>
+                                                <li><a href="javascript:;">Vinod Patel</a></li>
+                                                <li><a href="javascript:;">Vinod Rathod</a></li>
+                                                <li><a href="javascript:;">Vishal Bhardwaj</a></li>
+                                                <li><a href="javascript:;">Vishal &amp; Shekhar</a></li>
+                                                <li><a href="javascript:;">Vishwa Mohan Bhatt</a></li>
+                                                <li><a href="javascript:;">Viswanath Sastry</a></li>
+                                                <li><a href="javascript:;">VOCALOID</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YW" class="anchor"> W </a>
+            <div class="singerList">
+                <h3> W </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">Walt Disney World(沃尔特·迪斯尼世界)</a></li>
+                                                <li><a href="javascript:;">王洛宾歌曲精选集（演唱篇）</a></li>
+                                                <li><a href="javascript:;">网络歌手合辑</a></li>
+                                                <li><a href="javascript:;">网络神曲</a></li>
+                                                <li><a href="javascript:;">网络秀</a></li>
+                                                <li><a href="javascript:;">网友翻唱</a></li>
+                                                <li><a href="javascript:;">Whenua Patuwai</a></li>
+                                                <li><a href="javascript:;">White Pearl</a></li>
+                                                <li><a href="javascript:;">Wilfran Castillo</a></li>
+                                                <li><a href="javascript:;">我们这里还有鱼</a></li>
+                                                <li><a href="javascript:;">我是歌手</a></li>
+                                                <li><a href="javascript:;">我型我SHOW</a></li>
+                                                <li><a href="javascript:;">World Network Series</a></li>
+                                                <li><a href="javascript:;">Worrawech Danuwong</a></li>
+                                                <li><a href="javascript:;">无名英雄</a></li>
+                                                <li><a href="javascript:;">舞曲</a></li>
+                                                <li><a href="javascript:;">无线星空</a></li>
+                                                <li><a href="javascript:;">吴颖音乐工作室</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YX" class="anchor"> X </a>
+            <div class="singerList">
+                <h3> X </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">嘻哈大师</a></li>
+                                                <li><a href="javascript:;">喜力音乐无疆界(生命乐章)</a></li>
+                                                <li><a href="javascript:;">戏曲</a></li>
+                                                <li><a href="javascript:;">相声瓦舍</a></li>
+                                                <li><a href="javascript:;">小旭音乐</a></li>
+                                                <li><a href="javascript:;">校园歌曲</a></li>
+                                                <li><a href="javascript:;">校园金曲奖</a></li>
+                                                <li><a href="javascript:;">校园民谣</a></li>
+                                                <li><a href="javascript:;">校园摇滚</a></li>
+                                                <li><a href="javascript:;">小乐</a></li>
+                                                <li><a href="javascript:;">新春贺喜</a></li>
+                                                <li><a href="javascript:;">新春颂献</a></li>
+                                                <li><a href="javascript:;">"心动"音乐盒精选</a></li>
+                                                <li><a href="javascript:;">新力博德曼</a></li>
+                                                <li class="hot"><a href="javascript:;">心灵SPA水晶音乐</a></li>
+                                                <li><a href="javascript:;">心灵休闲</a></li>
+                                                <li><a href="javascript:;">新年系列</a></li>
+                                                <li><a href="javascript:;">新丝竹爵士乐坊</a></li>
+                                                <li><a href="javascript:;">新音乐</a></li>
+                                                <li><a href="javascript:;">星心相映</a></li>
+                                                <li><a href="javascript:;">宣传单曲</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YY" class="anchor"> Y </a>
+            <div class="singerList">
+                <h3> Y </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">亚非拉杂辑合锦</a></li>
+                                                <li><a href="javascript:;">亚洲创作人原音大碟</a></li>
+                                                <li><a href="javascript:;">摇滚合辑</a></li>
+                                                <li><a href="javascript:;">摇滚情歌</a></li>
+                                                <li><a href="javascript:;">Yasha</a></li>
+                                                <li><a href="javascript:;">Yesudas</a></li>
+                                                <li><a href="javascript:;">一听新动力</a></li>
+                                                <li><a href="javascript:;">一听专题</a></li>
+                                                <li><a href="javascript:;">印能法师</a></li>
+                                                <li><a href="javascript:;">音乐剧原声</a></li>
+                                                <li><a href="javascript:;">音乐剧</a></li>
+                                                <li class="hot"><a href="javascript:;">音乐疗法</a></li>
+                                                <li><a href="javascript:;">音乐情书</a></li>
+                                                <li><a href="javascript:;">英皇群星</a></li>
+                                                <li><a href="javascript:;">英皇盛世系列</a></li>
+                                                <li><a href="javascript:;">英文名曲精选</a></li>
+                                                <li><a href="javascript:;">英文童谣大赏</a></li>
+                                                <li><a href="javascript:;">映象唱片</a></li>
+                                                <li class="hot"><a href="javascript:;">有声读物</a></li>
+                                                <li><a href="javascript:;">游戏音乐</a></li>
+                                                <li><a href="javascript:;">原创歌手</a></li>
+                                                <li><a href="javascript:;">Yuan</a></li>
+                                                <li><a href="javascript:;">乐海盛世</a></li>
+                                                <li><a href="javascript:;">粤剧</a></li>
+                                                <li><a href="javascript:;">乐拍乐高</a></li>
+                                                <li><a href="javascript:;">乐器演奏</a></li>
+                                                <li><a href="javascript:;">Yusuf Ali Kecheri</a></li>
+                                                <li><a href="javascript:;">Yuvanshankar Raja</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="YZ" class="anchor"> Z </a>
+            <div class="singerList">
+                <h3> Z </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">杂锦合辑1</a></li>
+                                                <li><a href="javascript:;">杂锦合辑2</a></li>
+                                                <li><a href="javascript:;">杂锦合辑3</a></li>
+                                                <li><a href="javascript:;">杂锦合辑4</a></li>
+                                                <li><a href="javascript:;">杂锦合辑5</a></li>
+                                                <li><a href="javascript:;">杂锦合辑6</a></li>
+                                                <li><a href="javascript:;">杂锦合辑7</a></li>
+                                                <li><a href="javascript:;">杂锦合辑</a></li>
+                                                <li><a href="javascript:;">Zafar Iqbal</a></li>
+                                                <li><a href="javascript:;">再別康桥</a></li>
+                                                <li><a href="javascript:;">战斗吧歌姬！</a></li>
+                                                <li><a href="javascript:;">张震</a></li>
+                                                <li><a href="javascript:;">长征组歌</a></li>
+                                                <li><a href="javascript:;">朝歌夜弦</a></li>
+                                                <li><a href="javascript:;">正东群星</a></li>
+                                                <li><a href="javascript:;">中国古典音乐历朝黄金年鉴</a></li>
+                                                <li><a href="javascript:;">中国民歌宝典二</a></li>
+                                                <li><a href="javascript:;">中国民歌宝典</a></li>
+                                                <li><a href="javascript:;">中国西南民族口簧琴</a></li>
+                                                <li><a href="javascript:;">中国星力量</a></li>
+                                                <li><a href="javascript:;">中国星</a></li>
+                                                <li><a href="javascript:;">中华人民共和国经典歌曲集</a></li>
+                                                <li><a href="javascript:;">主打全舞行</a></li>
+                                                <li class="hot"><a href="javascript:;">助眠音乐</a></li>
+                                                <li><a href="javascript:;">祝你愉快-致家驹</a></li>
+                                                <li><a href="javascript:;">足球歌曲</a></li>
+                                                <li class="hot"><a href="javascript:;">最爱的主打歌</a></li>
+                                                <li><a href="javascript:;">最新试听</a></li>
+                                                <li><a href="javascript:;">最终幻想</a></li>
+                                                            </ul>
+            </div>
+            
+            <a name="Y0-9" class="anchor"> 0-9 </a>
+            <div class="singerList">
+                <h3> 0-9 </h3>
+                <ul class="allSinger">
+                                                                                                                    <li><a href="javascript:;">1999中国摇滚乐势力</a></li>
+                                                <li class="hot"><a href="javascript:;">2000钢琴恋曲</a></li>
+                                                <li><a href="javascript:;">2000千禧摇滚</a></li>
+                                                <li><a href="javascript:;">2001钢琴恋曲</a></li>
+                                                <li><a href="javascript:;">8866唱片</a></li>
+                                                <li><a href="javascript:;">忘川风华录</a></li>
+                                                <li><a href="javascript:;">歌尽浮生</a></li>
+                                                <li><a href="javascript:;">汐音社</a></li>
+                                                <li><a href="javascript:;">Afgan</a></li>
+                                                <li><a href="javascript:;">Rich Brian</a></li>
+                                                <li><a href="javascript:;">国风堂</a></li>
+                                                <li><a href="javascript:;">未知音素</a></li>
+                                                <li><a href="javascript:;">嘿人李逵Noisemakers</a></li>
+                                                <li><a href="javascript:;">R3HAB</a></li>
+                                                <li><a href="javascript:;">菲道尔</a></li>
+                                                <li><a href="javascript:;">Jasmine张静雯</a></li>
+                                                <li><a href="javascript:;">白玉盘</a></li>
+                                                <li><a href="javascript:;">好乐无荒</a></li>
+                                                <li><a href="javascript:;">琴默千弦</a></li>
+                                                <li><a href="javascript:;">Yultron</a></li>
+                                                <li><a href="javascript:;">国风集</a></li>
+                                                <li><a href="javascript:;">山止川行</a></li>
+                                                <li><a href="javascript:;">国风社</a></li>
+                                                <li><a href="javascript:;">古风插电</a></li>
+                                                <li><a href="javascript:;">First Mission</a></li>
+                                                <li><a href="javascript:;">W8VES</a></li>
+                                                <li><a href="javascript:;">浆糊音乐</a></li>
+                                                <li><a href="javascript:;">安得音乐AndMusic</a></li>
+                                                <li><a href="javascript:;">国风新语</a></li>
+                                                            </ul>
+            </div>
+                    </div>
+    </div>
+
+    <link href="../v5/r4/style/suggest.css" rel="stylesheet" type="text/css">
+<script src="../v5/r4/js/suggest.js"></script>
+<div class="footer center">
+    <!--<p class="footlink"> <a href="/faq/etc/about.html">关于一听</a> |--> <a href="../faq/etc/copyright.html">版权声明</a> <!--| <a href="/faq/etc/recruit.html">诚聘英才</a> -->| <a href="../faq/etc/contact_us.html">联系我们</a> | <a href="../index1.html">歌曲入库</a> | <a href="../faq/etc/history.html">历史合作</a> | <a href="../faq/etc/links.html">友情链接</a> | <a href="../faq/etc/help.html">帮助中心</a> <!--| <a href="https://h5.lezicartoon.cn">移动一听</a> </p>-->
+  <p class="copyright">&copy; 2003-2020   <a href="javascript:;" class="homepage">www.lezicartoon.cn</a> All Rights Reserved 沪ICP备19024260号-3</p>
+</div>
+
+<script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F32c12acc9a2efc3fa896bb3ebcd47ee7' type='text/javascript'%3E%3C/script%3E"));</script>
+<script src='../c-30001746.js' language='JavaScript'></script>
+    <!-- 广告位：左下角悬浮 -->
+    <script>
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div id="' + s + '"></div>');
+        (window.slotbydup=window.slotbydup || []).push({
+            id: '3221626',
+            container: s,
+            size: '300,250',
+            display: 'float'
+        });
+    })();
+    </script>
+
+    <!-- 广告位：富媒体补余 -->
+    <script>
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div id="' + s + '"></div>');
+        (window.slotbydup=window.slotbydup || []).push({
+            id: '2861847',
+            container: s,
+            size: '300,250',
+            display: 'float'
+        });
+    })();
+    </script>
+
+    <script id="bdshare_js" data="type=tools&amp;uid=14170"></script>
+    <script id="bdshell_js"></script>
+    <script>
+    var bds_config = {
+        //'wbUid':1671108633,
+        'bdPopTitle':'杭州乐米动漫',
+        'snsKey':{'tqq':'403a778463634ece8f0c75a66c4e230d', 'tsina':'1435846576'},            
+        'bdPic':'//img.lezicartoon.cn/images/singer/7416.jpg'
+            };
+        document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+    </script>
+</body>
+</html>

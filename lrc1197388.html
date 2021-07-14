@@ -1,0 +1,242 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>徐新军_好想好好爱一场-徐新军/雨霖枫LRC滚动歌词下载</title>
+<link href="v5/style/lrc/lrc.css" rel="stylesheet" type="text/css">
+<script>
+if(self==top){document.write('<style>#nav{position:absolute;top:0;left:0;padding:0 0;background:#fff url("/v5/r4/images/top_logo.png") no-repeat;border-top:4px solid #22A5E9;border-bottom:1px solid #AACBEE; width:100%;height:60px;}#nav p{padding:6px;height:30px;line-height:30px;margin-left:200px;}body{margin-top:80px;}#container{height:auto;width:auto;text-align:left;padding:10px;}.ting_5{text-align:left;}</style>');}
+</script>
+<script>
+document.domain='lezicartoon.cn';
+function the(s){return document.getElementById(s);}
+</script>
+</head>
+<body>
+<div class="ting_5">
+</div>
+        <div id="container"></div>
+    <div id="lrc">[00:05.82]好想好好爱一场
+[00:06.60]作词：雨霖枫
+[00:07.44]作曲：雨霖枫
+[00:08.40]演唱：雨霖枫/徐新军
+[00:09.57]编曲：雨霖枫
+[00:10.54]制作人：雨霖枫
+[00:11.25]录音：雨霖枫音乐工作室
+[00:12.02]和声：雨霖枫
+[00:12.73]混音：雨霖枫
+[00:13.29]吉他：雨霖枫
+[00:13.90]贝斯：雨霖枫
+[00:14.41]钢琴：雨霖枫
+[00:15.18]弦乐：雨霖枫
+[00:15.82]鼓：雨霖枫
+[00:16.33]和声编写：雨霖枫
+[00:16.89]母带处理：雨霖枫
+[00:17.56]混音工程后期：雨霖枫
+[00:18.39]母带工程后期：雨霖枫
+[00:20.17]怎么会变成了这样
+[00:23.74]你说我们的爱不一样
+[00:27.52]把最美好的回忆都留给对方
+[00:31.50]你的脑海都是他的模样
+[00:35.76]好想一个人痛快的醉一场
+[00:39.83]把那过去的爱一点点淡忘
+[00:43.86]流不出的泪却闪烁着泪光
+[00:47.69]滴血的心撕裂了我的坚强
+[00:53.64]还没来的及好好爱一场
+[00:57.41]就变成了我永远的伤
+[01:01.45]那该死的温柔回首相望
+[01:05.48]怎么才能让爱地久天长
+[01:09.81]还没来的及好好爱一场
+[01:13.78]缘分就冻结在这个地方
+[01:17.77]那冰冷的心是因爱而伤
+[01:21.76]我真的真的真的好想
+[01:26.90]痛哭一场
+[01:59.41]好想一个人痛快的醉一场
+[02:03.38]把那过去的爱一点点淡忘
+[02:07.57]流不出的泪却闪烁着泪光
+[02:11.28]滴血的心撕裂了我的坚强
+[02:17.24]还没来的及好好爱一场
+[02:21.11]就变成了我永远的伤
+[02:25.26]那该死的温柔回首相望
+[02:29.24]怎么才能让爱地久天长
+[02:33.33]还没来的及好好爱一场
+[02:37.10]缘分就冻结在这个地方
+[02:41.34]那冰冷的心是因爱而伤
+[02:45.26]我真的真的真的好想
+[02:50.64]痛哭一场
+[02:55.59]还没来的及好好爱一场
+[02:59.09]就变成了我永远的伤
+[03:03.18]那该死的温柔回首相望
+[03:07.16]怎么才能让爱地久天长
+[03:11.13]还没来的及好好爱一场
+[03:15.15]缘分就冻结在这个地方
+[03:19.18]那冰冷的心是因爱而伤
+[03:23.10]我真的真的真的好想
+[03:28.52]痛哭一场
+[03:33.28]那冰冷的心是因爱而伤
+[03:37.10]我真的真的真的好想
+[03:42.45]痛哭一场</div>
+    <script>
+        var Lyric = function(){
+            var that = this;
+            this.preTime = 0;
+            this.nextTime = 0;
+            this.currIndex = 0;
+            this.lrc = the("lrc").innerHTML.split("[");
+            this.array = [];
+
+            this.init = function(){
+                var array = [];
+                if (that.lrc.length > 5){
+                    for (var i = 0; i < that.lrc.length; i++){
+                        var g = {};
+                        var t = that.lrc[i].split("]");
+                        g.time = that.getTime(t[0]);
+                        if (isNaN(g.time))
+                            continue;
+                        g.c = t[1];
+                        if (g.c == "")
+                            g.c = that.getNext(i);
+                        array.push(g);
+                    }
+
+                    array.sort(function(x, y) {
+                        if (x.time > y.time)
+                            return 1;
+                        else if (x.time < y.time)
+                            return -1;
+                        else
+                            return 0;
+                    });
+                    var tc = '';
+                    for (var i = 0; i < array.length; i++){
+                        var g = array[i];
+                        if (!g.c) {
+                            g.c = "";
+                        }
+                        tc+=("<div id='lrc" + i + "'>" + g.c + "</div>");
+                    }
+                    the('container').innerHTML=tc;
+
+                    if(top == self){
+                        return;
+                    }
+
+                    var time = window.setInterval(function() {
+                        try {
+                            if (parent.document.getElementById('not-allowed-scroll').checked) {
+                                that.lrcList();
+                            }
+                        } catch(e) {
+                            that.lrcList();
+                        }
+                    }, 500);
+                } else {
+                    the("container").innerHTML = the("lrc").innerHTML;
+                }
+                that.lines = array;
+            };
+
+            this.getNext = function(i){
+                var result = "";
+                var i = i + 1;
+                if(that.lrc[i]){
+                    t = that.lrc[i].split("]");
+                    if (t[1] == "")
+                        result = that.getNext(i);
+                    else
+                        result = t[1]
+                }
+                return result;
+            };
+
+            this.getTime = function(str){
+                var time = 0;
+                var ta = str.split(":");
+                if (ta.length < 2)
+                    return time;
+
+                if (ta[1].indexOf(".") > 0) {
+                    var tb = ta[1].split(".");
+                    time = ta[0] * 60 * 1000 + tb[0] * 1000 + tb[1] * 10;
+                }
+                else
+                    time = ta[0] * 60 * 1000 + ta[1] * 1000;
+                return time;
+            };
+
+            this.lrcList = function(){
+                var s = 0;
+                try {
+                    s = parent.Instance.time();
+                } catch(e) {
+                    return;
+                }
+                s = s * 1000;
+
+                function getTop(idx) {
+                    return Math.max(80, the("lrc" + idx).offsetTop - 23) - 80;
+                }
+
+                function moveScrollbar(idx) {
+                    var t = getTop(idx);
+                    var ch = the('container').scrollHeight;
+
+                    the("container").scrollTop = t;
+                }
+
+                if (s == 0) {
+                    that.currIndex = 0;
+                    moveScrollbar(that.currIndex);
+
+                    for (var i = 0; i < that.lines.length; i++) {
+                        the("lrc" + i).style.color = '#000000';
+                    }
+                    return;
+                }
+
+                if (s > 0 && that.currIndex < that.lines.length - 1)
+                {
+                    that.preTime = that.lines[that.currIndex].time;
+
+                    that.nextTime = that.lines[that.currIndex + 1].time;
+
+                    if (s >= that.preTime && s < that.nextTime) {
+
+                    } else if (s >= that.nextTime) {
+                        the("lrc" + that.currIndex).style.color = '#000';
+                        moveScrollbar(++that.currIndex);
+                        the("lrc" + that.currIndex).style.color = '#06adf3';
+                        that.lrcList();
+                    } else {
+                        the("lrc" + that.currIndex).style.color = '#000';
+                        moveScrollbar(--that.currIndex);
+                        the("lrc" + that.currIndex).style.color = '#06adf3';
+                        that.lrcList();
+                    }
+                }
+                else
+                {
+                    if (s < that.lines[that.lines.length - 1].time) {
+                        that.currIndex = 0;
+                        moveScrollbar(that.currIndex);
+                        for (var i = 0; i < that.lines.length; i++) {
+                            the("lrc" + i).style.color = '#000';
+                        }
+                        that.lrcList();
+                    }
+                }
+            };
+        };
+        new Lyric().init();
+    </script>
+    <!--歌词下标签云22-->
+
+<div id="nav"><a href="index.html"><div style="width:300px;height:90px;"></div></a><p class="songtitle" style="margin-top:-45px">试听<a href="singer/d6/singer_39046.html" target="_blank">徐新军</a>的<a href="player/65/player_1197388.html" target="_blank">好想好好爱一场-徐新军/雨霖枫</a></p></div>
+<script src='c-30065998.js' language='JavaScript'></script>
+
+
+</body>
+</html>

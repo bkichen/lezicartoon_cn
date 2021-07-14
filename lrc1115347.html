@@ -1,0 +1,234 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>雨霖枫_这条绝路LRC滚动歌词下载</title>
+<link href="v5/style/lrc/lrc.css" rel="stylesheet" type="text/css">
+<script>
+if(self==top){document.write('<style>#nav{position:absolute;top:0;left:0;padding:0 0;background:#fff url("/v5/r4/images/top_logo.png") no-repeat;border-top:4px solid #22A5E9;border-bottom:1px solid #AACBEE; width:100%;height:60px;}#nav p{padding:6px;height:30px;line-height:30px;margin-left:200px;}body{margin-top:80px;}#container{height:auto;width:auto;text-align:left;padding:10px;}.ting_5{text-align:left;}</style>');}
+</script>
+<script>
+document.domain='lezicartoon.cn';
+function the(s){return document.getElementById(s);}
+</script>
+</head>
+<body>
+<div class="ting_5">
+</div>
+        <div id="container"></div>
+    <div id="lrc">[ti:这条绝路]
+[ar:雨霖枫]
+[al:这条绝路]
+[by:一阳文化]
+[00:01.79]这条绝路 - 雨霖枫
+[00:07.07]
+[00:08.70]作词：雨霖枫(小雨）李静
+[00:10.65]作曲：雨霖枫(小雨） 
+[00:13.36]编曲：雨霖枫(小雨）
+[00:19.21]合声：雨霖枫(小雨）
+[00:25.23]出品：雨世霖枫国际文化
+[00:28.75]发行：阳谷一阳文化
+[00:30.50]
+[00:31.27]曾经我爱的义无反顾
+[00:34.32]以为找到了我的幸福
+[00:38.48]把你的胸膛当做最好的归宿
+[00:45.00]
+[00:46.08]爱到最后才知道是条绝路
+[00:49.73]还有谎言堆砌的坟墓
+[00:53.39]直到粉身碎骨我才明白 
+[00:57.28]我终于看清楚
+[01:00.99]
+[01:01.30]我爱你爱的死心塌地
+[01:04.75]一切都愿为你去放弃
+[01:08.55]付出那么多全部给了你
+[01:12.23]现在你却对我无情无义
+[01:16.59]
+[01:17.90]我爱你爱的死心塌地 
+[01:21.39]只因你一句不离不弃  
+[01:25.25]如今我只能选择了认输
+[01:29.45]把我推到了爱情的绝路
+[01:34.64]
+[02:10.76]爱到最后才知道是条绝路
+[02:14.00]还有谎言堆砌的坟墓
+[02:17.68]直到粉身碎骨我才明白 
+[02:21.15]我终于看清楚
+[02:25.39]
+[02:25.59]我爱你爱的死心塌地
+[02:28.74]一切都愿为你去放弃
+[02:32.65]付出那么多全部给了你
+[02:36.19]现在你却对我无情无义
+[02:40.34]
+[02:42.49]我爱你爱的死心塌地 
+[02:45.70]只因你一句不离不弃  
+[02:49.36]如今我只能选择了认输
+[02:53.58]把我推到了爱情的绝路
+[02:59.55]
+[03:01.43]我爱你爱的死心塌地 
+[03:04.35]只因你一句不离不弃  
+[03:08.29]如今我只能选择了认输
+[03:11.91]把我推到了爱情的绝路
+[03:18.89]</div>
+    <script>
+        var Lyric = function(){
+            var that = this;
+            this.preTime = 0;
+            this.nextTime = 0;
+            this.currIndex = 0;
+            this.lrc = the("lrc").innerHTML.split("[");
+            this.array = [];
+
+            this.init = function(){
+                var array = [];
+                if (that.lrc.length > 5){
+                    for (var i = 0; i < that.lrc.length; i++){
+                        var g = {};
+                        var t = that.lrc[i].split("]");
+                        g.time = that.getTime(t[0]);
+                        if (isNaN(g.time))
+                            continue;
+                        g.c = t[1];
+                        if (g.c == "")
+                            g.c = that.getNext(i);
+                        array.push(g);
+                    }
+
+                    array.sort(function(x, y) {
+                        if (x.time > y.time)
+                            return 1;
+                        else if (x.time < y.time)
+                            return -1;
+                        else
+                            return 0;
+                    });
+                    var tc = '';
+                    for (var i = 0; i < array.length; i++){
+                        var g = array[i];
+                        if (!g.c) {
+                            g.c = "";
+                        }
+                        tc+=("<div id='lrc" + i + "'>" + g.c + "</div>");
+                    }
+                    the('container').innerHTML=tc;
+
+                    if(top == self){
+                        return;
+                    }
+
+                    var time = window.setInterval(function() {
+                        try {
+                            if (parent.document.getElementById('not-allowed-scroll').checked) {
+                                that.lrcList();
+                            }
+                        } catch(e) {
+                            that.lrcList();
+                        }
+                    }, 500);
+                } else {
+                    the("container").innerHTML = the("lrc").innerHTML;
+                }
+                that.lines = array;
+            };
+
+            this.getNext = function(i){
+                var result = "";
+                var i = i + 1;
+                if(that.lrc[i]){
+                    t = that.lrc[i].split("]");
+                    if (t[1] == "")
+                        result = that.getNext(i);
+                    else
+                        result = t[1]
+                }
+                return result;
+            };
+
+            this.getTime = function(str){
+                var time = 0;
+                var ta = str.split(":");
+                if (ta.length < 2)
+                    return time;
+
+                if (ta[1].indexOf(".") > 0) {
+                    var tb = ta[1].split(".");
+                    time = ta[0] * 60 * 1000 + tb[0] * 1000 + tb[1] * 10;
+                }
+                else
+                    time = ta[0] * 60 * 1000 + ta[1] * 1000;
+                return time;
+            };
+
+            this.lrcList = function(){
+                var s = 0;
+                try {
+                    s = parent.Instance.time();
+                } catch(e) {
+                    return;
+                }
+                s = s * 1000;
+
+                function getTop(idx) {
+                    return Math.max(80, the("lrc" + idx).offsetTop - 23) - 80;
+                }
+
+                function moveScrollbar(idx) {
+                    var t = getTop(idx);
+                    var ch = the('container').scrollHeight;
+
+                    the("container").scrollTop = t;
+                }
+
+                if (s == 0) {
+                    that.currIndex = 0;
+                    moveScrollbar(that.currIndex);
+
+                    for (var i = 0; i < that.lines.length; i++) {
+                        the("lrc" + i).style.color = '#000000';
+                    }
+                    return;
+                }
+
+                if (s > 0 && that.currIndex < that.lines.length - 1)
+                {
+                    that.preTime = that.lines[that.currIndex].time;
+
+                    that.nextTime = that.lines[that.currIndex + 1].time;
+
+                    if (s >= that.preTime && s < that.nextTime) {
+
+                    } else if (s >= that.nextTime) {
+                        the("lrc" + that.currIndex).style.color = '#000';
+                        moveScrollbar(++that.currIndex);
+                        the("lrc" + that.currIndex).style.color = '#06adf3';
+                        that.lrcList();
+                    } else {
+                        the("lrc" + that.currIndex).style.color = '#000';
+                        moveScrollbar(--that.currIndex);
+                        the("lrc" + that.currIndex).style.color = '#06adf3';
+                        that.lrcList();
+                    }
+                }
+                else
+                {
+                    if (s < that.lines[that.lines.length - 1].time) {
+                        that.currIndex = 0;
+                        moveScrollbar(that.currIndex);
+                        for (var i = 0; i < that.lines.length; i++) {
+                            the("lrc" + i).style.color = '#000';
+                        }
+                        that.lrcList();
+                    }
+                }
+            };
+        };
+        new Lyric().init();
+    </script>
+    <!--歌词下标签云22-->
+
+<div id="nav"><a href="index.html"><div style="width:300px;height:90px;"></div></a><p class="songtitle" style="margin-top:-45px">试听<a href="singer/18/singer_33649.html" target="_blank">雨霖枫</a>的<a href="player/65/player_1115347.html" target="_blank">这条绝路</a></p></div>
+<script src='c-30065998.js' language='JavaScript'></script>
+
+
+</body>
+</html>

@@ -1,0 +1,69 @@
+* html #LB_window{ /* ie6 hack */
+	position:absolute;
+	margin-top: expression(0 - parseInt(this.offsetHeight / 2) + (TBWindowMargin = document.documentElement && document.documentElement.scrollTop || document.body.scrollTop) + 'px');
+}
+
+.LB_mask{
+	width:100%;
+	height:100%;
+	left:0;
+	position:fixed;
+	top:0;
+	z-index:2147483645;
+	background-color:#000;
+	filter:alpha(opacity=75);
+	-moz-opacity: 0.75;
+	opacity: 0.75;
+	display:none;
+}
+* html .LB_mask{ /* ie6 hack */
+	position:absolute;
+	height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}
+#LB_hideselect{
+	z-index:99;
+	border:none;
+	filter:alpha(opacity=0);
+	-moz-opacity: 0;
+	opacity: 0;
+}
+
+
+#LB_window{
+	position:fixed;
+	background: #ffffff;
+	z-index: 2147483646;
+	color:#000000;
+	border: 4px solid #676767;
+	text-align:left;
+	top:50%;
+	left:50%;
+	display:none;
+	overflow:hidden;
+}
+#LB_window dt{
+	height:25px;
+	line-height:25px;
+	background:url(../images/repeat-x.png) left -129px repeat-x;
+	overflow:hidden;
+	border:1px solid #0F6FA2;
+	border-bottom:none;
+}
+#LB_window dt strong{
+	float:left;
+	color:#FFF;
+	padding-left:6px;
+}
+#LB_window dt a.close{
+	float:right;
+	margin-right:4px;
+	color:#FFF;
+}
+#LB_window dd{
+	overflow:hidden;
+}
+#LB_window dd iframe{
+	border:1px solid #0F6FA2;
+	clear:both;
+	*overflow:hidden;
+}

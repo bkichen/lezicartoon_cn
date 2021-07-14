@@ -1,0 +1,55 @@
+
+.comma {
+    color:#f60;
+    font-size:28px;
+    font-weight:800px;
+    text-align:center;
+    display:block;
+    width:30px;
+    height:30px;
+    border:1px solid #ccc;
+    -moz-border-radius:30px;
+    -webkit-border-radius:30px;
+    float:left;
+    margin-right:10px;
+}
+.auth-selector{
+    clear:both;
+    overflow:auto;
+}
+.auth-selector a{
+    float:left;
+    width:106px;
+    height:100px;
+    margin:2px;
+    border:1px solid #eee;
+    border-radius:4px;
+    -moz-border-radius:4px;
+    background:#fff url('../icon/login.png') no-repeat 0 50%;
+    display:block;
+    outline:none;
+    text-indent:-9999px;
+}
+.auth-selector a:hover{
+    border:1px solid #FF8600;
+}
+a.auth-qq{
+    background-position:-106px 0;
+}
+a.auth-sina{
+    background-position:0 0;
+}
+a.auth-baidu{
+    background-position:-318px 0;
+}
+
+#login-3rd {
+    border-bottom: 1px solid #EAF8FD;
+}
+
+#login-3rd dt{
+    float:none;
+    width:auto;
+    padding:0 10px 10px 50px;
+    text-align:left;
+}

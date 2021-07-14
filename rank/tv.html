@@ -1,0 +1,635 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>电视剧歌曲 - 杭州乐米动漫</title>
+<meta name="Description" content="电视剧歌曲,杭州乐米动漫">
+<meta name="Keywords" content="电视剧歌曲,杭州乐米动漫">
+<link href="../v5/r5/style/common.css" rel="stylesheet" type="text/css">
+<link href="../v5/r4/style/rank.css" rel="stylesheet" type="text/css">
+<script src="../v5/r4/js/jquery.min.js"></script>
+<script src="../v5/r4/js/common.js"></script>
+<script src="../js/ds.js"></script>
+</head>
+<body>
+    <div class="site-nav">
+        <div class="center">
+            <ul class="navlink">
+                <li><a href="javascript:;">保存到桌面</a></li>
+                <li><a href="../genre/index.html">曲风</a></li>
+                <li><a href="../rank.html">排行榜</a></li>
+                <li><a href="../archives/index.html">专辑库</a></li>
+            </ul>
+            <!--div class="bshare-custom"><a title="分享到微信" class="bshare-weixin"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到QQ空间" class="bshare-qzone"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div-->
+            <!--div class="sinaweibo_iframe">
+                <iframe width="120" height="24" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="https://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=136&height=24&uid=1671108633&style=2&btn=light&dpc=1"></iframe>
+            </div-->
+
+            <!--<ul style="height:19px;width:110px;padding-top:5px;float:left;"><li><a style="color:#333" href="https://h5.lezicartoon.cn" title="手机访问一听">手机版:h5.lezicartoon.cn</a></li></ul>-->
+            <ul class="siteaction" style="height:24px;padding-top:1px;"> 
+                <li class="favorite" style="margin-top:5px"><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">加入收藏</a></li>
+            </ul>
+        </div>
+    </div>
+               <script type="text/javascript" language="javascript">
+                function AddFavorite(sURL, sTitle) {
+                    sURL = encodeURI(sURL); 
+                try{   
+                    window.external.addFavorite(sURL, sTitle);   
+                }catch(e) {   
+                    try{   
+                        window.sidebar.addPanel(sTitle, sURL, "");   
+                    }catch (e) {   
+                        alert("加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.");
+         
+                        }   
+                    }
+                }
+              </script>
+    <!-- /site-nav -->
+    <div class="header center">
+        <div class="logo">
+            <h1>
+                <a href="../index.html" title="返回一听首页?">杭州乐米动漫</a>
+            </h1>
+        </div>
+        <div class="search">
+            <div class="option_selected" id="search_option_selected">
+                <a href="javascript:void(0);" id="st" target="_self">全部</a>
+            </div>
+            <div class="option_list" id="search_option_list">
+                <ul>
+                    <li class="selected"><a href="javascript:void(0);" target="_self">全部</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌曲</a></li>
+                    <li><a href="javascript:void(0);" target="_self">专辑</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌手</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌词</a></li>
+                </ul>
+            </div>
+            <div class="search_box"><form method="get" action="//so.lezicartoon.cn/all.do" onsubmit="return search(this);">
+                <input type="text" name="q" id="sq" x-webkit-speech="" x-webkit-grammar="builtin:search" onwebkitspeechchange="(function(e){e.target.form.submit();})(event)">
+                <button type="submit">搜索</button></form>
+            </div>
+        </div>
+        <div class="userbox">
+            <div class="user-guest" id="user-guest">
+                <p class="sitelogin">
+                    <a href="../register.html" class="link-reg">免费注册</a> -
+                    <a href="../login.html" class="link-login">登录</a>
+                </p>
+                <p class="pluginlogin">
+                    <a href="../oauth2/authorize-1435846576_http2F2Fmy..html" class="login-weibo">微博登录</a>
+                    <a href="../oauth2.0/show-Login_pc_101501725_https2F2.html" class="login-qq">QQ登录</a>
+                    <a href="../login.html" class="link-favor">我的收藏</a>
+                </p>
+            </div>
+            <div class="user-login" id="user-login">
+                <p class="user-welcome">
+                    <a href="../login.html" class="link-username" id="username"></a>
+                    <span id="greeting"></span>
+                </p>
+                <div class="user-action" id="user_login_action">
+                    <a href="../login.html" class="act-fav">我的收藏</a>
+                    <div style="display: none;">
+                        <a href="../login.html" target="_blank">用户中心</a>
+                        <a href="../login.html">退出登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+        (function(){
+            function cookie(k){
+                var v = "";
+                var s = k+"=",c = document.cookie,l=c.length;
+                if (l > 0) {
+                    var os = c.indexOf(s);
+                    if (os != -1) {
+                        os += s.length;
+                        var ed = c.indexOf(";", os);
+                        if (ed == -1) ed = l;
+                        v = decodeURIComponent(c.substring(os, ed)).replace(/\+/g,' ');
+                    }
+                }
+                return v;
+            }
+            function receive(){
+                var greeting,
+                    hour = new Date().getHours(),
+                    id = cookie('OneId'),
+                    user = cookie('OneNick')||cookie('OneUser');
+                if(hour >= 6 && hour < 12){
+                    greeting='上午好!';
+                }else if(hour>=12 && hour<18){
+                    greeting='下午好!';
+                }else if(hour>=18 && hour<23){
+                    greeting='晚上好!';
+                }else{
+                    greeting='夜深了 请注意休息!';
+                }
+                if(id && /^\d+$/.test(id) && user && /^[^<>\"\']+$/.test(user)){
+                    $('#username').html(user);
+                    $('#greeting').html(greeting);
+                    $('#user-login').show();
+                    $('#user-guest').hide();
+                }else{
+                    $('#user-guest').show();
+                    $('#user-login').hide();
+                }
+            }
+            (function(ctn) {
+                var timeId, time = 500,
+                    slideTime = 200,
+                    child = ctn.children("div"),
+                    upClass = "user-action-arrow-up";
+                ctn.hover(function() {
+                    timeId = setTimeout(function() {
+                        ctn.addClass(upClass);
+                        child.slideDown(slideTime);
+                    }, time);
+                }, function() {
+                    ctn.removeClass(upClass);
+                    clearTimeout(timeId);
+                    child.slideUp(slideTime);
+                });
+            })($("#user_login_action"));
+            receive();
+            setInterval(receive, 3000);
+        })();
+        </script>
+        <div class="nav">
+            <ul class="allcate" id="nav_list">
+                <li><a href="../index.html" target="_self"><span>首页</span></a></li>
+                <li><a href="../group.html" class="has-sub" target="_self"><i style="display:block" target="_self"></i><span>歌手</span></a></li>
+                <li><a href="../archives/index.html" target="_self"><span>专辑</span></a></li>
+                <li><a href="../rank.html" target="_self"><span>排行榜</span></a></li>
+                <li><a href="javascript:;" class="has-sub" target="_self"><span>高清MV</span></a></li>
+            </ul>
+            <div class="randplay">
+                <a href="../rand.html">随便一听</a>
+            </div>
+            <div class="nav-category">
+                <a href="../genre/index.html" target="_self">曲风分类</a>
+                <!--span>|</span>
+                <a href="/topic" target="_self">专题 &bull; 活动</a-->
+                
+            </div>
+        </div>
+        <div class="nav-secondary" id="nav_secondary">
+            <p style="display:block;">
+                <a href="../group/group0_2.html"><span>华语女歌手</span></a> |
+                <a href="../group/group0_1.html"><span>华语男歌手</span></a> |
+                <a href="../group/group0_3.html"><span>华语组合</span></a> |
+                <a href="../group/group3_15.html"><span>欧美女歌手</span></a> |
+                <a href="../group/group3_14.html"><span>欧美男歌手</span></a> |
+                <a href="../group/group3_16.html"><span>欧美组合</span></a> |
+                <a href="../group/group5_0.html"><span>韩国</span></a> |
+                <a href="../group/group4_0.html"><span>日本</span></a> |
+                <a href="../group/group6_0.html"><span>影视</span></a> |
+                <a href="../group/group7_0.html"><span>其他</span></a> |
+                <span><!--a class="misc" href="/fo/">佛教音乐</a><a href="/prenatal/">胎教/儿歌</a><a href="http://5.lezicartoon.cn">广场舞</a><a href="/xiqu/">戏曲</a--><a href="../mv/index.html">高清MV</a></span>
+            </p>
+            <p style="text-align:center;width:736px;">
+                 <a href="../mv/cate/3.html">港台歌手MV</a>  | <a href="../mv/cate/6.html">内地歌手MV</a> | <a href="../mv/cate/2.html">韩国歌手MV</a> | <a href="../mv/cate/5.html">日本歌手MV</a> | <a href="../mv/cate/4.html">欧美歌手MV</a> | <a href="../mv/search-E6BC94E594B1E4BC9A.html">演唱会视频</a>   
+            </p>
+        </div>
+    </div>
+    <!-- /header -->
+    <script>
+    (function(){
+        var menus = $("#nav_list").find("a.has-sub"),
+            subMenu = $("#nav_secondary");
+        $.each(menus, function(index, ele) {
+            $(ele).mouseover(function() {
+                menus.children("i").hide();
+                $(ele).children("i").show();
+                subMenu.children("p").hide()
+                            .eq(index).show();
+            });
+        });
+        /*var links = [{'name': '明星美图',  'path': 'star'}, 
+                     {'name': '街拍美女',  'path': 'jiepai'}, 
+                     /*{'name': '流行服饰',  'path': 'dress'}, 
+                     {'name': '时尚彩妆',  'path': 'face'}, 
+                     {'name': '潮流发型',  'path': 'tide'}, 
+                     {'name': '清新美女',  'path': 'meinv'}, 
+                     {'name': '车模美女',  'path': 'chemo'},
+                     {'name': '唯美女生',  'path': 'fennen'}, 
+                     {'name': '非主流女生',  'path': 'feizhuliu'}, 
+                     {'name': 'Show Girl',   'path': 'showgirl'}, 
+                     {'name': 'Cosplay女神', 'path': 'cosplay'},
+                     {'name': '婚纱秀欣赏',  'path': 'hunsha'}];
+        setInterval(function(){
+            var d = links[Math.ceil(Math.random()*links.length)-1];
+            $('#picture').attr('href', 'https://ent.lezicartoon.cn/pictures/'+d.path).text(d.name);
+        }, 10000);*/
+    })();
+    </script>
+<div class="pageTitle center">
+        <h2><a href="../rank.html">排行榜</a> - <span>电视剧歌曲</span></h2>
+        <a href="javascript:;" class="randplay"><span>随便听几首</span></a>
+                    <ul class="pagemenu">
+                <li style="color:#70C4F9;">本页更新于：2021年7月14日 0时10分</li>
+            </ul>
+        </div>
+
+<div class="center">
+        <div class="lbar">
+        <dl>
+            <dt><strong>一听之最</strong></dt>
+            <dd>
+                <ul>
+                    <li><a href="javascript:;">热门歌曲</a></li>
+                    <li><a href="javascript:;">最新歌曲</a></li>
+                    <li><a href="javascript:;">独家&首发</a></li>
+                    <li><a href="javascript:;">经典老歌</a></li>
+                    <li><a href="javascript:;">欧美歌曲</a></li>
+                    <li><a href="javascript:;">日韩歌曲</a></li>
+                    <li><a href="javascript:;">热门专辑</a></li>
+                    <li><a href="../album_n.html">最新专辑</a></li>
+                    <li><a href="javascript:;">热门歌手</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl>
+            <dt><strong>推荐排行</strong></dt>
+            <dd>
+                <ul>
+                    <li><a href="javascript:;">情歌对唱</a></li>
+                    <li><a href="javascript:;">电视剧歌曲</a></li>
+                    <li><a href="javascript:;">韩国影视歌曲</a></li>
+                    <li><a href="javascript:;">Indie流行歌曲</a></li>
+                    <li><a href="javascript:;">dj舞曲</a></li>
+                    <li><a href="javascript:;">军营歌曲</a></li>
+                    <li><a href="javascript:;">古典音乐</a></li>
+                    <li><a href="javascript:;">民谣、乡村</a></li>
+                    <li><a href="javascript:;">轻音乐</a></li>
+                </ul>
+            </dd>
+        </dl>
+        <dl>
+            <dt><strong>特别榜单</strong></dt>
+            <dd>
+                <ul>
+                    <li><a href="javascript:;">摇滚歌曲榜</a></li>
+                    <li><a href="javascript:;">跑步音乐榜</a></li>
+                    <li><a href="javascript:;">篮球音乐榜</a></li>
+                    <li><a href="javascript:;">台湾百佳唱片</a></li>
+                    <li><a href="javascript:;"><font color="#ff6600">新媒体流行榜</font></a></li>
+                </ul>
+            </dd>
+        </dl>
+    </div>
+    <!-- /lbar -->
+<script>
+(function(){
+    var a = $('div.lbar'), b = a.get(0),c = b.getElementsByTagName('a'),d,e=location.href;
+    if(e.indexOf('rank.html')>=0){return;}
+    try{
+        for(d=0;d<c.length;d++){
+            if((e.indexOf('/archives')!==-1 && c[d].getAttribute('href')==='/album_n.html')
+                || e.indexOf(c[d].getAttribute('href').replace('.html',''))>=0){
+                c[d].parentNode.className = 'thisclass';
+                break;
+            }
+        }
+    }catch(e){}
+})();
+</script>
+
+    <!-- /lbar -->
+    <div class="songList">
+        <div class="N_R1">
+            <!-- N_R1 -->
+            <script type="text/javascript" src="../gbkycdkyk.js"></script>
+        </div>
+                                        
+                
+                <h3>1-24</h3>
+                <ul id="list-0">
+                        <li>
+            <small>1.</small><input type="checkbox" value="53134"><a href="javascript:;" title="秋天的童话 - 《蓝色生死恋》" target="_1ting">秋天的童话 - 《蓝色生死恋》</a>
+            </li>
+                                <li>
+            <small>2.</small><input type="checkbox" value="131254"><a href="javascript:;" title="诗人的眼泪 - 《露露公主》" target="_1ting">诗人的眼泪 - 《露露公主》</a>
+            </li>
+                                <li>
+            <small>3.</small><input type="checkbox" value="138605"><a href="javascript:;" title="爱的勇气 - 《转角遇到爱》" target="_1ting">爱的勇气 - 《转角遇到爱》</a>
+            </li>
+                                <li>
+            <small>4.</small><input type="checkbox" value="119497"><a href="javascript:;" title="爱笑的眼睛 - 《别爱我》" target="_1ting">爱笑的眼睛 - 《别爱我》</a>
+            </li>
+                                <li>
+            <small>5.</small><input type="checkbox" value="93003"><a href="javascript:;" title="无法开口 - 《绿光森林》" target="_1ting">无法开口 - 《绿光森林》</a>
+            </li>
+                                <li>
+            <small>6.</small><input type="checkbox" value="73397"><a href="javascript:;" title="灰色空间 - 《斗鱼Ⅱ》" target="_1ting">灰色空间 - 《斗鱼Ⅱ》</a>
+            </li>
+                                <li>
+            <small>7.</small><input type="checkbox" value="240"><a href="javascript:;" title="等你爱我 - 《将爱情进行到底》" target="_1ting">等你爱我 - 《将爱情进行到底》</a>
+            </li>
+                                <li>
+            <small>8.</small><input type="checkbox" value="67612"><a href="javascript:;" title="一辈子的孤单 - 《涩女郎》" target="_1ting">一辈子的孤单 - 《涩女郎》</a>
+            </li>
+                                <li>
+            <small>9.</small><input type="checkbox" value="123296"><a href="javascript:;" title="我答应你 - 《白色巨塔》" target="_1ting">我答应你 - 《白色巨塔》</a>
+            </li>
+                                <li>
+            <small>10.</small><input type="checkbox" value="378"><a href="javascript:;" title="想你的三百六十五天 - 《宝莲灯》" target="_1ting">想你的三百六十五天 - 《宝莲灯》</a>
+            </li>
+                                <li>
+            <small>11.</small><input type="checkbox" value="131076"><a href="javascript:;" title="美人吟 - 《孝庄秘史》" target="_1ting">美人吟 - 《孝庄秘史》</a>
+            </li>
+                                <li>
+            <small>12.</small><input type="checkbox" value="178650"><a href="javascript:;" title="好想好想 - 《情深深雨蒙蒙《" target="_1ting">好想好想 - 《情深深雨蒙蒙《</a>
+            </li>
+                                <li>
+            <small>13.</small><input type="checkbox" value="109128"><a href="javascript:;" title="一剪梅 - 《一剪梅》" target="_1ting">一剪梅 - 《一剪梅》</a>
+            </li>
+                                <li>
+            <small>14.</small><input type="checkbox" value="91062"><a href="javascript:;" title="曾经最美 - 《维纳斯之恋》" target="_1ting">曾经最美 - 《维纳斯之恋》</a>
+            </li>
+                                <li>
+            <small>15.</small><input type="checkbox" value="40584"><a href="javascript:;" title="叶子 - 《蔷薇之恋》" target="_1ting">叶子 - 《蔷薇之恋》</a>
+            </li>
+                                <li>
+            <small>16.</small><input type="checkbox" value="52551"><a href="javascript:;" title="倒带 - 《求婚事务所》" target="_1ting">倒带 - 《求婚事务所》</a>
+            </li>
+                                <li>
+            <small>17.</small><input type="checkbox" value="77387"><a href="javascript:;" title="黄种人 - 《小鱼儿与花无缺》" target="_1ting">黄种人 - 《小鱼儿与花无缺》</a>
+            </li>
+                                <li>
+            <small>18.</small><input type="checkbox" value="118675"><a href="javascript:;" title="北极星的眼泪 - 《微笑pasta》" target="_1ting">北极星的眼泪 - 《微笑pasta》</a>
+            </li>
+                                <li>
+            <small>19.</small><input type="checkbox" value="101860"><a href="javascript:;" title="一直很安静 - 《仙剑奇侠传》" target="_1ting">一直很安静 - 《仙剑奇侠传》</a>
+            </li>
+                                <li>
+            <small>20.</small><input type="checkbox" value="98097"><a href="javascript:;" title="爱如空气 - 《幸福像花儿一样》" target="_1ting">爱如空气 - 《幸福像花儿一样》</a>
+            </li>
+                                <li>
+            <small>21.</small><input type="checkbox" value="66612"><a href="../player/32/player_66612.html" title="红颜 - 《荆柯传奇》" target="_1ting">红颜 - 《荆柯传奇》</a>
+            </li>
+                                <li>
+            <small>22.</small><input type="checkbox" value="58018"><a href="javascript:;" title="铁血丹心 - 《射雕英雄传》" target="_1ting">铁血丹心 - 《射雕英雄传》</a>
+            </li>
+                                <li>
+            <small>23.</small><input type="checkbox" value="26802"><a href="javascript:;" title="真爱你的云 - 《风云》" target="_1ting">真爱你的云 - 《风云》</a>
+            </li>
+                                <li>
+            <small>24.</small><input type="checkbox" value="87033"><a href="javascript:;" title="暧昧 - 《恶魔在身边》" target="_1ting">暧昧 - 《恶魔在身边》</a>
+            </li>
+                                                </ul>
+                       <div class="listAction">
+                            <p>
+                                <a href="javascript:;" class="select btn_cmd" name="selectall" data-id="#list-0">全/反选</a>
+                                <a href="javascript:;" class="play btn_cmd" name="playselected" data-id="#list-0">播放</a>
+                                <a href="javascript:;" class="add" name="addall" data-id="#list-0">加入列表</a>
+                            </p>
+                        </div>
+                
+                
+                <h3>25-48</h3>
+                <ul id="list-24">
+                        <li>
+            <small>25.</small><input type="checkbox" value="102162"><a href="javascript:;" title="兄弟 - 《武状元苏灿》" target="_1ting">兄弟 - 《武状元苏灿》</a>
+            </li>
+                                <li>
+            <small>26.</small><input type="checkbox" value="50220"><a href="javascript:;" title="亲爱的你怎么不在我身边 - 《十八岁的约定》" target="_1ting">亲爱的你怎么不在我身边 - 《十八岁的约定》</a>
+            </li>
+                                <li>
+            <small>27.</small><input type="checkbox" value="178653"><a href="javascript:;" title="雨蝶 - 《还珠格格》" target="_1ting">雨蝶 - 《还珠格格》</a>
+            </li>
+                                <li>
+            <small>28.</small><input type="checkbox" value="100694"><a href="javascript:;" title="一眼万年 - 《天外飞仙》" target="_1ting">一眼万年 - 《天外飞仙》</a>
+            </li>
+                                <li>
+            <small>29.</small><input type="checkbox" value="188214"><a href="javascript:;" title="希望 - 《大长今》" target="_1ting">希望 - 《大长今》</a>
+            </li>
+                                <li>
+            <small>30.</small><input type="checkbox" value="190303"><a href="javascript:;" title="又见一帘幽梦 - 《又见一帘幽梦》" target="_1ting">又见一帘幽梦 - 《又见一帘幽梦》</a>
+            </li>
+                                <li>
+            <small>31.</small><input type="checkbox" value="50169"><a href="javascript:;" title="从开始到现在 - 《冬季恋歌》" target="_1ting">从开始到现在 - 《冬季恋歌》</a>
+            </li>
+                                <li>
+            <small>32.</small><input type="checkbox" value="163323"><a href="javascript:;" title="相逢是首歌 - 《红十字方队》" target="_1ting">相逢是首歌 - 《红十字方队》</a>
+            </li>
+                                <li>
+            <small>33.</small><input type="checkbox" value="50523"><a href="javascript:;" title="爱人 - 《蝴蝶飞飞》" target="_1ting">爱人 - 《蝴蝶飞飞》</a>
+            </li>
+                                <li>
+            <small>34.</small><input type="checkbox" value="115466"><a href="javascript:;" title="逍遥叹 - 《仙剑奇侠传》" target="_1ting">逍遥叹 - 《仙剑奇侠传》</a>
+            </li>
+                                <li>
+            <small>35.</small><input type="checkbox" value="101217"><a href="javascript:;" title="傻瓜 - 《我的儿子是老大》" target="_1ting">傻瓜 - 《我的儿子是老大》</a>
+            </li>
+                                <li>
+            <small>36.</small><input type="checkbox" value="154969"><a href="javascript:;" title="我难过 - 《MVP情人》" target="_1ting">我难过 - 《MVP情人》</a>
+            </li>
+                                <li>
+            <small>37.</small><input type="checkbox" value="161764"><a href="javascript:;" title="一帘幽梦 - 《一帘幽梦》" target="_1ting">一帘幽梦 - 《一帘幽梦》</a>
+            </li>
+                                <li>
+            <small>38.</small><input type="checkbox" value="174248"><a href="javascript:;" title="新窝 - 《公主小妹》" target="_1ting">新窝 - 《公主小妹》</a>
+            </li>
+                                <li>
+            <small>39.</small><input type="checkbox" value="71924"><a href="javascript:;" title="两只蝴蝶 - 《281封信》" target="_1ting">两只蝴蝶 - 《281封信》</a>
+            </li>
+                                <li>
+            <small>40.</small><input type="checkbox" value="71928"><a href="javascript:;" title="其实我很在乎你 - 《281封信》" target="_1ting">其实我很在乎你 - 《281封信》</a>
+            </li>
+                                <li>
+            <small>41.</small><input type="checkbox" value="161723"><a href="javascript:;" title="挪威的森林 - 《涩女郎》" target="_1ting">挪威的森林 - 《涩女郎》</a>
+            </li>
+                                <li>
+            <small>42.</small><input type="checkbox" value="90989"><a href="javascript:;" title="恶作剧 - 《恶作剧之吻》" target="_1ting">恶作剧 - 《恶作剧之吻》</a>
+            </li>
+                                <li>
+            <small>43.</small><input type="checkbox" value="78328"><a href="javascript:;" title="迷魂计 - 《王子变青蛙》" target="_1ting">迷魂计 - 《王子变青蛙》</a>
+            </li>
+                                <li>
+            <small>44.</small><input type="checkbox" value="93001"><a href="javascript:;" title="勇敢的幸福 - 《绿光森林》" target="_1ting">勇敢的幸福 - 《绿光森林》</a>
+            </li>
+                                <li>
+            <small>45.</small><input type="checkbox" value="83217"><a href="javascript:;" title="我不想忘记你 - 《偷天换日》" target="_1ting">我不想忘记你 - 《偷天换日》</a>
+            </li>
+                                <li>
+            <small>46.</small><input type="checkbox" value="39721"><a href="javascript:;" title="白雪 - 《海豚湾恋人》" target="_1ting">白雪 - 《海豚湾恋人》</a>
+            </li>
+                                <li>
+            <small>47.</small><input type="checkbox" value="109136"><a href="javascript:;" title="千年等一回 - 《新白娘子传奇》" target="_1ting">千年等一回 - 《新白娘子传奇》</a>
+            </li>
+                                <li>
+            <small>48.</small><input type="checkbox" value="51914"><a href="javascript:;" title="你要的爱 - 《流星花园》" target="_1ting">你要的爱 - 《流星花园》</a>
+            </li>
+                                                </ul>
+                       <div class="listAction">
+                            <p>
+                                <a href="javascript:;" class="select btn_cmd" name="selectall" data-id="#list-24">全/反选</a>
+                                <a href="javascript:;" class="play btn_cmd" name="playselected" data-id="#list-24">播放</a>
+                                <a href="javascript:;" class="add" name="addall" data-id="#list-24">加入列表</a>
+                            </p>
+                        </div>
+                
+                
+                <h3>49-72</h3>
+                <ul id="list-48">
+                        <li>
+            <small>49.</small><input type="checkbox" value="16569"><a href="javascript:;" title="只要有你 - 《少年包青天》" target="_1ting">只要有你 - 《少年包青天》</a>
+            </li>
+                                <li>
+            <small>50.</small><input type="checkbox" value="91064"><a href="javascript:;" title="好聚好散 - 《维纳斯之恋》" target="_1ting">好聚好散 - 《维纳斯之恋》</a>
+            </li>
+                                    </ul>
+               <div class="listAction">
+                    <p>
+                        <a href="javascript:;" class="select btn_cmd" name="selectall" data-id="#list-24">全/反选</a>
+                        <a href="javascript:;" class="play btn_cmd" name="playselected" data-id="#list-24">播放</a>
+                        <a href="javascript:;" class="add" name="addall" data-id="#list-24">加入列表</a>
+                    </p>
+                </div>
+                </div>
+    <!-- /songList -->
+</div>
+<link href="../v5/r4/style/suggest.css" rel="stylesheet" type="text/css">
+<script src="../v5/r4/js/suggest.js"></script>
+<div class="footer center">
+    <!--<p class="footlink"> <a href="/faq/etc/about.html">关于一听</a> |--> <a href="../faq/etc/copyright.html">版权声明</a> <!--| <a href="/faq/etc/recruit.html">诚聘英才</a> -->| <a href="../faq/etc/contact_us.html">联系我们</a> | <a href="../index1.html">歌曲入库</a> | <a href="../faq/etc/history.html">历史合作</a> | <a href="../faq/etc/links.html">友情链接</a> | <a href="../faq/etc/help.html">帮助中心</a> <!--| <a href="https://h5.lezicartoon.cn">移动一听</a> </p>-->
+  <p class="copyright">&copy; 2003-2020   <a href="javascript:;" class="homepage">www.lezicartoon.cn</a> All Rights Reserved 沪ICP备19024260号-3</p>
+</div>
+
+<script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F32c12acc9a2efc3fa896bb3ebcd47ee7' type='text/javascript'%3E%3C/script%3E"));</script>
+<script src='../c-30001746.js' language='JavaScript'></script>
+<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="0" height="0" id="play_list_send">
+    <param name="allowScriptAccess" value="always">
+    <param name="movie" value="/v5/flash/play_list_send.swf">
+    <embed src="../v5/flash/play_list_send.swf" quality="high" width="0" height="0" name="play_list_send" allowscriptaccess="always" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer">
+</object>
+<script>
+window.callback_play_list = function(a){
+    window.flm = a;
+};
+(function(){
+    var c, m,q = function(v){
+        c = [];
+        $(v +' input:checkbox').each(function(){
+            if(this.checked){c.push(this.value)};
+        });
+        return c;
+    },p = function(c){
+        if(c.length>0){
+            try{
+                var fl =(function(n){
+                if (navigator.appName.indexOf("Microsoft") != -1) {
+                     return window[n];
+                 } else {
+                     return document[n];
+                 }
+                })('play_list_send');
+                fl.add_to_play_list(c);
+            }catch(e){
+                window.flm = e.message;
+            }
+        }else{
+            window.flm = '请选择歌曲！';
+        }
+    };
+
+    $('a.randplay').click(function(){
+        var h = [];
+        $('.songList input:checkbox').each(function(){
+            h.push(this.value);
+        });
+        h = h.sort(function(a,b){
+            return( parseInt( Math.random()*10 ) %2 );
+        }).slice(0,h.length>30?30:h.length);
+
+        window.open('/p_'+h.join('_')+'.html','_1ting');
+        return false;
+    });
+
+    $('a.btn_cmd').click(function(){
+        var d = $(this).attr('data-id'),
+            n = $(this).attr('name');
+        if(n=='selectall'){
+            $(d +' input:checkbox').each(function(){
+                this.checked = !this.checked;
+            });
+        }
+        else if(n=='playselected'){
+            c = q(d);
+            if(c.length>0){
+                window.open('/p_'+c.join('_')+'.html','_1ting');
+            }else{
+                alert('请选择要播放的歌曲!');
+            }
+        }
+        return false;
+    });
+
+    $('a.add').mousedown(function(){
+        c = q($(this).attr('data-id'));
+        if(c.length>0){
+            p(c);
+        }else{
+            window.flm = '请选择要加入播放列表的歌曲!';
+        }
+    }).mouseup(function(){
+        if(!window.flm){return;}
+        var m = window.flm;
+        switch (m.constructor){
+            case Array:
+                window.open('/p_'+m.join('_')+'.html','_1ting');
+                break;
+            case Boolean:
+                alert('已经添加到列表!');
+                break;
+            case String:
+                alert(m);
+                break;
+        }
+        window.flm = '';
+    });
+})();
+</script>
+<!-- 广告位：左下角悬浮 -->
+<script>
+(function() {
+    var s = "_" + Math.random().toString(36).slice(2);
+    document.write('<div id="' + s + '"></div>');
+    (window.slotbydup=window.slotbydup || []).push({
+        id: '3221626',
+        container: s,
+        size: '300,250',
+        display: 'float'
+    });
+})();
+</script>
+
+<!-- 广告位：富媒体补余 -->
+<script>
+(function() {
+    var s = "_" + Math.random().toString(36).slice(2);
+    document.write('<div id="' + s + '"></div>');
+    (window.slotbydup=window.slotbydup || []).push({
+        id: '2861847',
+        container: s,
+        size: '300,250',
+        display: 'float'
+    });
+})();
+</script>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=14170"></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    var bds_config = {
+        //'wbUid':1671108633,
+        'bdPopTitle':'杭州乐米动漫',
+        'snsKey':{'tqq':'403a778463634ece8f0c75a66c4e230d', 'tsina':'1435846576'},            
+        'bdPic':'//img.lezicartoon.cn/images/singer/7416.jpg'
+            };
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+</script>
+</body>
+</html>

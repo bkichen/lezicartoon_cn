@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="zh">
+ <head>
+    <meta charset="UTF-8">
+    <title>杭州乐米动漫 - 客服中心 -  帮助中心</title>
+    
+    <meta name="robots" content="index, follow">
+    <meta name="MSSmartTagsPreventParsing" content="true">
+    <link rel="canonical" href="http://www.www.com/faq/">
+    <link rel="stylesheet" type="text/css" media="all" href="../css/style.css">
+    <script src="../../v5/r4/js/jquery.min.js"></script>
+    <script>
+        function loadjs(url){
+            var id       = 'loadScript';
+            var params   = {'id':id,'type':'text/javascript','src':url+'&t='+new Date().getTime()};
+            $('<script/>').attr(params).appendTo($('head').remove('#' + id));
+        }
+        function callback_login(data){
+            if(data.error == 0){
+                init();
+            }else{
+                alert(data.response);
+            }
+        }
+        function callback_logout(){
+            setTimeout(function(){
+                $(".userlogin").show();
+                $(".userinfo").hide();
+            }, 1);
+        }
+        function login(){
+            var user_login  = $("input[name='user_login']");
+            var user_passwd = $("input[name='user_passwd']");
+            if(user_login.val().length == 0){
+                alert('请输入用户名!');
+                user_login.focus();
+            }else if(user_passwd.val().length == 0){
+                alert('请输入登录密码!');
+                user_passwd.focus();
+            }else{
+                loadjs('http://my.lezicartoon.cn/login?jsonp=callback_login&remember=1&user_login='
+                    +encodeURIComponent(user_login.val())
+                   +'&user_passwd='+encodeURIComponent(user_passwd.val()));
+            }
+            return false;
+        }
+        function logout(){
+            loadjs('http://my.lezicartoon.cn/logout?jsonp=callback_logout');
+            return false;
+        }
+    </script>
+ </head>
+ <body id="body">
+ <div id="content">
+    <div class="header" id="header">
+        <div class="top" id="top">
+            <h1>
+                <a title="杭州乐米动漫 - 客服中心" href="javascript:;"><img src="../images/logo.png" width="144" height="44"></a>
+            </h1>
+            <span class="service"><img src="../images/service.jpg"></span>
+            <form id="search" action="/faq/search" method="get" onsubmit="return $.trim($('#q').val()).length > 1" name="search">
+                <input type="text" id="q" name="q" placeholder="输入你要查询的关键词" value="" required="required"><button type="submit">搜索</button>
+            </form>
+            <ul class="problem">
+                <li>
+                    <a href="javascript:;">提问题</a>
+                </li>
+            </ul>
+        </div>
+        <ul class="log" id="logined" style="display:none;">
+            <li>
+                <a href="javascript:;" onclick="return logout();">退出</a>
+            </li>
+            <li>
+                <a href="javascript:;" target="_blank" id="uname" name="uname"></a>
+            </li>
+        </ul>
+        <ul class="log" id="logout">
+            <li>
+                <a href="#">注册</a>
+            </li>
+            <li>
+                <a href="#">登录</a>
+            </li>
+        </ul>
+    </div>
+    <div class="columns">
+        <div class="leftcolumn">
+            <div class="content">
+                <div id="categories">
+                    <ul>
+                                                <!--<li>
+                            <a href="/faq/about.html">关于一听</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/copyright.html">版权声明</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/contact_us.html">联系我们</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/history.html">历史合作</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/disc.html">唱片公司</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/ad.html">广告服务</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/links.html">友情链接</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/help.html">帮助中心</a>
+                        </li>-->
+                        
+                        <li>
+                            <a href="javascript:;">版权声明</a>
+                        </li>
+                                                <li>
+                            <a href="javascript:;">联系我们</a>
+                        </li>
+                                                <li>
+                            <a href="javascript:;">历史合作</a>
+                        </li>
+                                                <li>
+                            <a href="javascript:;">唱片公司</a>
+                        </li>
+                                                <li>
+                            <a href="javascript:;">广告服务</a>
+                        </li>
+                                                <li>
+                            <a href="javascript:;">友情链接</a>
+                        </li>
+                                                <li>
+                            <a href="javascript:;">帮助中心</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <h2>
+                帮助中心            </h2>
+            <div id="faq-content"><p><strong><a href="javascript:;">在线提交帮助工单</a></strong> <sup>beta</sup></p>
+<p style="text-indent: 2em; line-height: 18px; font-weight: 800; color: rgb(112, 112, 112);">
+	使用说明</p>
+<ol style="margin-left: 50px; line-height: 21px; padding: 0pt;">
+	<li>
+		<a href="javascript:;">关于杭州乐米动漫</a></li>
+	<li>
+		<a href="javascript:;">使用一听服务需要什么条件?</a></li>
+	<li>
+		<a href="javascript:;">一听会保护我的隐私吗?</a></li>
+	<li>
+		<a href="javascript:;">为什么要注册成为一听会员?</a></li><li><a href="javascript:;">为何会展示我的百度搜索记录?</a></li>
+</ol>
+<p style="text-indent: 2em; line-height: 18px; font-weight: 800; color: rgb(112, 112, 112);">
+	常见问题和解决办法</p>
+<ol style="margin-left: 50px; line-height: 21px; padding: 0pt;">
+	<li>
+		<a href="javascript:;">为什么我听歌非常慢?</a></li>
+	<li>
+		<a href="javascript:;">常见问题</a></li>
+	<li>
+		<a href="javascript:;">为什么我不能听歌?</a></li>
+	<li>
+		<a href="javascript:;">为什么我听歌老是缓冲?</a></li>
+	<li>
+		<a href="javascript:;">我为什么不能登录?</a></li>
+	<li>
+		<a href="javascript:;">播放器出现已关闭或者无讯息怎么办?</a></li>
+	<li>
+		<a href="javascript:;">我能把歌用在博客、QQ空间等这些地方吗?</a></li>
+	<li>
+		<a href="javascript:;">为什么我一播放就准备就绪?</a></li>
+	<li>
+		<a href="javascript:;">为什么我一点连播就跳到首页?</a></li>
+	<li>
+		<a href="javascript:;">我怎么登录不了了?</a></li>
+	<li>
+		<a href="javascript:;">为什么我的博客、QQ空间等老跳出本站?</a></li>
+	<li>
+		<a href="javascript:;">为什么我可以单播但是无法连播?</a></li>
+	<li>
+		<a href="javascript:;">为何一听没有收录我喜欢的歌手呢?</a></li>
+	<li>
+		<a href="javascript:;">我能用Firefox,Opera之类的浏览器听歌么? </a></li>
+	<li>
+		<a href="javascript:;">非IE用户试听问题</a></li>
+	<li>
+		<a href="javascript:;">Silverlight的问题</a></li>
+	<li>
+		<a href="javascript:;">暴风影音、QQ影音等播放器引起的问题</a></li>
+</ol>
+<p style="text-indent: 2em; line-height: 18px; font-weight: 800; color: rgb(112, 112, 112);">
+	音乐盒帮助</p>
+<ol style="margin-left: 50px; line-height: 21px; padding: 0pt;">
+	<li>
+		<a href="javascript:;">我如何才能自建专辑?</a></li>
+	<li>
+		<a href="javascript:;">什么是tag?</a></li>
+</ol>
+<p style="text-indent: 2em; line-height: 18px; font-weight: 800; color: rgb(112, 112, 112);">
+	其它帮助</p>
+<ol style="margin-left: 50px; line-height: 21px; padding: 0pt;">
+	<li>
+		<a href="javascript:;">如何查看我播放器的版本?</a></li>
+	<li>
+		<a href="javascript:;">如何判断我已经启用Javascript?</a></li>
+	<li>
+		<a href="javascript:;">如何判断我已启用cookie?</a></li>
+	<li>
+		<a href="javascript:;">如何使用ping命令?</a></li>
+	<li>
+		<a href="javascript:;">如何知道我的DNS服务器?</a></li>
+	<li>
+		<a href="javascript:;">关于广告</a></li>
+	<li>
+		<a href="javascript:;">Silverlight和金山词霸冲突的问题</a></li>
+	<li>
+		<a href="javascript:;">Silverlight是什么?</a></li>
+</ol>
+<p style="text-indent: 2em; line-height: 18px; font-weight: 800; color: rgb(112, 112, 112);">
+	注册帮助</p>
+<ol style="margin-left: 50px; line-height: 21px; padding: 0pt;">
+	<li>
+		<a href="javascript:;">用户协议</a></li>
+	<li>
+		<a href="javascript:;">如何注册?</a></li>
+	<li>
+		<a href="javascript:;">如何修改我的密码呢?</a></li>
+	<li>
+		<a href="javascript:;">我忘记密码了该怎么办?</a></li>
+</ol>
+<p style="text-indent: 2em; line-height: 18px; font-weight: 800; color: rgb(112, 112, 112);">
+	播放器下载</p>
+<ol style="margin-left: 50px; line-height: 21px; padding: 0pt;">
+	<li>
+		<a href="javascript:;">Windows Media Player Firefox Plugin</a></li>
+	<li>
+		<a href="javascript:;">Windows Media Player 11 For 2003</a></li>
+</ol></div>
+                        <div id="faq-answer"><br></div>
+                    </div>
+    </div>
+    <div class="clearing"></div>
+    <div id="footer" class="footer">
+        <p class="copyright">
+            Copyright &copy; 2003-2020 <a class="homepage" href="javascript:;">www.lezicartoon.cn</a> All Rights Reserved
+        </p>
+    </div>
+ </div>
+ </body>
+</html>
+

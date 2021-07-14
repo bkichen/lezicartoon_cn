@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="zh">
+ <head>
+    <meta charset="UTF-8">
+    <title>杭州乐米动漫 - 客服中心 -  历史合作</title>
+    
+    <meta name="robots" content="index, follow">
+    <meta name="MSSmartTagsPreventParsing" content="true">
+    <link rel="canonical" href="http://www.www.com/faq/">
+    <link rel="stylesheet" type="text/css" media="all" href="../css/style.css">
+    <script src="../../v5/r4/js/jquery.min.js"></script>
+    <script>
+        function loadjs(url){
+            var id       = 'loadScript';
+            var params   = {'id':id,'type':'text/javascript','src':url+'&t='+new Date().getTime()};
+            $('<script/>').attr(params).appendTo($('head').remove('#' + id));
+        }
+        function callback_login(data){
+            if(data.error == 0){
+                init();
+            }else{
+                alert(data.response);
+            }
+        }
+        function callback_logout(){
+            setTimeout(function(){
+                $(".userlogin").show();
+                $(".userinfo").hide();
+            }, 1);
+        }
+        function login(){
+            var user_login  = $("input[name='user_login']");
+            var user_passwd = $("input[name='user_passwd']");
+            if(user_login.val().length == 0){
+                alert('请输入用户名!');
+                user_login.focus();
+            }else if(user_passwd.val().length == 0){
+                alert('请输入登录密码!');
+                user_passwd.focus();
+            }else{
+                loadjs('http://my.lezicartoon.cn/login?jsonp=callback_login&remember=1&user_login='
+                    +encodeURIComponent(user_login.val())
+                   +'&user_passwd='+encodeURIComponent(user_passwd.val()));
+            }
+            return false;
+        }
+        function logout(){
+            loadjs('http://my.lezicartoon.cn/logout?jsonp=callback_logout');
+            return false;
+        }
+    </script>
+ </head>
+ <body id="body">
+ <div id="content">
+    <div class="header" id="header">
+        <div class="top" id="top">
+            <h1>
+                <a title="杭州乐米动漫 - 客服中心" href="javascript:;"><img src="../images/logo.png" width="144" height="44"></a>
+            </h1>
+            <span class="service"><img src="../images/service.jpg"></span>
+            <form id="search" action="/faq/search" method="get" onsubmit="return $.trim($('#q').val()).length > 1" name="search">
+                <input type="text" id="q" name="q" placeholder="输入你要查询的关键词" value="" required="required"><button type="submit">搜索</button>
+            </form>
+            <ul class="problem">
+                <li>
+                    <a href="javascript:;">提问题</a>
+                </li>
+            </ul>
+        </div>
+        <ul class="log" id="logined" style="display:none;">
+            <li>
+                <a href="javascript:;" onclick="return logout();">退出</a>
+            </li>
+            <li>
+                <a href="javascript:;" target="_blank" id="uname" name="uname"></a>
+            </li>
+        </ul>
+        <ul class="log" id="logout">
+            <li>
+                <a href="#">注册</a>
+            </li>
+            <li>
+                <a href="#">登录</a>
+            </li>
+        </ul>
+    </div>
+    <div class="columns">
+        <div class="leftcolumn">
+            <div class="content">
+                <div id="categories">
+                    <ul>
+                                                <!--<li>
+                            <a href="/faq/about.html">关于一听</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/copyright.html">版权声明</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/contact_us.html">联系我们</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/history.html">历史合作</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/disc.html">唱片公司</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/ad.html">广告服务</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/links.html">友情链接</a>
+                        </li>-->
+                                                <!--<li>
+                            <a href="/faq/help.html">帮助中心</a>
+                        </li>-->
+                        
+                        <li>
+                            <a href="javascript:;">版权声明</a>
+                        </li>
+                                                <li>
+                            <a href="javascript:;">联系我们</a>
+                        </li>
+                                                <li>
+                            <a href="javascript:;">历史合作</a>
+                        </li>
+                                                <li>
+                            <a href="javascript:;">唱片公司</a>
+                        </li>
+                                                <li>
+                            <a href="javascript:;">广告服务</a>
+                        </li>
+                                                <li>
+                            <a href="javascript:;">友情链接</a>
+                        </li>
+                                                <li>
+                            <a href="javascript:;">帮助中心</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="main-content">
+            <h2>
+                历史合作            </h2>
+            <div id="faq-content"><p style="margin-bottom: 30px;">
+	<b>我们的客户</b></p>
+<p style="text-align: center; margin-bottom: 30px;">
+	<img alt="" height="311" src="../../v5/images/faq/history.gif" width="350"></p>
+<p style="margin-bottom: 30px;">
+	<b>整体营销案例</b></p>
+<p style="margin-bottom: 30px;">
+	<b>2009年</b></p>
+<ul style="list-style-type: disc; padding: 0px 0px 20px 15px; line-height: 18px;">
+	<li class="yes">
+		2009年7月，<a href="javascript:;" target="_blank">快乐宣言大声说 快乐音乐共分享</a></li>
+</ul>
+<p style="text-align: center; margin-bottom: 30px;">
+	<img alt="" height="635" src="../../v5/images/faq/masterkong.jpg" width="302"></p>
+<ul style="list-style-type: disc; padding: 0px 0px 20px 15px; line-height: 18px;">
+	<li class="yes">
+		2009年4月，<a href="javascript:;" target="_blank">&ldquo;撒开跑，就快活&rdquo;李宁Fun Run 超级晚活动</a></li>
+</ul>
+<p style="text-align: center; margin-bottom: 30px;">
+	<img alt="" height="560" src="../../v5/images/faq/lining.gif" width="302"></p>
+<ul style="list-style-type: disc; padding: 20px 0px 20px 15px; line-height: 18px;">
+	<li class="yes">
+		2009年3月，<a href="javascript:;" target="_blank">&ldquo;小音乐大感动&rdquo;联想HandBag百大感人歌曲征集活动</a></li>
+</ul>
+<p style="text-align: center; margin-bottom: 30px;">
+	<img alt="" height="676" src="../../v5/images/faq/smusic.gif" width="303"></p>
+<p style="margin-bottom: 30px;">
+	<b>2008年</b></p>
+<ul style="list-style-type: disc; padding: 0px 0px 20px 15px; line-height: 18px;">
+	<li class="yes">
+		2008年，起亚汽车音乐联合大调查</li>
+</ul>
+<p style="text-align: center; margin-bottom: 30px;">
+	<img alt="" src="../../v5/images/faq/cat.jpg" width="303"></p>
+<ul style="list-style-type: disc; padding: 20px 0px 20px 15px; line-height: 18px;">
+	<li class="yes">
+		2008年，三星MYCD创意征集大赛</li>
+</ul>
+<p style="text-align: center; margin-bottom: 30px;">
+	<img alt="" height="189" src="../../v5/images/faq/sav.gif" width="304"></p>
+<ul style="list-style-type: disc; padding: 20px 0px 20px 15px; line-height: 18px;">
+	<li class="yes">
+		2007年-2008年,与世界著名企业雀巢咖啡联合推出雀巢咖啡音乐时间</li>
+</ul>
+<p style="text-align: center; margin-bottom: 30px;">
+	<img alt="" height="248" src="../../v5/images/faq/que.gif" width="303"></p>
+<ul style="list-style-type: disc; padding: 20px 0px 20px 15px; line-height: 18px;">
+	<li class="yes">
+		2008年，独家承办<a href="javascript:;" target="_blank">网络音乐盛典</a>北京赛区活动</li>
+</ul>
+<p style="text-align: center; margin-bottom: 30px;">
+	<img alt="" height="546" src="../../v5/images/faq/shengdian.gif" width="314"></p>
+<p style="margin-bottom: 30px;">
+	<b>2007年</b></p>
+<ul style="list-style-type: disc; padding: 0px 0px 20px 15px; line-height: 18px;">
+	<li class="yes">
+		2007年9月，同星外星合作，创建国内首歌正版<a href="javascript:;" target="_blank">古典音乐入门专区</a>。</li>
+</ul>
+<p style="text-align: center; margin-bottom: 30px;">
+	<img alt="" height="1649" src="../../v5/images/faq/classic.gif" width="319"></p>
+<ul style="list-style-type: disc; padding: 20px 0px 20px 15px; line-height: 18px;">
+	<li class="yes">
+		2007年8月，与Cmarket合作，开辟国内最多正版<a href="javascript:;" target="_blank">韩剧原声专区</a>。</li>
+</ul>
+<p style="text-align: center; margin-bottom: 30px;">
+	<img alt="" height="523" src="../../v5/images/faq/han.jpg" width="334"></p>
+<ul style="list-style-type: disc; padding: 20px 0px 20px 15px; line-height: 18px;">
+	<li class="yes">
+		2007年7月，由台湾勤创科技授权，建立国内最全的正版<a href="javascript:;" target="_blank">台湾本土独立音乐</a>。</li>
+</ul>
+<p style="text-align: center; margin-bottom: 30px;">
+	<img alt="" height="525" src="../../v5/images/faq/indie.gif" width="337"></p>
+<ul style="list-style-type: disc; padding: 20px 0px 20px 15px; line-height: 18px;">
+	<li class="yes">
+		2007年4月，为独家网络合作伙伴承办了<a href="javascript:;" target="_blank">伊利大学生音乐节</a>网络赛区选拔，并为决赛阶段做为唯一投票网站。</li>
+</ul>
+<p style="text-align: center; margin-bottom: 30px;">
+	<img alt="" height="958" src="../../v5/images/faq/YiLi1.gif" width="352"></p>
+<br>
+<p style="margin-bottom: 30px;">
+	<b>2006年</b></p>
+<ul style="list-style-type: disc; padding: 0px 0px 20px 15px; line-height: 18px;">
+	<li class="yes">
+		2006年，联想手机粉时尚主题曲征集活动</li>
+</ul>
+<p style="text-align: center; margin-bottom: 30px;">
+	<img alt="" src="../../v5/images/faq/lian.gif" width="340"></p>
+<ul style="list-style-type: disc; padding: 0px 0px 20px 15px; line-height: 18px;">
+	<li class="yes">
+		2006年12月，与网易，迅雷等十几家网站同联想一起举办联想手机粉时尚网络封神大赛。</li>
+</ul>
+<p style="text-align: center; margin-bottom: 30px;">
+	<img alt="" src="../../v5/images/faq/lianxiang.jpg" width="340"></p>
+<ul style="list-style-type: disc; padding: 20px 0px 20px 15px; line-height: 18px;">
+	<li class="yes">
+		2006年10月,同著名游戏代理商悠游天使之恋OL主题曲征唱活动</li>
+</ul>
+<p style="text-align: center; margin-bottom: 30px;">
+	<img alt="" height="353" src="../../v5/images/faq/tianshi.gif" width="336"></p>
+<p style="margin-bottom: 30px;">
+	<b>榜单</b></p>
+<ul style="list-style-type: disc; padding: 0px 0px 20px 15px; line-height: 18px;">
+	<li class="yes">
+		2008年6月，继巨鲸音乐榜之后成为第二家合作音乐网站为<a href="javascript:;" target="_blank">谷歌热榜</a>提供权威数据。</li>
+</ul>
+<p style="text-align: center; margin-bottom: 30px;">
+	<img alt="" src="../../v5/images/faq/Google.jpg" width="340"></p>
+<ul style="list-style-type: disc; padding: 20px 0px 20px 15px; line-height: 18px;">
+	<li class="yes">
+		2007年10月，<a href="javascript:;" target="_blank">Mysapce</a>中国独家提供中文歌曲榜单。</li>
+</ul>
+<p style="text-align: center; margin-bottom: 30px;">
+	<img alt="" src="../../v5/images/faq/myspace(4).jpg" width="340"></p>
+</div>
+                    </div>
+    </div>
+    <div class="clearing"></div>
+    <div id="footer" class="footer">
+        <p class="copyright">
+            Copyright &copy; 2003-2020 <a class="homepage" href="javascript:;">www.lezicartoon.cn</a> All Rights Reserved
+        </p>
+    </div>
+ </div>
+ </body>
+</html>
+

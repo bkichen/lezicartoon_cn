@@ -1,0 +1,241 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>徐新军_十年的爱LRC滚动歌词下载</title>
+<link href="v5/style/lrc/lrc.css" rel="stylesheet" type="text/css">
+<script>
+if(self==top){document.write('<style>#nav{position:absolute;top:0;left:0;padding:0 0;background:#fff url("/v5/r4/images/top_logo.png") no-repeat;border-top:4px solid #22A5E9;border-bottom:1px solid #AACBEE; width:100%;height:60px;}#nav p{padding:6px;height:30px;line-height:30px;margin-left:200px;}body{margin-top:80px;}#container{height:auto;width:auto;text-align:left;padding:10px;}.ting_5{text-align:left;}</style>');}
+</script>
+<script>
+document.domain='lezicartoon.cn';
+function the(s){return document.getElementById(s);}
+</script>
+</head>
+<body>
+<div class="ting_5">
+</div>
+        <div id="container"></div>
+    <div id="lrc">[00:05.52]十年的爱
+[00:06.49]作词：雨霖枫
+[00:07.12]作曲：雨霖枫
+[00:07.74]演唱：徐新军
+[00:08.57]编曲：雨霖枫
+[00:09.29]和声：雨霖枫
+[00:09.95]混音：雨霖枫
+[00:10.57]吉他：雨霖枫
+[00:11.14]贝斯：雨霖枫
+[00:11.70]钢琴：雨霖枫
+[00:12.37]弦乐：雨霖枫
+[00:13.00]鼓：雨霖枫
+[00:13.58]录音：雨霖枫音乐工作室
+[00:14.12]制作人：雨霖枫
+[00:14.69]录音师：雨霖枫
+[00:15.33]和声编写：雨霖枫
+[00:15.83]和声处理：雨霖枫
+[00:16.30]母带处理：雨霖枫
+[00:16.83]混音工程后期：雨霖枫
+[00:17.34]母带工程后期：雨霖枫
+[00:18.03]发行：安雨琪枫文化传媒
+[00:18.73]出品：雨世霖枫集团
+[00:21.75]那是一个下雨的天
+[00:25.79]你笑着对我说再见
+[00:30.30]我们的爱仿佛是昨天
+[00:34.59]黑了夜又轮回到白天
+[00:38.88]你对我许下的那些誓言
+[00:42.64]就像阳光下的雪消失不见
+[00:47.47]那些所有的所有的温暖
+[00:51.21]都是我自己一厢情愿
+[00:55.88]十年的爱抵不过一句再见
+[00:59.85]你我的今生只剩下擦肩
+[01:04.14]你会不会在某一天想念
+[01:08.33]想起我为你哭红的双眼
+[01:13.17]十年的爱换不会一句想念
+[01:17.02]为何我的心你始终看不见
+[01:21.27]曾经的曾经就当不曾见面
+[01:25.58]今生今世我已生无可恋
+[01:39.02]你对我许下的那些誓言
+[01:42.64]就像阳光下的雪消失不见
+[01:47.49]那些所有的所有的温暖
+[01:51.23]都是我自己一厢情愿
+[01:55.90]十年的爱抵不过一句再见
+[01:59.65]你我的今生只剩下擦肩
+[02:03.54]你会不会在某一天想念
+[02:08.38]想起我为你哭红的双眼
+[02:13.24]十年的爱换不会一句想念
+[02:17.01]为何我的心你始终看不见
+[02:21.20]曾经的曾经就当不曾见面
+[02:25.51]今生今世我已生无可恋
+[02:51.82]十年的爱抵不过一句再见
+[02:55.56]你我的今生只剩下擦肩
+[02:59.93]你会不会在某一天想念
+[03:04.12]想起我为你哭红的双眼
+[03:08.80]十年的爱换不会一句想念
+[03:12.81]为何我的心你始终看不见
+[03:17.09]曾经的曾经就当不曾见面
+[03:21.32]今生今世我已生无可恋
+[03:30.52]今生今世我已生无可恋</div>
+    <script>
+        var Lyric = function(){
+            var that = this;
+            this.preTime = 0;
+            this.nextTime = 0;
+            this.currIndex = 0;
+            this.lrc = the("lrc").innerHTML.split("[");
+            this.array = [];
+
+            this.init = function(){
+                var array = [];
+                if (that.lrc.length > 5){
+                    for (var i = 0; i < that.lrc.length; i++){
+                        var g = {};
+                        var t = that.lrc[i].split("]");
+                        g.time = that.getTime(t[0]);
+                        if (isNaN(g.time))
+                            continue;
+                        g.c = t[1];
+                        if (g.c == "")
+                            g.c = that.getNext(i);
+                        array.push(g);
+                    }
+
+                    array.sort(function(x, y) {
+                        if (x.time > y.time)
+                            return 1;
+                        else if (x.time < y.time)
+                            return -1;
+                        else
+                            return 0;
+                    });
+                    var tc = '';
+                    for (var i = 0; i < array.length; i++){
+                        var g = array[i];
+                        if (!g.c) {
+                            g.c = "";
+                        }
+                        tc+=("<div id='lrc" + i + "'>" + g.c + "</div>");
+                    }
+                    the('container').innerHTML=tc;
+
+                    if(top == self){
+                        return;
+                    }
+
+                    var time = window.setInterval(function() {
+                        try {
+                            if (parent.document.getElementById('not-allowed-scroll').checked) {
+                                that.lrcList();
+                            }
+                        } catch(e) {
+                            that.lrcList();
+                        }
+                    }, 500);
+                } else {
+                    the("container").innerHTML = the("lrc").innerHTML;
+                }
+                that.lines = array;
+            };
+
+            this.getNext = function(i){
+                var result = "";
+                var i = i + 1;
+                if(that.lrc[i]){
+                    t = that.lrc[i].split("]");
+                    if (t[1] == "")
+                        result = that.getNext(i);
+                    else
+                        result = t[1]
+                }
+                return result;
+            };
+
+            this.getTime = function(str){
+                var time = 0;
+                var ta = str.split(":");
+                if (ta.length < 2)
+                    return time;
+
+                if (ta[1].indexOf(".") > 0) {
+                    var tb = ta[1].split(".");
+                    time = ta[0] * 60 * 1000 + tb[0] * 1000 + tb[1] * 10;
+                }
+                else
+                    time = ta[0] * 60 * 1000 + ta[1] * 1000;
+                return time;
+            };
+
+            this.lrcList = function(){
+                var s = 0;
+                try {
+                    s = parent.Instance.time();
+                } catch(e) {
+                    return;
+                }
+                s = s * 1000;
+
+                function getTop(idx) {
+                    return Math.max(80, the("lrc" + idx).offsetTop - 23) - 80;
+                }
+
+                function moveScrollbar(idx) {
+                    var t = getTop(idx);
+                    var ch = the('container').scrollHeight;
+
+                    the("container").scrollTop = t;
+                }
+
+                if (s == 0) {
+                    that.currIndex = 0;
+                    moveScrollbar(that.currIndex);
+
+                    for (var i = 0; i < that.lines.length; i++) {
+                        the("lrc" + i).style.color = '#000000';
+                    }
+                    return;
+                }
+
+                if (s > 0 && that.currIndex < that.lines.length - 1)
+                {
+                    that.preTime = that.lines[that.currIndex].time;
+
+                    that.nextTime = that.lines[that.currIndex + 1].time;
+
+                    if (s >= that.preTime && s < that.nextTime) {
+
+                    } else if (s >= that.nextTime) {
+                        the("lrc" + that.currIndex).style.color = '#000';
+                        moveScrollbar(++that.currIndex);
+                        the("lrc" + that.currIndex).style.color = '#06adf3';
+                        that.lrcList();
+                    } else {
+                        the("lrc" + that.currIndex).style.color = '#000';
+                        moveScrollbar(--that.currIndex);
+                        the("lrc" + that.currIndex).style.color = '#06adf3';
+                        that.lrcList();
+                    }
+                }
+                else
+                {
+                    if (s < that.lines[that.lines.length - 1].time) {
+                        that.currIndex = 0;
+                        moveScrollbar(that.currIndex);
+                        for (var i = 0; i < that.lines.length; i++) {
+                            the("lrc" + i).style.color = '#000';
+                        }
+                        that.lrcList();
+                    }
+                }
+            };
+        };
+        new Lyric().init();
+    </script>
+    <!--歌词下标签云22-->
+
+<div id="nav"><a href="index.html"><div style="width:300px;height:90px;"></div></a><p class="songtitle" style="margin-top:-45px">试听<a href="singer/d6/singer_39046.html" target="_blank">徐新军</a>的<a href="player/65/player_1197386.html" target="_blank">十年的爱</a></p></div>
+<script src='c-30065998.js' language='JavaScript'></script>
+
+
+</body>
+</html>

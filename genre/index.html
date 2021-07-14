@@ -1,0 +1,759 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>曲风列表 - 杭州乐米动漫 </title>
+<meta name="Description" content="曲风，热门曲风，杭州乐米动漫">
+<meta name="Keywords" content="曲风，热门曲风，杭州乐米动漫">
+<link href="../v5/r5/style/common.css" rel="stylesheet" type="text/css" media="all">
+<link href="../v5/r4/style/genre.css" rel="stylesheet" type="text/css" media="all">
+<script src="../v5/r4/js/jquery.min.js"></script>
+<script src="../v5/r4/js/common.js"></script>
+<script src="../v5/r4/js/genre.js"></script>
+<script type="text/javascript" src="../js/ds.js"></script>
+</head>
+
+<body>
+        <div class="site-nav">
+        <div class="center">
+            <ul class="navlink">
+                <li><a href="javascript:;">保存到桌面</a></li>
+                <li><a href="">曲风</a></li>
+                <li><a href="../rank.html">排行榜</a></li>
+                <li><a href="../archives/index.html">专辑库</a></li>
+            </ul>
+            <!--div class="bshare-custom"><a title="分享到微信" class="bshare-weixin"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到QQ空间" class="bshare-qzone"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div-->
+            <!--div class="sinaweibo_iframe">
+                <iframe width="120" height="24" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="https://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=136&height=24&uid=1671108633&style=2&btn=light&dpc=1"></iframe>
+            </div-->
+
+            <!--<ul style="height:19px;width:110px;padding-top:5px;float:left;"><li><a style="color:#333" href="https://h5.lezicartoon.cn" title="手机访问一听">手机版:h5.lezicartoon.cn</a></li></ul>-->
+            <ul class="siteaction" style="height:24px;padding-top:1px;"> 
+                <li class="favorite" style="margin-top:5px"><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">加入收藏</a></li>
+            </ul>
+        </div>
+    </div>
+               <script type="text/javascript" language="javascript">
+                function AddFavorite(sURL, sTitle) {
+                    sURL = encodeURI(sURL); 
+                try{   
+                    window.external.addFavorite(sURL, sTitle);   
+                }catch(e) {   
+                    try{   
+                        window.sidebar.addPanel(sTitle, sURL, "");   
+                    }catch (e) {   
+                        alert("加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.");
+         
+                        }   
+                    }
+                }
+              </script>
+    <!-- /site-nav -->
+    <div class="header center">
+        <div class="logo">
+            <h1>
+                <a href="../index.html" title="返回一听首页?">杭州乐米动漫</a>
+            </h1>
+        </div>
+        <div class="search">
+            <div class="option_selected" id="search_option_selected">
+                <a href="javascript:void(0);" id="st" target="_self">全部</a>
+            </div>
+            <div class="option_list" id="search_option_list">
+                <ul>
+                    <li class="selected"><a href="javascript:void(0);" target="_self">全部</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌曲</a></li>
+                    <li><a href="javascript:void(0);" target="_self">专辑</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌手</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌词</a></li>
+                </ul>
+            </div>
+            <div class="search_box"><form method="get" action="//so.lezicartoon.cn/all.do" onsubmit="return search(this);">
+                <input type="text" name="q" id="sq" x-webkit-speech="" x-webkit-grammar="builtin:search" onwebkitspeechchange="(function(e){e.target.form.submit();})(event)">
+                <button type="submit">搜索</button></form>
+            </div>
+        </div>
+        <div class="userbox">
+            <div class="user-guest" id="user-guest">
+                <p class="sitelogin">
+                    <a href="../register.html" class="link-reg">免费注册</a> -
+                    <a href="../login.html" class="link-login">登录</a>
+                </p>
+                <p class="pluginlogin">
+                    <a href="../oauth2/authorize-1435846576_http2F2Fmy..html" class="login-weibo">微博登录</a>
+                    <a href="../oauth2.0/show-Login_pc_101501725_https2F2.html" class="login-qq">QQ登录</a>
+                    <a href="../login.html" class="link-favor">我的收藏</a>
+                </p>
+            </div>
+            <div class="user-login" id="user-login">
+                <p class="user-welcome">
+                    <a href="../login.html" class="link-username" id="username"></a>
+                    <span id="greeting"></span>
+                </p>
+                <div class="user-action" id="user_login_action">
+                    <a href="../login.html" class="act-fav">我的收藏</a>
+                    <div style="display: none;">
+                        <a href="../login.html" target="_blank">用户中心</a>
+                        <a href="../login.html">退出登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+        (function(){
+            function cookie(k){
+                var v = "";
+                var s = k+"=",c = document.cookie,l=c.length;
+                if (l > 0) {
+                    var os = c.indexOf(s);
+                    if (os != -1) {
+                        os += s.length;
+                        var ed = c.indexOf(";", os);
+                        if (ed == -1) ed = l;
+                        v = decodeURIComponent(c.substring(os, ed)).replace(/\+/g,' ');
+                    }
+                }
+                return v;
+            }
+            function receive(){
+                var greeting,
+                    hour = new Date().getHours(),
+                    id = cookie('OneId'),
+                    user = cookie('OneNick')||cookie('OneUser');
+                if(hour >= 6 && hour < 12){
+                    greeting='上午好!';
+                }else if(hour>=12 && hour<18){
+                    greeting='下午好!';
+                }else if(hour>=18 && hour<23){
+                    greeting='晚上好!';
+                }else{
+                    greeting='夜深了 请注意休息!';
+                }
+                if(id && /^\d+$/.test(id) && user && /^[^<>\"\']+$/.test(user)){
+                    $('#username').html(user);
+                    $('#greeting').html(greeting);
+                    $('#user-login').show();
+                    $('#user-guest').hide();
+                }else{
+                    $('#user-guest').show();
+                    $('#user-login').hide();
+                }
+            }
+            (function(ctn) {
+                var timeId, time = 500,
+                    slideTime = 200,
+                    child = ctn.children("div"),
+                    upClass = "user-action-arrow-up";
+                ctn.hover(function() {
+                    timeId = setTimeout(function() {
+                        ctn.addClass(upClass);
+                        child.slideDown(slideTime);
+                    }, time);
+                }, function() {
+                    ctn.removeClass(upClass);
+                    clearTimeout(timeId);
+                    child.slideUp(slideTime);
+                });
+            })($("#user_login_action"));
+            receive();
+            setInterval(receive, 3000);
+        })();
+        </script>
+        <div class="nav">
+            <ul class="allcate" id="nav_list">
+                <li><a href="../index.html" target="_self"><span>首页</span></a></li>
+                <li><a href="../group.html" class="has-sub" target="_self"><i style="display:block" target="_self"></i><span>歌手</span></a></li>
+                <li><a href="../archives/index.html" target="_self"><span>专辑</span></a></li>
+                <li><a href="../rank.html" target="_self"><span>排行榜</span></a></li>
+                <li><a href="#" class="has-sub" target="_self"><span>高清MV</span></a></li>
+            </ul>
+            <div class="randplay">
+                <a href="../rand.html">随便一听</a>
+            </div>
+            <div class="nav-category">
+                <a href="" target="_self">曲风分类</a>
+                <!--span>|</span>
+                <a href="/topic" target="_self">专题 &bull; 活动</a-->
+                
+            </div>
+        </div>
+        <div class="nav-secondary" id="nav_secondary">
+            <p style="display:block;">
+                <a href="../group/group0_2.html"><span>华语女歌手</span></a> |
+                <a href="../group/group0_1.html"><span>华语男歌手</span></a> |
+                <a href="../group/group0_3.html"><span>华语组合</span></a> |
+                <a href="../group/group3_15.html"><span>欧美女歌手</span></a> |
+                <a href="../group/group3_14.html"><span>欧美男歌手</span></a> |
+                <a href="../group/group3_16.html"><span>欧美组合</span></a> |
+                <a href="../group/group5_0.html"><span>韩国</span></a> |
+                <a href="../group/group4_0.html"><span>日本</span></a> |
+                <a href="../group/group6_0.html"><span>影视</span></a> |
+                <a href="../group/group7_0.html"><span>其他</span></a> |
+                <span><!--a class="misc" href="/fo/">佛教音乐</a><a href="/prenatal/">胎教/儿歌</a><a href="http://5.lezicartoon.cn">广场舞</a><a href="/xiqu/">戏曲</a--><a href="../mv/index.html">高清MV</a></span>
+            </p>
+            <p style="text-align:center;width:736px;">
+                 <a href="../mv/cate/3.html">港台歌手MV</a>  | <a href="../mv/cate/6.html">内地歌手MV</a> | <a href="../mv/cate/2.html">韩国歌手MV</a> | <a href="../mv/cate/5.html">日本歌手MV</a> | <a href="../mv/cate/4.html">欧美歌手MV</a> | <a href="../mv/search-E6BC94E594B1E4BC9A.html">演唱会视频</a>   
+            </p>
+        </div>
+    </div>
+    <!-- /header -->
+    <script>
+    (function(){
+        var menus = $("#nav_list").find("a.has-sub"),
+            subMenu = $("#nav_secondary");
+        $.each(menus, function(index, ele) {
+            $(ele).mouseover(function() {
+                menus.children("i").hide();
+                $(ele).children("i").show();
+                subMenu.children("p").hide()
+                            .eq(index).show();
+            });
+        });
+        /*var links = [{'name': '明星美图',  'path': 'star'}, 
+                     {'name': '街拍美女',  'path': 'jiepai'}, 
+                     /*{'name': '流行服饰',  'path': 'dress'}, 
+                     {'name': '时尚彩妆',  'path': 'face'}, 
+                     {'name': '潮流发型',  'path': 'tide'}, 
+                     {'name': '清新美女',  'path': 'meinv'}, 
+                     {'name': '车模美女',  'path': 'chemo'},
+                     {'name': '唯美女生',  'path': 'fennen'}, 
+                     {'name': '非主流女生',  'path': 'feizhuliu'}, 
+                     {'name': 'Show Girl',   'path': 'showgirl'}, 
+                     {'name': 'Cosplay女神', 'path': 'cosplay'},
+                     {'name': '婚纱秀欣赏',  'path': 'hunsha'}];
+        setInterval(function(){
+            var d = links[Math.ceil(Math.random()*links.length)-1];
+            $('#picture').attr('href', 'https://ent.lezicartoon.cn/pictures/'+d.path).text(d.name);
+        }, 10000);*/
+    })();
+    </script>
+    <div class="pageTitle center">
+        <h2>曲风</h2>
+        <a href="#" class="help" id="showGenreHelp">帮助</a>
+        <p>推荐排行：<a href="javascript:;">情歌对唱</a>&nbsp;&nbsp;&nbsp;<a href="javascript:;">dj舞曲</a>&nbsp;&nbsp;&nbsp;<a href="javascript:;">Indie流行</a>&nbsp;&nbsp;&nbsp;<a href="javascript:;">电视剧歌曲</a>&nbsp;&nbsp;&nbsp;<a href="javascript:;">轻音乐</a>&nbsp;&nbsp;&nbsp;<a href="javascript:;">新媒体流行榜</a></p>
+    </div>
+
+    <div id="genreDescription">
+        <h2>曲风帮助</h2>
+        <p>曲风（歌曲风格）是指音乐作品在整体上呈现出的具有代表性的独特面貌。曲风同其它艺术风格类似，其通过歌曲表现出来的相对稳定、内在和深刻，能更为本质地反映出时代、民族或音乐家个人的思想观念、审美理想、精神气质等内在特性的外部印记。</p>
+    </div>
+
+    <div class="center">
+        <div class="lbar">
+            <div class="today">
+                <dl>
+                    <dt>今日推荐曲风</dt>
+                    <dd class="info">
+                        <big class="name"><a href="../prenatal/index.html">胎教音乐</a></big>
+                        <span class="date">
+                        <script>
+                        var d = new Date(),y = d.getFullYear(), m = d.getMonth()+1,d = d.getDate();
+                        document.writeln(y+"年"+(m<10?'0':'')+m+"月"+(d<10?'0':'')+d+"日");
+                        </script>
+                        </span>
+                        <a href="javascript:;" class="randplay" target="_blank">随便听几首</a>
+                    </dd>
+                    <dt>相关歌曲推荐</dt>
+                    <dd class="songs">
+                        <ul>
+                                                                                                <li><a href="javascript:;" target="_1ting">数鸭子(完整版)</a></li>
+                                                                        <li><a href="javascript:;" target="_1ting">踏古</a></li>
+                                                                        <li><a href="javascript:;" target="_1ting">Grand Canyon (USA)</a></li>
+                                                                        <li><a href="javascript:;" target="_1ting">数星星</a></li>
+                                                                        <li><a href="javascript:;" target="_1ting">Prelude & Fugue No.15 in D flat major</a></li>
+                                                                        <li><a href="javascript:;" target="_1ting">The Sound of Silence from Morning Has Broken</a></li>
+                                                                        <li><a href="javascript:;" target="_1ting">昼下がりの憂鬱</a></li>
+                                                                        <li><a href="javascript:;" target="_1ting">妈咪的怀抱里</a></li>
+                                                                        <li><a href="javascript:;" target="_1ting">Concerto No. 5 in F Minor for Harpsichord/Largo (With Nature Sounds)</a></li>
+                                                                        <li><a href="javascript:;" target="_1ting">Psyche</a></li>
+                                                                        <li><a href="javascript:;" target="_1ting">好甜好甜的梦</a></li>
+                                                                        <li><a href="javascript:;" target="_1ting">Eine kleine Nachtmusik, KV 525: 3 Menuetto - Allegretto (Serenade In G)</a></li>
+                                                                        <li><a href="javascript:;" target="_1ting">Bach J.S. BWV 158 - Recitativo (B)- Der Friede sei mit dir</a></li>
+                                                                        <li><a href="javascript:;" target="_1ting">Bach J.S. BWV 163 - Aria (T)- Nur jedem das Seine</a></li>
+                                                                        <li><a href="javascript:;" target="_1ting">Bach J.S. BWV 168 - Aria (T)- Kapital und Interessen</a></li>
+                                                </ul>
+                        <a href="javascript:;" class="btn_playall" target="_1ting">播放全部</a>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+
+        <div class="rbox allGenre">
+            <div style="margin-top:5px">
+        <!-- u1578189 -->
+        <script type="text/javascript" src="../rmvjnovou.js"></script>
+            </div>
+
+                        <dl>
+                <dt><strong>流行</strong></dt>
+                <dd>
+                    <ul>
+                                                            <li class="hot">
+                    <a href="g74p0.html">流行/Pop</a></li>
+                                        <li>
+                    <a href="javascript:;">R&B/R&B</a></li>
+                                        <li>
+                    <a href="g77p0.html">嘻哈/Hip-Hop</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">说唱/Rap</a></li>
+                                        <li>
+                    <a href="javascript:;">独立流行/Indie Pop</a></li>
+                                        <li>
+                    <a href="javascript:;">J-POP/J-POP</a></li>
+                                        <li>
+                    <a href="javascript:;">K-POP/K-POP</a></li>
+                                        <li>
+                    <a href="javascript:;">灵魂/Soul</a></li>
+                                        <li>
+                    <a href="javascript:;">Dream-pop/Dream-pop</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">布鲁斯/Blues</a></li>
+                                        <li>
+                    <a href="javascript:;">法国香颂/Chanson</a></li>
+                                        <li>
+                    <a href="javascript:;">拉丁/Latin Pop</a></li>
+                                        <li>
+                    <a href="javascript:;">雷鬼/Reggae</a></li>
+                                        <li>
+                    <a href="javascript:;">另类流行/Alternative Pop</a></li>
+                                        <li>
+                    <a href="javascript:;">前卫/Progressive</a></li>
+                                        <li>
+                    <a href="javascript:;">福音/Gospel</a></li>
+                                        <li>
+                    <a href="javascript:;">Synthpop/Synthpop</a></li>
+                                        <li>
+                    <a href="javascript:;">Teen Pop/Teen-Pop</a></li>
+                                        <li>
+                    <a href="javascript:;">Dance-Pop/Dance-Pop</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">Urban/Urban</a></li>
+                                        <li>
+                    <a href="g260p0.html">网络流行/New Media</a></li>
+                                        </ul>
+                </dd>
+            </dl>
+                        <dl>
+                <dt><strong>摇滚</strong></dt>
+                <dd>
+                    <ul>
+                                                            <li class="hot">
+                    <a href="g89p0.html">摇滚/Rock</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">硬摇滚/Hard Rock</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">重金属/Heavy Metal</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">朋克/Punk</a></li>
+                                        <li>
+                    <a href="javascript:;">新金属/Nu-Metal</a></li>
+                                        <li>
+                    <a href="javascript:;">死亡金属/Death Metal</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">另类摇滚/Alternative Rock</a></li>
+                                        <li>
+                    <a href="javascript:;">流行摇滚/Pop Rock</a></li>
+                                        <li>
+                    <a href="javascript:;">哥特/Gothic</a></li>
+                                        <li>
+                    <a href="javascript:;">迷幻/Psychedelic</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">英伦摇滚/Brit-pop</a></li>
+                                        <li>
+                    <a href="javascript:;">Funk/Funk</a></li>
+                                        <li>
+                    <a href="javascript:;">后摇/PostRock</a></li>
+                                        <li>
+                    <a href="javascript:;">后朋克/Post Punk</a></li>
+                                        <li>
+                    <a href="javascript:;">实验音乐/Experimental</a></li>
+                                        <li>
+                    <a href="javascript:;">新古典金属/Neo-Classical Metal</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">独立摇滚/Indie Rock</a></li>
+                                        <li>
+                    <a href="javascript:;">后垃圾/Post Grunge</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">硬核/Hardcore</a></li>
+                                        <li>
+                    <a href="javascript:;">流行朋克/Punk-Pop</a></li>
+                                        <li>
+                    <a href="javascript:;">后硬核/Post Hardcore</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">金属/Metal</a></li>
+                                        <li>
+                    <a href="javascript:;">流行金属/Pop Metal</a></li>
+                                        <li>
+                    <a href="javascript:;">车库/Garage</a></li>
+                                        <li>
+                    <a href="javascript:;">艺术摇滚/ArtRock</a></li>
+                                        <li>
+                    <a href="javascript:;">前卫金属/Progressive Metal</a></li>
+                                        <li>
+                    <a href="javascript:;">工业金属/Industrial Metal</a></li>
+                                        <li>
+                    <a href="javascript:;">新浪潮/New Wave</a></li>
+                                        <li>
+                    <a href="javascript:;">垃圾乐/Grunge</a></li>
+                                        <li>
+                    <a href="javascript:;">交响金属/Symphonic Metal</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">民谣摇滚/FolkRock</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">乡村摇滚/Country Rock</a></li>
+                                        <li>
+                    <a href="javascript:;">悲核/Sadcore</a></li>
+                                        <li>
+                    <a href="javascript:;">歌特金属/Gothic Metal</a></li>
+                                        <li>
+                    <a href="javascript:;">EMO/EMO</a></li>
+                                        <li>
+                    <a href="javascript:;">说唱金属/Rap Metal</a></li>
+                                        <li>
+                    <a href="javascript:;">Blues Rock/Blues-Rock</a></li>
+                                        <li>
+                    <a href="javascript:;">软摇滚/Soft Rock</a></li>
+                                        <li>
+                    <a href="javascript:;">黑金属/Black Metal</a></li>
+                                        </ul>
+                </dd>
+            </dl>
+                        <dl>
+                <dt><strong>民谣</strong></dt>
+                <dd>
+                    <ul>
+                                                            <li class="hot">
+                    <a href="g101p0.html">民谣/Folk</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">乡村/Country</a></li>
+                                        <li class="hot">
+                    <a href="g103p0.html">校园民谣/Campus Folk</a></li>
+                                        <li>
+                    <a href="javascript:;">城市民谣/Urban Folk</a></li>
+                                        <li>
+                    <a href="javascript:;">蓝草/Bluegrass</a></li>
+                                        <li>
+                    <a href="javascript:;">Anti-folk/Anti-folk</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">新民谣/Neo-Folk</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">凯尔特/Celtic</a></li>
+                                        </ul>
+                </dd>
+            </dl>
+                        <dl>
+                <dt><strong>舞曲</strong></dt>
+                <dd>
+                    <ul>
+                                                            <li>
+                    <a href="g106p0.html">舞曲/Dance</a></li>
+                                        <li>
+                    <a href="g107p0.html">迪士高/Disco</a></li>
+                                        <li class="hot">
+                    <a href="g108p0.html">DJ/DJ</a></li>
+                                        <li>
+                    <a href="javascript:;">House/House</a></li>
+                                        <li>
+                    <a href="javascript:;">碎拍/Breakbeat</a></li>
+                                        <li>
+                    <a href="javascript:;">电子舞曲/E-Dance</a></li>
+                                        <li>
+                    <a href="javascript:;">混音/Remix</a></li>
+                                        <li>
+                    <a href="javascript:;">Trance/Trance</a></li>
+                                        <li>
+                    <a href="javascript:;">Progressive House/Progressive-House</a></li>
+                                        <li>
+                    <a href="javascript:;">Progressive Trance/Progressive-Trance</a></li>
+                                        <li>
+                    <a href="javascript:;">Drum n Bass/Drum & Bass</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">Club / Dance/Club-Dance</a></li>
+                                        </ul>
+                </dd>
+            </dl>
+                        <dl>
+                <dt><strong>电子</strong></dt>
+                <dd>
+                    <ul>
+                                                            <li class="hot">
+                    <a href="javascript:;">电子/Electronica</a></li>
+                                        <li>
+                    <a href="javascript:;">驰放/Chillout</a></li>
+                                        <li>
+                    <a href="javascript:;">Trip-Hop/Trip-Hop</a></li>
+                                        <li>
+                    <a href="javascript:;">沙发/Lounge</a></li>
+                                        <li>
+                    <a href="javascript:;">Darkwave/Darkwave</a></li>
+                                        <li>
+                    <a href="javascript:;">Ambient/Ambient</a></li>
+                                        </ul>
+                </dd>
+            </dl>
+                        <dl>
+                <dt><strong>古典音乐</strong></dt>
+                <dd>
+                    <ul>
+                                                            <li class="hot">
+                    <a href="g114p0.html">古典音乐/Classic</a></li>
+                                        <li>
+                    <a href="javascript:;">室内乐/Chamber Music</a></li>
+                                        <li>
+                    <a href="javascript:;">独奏/Solo</a></li>
+                                        <li>
+                    <a href="javascript:;">歌剧/Opera</a></li>
+                                        <li>
+                    <a href="javascript:;">艺术歌曲/Art Music</a></li>
+                                        <li>
+                    <a href="javascript:;">交响乐/Symphony</a></li>
+                                        <li>
+                    <a href="javascript:;">协奏曲/Concerto</a></li>
+                                        <li>
+                    <a href="javascript:;">奏鸣曲/Sonata</a></li>
+                                        <li>
+                    <a href="javascript:;">Vocal/Vocal</a></li>
+                                        <li>
+                    <a href="javascript:;">现代基督/Contemporary Christian</a></li>
+                                        </ul>
+                </dd>
+            </dl>
+                        <dl>
+                <dt><strong>爵士</strong></dt>
+                <dd>
+                    <ul>
+                                                            <li>
+                    <a href="g120p0.html">爵士/Jazz</a></li>
+                                        <li>
+                    <a href="javascript:;">人声爵士/Vocal Jazz</a></li>
+                                        <li>
+                    <a href="javascript:;">器乐爵士/Jazz instrumental</a></li>
+                                        <li>
+                    <a href="javascript:;">Bossa Nova/Bossa-Nova</a></li>
+                                        <li>
+                    <a href="javascript:;">大乐队/BigBand</a></li>
+                                        <li>
+                    <a href="javascript:;">波谱/Bop</a></li>
+                                        <li>
+                    <a href="javascript:;">后波谱/HardBop</a></li>
+                                        <li>
+                    <a href="javascript:;">冷爵士/Cool Jazz</a></li>
+                                        <li>
+                    <a href="javascript:;">自由爵士/Free Jazz</a></li>
+                                        <li>
+                    <a href="javascript:;">融合爵士/Fusion Jazz</a></li>
+                                        <li>
+                    <a href="javascript:;">酸爵士/Acid Jazz</a></li>
+                                        </ul>
+                </dd>
+            </dl>
+                        <dl>
+                <dt><strong>原声</strong></dt>
+                <dd>
+                    <ul>
+                                                            <li class="hot">
+                    <a href="javascript:;">原声/OST</a></li>
+                                        <li>
+                    <a href="javascript:;">电影原声/Movie OST</a></li>
+                                        <li>
+                    <a href="g126p0.html">电视原声/Drama OST</a></li>
+                                        <li>
+                    <a href="javascript:;">动漫原声/Comic OST</a></li>
+                                        <li>
+                    <a href="javascript:;">游戏原声/Game OST</a></li>
+                                        </ul>
+                </dd>
+            </dl>
+                        <dl>
+                <dt><strong>器乐演奏</strong></dt>
+                <dd>
+                    <ul>
+                                                            <li class="hot">
+                    <a href="javascript:;">纯音乐/Instrument</a></li>
+                                        <li class="hot">
+                    <a href="g131p0.html">钢琴/Piano</a></li>
+                                        <li>
+                    <a href="javascript:;">吉他/Guitar</a></li>
+                                        <li>
+                    <a href="g133p0.html">萨克斯/Saxophone</a></li>
+                                        <li>
+                    <a href="g150p0.html">古筝/GuZheng</a></li>
+                                        <li>
+                    <a href="javascript:;">胡琴/HuQin</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">笛子/Bamboo Flute</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">二胡/ErHu</a></li>
+                                        <li>
+                    <a href="javascript:;">琵琶/PiPa</a></li>
+                                        <li>
+                    <a href="javascript:;">唢呐/Suona Horn</a></li>
+                                        <li>
+                    <a href="javascript:;">葫芦丝/HuLuSi</a></li>
+                                        <li>
+                    <a href="javascript:;">小提琴/Violin</a></li>
+                                        <li>
+                    <a href="javascript:;">大提琴/Cello</a></li>
+                                        <li>
+                    <a href="javascript:;">长笛/Flute</a></li>
+                                        <li>
+                    <a href="javascript:;">打击乐/Percussion</a></li>
+                                        <li>
+                    <a href="javascript:;">电子琴/Electric Keyboard</a></li>
+                                        <li>
+                    <a href="javascript:;">单簧管/Clarinet</a></li>
+                                        <li>
+                    <a href="javascript:;">小号/Trumpet</a></li>
+                                        <li>
+                    <a href="javascript:;">手风琴/Accordion</a></li>
+                                        </ul>
+                </dd>
+            </dl>
+                        <dl>
+                <dt><strong>民族音乐</strong></dt>
+                <dd>
+                    <ul>
+                                                            <li class="hot">
+                    <a href="g88p0.html">民歌/Folk</a></li>
+                                        <li>
+                    <a href="javascript:;">原生态/Primitive Music</a></li>
+                                        <li>
+                    <a href="javascript:;">民乐/Folk Music</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">民族歌曲/Ethnic Music</a></li>
+                                        </ul>
+                </dd>
+            </dl>
+                        <dl>
+                <dt><strong>特色分类</strong></dt>
+                <dd>
+                    <ul>
+                                                            <li class="hot">
+                    <a href="g75p0.html">经典老歌/Oldies</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">儿童歌曲/Kid's Music</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">宗教音乐/Religious Music</a></li>
+                                        <li>
+                    <a href="g128p0.html">发烧音乐/HiFi</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">革命歌曲/Red Song</a></li>
+                                        <li class="hot">
+                    <a href="g136p0.html">军营歌曲/Army Music</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">休闲音乐/Leisure Music</a></li>
+                                        <li>
+                    <a href="javascript:;">世界音乐/World Music</a></li>
+                                        <li>
+                    <a href="javascript:;">新世纪/New Age</a></li>
+                                        <li>
+                    <a href="javascript:;">纯人声/Acappella</a></li>
+                                        <li class="hot">
+                    <a href="g145p0.html">现场演唱会/Live</a></li>
+                                        <li>
+                    <a href="javascript:;">跨界/Crossover</a></li>
+                                        <li>
+                    <a href="../prenatal/index.html">胎教音乐/Prenatal Education Music</a></li>
+                                        <li>
+                    <a href="g155p0.html">轻音乐/Easy-Listening</a></li>
+                                        <li>
+                    <a href="javascript:;">汽车音乐/Auto Music</a></li>
+                                        <li>
+                    <a href="javascript:;">瑜伽音乐/Yoga Music</a></li>
+                                        <li>
+                    <a href="javascript:;">广告歌曲/Commercial Song</a></li>
+                                        <li>
+                    <a href="javascript:;">音乐剧/Musical</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">情歌对唱/Love Song</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">节日歌曲/Holiday Song</a></li>
+                                        <li class="hot">
+                    <a href="../fo/index.html">佛教音乐/Buddhist Music</a></li>
+                                        <li>
+                    <a href="g259p0.html">韩国影视歌曲/Korean Drama OST</a></li>
+                                        <li>
+                    <a href="g261p0.html">有声读物/Audio Books</a></li>
+                                        <li>
+                    <a href="javascript:;">密咒真言</a></li>
+                                        <li>
+                    <a href="javascript:;">经忏课颂</a></li>
+                                        <li>
+                    <a href="javascript:;">经典念诵</a></li>
+                                        <li>
+                    <a href="javascript:;">一心念佛</a></li>
+                                        <li>
+                    <a href="javascript:;">凡歌咏法</a></li>
+                                        <li>
+                    <a href="javascript:;">和雅清音</a></li>
+                                        <li>
+                    <a href="javascript:;">雪域梵音</a></li>
+                                        <li>
+                    <a href="javascript:;">其它佛乐</a></li>
+                                        <li>
+                    <a href="javascript:;">世界杯/fifa</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">儿歌童谣/ErGeTongYao</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">军旅红歌/JunLvHongGe</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">儿童佛乐/Nursery Rhyme</a></li>
+                                        <li>
+                    <a href="javascript:;">原创音乐/Original Music</a></li>
+                                        </ul>
+                </dd>
+            </dl>
+                        <dl>
+                <dt><strong>戏曲曲艺</strong></dt>
+                <dd>
+                    <ul>
+                                                            <li>
+                    <a href="javascript:;">曲艺/QuYi</a></li>
+                                        <li>
+                    <a href="javascript:;">戏曲/Chinese Opera</a></li>
+                                        <li>
+                    <a href="javascript:;">相声小品/XiangShengXiaopin</a></li>
+                                        <li>
+                    <a href="javascript:;">黄梅戏/Huangmei Tone</a></li>
+                                        <li class="hot">
+                    <a href="javascript:;">京剧/Beijing Opera</a></li>
+                                        <li>
+                    <a href="javascript:;">评剧/Ping Opera</a></li>
+                                        <li>
+                    <a href="javascript:;">评书/Story Telling</a></li>
+                                        <li>
+                    <a href="javascript:;">豫剧/Yu Opera</a></li>
+                                        <li>
+                    <a href="javascript:;">越剧/Yue Opera</a></li>
+                                        </ul>
+                </dd>
+            </dl>
+                    </div>
+    </div>
+
+
+<link href="../v5/r4/style/suggest.css" rel="stylesheet" type="text/css">
+<script src="../v5/r4/js/suggest.js"></script>
+<div class="footer center">
+    <!--<p class="footlink"> <a href="/faq/etc/about.html">关于一听</a> |--> <a href="../faq/etc/copyright.html">版权声明</a> <!--| <a href="/faq/etc/recruit.html">诚聘英才</a> -->| <a href="../faq/etc/contact_us.html">联系我们</a> | <a href="../index1.html">歌曲入库</a> | <a href="../faq/etc/history.html">历史合作</a> | <a href="../faq/etc/links.html">友情链接</a> | <a href="../faq/etc/help.html">帮助中心</a> <!--| <a href="https://h5.lezicartoon.cn">移动一听</a> </p>-->
+  <p class="copyright">&copy; 2003-2020   <a href="javascript:;" class="homepage">www.lezicartoon.cn</a> All Rights Reserved 沪ICP备19024260号-3</p>
+</div>
+
+<script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F32c12acc9a2efc3fa896bb3ebcd47ee7' type='text/javascript'%3E%3C/script%3E"));</script>
+<script src='../c-30001746.js' language='JavaScript'></script>
+<!--
+
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=14170" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    var bds_config = {
+        //'wbUid':1671108633,
+        'bdPopTitle':'杭州乐米动漫',
+        'snsKey':{'tqq':'403a778463634ece8f0c75a66c4e230d', 'tsina':'1435846576'},            
+        'bdPic':'//img.lezicartoon.cn/images/singer/7416.jpg'
+            };
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+</script>
+-->
+</body>
+</html>

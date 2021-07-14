@@ -1,0 +1,579 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="Keywords" content="古典音乐歌曲,,Classic,曲风,一听音乐,网提供免费在线音乐试听,mp3音乐下载">
+<meta name="Description" content="古典音乐,Classic,曲风,杭州乐米动漫提供免费在线音乐试听,mp3音乐下载">
+<meta content="all" name="robots">
+<title>古典音乐歌曲 , Classic - 杭州乐米动漫 </title>
+<link href="../v5/r5/style/common.css" rel="stylesheet" type="text/css">
+<link href="../v5/r4/style/genre.css" rel="stylesheet" type="text/css">
+<script src="../v5/r4/js/jquery.min.js"></script>
+<script src="../v5/r4/js/common.js"></script>
+<script src="../v5/r4/js/genre.js"></script>
+<script src="../js/ds.js"></script>
+</head>
+<body>
+    <div class="site-nav">
+        <div class="center">
+            <ul class="navlink">
+                <li><a href="javascript:;">保存到桌面</a></li>
+                <li><a href="index.html">曲风</a></li>
+                <li><a href="../rank.html">排行榜</a></li>
+                <li><a href="../archives/index.html">专辑库</a></li>
+            </ul>
+            <!--div class="bshare-custom"><a title="分享到微信" class="bshare-weixin"></a><a title="分享到新浪微博" class="bshare-sinaminiblog"></a><a title="分享到QQ空间" class="bshare-qzone"></a><a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div-->
+            <!--div class="sinaweibo_iframe">
+                <iframe width="120" height="24" frameborder="0" allowtransparency="true" marginwidth="0" marginheight="0" scrolling="no" border="0" src="https://widget.weibo.com/relationship/followbutton.php?language=zh_cn&width=136&height=24&uid=1671108633&style=2&btn=light&dpc=1"></iframe>
+            </div-->
+
+            <!--<ul style="height:19px;width:110px;padding-top:5px;float:left;"><li><a style="color:#333" href="https://h5.lezicartoon.cn" title="手机访问一听">手机版:h5.lezicartoon.cn</a></li></ul>-->
+            <ul class="siteaction" style="height:24px;padding-top:1px;"> 
+                <li class="favorite" style="margin-top:5px"><a onclick="AddFavorite(window.location,document.title)" href="javascript:void(0)">加入收藏</a></li>
+            </ul>
+        </div>
+    </div>
+               <script type="text/javascript" language="javascript">
+                function AddFavorite(sURL, sTitle) {
+                    sURL = encodeURI(sURL); 
+                try{   
+                    window.external.addFavorite(sURL, sTitle);   
+                }catch(e) {   
+                    try{   
+                        window.sidebar.addPanel(sTitle, sURL, "");   
+                    }catch (e) {   
+                        alert("加入收藏失败，请使用Ctrl+D进行添加,或手动在浏览器里进行设置.");
+         
+                        }   
+                    }
+                }
+              </script>
+    <!-- /site-nav -->
+    <div class="header center">
+        <div class="logo">
+            <h1>
+                <a href="../index.html" title="返回一听首页?">杭州乐米动漫</a>
+            </h1>
+        </div>
+        <div class="search">
+            <div class="option_selected" id="search_option_selected">
+                <a href="javascript:void(0);" id="st" target="_self">全部</a>
+            </div>
+            <div class="option_list" id="search_option_list">
+                <ul>
+                    <li class="selected"><a href="javascript:void(0);" target="_self">全部</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌曲</a></li>
+                    <li><a href="javascript:void(0);" target="_self">专辑</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌手</a></li>
+                    <li><a href="javascript:void(0);" target="_self">歌词</a></li>
+                </ul>
+            </div>
+            <div class="search_box"><form method="get" action="//so.lezicartoon.cn/all.do" onsubmit="return search(this);">
+                <input type="text" name="q" id="sq" x-webkit-speech="" x-webkit-grammar="builtin:search" onwebkitspeechchange="(function(e){e.target.form.submit();})(event)">
+                <button type="submit">搜索</button></form>
+            </div>
+        </div>
+        <div class="userbox">
+            <div class="user-guest" id="user-guest">
+                <p class="sitelogin">
+                    <a href="../register.html" class="link-reg">免费注册</a> -
+                    <a href="../login.html" class="link-login">登录</a>
+                </p>
+                <p class="pluginlogin">
+                    <a href="../oauth2/authorize-1435846576_http2F2Fmy..html" class="login-weibo">微博登录</a>
+                    <a href="../oauth2.0/show-Login_pc_101501725_https2F2.html" class="login-qq">QQ登录</a>
+                    <a href="../login.html" class="link-favor">我的收藏</a>
+                </p>
+            </div>
+            <div class="user-login" id="user-login">
+                <p class="user-welcome">
+                    <a href="../login.html" class="link-username" id="username"></a>
+                    <span id="greeting"></span>
+                </p>
+                <div class="user-action" id="user_login_action">
+                    <a href="../login.html" class="act-fav">我的收藏</a>
+                    <div style="display: none;">
+                        <a href="../login.html" target="_blank">用户中心</a>
+                        <a href="../login.html">退出登录</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+        (function(){
+            function cookie(k){
+                var v = "";
+                var s = k+"=",c = document.cookie,l=c.length;
+                if (l > 0) {
+                    var os = c.indexOf(s);
+                    if (os != -1) {
+                        os += s.length;
+                        var ed = c.indexOf(";", os);
+                        if (ed == -1) ed = l;
+                        v = decodeURIComponent(c.substring(os, ed)).replace(/\+/g,' ');
+                    }
+                }
+                return v;
+            }
+            function receive(){
+                var greeting,
+                    hour = new Date().getHours(),
+                    id = cookie('OneId'),
+                    user = cookie('OneNick')||cookie('OneUser');
+                if(hour >= 6 && hour < 12){
+                    greeting='上午好!';
+                }else if(hour>=12 && hour<18){
+                    greeting='下午好!';
+                }else if(hour>=18 && hour<23){
+                    greeting='晚上好!';
+                }else{
+                    greeting='夜深了 请注意休息!';
+                }
+                if(id && /^\d+$/.test(id) && user && /^[^<>\"\']+$/.test(user)){
+                    $('#username').html(user);
+                    $('#greeting').html(greeting);
+                    $('#user-login').show();
+                    $('#user-guest').hide();
+                }else{
+                    $('#user-guest').show();
+                    $('#user-login').hide();
+                }
+            }
+            (function(ctn) {
+                var timeId, time = 500,
+                    slideTime = 200,
+                    child = ctn.children("div"),
+                    upClass = "user-action-arrow-up";
+                ctn.hover(function() {
+                    timeId = setTimeout(function() {
+                        ctn.addClass(upClass);
+                        child.slideDown(slideTime);
+                    }, time);
+                }, function() {
+                    ctn.removeClass(upClass);
+                    clearTimeout(timeId);
+                    child.slideUp(slideTime);
+                });
+            })($("#user_login_action"));
+            receive();
+            setInterval(receive, 3000);
+        })();
+        </script>
+        <div class="nav">
+            <ul class="allcate" id="nav_list">
+                <li><a href="../index.html" target="_self"><span>首页</span></a></li>
+                <li><a href="../group.html" class="has-sub" target="_self"><i style="display:block" target="_self"></i><span>歌手</span></a></li>
+                <li><a href="../archives/index.html" target="_self"><span>专辑</span></a></li>
+                <li><a href="../rank.html" target="_self"><span>排行榜</span></a></li>
+                <li><a href="#" class="has-sub" target="_self"><span>高清MV</span></a></li>
+            </ul>
+            <div class="randplay">
+                <a href="../rand.html">随便一听</a>
+            </div>
+            <div class="nav-category">
+                <a href="index.html" target="_self">曲风分类</a>
+                <!--span>|</span>
+                <a href="/topic" target="_self">专题 &bull; 活动</a-->
+                
+            </div>
+        </div>
+        <div class="nav-secondary" id="nav_secondary">
+            <p style="display:block;">
+                <a href="../group/group0_2.html"><span>华语女歌手</span></a> |
+                <a href="../group/group0_1.html"><span>华语男歌手</span></a> |
+                <a href="../group/group0_3.html"><span>华语组合</span></a> |
+                <a href="../group/group3_15.html"><span>欧美女歌手</span></a> |
+                <a href="../group/group3_14.html"><span>欧美男歌手</span></a> |
+                <a href="../group/group3_16.html"><span>欧美组合</span></a> |
+                <a href="../group/group5_0.html"><span>韩国</span></a> |
+                <a href="../group/group4_0.html"><span>日本</span></a> |
+                <a href="../group/group6_0.html"><span>影视</span></a> |
+                <a href="../group/group7_0.html"><span>其他</span></a> |
+                <span><!--a class="misc" href="/fo/">佛教音乐</a><a href="/prenatal/">胎教/儿歌</a><a href="http://5.lezicartoon.cn">广场舞</a><a href="/xiqu/">戏曲</a--><a href="../mv/index.html">高清MV</a></span>
+            </p>
+            <p style="text-align:center;width:736px;">
+                 <a href="../mv/cate/3.html">港台歌手MV</a>  | <a href="../mv/cate/6.html">内地歌手MV</a> | <a href="../mv/cate/2.html">韩国歌手MV</a> | <a href="../mv/cate/5.html">日本歌手MV</a> | <a href="../mv/cate/4.html">欧美歌手MV</a> | <a href="../mv/search-E6BC94E594B1E4BC9A.html">演唱会视频</a>   
+            </p>
+        </div>
+    </div>
+    <!-- /header -->
+    <script>
+    (function(){
+        var menus = $("#nav_list").find("a.has-sub"),
+            subMenu = $("#nav_secondary");
+        $.each(menus, function(index, ele) {
+            $(ele).mouseover(function() {
+                menus.children("i").hide();
+                $(ele).children("i").show();
+                subMenu.children("p").hide()
+                            .eq(index).show();
+            });
+        });
+        /*var links = [{'name': '明星美图',  'path': 'star'}, 
+                     {'name': '街拍美女',  'path': 'jiepai'}, 
+                     /*{'name': '流行服饰',  'path': 'dress'}, 
+                     {'name': '时尚彩妆',  'path': 'face'}, 
+                     {'name': '潮流发型',  'path': 'tide'}, 
+                     {'name': '清新美女',  'path': 'meinv'}, 
+                     {'name': '车模美女',  'path': 'chemo'},
+                     {'name': '唯美女生',  'path': 'fennen'}, 
+                     {'name': '非主流女生',  'path': 'feizhuliu'}, 
+                     {'name': 'Show Girl',   'path': 'showgirl'}, 
+                     {'name': 'Cosplay女神', 'path': 'cosplay'},
+                     {'name': '婚纱秀欣赏',  'path': 'hunsha'}];
+        setInterval(function(){
+            var d = links[Math.ceil(Math.random()*links.length)-1];
+            $('#picture').attr('href', 'https://ent.lezicartoon.cn/pictures/'+d.path).text(d.name);
+        }, 10000);*/
+    })();
+    </script>
+<div class="pageTitle center">
+    <h2><a href="index.html">曲风</a> - <span>古典音乐/Classic</span></h2>
+    <a href="#" class="help" id="showGenreHelp">帮助</a>
+    <a href="javascript:;" class="randplay" target="_blank"><span>随便听几首</span></a>            <a href="javascript:;" target="_blank"><span style="line-height:36px;margin-left:20px;color:#f60;">推荐古典音乐大全</span></a>
+                    <ul class="pagemenu">
+                        <li class="thisclass"><a href="">热门推荐</a></li>
+                <li class="_genre_"><a href="javascript:;">全部歌曲</a></li>
+                <li class="_genre_"><a href="javascript:;">全部专辑</a></li>
+                <li class="_genre_"><a href="javascript:;">相关歌手</a></li>
+            </ul>
+</div>
+
+<div id="genreDescription">
+    <h2>曲风帮助</h2>
+    <p>广义的古典音乐是指西洋古典音乐，那些从西方中世纪开始至今的、在欧洲主流文化背景下创作的音乐，主要因其复杂多样的创作技术和所能承载的厚重内涵而有别于通俗音乐和民间音乐。 
+狭义的古典音乐是指古典主义音乐，是1750－1820年这一段时间的欧洲主流音乐，又称维也纳古典乐派。此乐派三位最著名的作曲家是海顿、莫扎特和贝多芬。</p>
+</div>
+
+
+<div class="center">
+    <div class="lbar">
+        <div class="nexus">
+            <dl>
+                <dt>相关曲风</dt>
+                <dd>
+                    <ul>
+                                        <li><a href="">古典音乐/Classic</a></li>
+                                        <li><a href="javascript:;">室内乐/Chamber Music</a></li>
+                                        <li><a href="javascript:;">独奏/Solo</a></li>
+                                        <li><a href="javascript:;">歌剧/Opera</a></li>
+                                        <li><a href="javascript:;">艺术歌曲/Art Music</a></li>
+                                        <li><a href="javascript:;">交响乐/Symphony</a></li>
+                                        <li><a href="javascript:;">协奏曲/Concerto</a></li>
+                                        <li><a href="javascript:;">奏鸣曲/Sonata</a></li>
+                                        <li><a href="javascript:;">Vocal/Vocal</a></li>
+                                        <li><a href="javascript:;">现代基督/Contemporary Christian</a></li>
+                                        </ul>
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="rbox">
+                        <div class="cTitle">
+            <h3>推荐歌曲</h3>
+            <p><a href="javascript:;">全部歌曲</a></p>
+        </div>
+        <div class="songList" id="song-list">
+            <ul>
+                                    <li><input name="checked" type="checkbox" value="1094401"><a href="javascript:;" target="_1ting" title="梁祝 小提琴独奏-未知">梁祝 小提琴独奏-未知</a> - <a href="javascript:;" target="_blank" title="中国古典乐曲">中国古典乐曲</a></li>
+                        <li><input name="checked" type="checkbox" value="1094490"><a href="javascript:;" target="_1ting" title="二泉映月 二胡音乐-周钰">二泉映月 二胡音乐-周钰</a> - <a href="javascript:;" target="_blank" title="中国古典乐曲">中国古典乐曲</a></li>
+                        <li><input name="checked" type="checkbox" value="1112619"><a href="javascript:;" target="_1ting" title="Ave Maria">Ave Maria</a> - <a href="javascript:;" target="_blank" title="马友友">马友友</a></li>
+                        <li><input name="checked" type="checkbox" value="1112629"><a href="javascript:;" target="_1ting" title="Romance For Cello And Piano">Romance For Cello And Piano</a> - <a href="javascript:;" target="_blank" title="马友友">马友友</a></li>
+                        <li><input name="checked" type="checkbox" value="1112633"><a href="javascript:;" target="_1ting" title="The Wounded Heart, Op. 34, No. 1 (From 'elegiac Melodies')">The Wounded Heart, Op. 34, No. 1 (From 'elegiac Melodies')</a> - <a href="javascript:;" target="_blank" title="马友友">马友友</a></li>
+                        <li><input name="checked" type="checkbox" value="1094442"><a href="javascript:;" target="_1ting" title="春江花月夜 古筝与琵琶合奏-林石城/李萌">春江花月夜 古筝与琵琶合奏-林石城/李萌</a> - <a href="javascript:;" target="_blank" title="中国古典乐曲">中国古典乐曲</a></li>
+                        <li><input name="checked" type="checkbox" value="1095730"><a href="javascript:;" target="_1ting" title="枉凝眉 笛、箫演奏-伍国忠">枉凝眉 笛、箫演奏-伍国忠</a> - <a href="javascript:;" target="_blank" title="中国古典乐曲">中国古典乐曲</a></li>
+                        <li><input name="checked" type="checkbox" value="1096004"><a href="javascript:;" target="_1ting" title="牧羊曲 古筝乐曲-段银莹/周桃桃">牧羊曲 古筝乐曲-段银莹/周桃桃</a> - <a href="javascript:;" target="_blank" title="中国古典乐曲">中国古典乐曲</a></li>
+                        <li><input name="checked" type="checkbox" value="1096040"><a href="javascript:;" target="_1ting" title="但愿人长久 经典古诗词-邓丽君">但愿人长久 经典古诗词-邓丽君</a> - <a href="javascript:;" target="_blank" title="中国古典乐曲">中国古典乐曲</a></li>
+                        <li><input name="checked" type="checkbox" value="1112620"><a href="javascript:;" target="_1ting" title="Lullaby (Wiegenlied, Op. 49, No. 4)">Lullaby (Wiegenlied, Op. 49, No. 4)</a> - <a href="javascript:;" target="_blank" title="马友友">马友友</a></li>
+                        <li><input name="checked" type="checkbox" value="1112622"><a href="javascript:;" target="_1ting" title="Papillon, Op. 77">Papillon, Op. 77</a> - <a href="javascript:;" target="_blank" title="马友友">马友友</a></li>
+                        <li><input name="checked" type="checkbox" value="1112623"><a href="javascript:;" target="_1ting" title="Tango Jalousie">Tango Jalousie</a> - <a href="javascript:;" target="_blank" title="马友友">马友友</a></li>
+                        <li><input name="checked" type="checkbox" value="1112631"><a href="javascript:;" target="_1ting" title="Il Bell'antonio, Tema Iii">Il Bell'antonio, Tema Iii</a> - <a href="javascript:;" target="_blank" title="马友友">马友友</a></li>
+                        <li><input name="checked" type="checkbox" value="1112637"><a href="javascript:;" target="_1ting" title="Ave Maria, Op. 52, No. 6 (Ellens Gesang Iii From 'ein Fräulein Vom See')">Ave Maria, Op. 52, No. 6 (Ellens Gesang Iii From 'ein Fräulein Vom See')</a> - <a href="javascript:;" target="_blank" title="马友友">马友友</a></li>
+                        <li><input name="checked" type="checkbox" value="459757"><a href="javascript:;" target="_1ting" title="蓝色多瑙河舞曲">蓝色多瑙河舞曲</a> - <a href="javascript:;" target="_blank" title="古典音乐">古典音乐</a></li>
+                        <li><input name="checked" type="checkbox" value="1094395"><a href="javascript:;" target="_1ting" title="梁祝 二胡乐曲-依珩">梁祝 二胡乐曲-依珩</a> - <a href="javascript:;" target="_blank" title="中国古典乐曲">中国古典乐曲</a></li>
+                        <li><input name="checked" type="checkbox" value="1095703"><a href="javascript:;" target="_1ting" title="天仙配 黄梅戏-未知">天仙配 黄梅戏-未知</a> - <a href="javascript:;" target="_blank" title="中国古典乐曲">中国古典乐曲</a></li>
+                        <li><input name="checked" type="checkbox" value="1112625"><a href="javascript:;" target="_1ting" title="Was It A Dream?, Op. 37, No. 4">Was It A Dream?, Op. 37, No. 4</a> - <a href="javascript:;" target="_blank" title="马友友">马友友</a></li>
+                        <li><input name="checked" type="checkbox" value="1112627"><a href="javascript:;" target="_1ting" title="Salut D'amour, Op. 12">Salut D'amour, Op. 12</a> - <a href="javascript:;" target="_blank" title="马友友">马友友</a></li>
+                        <li><input name="checked" type="checkbox" value="233499"><a href="javascript:;" target="_1ting" title="蓝色多瑙河">蓝色多瑙河</a> - <a href="javascript:;" target="_blank" title="助眠音乐">助眠音乐</a></li>
+                        <li><input name="checked" type="checkbox" value="1094399"><a href="javascript:;" target="_1ting" title="梁祝 古筝演奏-朱杏茹/上海交响乐团">梁祝 古筝演奏-朱杏茹/上海交响乐团</a> - <a href="javascript:;" target="_blank" title="中国古典乐曲">中国古典乐曲</a></li>
+                        <li><input name="checked" type="checkbox" value="1112621"><a href="javascript:;" target="_1ting" title="Songs My Mother Taught Me (From 'gypsy Songs', Op. 55, No. 4)">Songs My Mother Taught Me (From 'gypsy Songs', Op. 55, No. 4)</a> - <a href="javascript:;" target="_blank" title="马友友">马友友</a></li>
+                        <li><input name="checked" type="checkbox" value="1117954"><a href="javascript:;" target="_1ting" title="How Samba">How Samba</a> - <a href="javascript:;" target="_blank" title="SEMIFUSA">SEMIFUSA</a></li>
+                        <li><input name="checked" type="checkbox" value="1117955"><a href="javascript:;" target="_1ting" title="Mystic Forest">Mystic Forest</a> - <a href="javascript:;" target="_blank" title="SEMIFUSA">SEMIFUSA</a></li>
+                        <li><input name="checked" type="checkbox" value="1095738"><a href="javascript:;" target="_1ting" title="枉凝眉 影视歌曲-陈力">枉凝眉 影视歌曲-陈力</a> - <a href="javascript:;" target="_blank" title="中国古典乐曲">中国古典乐曲</a></li>
+                        <li><input name="checked" type="checkbox" value="1117953"><a href="javascript:;" target="_1ting" title="Keep the Bow Rolling">Keep the Bow Rolling</a> - <a href="javascript:;" target="_blank" title="SEMIFUSA">SEMIFUSA</a></li>
+                        <li><input name="checked" type="checkbox" value="1117957"><a href="javascript:;" target="_1ting" title="OL Tango">OL Tango</a> - <a href="javascript:;" target="_blank" title="SEMIFUSA">SEMIFUSA</a></li>
+                        <li><input name="checked" type="checkbox" value="1117958"><a href="javascript:;" target="_1ting" title="Nien Nu Jiao">Nien Nu Jiao</a> - <a href="javascript:;" target="_blank" title="SEMIFUSA">SEMIFUSA</a></li>
+                        <li><input name="checked" type="checkbox" value="1117961"><a href="javascript:;" target="_1ting" title="Pop Rocks (Bonus Track)">Pop Rocks (Bonus Track)</a> - <a href="javascript:;" target="_blank" title="SEMIFUSA">SEMIFUSA</a></li>
+                        <li><input name="checked" type="checkbox" value="1117952"><a href="javascript:;" target="_1ting" title="Let the Groove Begin">Let the Groove Begin</a> - <a href="javascript:;" target="_blank" title="SEMIFUSA">SEMIFUSA</a></li>
+                                    </ul>
+            <div class="listAction">
+                <p>
+                    <a href="javascript:void(0);" class="select" onclick="fns.select();">全/反选</a>
+                    <a href="javascript:void(0);" class="play" onclick="fns.play();">播放</a>
+                    <a href="javascript:void(0);" class="add" onmousedown="fns.add();" onmouseup="fns.addlist();">加入列表</a>
+                </p>
+            </div>
+        </div>
+        <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=8,0,0,0" width="0" height="0" id="play_list_send" align="middle"><param name="allowScriptAccess" value="always"><param name="allowFullScreen" value="false"><param name="movie" value="/v5/flash/play_list_send.swf"><param name="quality" value="high"><embed src="../v5/flash/play_list_send.swf" quality="high" width="0" height="0" name="play_list_send" align="middle" allowscriptaccess="always" allowfullscreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer"></object>
+        <div>
+        <!-- u1578189 -->
+        <script type="text/javascript" src="../rmvjnovou.js"></script>
+        </div>
+
+        <div class="cTitle">
+            <h3>推荐专辑</h3>
+            <p><a href="javascript:;">全部专辑</a></p>
+        </div>
+        <div class="albumList">
+            <ul>
+                                    <li>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../images/special/157/s150_9d242201e7502196837c20222db.jpg" width="150" height="150" class="albumPic" alt="世界名曲百首">
+                    <span class="albumName">世界名曲百首</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" title="古典音乐" target="_blank">古典音乐</a></span>
+                <span class="albumDate"><a href="javascript:;" target="_blank">2006-03-25</a></span>
+            </li>
+                        <li>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../images/special/374/s150_a440cc6c2f3e76f63384b9012bd.jpg" width="150" height="150" class="albumPic" alt="二泉映月">
+                    <span class="albumName">二泉映月</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" title="中国古典乐曲" target="_blank">中国古典乐曲</a></span>
+                <span class="albumDate"><a href="javascript:;" target="_blank">2015-07-03</a></span>
+            </li>
+                        <li>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../images/special/6/s150_e29feb2431b8dde95f64f64b387.jpg" width="150" height="150" class="albumPic" alt="钢琴协奏曲（一）-莫扎特">
+                    <span class="albumName">钢琴协奏曲（一）-莫扎特</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" title="古典音乐" target="_blank">古典音乐</a></span>
+                <span class="albumDate"><a href="javascript:;" target="_blank">2014-03-17</a></span>
+            </li>
+                        <li>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../images/special/374/s150_8c722420b7490caba5cf5ce1b66.jpg" width="150" height="150" class="albumPic" alt="春江花月夜">
+                    <span class="albumName">春江花月夜</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" title="中国古典乐曲" target="_blank">中国古典乐曲</a></span>
+                <span class="albumDate"><a href="javascript:;" target="_blank">2015-07-03</a></span>
+            </li>
+                        <li>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../images/special/204/s150_77254cd4a4da1a33b8faf89c4cb.jpg" width="150" height="150" class="albumPic" alt="肖邦">
+                    <span class="albumName">肖邦</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" title="郎朗" target="_blank">郎朗</a></span>
+                <span class="albumDate"><a href="javascript:;" target="_blank">2012-10-22</a></span>
+            </li>
+                        <li>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../images/special/374/s150_2f06b17427718e01e54be1cfe46.jpg" width="150" height="150" class="albumPic" alt="梁祝">
+                    <span class="albumName">梁祝</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" title="中国古典乐曲" target="_blank">中国古典乐曲</a></span>
+                <span class="albumDate"><a href="javascript:;" target="_blank">2015-07-03</a></span>
+            </li>
+                        <li>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../images/special/6/s150_1e49c11066b23ee347a13de7f6c.jpg" width="150" height="150" class="albumPic" alt="世界著名古典舞曲">
+                    <span class="albumName">世界著名古典舞曲</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" title="古典音乐" target="_blank">古典音乐</a></span>
+                <span class="albumDate"><a href="javascript:;" target="_blank"></a></span>
+            </li>
+                        <li>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../images/special/75/s150_f84ef5082b0420f74cd2546b986.jpg" width="150" height="150" class="albumPic" alt="黄金古典 贝多芬">
+                    <span class="albumName">黄金古典 贝多芬</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" title="古典音乐" target="_blank">古典音乐</a></span>
+                <span class="albumDate"><a href="javascript:;" target="_blank">2006-01-30</a></span>
+            </li>
+                        <li>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../images/special/375/s150_0d4820848860cfcb47a6542a9ba.jpg" width="150" height="150" class="albumPic" alt="阳关三叠">
+                    <span class="albumName">阳关三叠</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" title="中国古典乐曲" target="_blank">中国古典乐曲</a></span>
+                <span class="albumDate"><a href="javascript:;" target="_blank">2015-07-06</a></span>
+            </li>
+                        <li>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../images/special/59/s150_f35b6eb620441dd87c28520b007.jpg" width="150" height="150" class="albumPic" alt="肖邦夜曲全集 I (1-10)">
+                    <span class="albumName">肖邦夜曲全集 I (1-10)</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" title="古典音乐" target="_blank">古典音乐</a></span>
+                <span class="albumDate"><a href="javascript:;" target="_blank">2008-04-30</a></span>
+            </li>
+                        <li>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../images/special/59/s150_64921cf79e1525d1532bc5ff8bc.jpg" width="150" height="150" class="albumPic" alt="柴科夫斯基 第五交响曲 1812序曲">
+                    <span class="albumName">柴科夫斯基 第五交响曲 1812序曲</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" title="古典音乐" target="_blank">古典音乐</a></span>
+                <span class="albumDate"><a href="javascript:;" target="_blank">2008-04-28</a></span>
+            </li>
+                        <li>
+                <a href="javascript:;" class="albumLink" target="_blank">
+                    <img src="../images/special/75/s150_cd95c9ebd6df8a2e36d2432d69d.jpg" width="150" height="150" class="albumPic" alt="Ein Straussfest I&II 施特劳斯节庆1&2(红衫仔)">
+                    <span class="albumName">Ein Straussfest I&II 施特劳斯节庆1&2(红衫仔)</span>
+                </a>
+                <a href="javascript:;" class="albumPlay" target="_blank">
+                    <span>播放整张专辑</span>
+                </a>
+                <span class="singerName"><a href="javascript:;" title="古典音乐" target="_blank">古典音乐</a></span>
+                <span class="albumDate"><a href="javascript:;" target="_blank">1985-03-01</a></span>
+            </li>
+                                    </ul>
+        </div>
+
+
+        <div class="cTitle">
+            <h3>推荐歌手</h3>
+            <p><a href="javascript:;">全部相关歌手</a></p>
+        </div>
+        <div class="singerList">
+            <ul>
+                                    <li>
+                    <a href="javascript:;" class="singerPic" title="中国古典乐曲" target="_blank"><img src="../images/singer/s75_32903.jpg" width="75" height="100" alt="中国古典乐曲"></a>
+                    <a href="javascript:;" class="singerName" title="中国古典乐曲" target="_blank">中国古典乐曲</a>
+            </li>
+                        <li>
+                    <a href="javascript:;" class="singerPic" title="古典音乐" target="_blank"><img src="../images/singer/s75_927.jpg" width="75" height="100" alt="古典音乐"></a>
+                    <a href="javascript:;" class="singerName" title="古典音乐" target="_blank">古典音乐</a>
+            </li>
+                        <li>
+                    <a href="javascript:;" class="singerPic" title="Jascha Heifetz" target="_blank"><img src="../images/singer/s75_12793.jpg" width="75" height="100" alt="Jascha Heifetz"></a>
+                    <a href="javascript:;" class="singerName" title="Jascha Heifetz" target="_blank">Jascha Heifetz</a>
+            </li>
+                        <li>
+                    <a href="javascript:;" class="singerPic" title="多明戈" target="_blank"><img src="../images/singer/s75_27698.jpg" width="75" height="100" alt="多明戈"></a>
+                    <a href="javascript:;" class="singerName" title="多明戈" target="_blank">多明戈</a>
+            </li>
+                        <li>
+                    <a href="javascript:;" class="singerPic" title="Russell Watson" target="_blank"><img src="../images/singer/s75_8655.jpg" width="75" height="100" alt="Russell Watson"></a>
+                    <a href="javascript:;" class="singerName" title="Russell Watson" target="_blank">Russell Watson</a>
+            </li>
+                        <li>
+                    <a href="javascript:;" class="singerPic" title="E.S. Posthumus" target="_blank"><img src="../images/singer/s75_11664.jpg" width="75" height="100" alt="E.S. Posthumus"></a>
+                    <a href="javascript:;" class="singerName" title="E.S. Posthumus" target="_blank">E.S. Posthumus</a>
+            </li>
+                        <li>
+                    <a href="javascript:;" class="singerPic" title="川井郁子" target="_blank"><img src="../images/singer/s75_13367.jpg" width="75" height="100" alt="川井郁子"></a>
+                    <a href="javascript:;" class="singerName" title="川井郁子" target="_blank">川井郁子</a>
+            </li>
+                        <li>
+                    <a href="javascript:;" class="singerPic" title="古澤巌" target="_blank"><img src="../images/singer/s75_14426.jpg" width="75" height="100" alt="古澤巌"></a>
+                    <a href="javascript:;" class="singerName" title="古澤巌" target="_blank">古澤巌</a>
+            </li>
+                        <li>
+                    <a href="javascript:;" class="singerPic" title="Ólafur Arnalds" target="_blank"><img src="../images/singer/s75_15362.jpg" width="75" height="100" alt="Ólafur Arnalds"></a>
+                    <a href="javascript:;" class="singerName" title="Ólafur Arnalds" target="_blank">Ólafur Arnalds</a>
+            </li>
+                        <li>
+                    <a href="javascript:;" class="singerPic" title="宮本笑里" target="_blank"><img src="../images/singer/s75_15422.jpg" width="75" height="100" alt="宮本笑里"></a>
+                    <a href="javascript:;" class="singerName" title="宮本笑里" target="_blank">宮本笑里</a>
+            </li>
+                        <li>
+                    <a href="javascript:;" class="singerPic" title="Whisper Of Tears" target="_blank"><img src="../images/singer/s75_15539.jpg" width="75" height="100" alt="Whisper Of Tears"></a>
+                    <a href="javascript:;" class="singerName" title="Whisper Of Tears" target="_blank">Whisper Of Tears</a>
+            </li>
+                        <li>
+                    <a href="javascript:;" class="singerPic" title="Glenn Gould" target="_blank"><img src="../images/singer/s75_16572.jpg" width="75" height="100" alt="Glenn Gould"></a>
+                    <a href="javascript:;" class="singerName" title="Glenn Gould" target="_blank">Glenn Gould</a>
+            </li>
+                        <li>
+                    <a href="javascript:;" class="singerPic" title="Saul" target="_blank"><img src="../images/singer/s75_16605.jpg" width="75" height="100" alt="Saul"></a>
+                    <a href="javascript:;" class="singerName" title="Saul" target="_blank">Saul</a>
+            </li>
+                        <li>
+                    <a href="javascript:;" class="singerPic" title="2Cellos" target="_blank"><img src="../images/singer/s75_16610.jpg" width="75" height="100" alt="2Cellos"></a>
+                    <a href="javascript:;" class="singerName" title="2Cellos" target="_blank">2Cellos</a>
+            </li>
+                                    </ul>
+        </div>    </div>
+</div>
+<link href="../v5/r4/style/suggest.css" rel="stylesheet" type="text/css">
+<script src="../v5/r4/js/suggest.js"></script>
+<div class="footer center">
+    <!--<p class="footlink"> <a href="/faq/etc/about.html">关于一听</a> |--> <a href="../faq/etc/copyright.html">版权声明</a> <!--| <a href="/faq/etc/recruit.html">诚聘英才</a> -->| <a href="../faq/etc/contact_us.html">联系我们</a> | <a href="../index1.html">歌曲入库</a> | <a href="../faq/etc/history.html">历史合作</a> | <a href="../faq/etc/links.html">友情链接</a> | <a href="../faq/etc/help.html">帮助中心</a> <!--| <a href="https://h5.lezicartoon.cn">移动一听</a> </p>-->
+  <p class="copyright">&copy; 2003-2020   <a href="javascript:;" class="homepage">www.lezicartoon.cn</a> All Rights Reserved 沪ICP备19024260号-3</p>
+</div>
+
+<script type="text/javascript">var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F32c12acc9a2efc3fa896bb3ebcd47ee7' type='text/javascript'%3E%3C/script%3E"));</script>
+<script src='../c-30001746.js' language='JavaScript'></script>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=14170"></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+    var bds_config = {
+        //'wbUid':1671108633,
+        'bdPopTitle':'杭州乐米动漫',
+        'snsKey':{'tqq':'403a778463634ece8f0c75a66c4e230d', 'tsina':'1435846576'},            
+        'bdPic':'//img.lezicartoon.cn/images/singer/7416.jpg'
+            };
+	document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + new Date().getHours();
+</script>
+    <!-- 广告位：左下角悬浮 -->
+    <script>
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div id="' + s + '"></div>');
+        (window.slotbydup=window.slotbydup || []).push({
+            id: '3221626',
+            container: s,
+            size: '300,250',
+            display: 'float'
+        });
+    })();
+    </script>
+
+    <!-- 广告位：富媒体补余 -->
+    <script>
+    (function() {
+        var s = "_" + Math.random().toString(36).slice(2);
+        document.write('<div id="' + s + '"></div>');
+        (window.slotbydup=window.slotbydup || []).push({
+            id: '2861847',
+            container: s,
+            size: '300,250',
+            display: 'float'
+        });
+    })();
+    </script>
+</body>
+</html>

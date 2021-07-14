@@ -1,0 +1,845 @@
+
+
+body
+{
+    font:12px/1.5 Tahoma, Geneva, sans-serif;
+    background:url(../images/background.png) repeat-x;
+    margin:0;
+}
+
+td
+{
+    font-size:.8em;
+}
+
+a:link,a:visited
+{
+    color:#0066cc;
+    text-decoration:none;
+}
+
+a:hover
+{
+    color:#000;
+    background:#FFF;
+    text-decoration:underline;
+}
+
+pre
+{
+    background:#eee;
+    border:1px solid #ddd;
+    overflow:auto;
+    padding:0.5em;
+}
+
+ul
+{
+    list-style:square;
+}
+
+li
+{
+    list-style:none;
+}
+
+abbr
+{
+    border-bottom:1px dotted #999;
+}
+
+.main-content a:hover
+{
+    color:#06c;
+    text-decoration:underline;
+}
+
+#content
+{
+    width:960px;
+    margin:auto;
+}
+
+#header
+{
+    width:940px;
+    height:44px;
+    border-bottom:1px solid #C9E9FD;
+    overflow:hidden;
+    position:relative;
+    padding:20px 10px;
+}
+
+#top
+{
+    height:44px;
+}
+
+.log
+{
+    right:10px;
+    top:4px;
+    display:block;
+    position:absolute;
+    margin:0;
+}
+
+.log li
+{
+    list-style:none;
+    padding:5px;
+}
+
+#header ul
+{
+    list-style:none;
+    font-size:1em;
+    float:right;
+    padding:0;
+}
+
+#header li
+{
+    float:right;
+    margin:0;
+}
+
+.problem
+{
+    margin:14px 0 0;
+}
+
+.problem li
+{
+    border-bottom:1px dashed #CCC;
+    margin-right:10px;
+    padding:4px;
+}
+
+#header h1
+{
+    font-size:1.5em;
+    height:1.2em;
+    float:left;
+    margin:0 22px 0 0;
+    padding:0;
+}
+
+#header #top .service
+{
+    width:88px;
+    height:22px;
+    float:left;
+    margin:12px 20px 0 0;
+}
+
+#header #top #q
+{
+    width:256px;
+    height:26px;
+    border:none;
+    background:url(../images/searchbox.jpg) no-repeat;
+    overflow:hidden;
+    line-height:21px;
+    padding-left:4px;
+    float:left;
+    font-size:12px;
+    font-weight:400;
+    margin:12px 10px 0 0;
+}
+
+#header #top button
+{
+    width:88px;
+    height:26px;
+    background:url(../images/searchbutton.png) no-repeat;
+    border:none;
+    text-indent:-9999px;
+    overflow:hidden;
+    margin-top:12px;
+    float:left;
+}
+
+#captcha-wrap
+{
+    position:absolute;
+    margin:3px 0 0 0;
+}
+
+
+#captcha-wrap img
+{
+    border:1px solid #000;
+}
+
+.submit
+{
+    width:88px;
+    height:26px;
+    border:none;
+    background:url(../images/submit.png) no-repeat;
+    display:block;
+    text-indent:-9999px;
+    margin:0 auto;
+}
+
+.submitt
+{
+    width:88px;
+    height:26px;
+    border:none;
+    background:url(https://www.1ting.com/faq/images/sutping.png) no-repeat;
+    display:block;
+    text-indent:-9999px;
+    margin:0 auto;
+}
+
+.inputfield
+{
+    font-size:14px;
+    float:left;
+    border:1px solid #DBDBDB;
+    width:150px;
+    margin-bottom:20px;
+}
+
+.mostpupularsearcheslist li
+{
+    width:100px;
+    height:23px;
+    line-height:23px;
+    text-align:center;
+    float:left;
+}
+
+#header h1 a
+{
+    color:#000;
+    border:0;
+    background:none;
+}
+
+#categories
+{
+    width:154px;
+    padding:18px 10px 10px;
+}
+
+#categories ul
+{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+#categories ul ul,#categories ul ul ul,#categories ul ul ul ul,#categories ul ul ul ul ul
+{
+    border-top:0;
+}
+
+#categories li a
+{
+    display:block;
+    border-bottom:1px solid #ECECEC;
+    text-decoration:none;
+    height:100%;
+    color:#000;
+    padding:.5em 0 .5em .5em;
+}
+
+#categories a.current
+{
+    background-color:#FFF;
+    border-bottom:medium none;
+}
+
+#categories li ul a
+{
+    padding-left:1em;
+}
+
+#categories ul ul ul a
+{
+    padding-left:2em;
+}
+
+#categories ul ul ul ul a
+{
+    padding-left:3em;
+}
+
+#categories ul ul ul ul ul a
+{
+    padding-left:4em;
+}
+
+#categories .active
+{
+    font-weight:700;
+    color:#000;
+    background-color:#FFF;
+}
+
+#langform
+{
+    padding:.5em 0;
+}
+
+label
+{
+    display:block;
+}
+
+.leftcolumn .inputfield
+{
+    width:98%;
+}
+
+.leftcolumn .language
+{
+    width:100%;
+}
+
+.openquestions
+{
+    width:98%;
+    font-size:12px;
+    line-height:23px;
+}
+
+.openquestions a
+{
+    font-size:12px;
+}
+
+.openquestions tr td
+{
+    text-align:center;
+    font-size:12px;
+}
+
+.loginform
+{
+    margin-top:20px;
+    line-height:26px;
+}
+
+.page a
+{
+    margin-right:20px;
+    line-height:23px;
+}
+
+.page span
+{
+    margin-right:20px;
+}
+
+#page
+{
+    padding:10px 0 0;
+}
+
+.loginform_1 span
+{
+    width:100px;
+    float:left;
+    text-align:right;
+    line-height:26px;
+}
+
+.loginform_1
+{
+    height:26px;
+    overflow:hidden;
+    margin-bottom:15px;
+}
+
+.loginform_1 input
+{
+    float:left;
+    border:1px solid #DBDBDB;
+    width:150px;
+    margin-bottom:20px;
+}
+
+.logapp
+{
+    width:180px;
+    overflow:hidden;
+    margin:0 auto;
+}
+
+.logapp a
+{
+    float:left;
+}
+
+.regform
+{
+    margin:20px 0 0;
+}
+
+#topten,#latest,#tagcloud,#allcategoryarticles,#stickyrecords
+{
+    margin-bottom:1em;
+}
+
+#topten h3,#latest h3,#tagcloud h3,#allcategoryarticles h3,#stickyrecords h3
+{
+    font-size:135%;
+    border-radius:5px 5px 5px 5px;
+    margin:0;
+    padding:4px 4px 2px;
+}
+
+#latest h3,#topten h3
+{
+    font-size:14px;
+    border-bottom:1px solid #ECECEC;
+}
+
+#topten img,#latest img
+{
+    float:right;
+    margin-top:-16px;
+}
+
+#topten ul,#latest ul
+{
+    list-style-type:decimal;
+    background:url(../images/numeral.jpg) no-repeat 0 14px;
+    list-style:none;
+    margin:0;
+    padding:5px 0 0;
+}
+
+#latest_ul
+{
+    margin-top:10px;
+}
+
+#latest_ul li
+{
+    line-height:27px;
+    border-bottom:1px dashed #DBDBDB;
+}
+
+#latest ul li,#topten ul li
+{
+    width:183px;
+    overflow:hidden;
+    height:25px;
+    background:url(../images/libackground.jpg) no-repeat bottom;
+    line-height:25px;
+    font-size:12px;
+    padding:0 0 0 17px;
+}
+
+#tagcloud .relevance1
+{
+    font-size:80%;
+}
+
+#tagcloud .relevance2
+{
+    font-size:100%;
+}
+
+#tagcloud .relevance3
+{
+    font-size:120%;
+}
+
+#tagcloud .relevance4
+{
+    font-size:140%;
+}
+
+#tagcloud .relevance5
+{
+    font-size:160%;
+}
+
+.main-content
+{
+    background:url(../images/centerbj.jpg) #fff repeat-y;
+    margin:0;
+    padding:18px 20px 10px 200px;
+}
+
+.columns
+{
+    padding:0 0 30px;
+}
+
+.p_answer
+{
+    background:#F7F7F7;
+}
+
+.main-content h1,.main-content h2,.main-content h3,.main-content h4,.main-content h5
+{
+    margin:0;
+}
+
+.main-content h2
+{
+    font-size:18px;
+}
+
+.main-content pre,.main-content code
+{
+    white-space:pre;
+}
+
+.main-content #solution_id
+{
+    float:right;
+}
+
+.main-content table
+{
+    overflow:scroll;
+}
+
+.main-content form
+{
+    width:99%;
+}
+
+.main-content label.left
+{
+    width:150px;
+    margin-right:0.3em;
+}
+
+.main-content label.left1
+{
+    width:auto;
+}
+
+.main-content form br
+{
+    clear:both;
+}
+
+#article_category
+{
+    font-size:1.5em;
+}
+
+#search
+{
+    width:auto;
+    margin:0;
+    padding:0;
+}
+
+#search input,#instantfield
+{
+    vertical-align:middle;
+    font-size:1.5em;
+    font-weight:700;
+}
+
+.leftcolumn
+{
+    float:left;
+    width:184px;
+    margin-bottom:1em;
+}
+
+.rightcolumn
+{
+    position:static;
+    float:right;
+    width:200px;
+    margin-bottom:1em;
+    overflow:hidden;
+    margin-left:10px;
+    padding:14px 0 0;
+}
+
+.rightcolumn ol
+{
+    margin:0 0 0 25px;
+    padding:0;
+}
+
+html>body .rightcolumn ol
+{
+    margin:0 0 0 20px;
+    padding:0;
+}
+
+#footer
+{
+    margin-top:1em;
+    clear:both;
+    border-top:1px solid #DEEFFA;
+    color:#aaa;
+    font-size:12px;
+    padding-top:5px;
+}
+
+.footer p
+{
+    line-height:25px;
+    text-align:center;
+    margin:0;
+    padding:0;
+}
+
+#footer a:link,#footer a:visited
+{
+    font-size:12px;
+    margin:0 6px;
+}
+
+.footer a:hover
+{
+    text-decoration:underline;
+}
+
+.copyright
+{
+    color:#888;
+    font-size:12px;
+    font:12px "Trebuchet MS","微软雅黑", "宋体", "Helvetica Neue", Helvetica,Verdana, Arial, sans-serif;
+}
+
+#footer .copyright a
+{
+    color:#09F;
+    font-weight:700;
+}
+
+#footer p.support
+{
+    color:#CCC;
+    line-height:31px;
+}
+
+#footer p.support span a
+{
+    color:#888;
+}
+
+#footer p.support span
+{
+    color:#888;
+    margin:0 6px;
+}
+
+.main-content ul
+{
+    width:95%;
+    overflow:hidden;
+    margin:0;
+    padding:0 0 30px 1em;
+}
+
+.phpmyfaq_ull li
+{
+    list-style:none;
+    line-height:23px;
+}
+
+.phpmyfaq_ull li a
+{
+    font-size:14px;
+    font-weight:700;
+}
+
+.invisible
+{
+    display:none;
+}
+
+a.rss:link,a.rss:visited
+{
+    background:#ff6a00;
+    color:#fff;
+    font:9px normal Verdana, sans-serif;
+    border-top:1px solid #ffb627;
+    border-left:1px solid #ffb627;
+    border-right:1px solid #ab4800;
+    border-bottom:1px solid #ab4800;
+    text-transform:uppercase;
+    vertical-align:middle;
+    padding:0 2px;
+}
+
+.clearing
+{
+    clear:both;
+    display:none;
+}
+
+.highlight
+{
+    background:#f0ff00;
+    font-weight:700;
+    padding:0 .2em;
+}
+
+.voting
+{
+    width:99%;
+    overflow:hidden;
+    float:left;
+}
+
+.yes a
+{
+    color:#06C;
+}
+
+.disc li
+{
+    width:100px;
+    overflow:hidden;
+    height:25px;
+    float:left;
+    list-style:none;
+    margin-right:30px;
+    text-align:center;
+}
+
+.disc li a:hover
+{
+    text-decoration:underline;
+    color:#06C;
+}
+
+#action
+{
+    text-align:center;
+    margin:5px;
+}
+
+#username
+{
+    border:1px solid #000;
+}
+
+.phpmyfaq_ull
+{
+    line-height:23px;
+}
+
+h3 a:link,h3 a:visited,a img,img
+{
+    border:0;
+}
+
+h3 img,p #action img
+{
+    vertical-align:middle;
+}
+
+form,#categories li
+{
+    margin:0;
+    padding:0;
+}
+
+#useronline,#version,#copyright
+{
+    margin-top:1em;
+    text-align:center;
+}
+
+.openquestions tr th,.page
+{
+    text-align:center;
+}
+
+.main-content .disc li,.main-content .product li
+{
+    width:100px;
+    overflow:hidden;
+    height:25px;
+    float:left;
+    list-style:none;
+    margin-right:30px;
+    display:block;
+    text-align:center;
+}
+
+.main-content .disc li a,.main-content .product li a,.disc li a
+{
+    line-height:25px;
+}
+
+.j_help,.j_radio
+{
+    margin:10px 0;
+    padding:0;
+}
+
+#j_show,.latest ol li
+{
+    margin-bottom:10px;
+}
+
+
+#faq-form {
+    padding:0 0 15px 0;
+}
+
+#faq-form label{
+    font-weight:700;
+    background:#F7F7F7;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    padding:5px;
+}
+
+#faq-form input, #faq-form textarea{
+    -moz-border-radius:5px;
+    border-radius:5px;
+    border:1px solid #ddd;
+    border-color:#bbb #eee #eee #bbb;
+    padding:5px;
+    margin:3px 5px;
+}
+#faq-form button{
+    background: url("../images/submit.png") no-repeat 50% 50% transparent;
+    height: 26px;
+    border:0;
+    width: 96px;
+    text-indent:-9999px;
+}
+
+#faq-content{
+    padding:10px;
+
+}
+#faq-answer{
+    padding:10px;
+    background:#efefef;
+}
+
+#search-results dt{
+    font:normal bold 14px/1.5 Tahoma, Geneva, sans-serif;
+    border-top:1px solid #eee;
+    padding:5px;
+    border-bottom:1px solid #eee;
+    background:#fafafa;
+}
+#search-results dd b.hl{
+    color:#f30;
+}
+#search-results dt a{
+    color: #069;
+    text-decoration: underline;
+}
+#search-results dt a:hover{
+    color: #06c;
+    text-decoration: none;
+}
+
+
+

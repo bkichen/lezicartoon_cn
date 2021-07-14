@@ -1,0 +1,292 @@
+
+*{
+	padding:0px;
+	margin:0px;
+}
+body{
+	font:12px Verdana, Geneva, sans-serif;
+	background-color:#FFF;
+}
+ul,li{
+	list-style:none;
+}
+a{
+	color:#06C;
+	text-decoration:none;
+}
+a:hover{
+	color:#F33;
+	text-decoration:underline;
+}
+img{
+	border:0px;
+}
+
+.header-border{
+	width:100%;
+	height:5px;
+	background-color:#EDF6FA;
+	border-bottom:1px solid #DFEFF7;
+	overflow:hidden;
+}
+
+.header{
+	width:960px;
+	height:64px;
+	margin:0px auto;
+	overflow:hidden;
+}
+.header .logo{
+	width:280px;
+	height:64px;
+	background:url(../../../../v5/r5/images/top_logo.png) 0px 0px no-repeat;
+	float:left;
+}
+.header .logo a{
+	display:block;
+	width:280px;
+	height:0px;
+	padding-top:64px;
+	overflow:hidden;
+}
+
+.header .nav{
+	width:468px;
+	height:20px;
+	line-height:20px;
+	padding:24px 12px 0px 0px;
+	float:left;
+	text-align:right;
+	color:#E9E7E3;
+}
+.header .nav a{
+	color:#000;
+	margin:0px 8px;	
+}
+.header .nav a:hover{
+	color:#F60;
+}
+.header .search{
+	width:198px;
+	height:23px;
+	float:right;
+	margin-top:22px;
+	background:#1398CA;
+	border:1px solid #1398CA;
+}
+.header .search input{
+	width:169px;
+	height:17px;
+	line-height:17px;
+	border:0px;
+	float:left;
+	background:#1398CA;
+	padding:3px;
+	color:#FFF;
+	font-size:12px;
+}
+.header .search button{
+	width:23px;
+	height:23px;
+	float:left;
+	border:0px;
+	background:url(../images/login_search_btn.png) center center no-repeat;
+	text-indent:-9999em;
+	cursor:pointer;
+}
+
+.pTitle{
+	width:960px;
+	height:32px;
+	overflow:hidden;
+	margin:8px auto 0px;
+	background-color:#EAF8FD;
+	clear:both;
+}
+.pTitle h2{
+	height:32px;
+	float:left;
+	font:16px/32px "微软雅黑", "黑体";
+	overflow:hidden;
+	display:block;
+	padding-left:8px;
+}
+.pTitle h2.pt_register{
+	width:200px;
+	height:0px;
+	padding-top:32px;
+	background:url(../images/txt_reg_pt.png) 10px 0px no-repeat;
+}
+.pTitle h2.pt_login{
+	width:200px;
+	height:0px;
+	padding-top:32px;
+	background:url(../images/txt_login_pt.png) 10px 0px no-repeat;
+}
+.pTitle h2.pt_findpassword{
+	width:200px;
+	height:0px;
+	padding-top:32px;
+	background:url(../images/txt_findpassword_pt.png) 10px 0px no-repeat;
+}
+
+.main{
+	width:960px;
+	margin:8px auto;
+	overflow:hidden;
+	clear:both;
+}
+.main .form{
+	width:580px;
+	float:left;
+}
+.main .form dl{
+	width:580px;
+	padding:16px 0px 8px;
+	overflow:hidden;
+	clear:both;
+}
+.main .form dl dt{
+	width:112px;
+	height:32px;
+	line-height:32px;
+	float:left;
+	padding-right:8px;;
+	font-weight:bold;
+	color:#888;
+	text-align:right;
+}
+.main .form dl dd{
+	width:460px;
+	float:right;
+}
+.main .form dl dd .intro{
+	line-height:19px;
+	padding:4px 0px;
+	color:#999;
+	clear:both;
+}
+.main .form dl dd .intro .error{
+	float:left;
+	border:1px solid #F63;
+	padding:0px 6px;
+	color:#F30;
+	background-color:#FFF7F7;
+}
+.main .form dl dd .form_txt{
+	line-height:23px;
+	height:23px;
+	padding:2px 4px;
+	border:1px solid #DDD;
+	border-top:1px solid #AAA;
+	font-size:12px;
+}
+.main .form dl dd .form_checkbox{
+	padding:0px;
+	float:left;
+	margin:-3px 0px 0px -4px;
+	font-size:12px;
+}
+.main .form dl dd input.form_checkbox[type='checkbox']{
+	margin:2px 3px 0px 2px;
+	+margin:-3px 0px 0px -2px;
+}
+.main .form dl dd .label_checkbox{
+	float:left;
+	height:17px;
+	line-height:17px;
+	overflow:hidden;
+	cursor:pointer;
+	margin-right:18px;
+	color:#666;
+}
+
+.msg{
+	width:640px;
+	margin:12px auto;
+	padding:8px 16px;
+}
+.msg h3{
+	font-size:22px;
+	line-height:40px;
+}
+.msg p{
+	font-size:14px;
+	color:#777;
+	padding:12px 0px;
+	line-height:27px;
+}
+
+
+.btn_s1{
+	width:80px;
+	height:29px;
+	border:0px;
+	background:url(../images/btn_bg3.png) 0px 0px no-repeat;
+	text-align:center;
+	line-height:27px;
+	color:#FFF;
+	font-size:12px;
+	cursor:pointer;
+	margin-right:8px;
+}
+.btn_s2{
+	width:80px;
+	height:29px;
+	border:0px;
+	background:url(../images/btn_bg5.png) 0px 0px no-repeat;
+	text-align:center;
+	line-height:27px;
+	color:#C30;
+	font-weight:bold;
+	font-size:12px;
+	cursor:pointer;
+	margin-right:8px;
+}
+
+.main .side{
+	width:320px;
+	padding:8px 0px 8px 32px;
+	border-left:1px solid #EAF8FD;
+	float:right;
+}
+.main .side dl{
+	width:100%;
+	padding:0px 0px 20px;
+	clear:both;
+	overflow:hidden;
+}
+.main .side dl dt{
+	height:32px;
+	line-height:32px;
+	color:#666;
+}
+.main .side dl dd{
+	padding:2px;
+}
+.main .side dl dt a{
+	margin:0px 2px;
+}
+.register_tips{
+	width:320px;
+	height:0px;
+	padding-top:220px;
+	overflow:hidden;
+	background:url(../images/register_tips.png) center 12px no-repeat;
+}
+
+.footer{
+	height:23px;
+	line-height:23px;
+	padding:8px 0px;
+	width:960px;
+	margin:12px auto 0px;
+	text-align:center;
+	font-size:11px;
+	color:#666;
+	border-top:1px solid #EAF8FD;
+}
+.footer a.siteurl{
+	font-weight:bold;
+	color:#06C;
+}
